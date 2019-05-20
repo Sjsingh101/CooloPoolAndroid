@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity"
+    android:background="@drawable/background">
+
+    <ImageButton
+        android:id="@+id/left_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_left_arrow"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/left_btn"
+        android:gravity="left"
+    android:paddingStart="80dp"
+        android:text="Log In"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/login_name"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:drawableLeft="@drawable/ic_profile"
+        android:drawablePadding="18dp"
+        android:hint="@string/UserName"
+        android:backgroundTint="@color/colorGold"
+        android:padding="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="@color/colorGold"
+        android:textColorHint="@color/colorGold"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/login_pass"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="@color/colorGold"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawablePadding="18dp"
+        android:hint="@string/Password"
+        android:padding="15dp"
+        android:layout_marginLeft="40dp"
+        android:textColor="@color/colorGold"
+        android:textColorHint="@color/colorGold"
+        android:textSize="20sp" />
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/login_btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/circlebackground_white"
+        android:text="Log In"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black" />
+
+
+ <TextView
+     android:id="@+id/SignUp_btn"
+     android:layout_gravity="center"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="New User? SIgnUp"
+     android:padding="15dp"
+     android:textAllCaps="false"
+     android:textColor="@android:color/white" />
+
+</LinearLayout>

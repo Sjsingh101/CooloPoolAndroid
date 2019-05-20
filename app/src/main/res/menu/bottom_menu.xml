@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/taxi"
+        android:icon="@drawable/ic_taxi"
+        android:title="Taxi"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/hotel"
+        android:icon="@drawable/ic_hotel_b"
+        android:title="Hotel"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/food"
+        android:icon="@drawable/ic_food"
+        android:title="Food"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/user"
+        android:icon="@drawable/ic_user"
+        android:title="User"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/user1"
+        android:icon="@drawable/ic_user"
+        android:title="User"
+        app:showAsAction="always" />
+
+</menu>
