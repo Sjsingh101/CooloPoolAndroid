@@ -1,4 +1,4 @@
-package com.coolopool.coolopool;
+package com.coolopool.coolopool.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.coolopool.coolopool.R;
 
 public class LoginActivity extends AppCompatActivity {
 

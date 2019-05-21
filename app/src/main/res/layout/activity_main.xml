@@ -1,31 +1,178 @@
-<?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".HomeActivity">
+    android:layout_gravity="bottom"
+    android:background="@drawable/background">
 
 
-    <android.support.design.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar"
-        style="@style/Widget.MaterialComponents.BottomAppBar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_gravity="bottom"
-        app:backgroundTint="@color/colorBtmGray"
-        app:fabAlignmentMode="center"
-        app:title="detail"
-        app:titleTextColor="@android:color/black"
-        app:menu="@menu/bottom_menu"/>
+        android:gravity="top"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:weightSum="6">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        <ImageButton
+            android:src="@drawable/ic_house"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:layout_gravity="center"
+        android:layout_weight="4">
+        <EditText
+            android:id="@+id/searchbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint=" Search"
+            android:singleLine="true"
+            android:padding="4dp"
+            android:background="@drawable/rounded_edittext" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_weight="1">
+        <ImageButton
+            android:src="@drawable/ic_search"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <ImageButton
+            android:src="@drawable/ic_cart"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        android:scrollbars="vertical" />
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:src="@drawable/ic_add"
-        app:layout_anchor="@id/bottomAppBar" />
+        android:focusable="true"
+        app:layout_anchor="@id/bar" />
 
+    <android.support.design.bottomappbar.BottomAppBar
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/colorBtmGray">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_taxi"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Travel"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF">
+
+            </TextView>
+
+            <TextView
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_hotel_b"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Hotel"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF">
+
+            </TextView>
+
+            <TextView
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textColor="#FFFFFF"
+                android:visibility="invisible">
+
+            </TextView>
+
+            <TextView
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_food"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Resturant"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF">
+
+            </TextView>
+
+            <TextView
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableTop="@drawable/ic_user"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="User"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </android.support.design.bottomappbar.BottomAppBar>
 
 </android.support.design.widget.CoordinatorLayout>
