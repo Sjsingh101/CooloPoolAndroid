@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".Activity.SignInActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Coolopool"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="45sp"
+        android:textStyle="bold"/>
+
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Name"
+        android:textColor="#fff"
+        android:textColorHint="@color/colorGold"
+        android:textSize="20sp"
+        android:backgroundTint="@color/colorGold"
+        android:padding="16dp"
+        android:drawableStart="@drawable/ic_profile"
+        android:drawablePadding="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="130dp"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Password"
+        android:textColor="#fff"
+        android:textColorHint="@color/colorGold"
+        android:textSize="20sp"
+        android:backgroundTint="@color/colorGold"
+        android:padding="16dp"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:id="@+id/confPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:textColor="#fff"
+        android:textColorHint="@color/colorGold"
+        android:textSize="20sp"
+        android:backgroundTint="@color/colorGold"
+        android:padding="16dp"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/createAccountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/circlebackground_white"
+        android:padding="10dp"
+        android:text="Create Account"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+</LinearLayout>

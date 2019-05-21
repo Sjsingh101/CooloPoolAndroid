@@ -3,4 +3,6 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="UserName">Username</string>
     <string name="Password">Password</string>
+    <string name="search_box">Search</string>
+    <string name="travel">Travel</string>
 </resources>

@@ -7,6 +7,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.coolopool.coolopool.Adapter.PostAdapter;
 import com.coolopool.coolopool.R;
@@ -24,13 +27,27 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // for search box
+
+        ImageButton mSearchButton = findViewById(R.id.searchButton);
+        final EditText mSearchBox = findViewById(R.id.searchbar);
+        mSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSearchBox.setVisibility(View.VISIBLE);
+            }
+        });
+
+
         recyclerView = findViewById(R.id.recycler_view);
         layoutManager = new GridLayoutManager(this,2);
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(layoutManager);
 
         postAdapter = new PostAdapter(images,titles,descriptions);
         recyclerView.setAdapter(postAdapter);
+
+
     }
 
 }

@@ -1,9 +1,11 @@
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="bottom"
-    android:background="@drawable/background">
+    tools:context=".Activity.HomeActivity">
 
 
     <LinearLayout
@@ -11,10 +13,8 @@
         android:gravity="top"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:weightSum="6">
+        android:weightSum="6"
+        android:baselineAligned="false">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +23,8 @@
             android:src="@drawable/ic_house"
             android:backgroundTint="@android:color/transparent"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:contentDescription="TODO" />
         </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -35,21 +36,27 @@
             android:id="@+id/searchbar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint=" Search"
+            android:hint="@string/search_box"
+            android:visibility="invisible"
             android:singleLine="true"
             android:padding="4dp"
-            android:background="@drawable/rounded_edittext" />
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text"/>
+
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="right"
         android:layout_weight="1">
         <ImageButton
+            android:id="@+id/searchButton"
             android:src="@drawable/ic_search"
             android:backgroundTint="@android:color/transparent"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:contentDescription="TODO" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,7 +68,8 @@
             android:src="@drawable/ic_cart"
             android:backgroundTint="@android:color/transparent"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:contentDescription="TODO" />
     </LinearLayout>
 
     </LinearLayout>
@@ -71,8 +79,8 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
         android:scrollbars="vertical" />
 
 
@@ -81,14 +89,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:src="@drawable/ic_add"
         android:focusable="true"
+        android:src="@drawable/ic_add"
         app:layout_anchor="@id/bar" />
 
     <android.support.design.bottomappbar.BottomAppBar
         android:id="@+id/bar"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:backgroundTint="@color/colorBtmGray">
 
@@ -97,79 +105,46 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                style="?android:attr/borderlessButtonStyle"
+
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:drawableTop="@drawable/ic_taxi"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:text="Travel"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF">
-
-            </TextView>
-
-            <TextView
-                style="?android:attr/borderlessButtonStyle"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_taxi"
+                android:backgroundTint="@android:color/transparent">
+            </ImageButton>
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:drawableTop="@drawable/ic_hotel_b"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:text="Hotel"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF">
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_hotel_b"
+                android:backgroundTint="@android:color/transparent">
 
-            </TextView>
+            </ImageButton>
 
-            <TextView
-                style="?android:attr/borderlessButtonStyle"
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent">
+            </ImageButton>
 
-                android:gravity="center"
-                android:orientation="vertical"
-                android:textColor="#FFFFFF"
-                android:visibility="invisible">
-
-            </TextView>
-
-            <TextView
-                style="?android:attr/borderlessButtonStyle"
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:drawableTop="@drawable/ic_food"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:text="Resturant"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF">
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_food"
+                android:backgroundTint="@android:color/transparent">
+            </ImageButton>
 
-            </TextView>
-
-            <TextView
-                style="?android:attr/borderlessButtonStyle"
+            <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:drawableTop="@drawable/ic_user"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:text="User"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF">
+                android:layout_height="wrap_content"
+               android:src="@drawable/ic_user"
+                android:backgroundTint="@android:color/transparent">
+            </ImageButton>
 
-            </TextView>
 
         </LinearLayout>
 
