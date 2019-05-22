@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/ic_left_arrow"/>
 
@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/left_btn"
-        android:gravity="left"
-    android:paddingStart="80dp"
+        android:gravity="center"
+        android:paddingStart="8dp"
         android:text="Log In"
         android:textAllCaps="false"
         android:textColor="#fff"
@@ -35,8 +35,8 @@
         android:singleLine="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:drawableLeft="@drawable/ic_profile"
+        android:layout_marginTop="70dp"
+        android:drawableStart="@drawable/ic_profile"
         android:drawablePadding="18dp"
         android:hint="@string/UserName"
         android:backgroundTint="@color/colorGold"
@@ -56,9 +56,10 @@
         android:layout_marginRight="40dp"
         android:backgroundTint="@color/colorGold"
         android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/ic_lock"
+        android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="18dp"
         android:hint="@string/Password"
+        android:inputType="textPassword"
         android:padding="15dp"
         android:layout_marginLeft="40dp"
         android:textColor="@color/colorGold"
@@ -80,14 +81,32 @@
         android:textColor="@android:color/black" />
 
 
- <TextView
-     android:id="@+id/SignUp_btn"
-     android:layout_gravity="center"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:text="New User? SIgnUp"
-     android:padding="15dp"
-     android:textAllCaps="false"
-     android:textColor="@android:color/white" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New User?"
+            android:padding="8dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/SignUp_btn"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SignUp"
+            android:padding="8dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/darker_gray" />
+    </LinearLayout>
+
 
 </LinearLayout>

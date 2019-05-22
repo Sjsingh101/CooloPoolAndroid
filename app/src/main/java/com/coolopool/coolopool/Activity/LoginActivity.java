@@ -3,6 +3,7 @@ package com.coolopool.coolopool.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -28,7 +29,8 @@ public class LoginActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,WelcomeActivity.class);
+                Log.d("Log_test","Login button is clicked");
+                Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                 intent.putExtra("name",UserName);
                 startActivity(intent);
             }
@@ -37,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         signUpbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,WelcomeActivity.class));
+                startActivity(new Intent(LoginActivity.this,SignInActivity.class));
             }
         });
     }
