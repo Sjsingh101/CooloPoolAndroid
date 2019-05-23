@@ -20,12 +20,88 @@
         android:textSize="45sp"
         android:textStyle="bold"/>
 
+   <android.support.v7.widget.AppCompatButton
+       android:id="@+id/googleSignUp"
+       android:layout_marginTop="60dp"
+       android:layout_marginBottom="30dp"
+       android:drawableStart="@drawable/google_icon"
+       android:text="Sign Up with Goolge"
+       android:textSize="25sp"
+       android:drawablePadding="8dp"
+       android:padding="2dp"
+       android:paddingEnd="16dp"
+       android:paddingStart="16dp"
+       android:elevation="10dp"
+       android:background="@drawable/circlebackground_white"
+       android:textAllCaps="false"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       />
+
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       android:padding="16dp">
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="6dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#c0c0c0"
+            />
+
+        <View
+            android:layout_width="170dp"
+            android:layout_height="2dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#c0c0c0"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:textStyle="italic"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:paddingBottom="8dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+        <View
+            android:layout_width="170dp"
+            android:layout_height="2dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#c0c0c0"
+            />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="6dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#c0c0c0"
+            />
+
+
+    </LinearLayout>
+-->
+
+
 
     <EditText
         android:id="@+id/userName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="User Name"
+        android:singleLine="true"
         android:textColor="#fff"
         android:textColorHint="@color/colorGold"
         android:textSize="20sp"
@@ -35,7 +111,7 @@
         android:drawablePadding="16dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginTop="130dp"/>
+        />
 
     <EditText
         android:id="@+id/password"
@@ -43,6 +119,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/Password"
         android:textColor="#fff"
+        android:inputType="textPassword"
         android:textColorHint="@color/colorGold"
         android:textSize="20sp"
         android:backgroundTint="@color/colorGold"
@@ -60,6 +137,7 @@
         android:layout_height="wrap_content"
         android:hint="Confirm Password"
         android:textColor="#fff"
+        android:inputType="textPassword"
         android:textColorHint="@color/colorGold"
         android:textSize="20sp"
         android:backgroundTint="@color/colorGold"
@@ -82,5 +160,32 @@
         android:text="Create Account"
         android:textColor="@android:color/black"
         android:textSize="15sp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I Already have account"
+            android:padding="8dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/Login_btn"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log In"
+            android:padding="8dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/darker_gray" />
+    </LinearLayout>
 
 </LinearLayout>

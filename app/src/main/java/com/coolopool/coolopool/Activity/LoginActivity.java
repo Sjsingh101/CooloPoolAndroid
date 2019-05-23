@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.R;
@@ -13,6 +14,7 @@ import com.coolopool.coolopool.R;
 public class LoginActivity extends AppCompatActivity {
 
     Button loginbtn;
+   // ImageButton mBackButton;  uncomment if back button is required.
     TextView signUpbtn;
     String UserName;
     @Override
@@ -25,6 +27,17 @@ public class LoginActivity extends AppCompatActivity {
 
         loginbtn = findViewById(R.id.login_btn);
         signUpbtn = findViewById(R.id.SignUp_btn);
+
+       //  uncomment if back button is required.
+       /* mBackButton = findViewById(R.id.backButton);
+
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, SplashActivity.class);
+                startActivity(intent);
+            }
+        });*/
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +52,9 @@ public class LoginActivity extends AppCompatActivity {
         signUpbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,SignInActivity.class));
+                Log.d("Log_test","Sign UP button is clicked");
+                Intent intent = new Intent(LoginActivity.this,SignInActivity.class);
+                startActivity(intent);
             }
         });
     }

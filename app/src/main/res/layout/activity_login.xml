@@ -8,20 +8,22 @@
     tools:context=".Activity.LoginActivity"
     android:background="@drawable/background">
 
-    <ImageButton
-        android:id="@+id/left_btn"
+
+    <!-- Uncomment if it requried -->
+    <!--<ImageButton
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/ic_left_arrow"/>
+        android:src="@drawable/ic_left_arrow"/>-->
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_toEndOf="@id/left_btn"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="16dp"
         android:gravity="center"
         android:paddingStart="8dp"
         android:text="Log In"

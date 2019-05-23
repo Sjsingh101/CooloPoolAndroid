@@ -14,8 +14,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="160dp"
         android:src="@drawable/logo" />
-        />
-
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/startBtn"
