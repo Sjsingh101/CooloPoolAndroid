@@ -15,6 +15,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     int[] images;
     String[] titles;
     String[] descriptions;
+
     public PostAdapter(int[] images,String[] titles,String[] descriptions){
         this.images = images;
         this.titles = titles;
