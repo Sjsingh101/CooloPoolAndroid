@@ -10,135 +10,139 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_above="@+id/swipe_up"
+        android:layout_marginBottom="31dp"
         android:orientation="vertical"
         android:scrollbars="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New Post"
-        android:textAllCaps="false"
-        android:textSize="35sp"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="15dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/circlebackground_white_small"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="vertical"
-        android:elevation="20dp">
         <TextView
-            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Title"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="New Post"
             android:textAllCaps="false"
-            android:textSize="30sp"
-            android:gravity="left"
-            android:singleLine="true"
-            android:textStyle="bold"
-            android:textColor="@android:color/black" />
-        <EditText
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Get a catchy title"
-            android:singleLine="true"
-            android:textColorHint="@android:color/black"
-            android:textSize="20sp"
-            />
+            android:textColor="@android:color/white"
+            android:textSize="35sp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/circlebackground_white_small"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="vertical"
-        android:elevation="20dp">
-        <TextView
-            android:layout_marginLeft="10dp"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Description"
-            android:textAllCaps="false"
-            android:textSize="30sp"
-            android:gravity="left"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            />
-        <EditText
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-          android:layout_marginTop="50dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Describe your trip"
-            android:textColorHint="@android:color/black"
-            android:textSize="20sp"
-            />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/circlebackground_white_small"
+            android:elevation="20dp"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text="Title"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/circlebackground_white_small"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="vertical"
-        android:elevation="20dp">
-        <TextView
-            android:layout_marginLeft="10dp"
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:hint="Get a catchy title"
+                android:singleLine="true"
+                android:textColorHint="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date"
-            android:textAllCaps="false"
-            android:textSize="30sp"
-            android:gravity="left"
-            android:textStyle="bold"
-            android:textColor="@android:color/black" />
-        <DatePicker
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/circlebackground_white_small"
+            android:elevation="20dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="left"
+                android:text="Description"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="10dp"
+                android:hint="Describe your trip"
+                android:textColorHint="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:datePickerMode="spinner"
-            android:calendarViewShown="false"
-            />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/circlebackground_white_small"
+            android:elevation="20dp"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="left"
+                android:text="Date"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <DatePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 
     <LinearLayout
         android:id="@+id/swipe_up"
         android:paddingTop="20dp"
-        android:paddingBottom="20dp"
+        android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
         android:layout_alignParentBottom="true"
         android:weightSum="5">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:gravity="left"
             android:layout_weight="1">
         <ImageView
