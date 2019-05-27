@@ -1,5 +1,6 @@
 package com.coolopool.coolopool.Activity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.design.bottomappbar.BottomAppBar;
 import android.support.design.widget.FloatingActionButton;
@@ -56,6 +57,13 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this,NewPostActivity.class));
             }
         });
+
+
+    }
+
+    private void showDialoge(){
+        Dialog dialog = new Dialog(this);
+
     }
 
 }
