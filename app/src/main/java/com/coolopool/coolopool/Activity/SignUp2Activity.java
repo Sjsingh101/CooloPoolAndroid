@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.coolopool.coolopool.R;
 
-public class SignInActivity extends AppCompatActivity {
+public class SignUp2Activity extends AppCompatActivity {
 
     Button mCreateButton;
     TextView mLoginButton;
@@ -18,8 +18,7 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
-
+        setContentView(R.layout.activity_sign_up2);
 
         // use for creating account
         mCreateButton = findViewById(R.id.createAccountButton);
@@ -27,7 +26,7 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("Log_test","Create Account has clicked");
-                Intent intent = new Intent(SignInActivity.this,LoginActivity.class);
+                Intent intent = new Intent(SignUp2Activity.this,LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -38,7 +37,7 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("Log_test","I have account has Login clicked");
-                Intent intent = new Intent(SignInActivity.this,LoginActivity.class);
+                Intent intent = new Intent(SignUp2Activity.this,LoginActivity.class);
                 startActivity(intent);
             }
         });
