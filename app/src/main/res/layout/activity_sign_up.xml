@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context=".Activity.SignInActivity">
+    tools:context=".Activity.SignUpActivity">
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="8dp"
+        android:gravity="start"
+        android:paddingStart="50dp"
         android:layout_marginTop="16dp"
-        android:text="Coolopool"
+        android:text="New \nAccount"
         android:textAllCaps="false"
         android:textColor="#fff"
         android:textSize="45sp"
@@ -38,63 +39,6 @@
        android:layout_height="wrap_content"
        android:layout_gravity="center"
        />
-
-<!--
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-       android:padding="16dp">
-
-        <View
-            android:layout_width="2dp"
-            android:layout_height="6dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="#c0c0c0"
-            />
-
-        <View
-            android:layout_width="170dp"
-            android:layout_height="2dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="#c0c0c0"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="OR"
-            android:textStyle="italic"
-            android:textSize="12sp"
-            android:textColor="#000000"
-            android:paddingBottom="8dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"/>
-        <View
-            android:layout_width="170dp"
-            android:layout_height="2dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="#c0c0c0"
-            />
-        <View
-            android:layout_width="2dp"
-            android:layout_height="6dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="#c0c0c0"
-            />
-
-
-    </LinearLayout>
--->
-
-
 
     <EditText
         android:id="@+id/userName"
@@ -150,14 +94,16 @@
         />
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/createAccountButton"
+        android:id="@+id/nextButtton"
         android:layout_width="wrap_content"
+        android:elevation="6dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:background="@drawable/circlebackground_white"
-        android:padding="10dp"
-        android:text="Create Account"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:text="Next"
         android:textColor="@android:color/black"
         android:textSize="15sp" />
 
