@@ -15,7 +15,6 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.PostMethodChooserActivity"/>
         <activity android:name=".Activity.SignUp2Activity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
