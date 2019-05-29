@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.coolopool.coolopool">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +15,19 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activity.SignUp2Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Activity.PostDraftActivity"
             android:label="@string/title_activity_post_draft"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activity.NewPostActivity"
-            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity 
+            android:name=".Activity.SignUpActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
-        <activity
-            android:name=".Activity.SignInActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"/>
         <activity android:name=".Activity.TaxiActivity" />
         <activity
             android:name=".Activity.WelcomeActivity"
@@ -38,8 +46,8 @@
         </activity>
         <activity
             android:name=".Activity.HomeActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:theme="@style/Theme.Design.Light.NoActionBar" />
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

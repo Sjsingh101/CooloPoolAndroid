@@ -160,7 +160,7 @@
               android:layout_height="wrap_content"
               android:textColor="@android:color/white"
               android:textSize="20sp"
-              android:text="Swiple when you are done"
+              android:text="Swipe when you are done"
               android:textAllCaps="false"/>
         </LinearLayout>
         <LinearLayout
