@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -46,6 +47,17 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        // for hotel
+        ImageButton mHotelButton = findViewById(R.id.hotelbtn);
+        mHotelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Log_test", "Hotel Button has clicked");
+                Intent intent = new Intent(HomeActivity.this, HotelActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         recyclerView = findViewById(R.id.recycler_view);
         layoutManager = new GridLayoutManager(this,2);
@@ -60,6 +72,8 @@ public class HomeActivity extends AppCompatActivity {
                 showDialog();
             }
         });
+
+
 
 
     }
