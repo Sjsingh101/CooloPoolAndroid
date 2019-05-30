@@ -28,6 +28,13 @@ public class HomeActivity extends AppCompatActivity {
     ViewPager viewPager;
     FloatingActionButton addPost;
 
+    ImageButton mSearchButton;
+    ImageButton mHomeButton;
+
+    ImageButton transportButton;
+    ImageButton hotelButton;
+    ImageButton restaurantsButton;
+
     MainStatePageAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +42,54 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         addPost = findViewById(R.id.fab);
         viewPager = (ViewPager)findViewById(R.id.viewPager);
+        transportButton = (ImageButton)findViewById(R.id.taxiBtn);
+        hotelButton = (ImageButton)findViewById(R.id.hotelbtn);
+        restaurantsButton = (ImageButton)findViewById(R.id.foodbtn);
+
+        mSearchButton = (ImageButton)findViewById(R.id.searchButton);
+        final EditText mSearchBox = (EditText)findViewById(R.id.searchbar);
+        mSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSearchBox.setVisibility(View.VISIBLE);
+            }
+        });
+
+        mHomeButton = (ImageButton)findViewById(R.id.homeButton);
+
 
         adapter = new MainStatePageAdapter(getSupportFragmentManager());
 
         viewPager.setAdapter(adapter);
+
+        mHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewPager.setCurrentItem(0);
+            }
+        });
+
+        transportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewPager.setCurrentItem(1);
+            }
+        });
+
+        hotelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewPager.setCurrentItem(2);
+            }
+        });
+
+        restaurantsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewPager.setCurrentItem(3);
+            }
+        });
+
 
         addPost.setOnClickListener(new View.OnClickListener() {
             @Override

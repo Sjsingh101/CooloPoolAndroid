@@ -57,14 +57,6 @@ public class HomeFragment extends Fragment {
 
         // for search box
 
-        ImageButton mSearchButton = (ImageButton)view.findViewById(R.id.searchButton);
-        final EditText mSearchBox = (EditText)view.findViewById(R.id.searchbar);
-        mSearchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mSearchBox.setVisibility(View.VISIBLE);
-            }
-        });
 
 
         recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
