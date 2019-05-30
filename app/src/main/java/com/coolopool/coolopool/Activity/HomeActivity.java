@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.design.bottomappbar.BottomAppBar;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -18,64 +19,33 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.coolopool.coolopool.Adapter.MainStatePageAdapter;
 import com.coolopool.coolopool.Adapter.PostAdapter;
 import com.coolopool.coolopool.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    int[] images ={R.drawable.pic1,R.drawable.pic2,R.drawable.pic3,R.drawable.pic1,R.drawable.pic2,R.drawable.pic3};
-    String[] titles ={"Afgfgf","A","A","A","A","A"};
-    String[] descriptions ={"A","A","A","A","A","A"};
-    RecyclerView.LayoutManager layoutManager;
-    PostAdapter postAdapter;
+    ViewPager viewPager;
     FloatingActionButton addPost;
+
+    MainStatePageAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addPost = findViewById(R.id.fab);
+        viewPager = (ViewPager)findViewById(R.id.viewPager);
 
-        // for search box
+        adapter = new MainStatePageAdapter(getSupportFragmentManager());
 
-        ImageButton mSearchButton = findViewById(R.id.searchButton);
-        final EditText mSearchBox = findViewById(R.id.searchbar);
-        mSearchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mSearchBox.setVisibility(View.VISIBLE);
-            }
-        });
+        viewPager.setAdapter(adapter);
 
-        // for hotel
-        ImageButton mHotelButton = findViewById(R.id.hotelbtn);
-        mHotelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("Log_test", "Hotel Button has clicked");
-                Intent intent = new Intent(HomeActivity.this, HotelActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-        recyclerView = findViewById(R.id.recycler_view);
-        layoutManager = new GridLayoutManager(this,2);
-        recyclerView.setHasFixedSize(false);
-        recyclerView.setLayoutManager(layoutManager);
-
-        postAdapter = new PostAdapter(images,titles,descriptions);
-        recyclerView.setAdapter(postAdapter);
         addPost.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 showDialog();
             }
         });
-
-
-
-
     }
 
     private void showDialog(){
