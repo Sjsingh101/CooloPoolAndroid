@@ -15,18 +15,24 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.Adapter.MainStatePageAdapter;
 import com.coolopool.coolopool.Adapter.PostAdapter;
+import com.coolopool.coolopool.Fragments.HotelFragment;
+import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
 
 public class HomeActivity extends AppCompatActivity {
 
+    static String TAG = "HomeActivity";
+
     ViewPager viewPager;
-    FloatingActionButton addPost;
+    FloatingActionButton fab;
 
     ImageButton mSearchButton;
     ImageButton mHomeButton;
@@ -40,7 +46,9 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addPost = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
+
+
         viewPager = (ViewPager)findViewById(R.id.viewPager);
         transportButton = (ImageButton)findViewById(R.id.taxiBtn);
         hotelButton = (ImageButton)findViewById(R.id.hotelbtn);
@@ -61,6 +69,24 @@ public class HomeActivity extends AppCompatActivity {
         adapter = new MainStatePageAdapter(getSupportFragmentManager());
 
         viewPager.setAdapter(adapter);
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                Log.d(TAG, ""+i);
+                updateUi(i);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
 
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +117,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-        addPost.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showDialog();
@@ -100,36 +126,67 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void showDialog(){
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.post_method_chooser);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        DialogBuilder dB = new DialogBuilder(this, R.layout.post_method_chooser);
+        dB.build();
 
-        ((TextView)dialog.findViewById(R.id.new_post_pic)).setOnClickListener(new View.OnClickListener() {
+
+
+        ((TextView)dB.getDialog().findViewById(R.id.new_post_pic)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Todo: create another activity for user to create their trip of only pictures
 
             }
         });
-        ((TextView)dialog.findViewById(R.id.new_post_blog)).setOnClickListener(new View.OnClickListener() {
+        ((TextView)dB.getDialog().findViewById(R.id.new_post_blog)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Todo: create another activity for user to create their trip in form of blog(pic plus caption)
+                //Todo: create another activity for user to create their trip of only pictures
 
             }
         });
-        ((TextView)dialog.findViewById(R.id.new_post_trip)).setOnClickListener(new View.OnClickListener() {
+
+        ((TextView)dB.getDialog().findViewById(R.id.new_post_trip)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Normal way of creating post using trip details
                 startActivity(new Intent(HomeActivity.this,NewPostActivity.class));
             }
         });
+        
 
-        dialog.setCancelable(true);
 
-        dialog.show();
 
     }
 
+    private void updateUi(int i){
+
+        switch (i){
+            case 0:
+                fab.setImageResource(R.drawable.ic_add);
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        showDialog();
+                    }
+                });
+                break;
+            case 1:
+                fab.setImageResource(R.drawable.ic_search);
+                Log.d(TAG, "CabFragment Enabled");
+                break;
+            case 2:
+                fab.setImageResource(R.drawable.ic_search);
+                Log.d(TAG, "HotelFragment Enabled");
+                break;
+            case 3:
+                fab.setImageResource(R.drawable.ic_search);
+                Log.d(TAG, "ResturantFragment Enabled");
+                break;
+
+            default:
+                return;
+
+        }
+    }
 }
