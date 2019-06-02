@@ -189,7 +189,7 @@
                     android:id="@+id/rooms_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="GUESTS"
+                    android:text="ROOMS"
                     android:fontFamily="sans-serif-thin"
                     android:textColor="@color/colorBtmGray"/>
 

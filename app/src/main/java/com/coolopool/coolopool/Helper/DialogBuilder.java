@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.R;
@@ -22,25 +23,24 @@ public class DialogBuilder {
     }
 
     public void build() {
-        Dialog dialog = new Dialog(mContext);
+        dialog = new Dialog(mContext);
         dialog.setContentView(mViewId);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
-        dialog.setCancelable(true);
         dialog.show();
     }
 
     public void reBuild(int viewId){
         destroy();
-        dialog = null;
-        System.gc();
         mViewId = viewId;
         build();
     }
 
     public void destroy(){
         dialog.dismiss();
+        dialog = null;
+        System.gc();
     }
 
     public Dialog getDialog() {

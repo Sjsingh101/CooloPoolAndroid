@@ -8,11 +8,20 @@
     android:background="@color/transparent">
 
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+
+        <ImageButton
+            android:id="@+id/dialog_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_white"
+            android:backgroundTint="@android:color/transparent"/>
 
         <EditText
             android:id="@+id/hotel_search_editText"
@@ -24,12 +33,16 @@
             android:padding="4dp"
             android:background="@drawable/circlebackground_white"
             android:inputType="text"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:layout_below="@id/dialog_back_button"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="16dp"/>
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="2"
             android:background="@drawable/circlebackground_white">
 
 
