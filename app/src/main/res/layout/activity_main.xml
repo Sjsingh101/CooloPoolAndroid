@@ -54,7 +54,7 @@
             android:layout_weight="1">
             <ImageButton
                 android:id="@+id/searchButton"
-                android:src="@drawable/ic_search"
+                android:src="@drawable/ic_search_white"
                 android:backgroundTint="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

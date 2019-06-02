@@ -1,29 +1,17 @@
 package com.coolopool.coolopool.Activity;
 
-import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.support.design.bottomappbar.BottomAppBar;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.Adapter.MainStatePageAdapter;
-import com.coolopool.coolopool.Adapter.PostAdapter;
-import com.coolopool.coolopool.Fragments.HotelFragment;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
 
@@ -153,7 +141,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this,NewPostActivity.class));
             }
         });
-        
+
 
 
 
@@ -172,15 +160,15 @@ public class HomeActivity extends AppCompatActivity {
                 });
                 break;
             case 1:
-                fab.setImageResource(R.drawable.ic_search);
+                fab.setImageResource(R.drawable.ic_search_white);
                 Log.d(TAG, "CabFragment Enabled");
                 break;
             case 2:
-                fab.setImageResource(R.drawable.ic_search);
+                fab.setImageResource(R.drawable.ic_search_white);
                 Log.d(TAG, "HotelFragment Enabled");
                 break;
             case 3:
-                fab.setImageResource(R.drawable.ic_search);
+                fab.setImageResource(R.drawable.ic_search_white);
                 Log.d(TAG, "ResturantFragment Enabled");
                 break;
 

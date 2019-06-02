@@ -6,9 +6,43 @@
     tools:context=".Fragments.HotelFragment"
     android:background="@drawable/background">
 
-    <TextView
+
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hotel fragment" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/hotel_fragment_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City/Area/Hotel Name"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-thin"/>
+
+
+        <TextView
+            android:id="@+id/hotel_fragment_loaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hotel_fragment_tv"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            android:text="Shimla"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-black"/>
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
 
 </FrameLayout>

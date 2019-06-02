@@ -31,6 +31,14 @@ public class DialogBuilder {
         dialog.show();
     }
 
+    public void reBuild(int viewId){
+        destroy();
+        dialog = null;
+        System.gc();
+        mViewId = viewId;
+        build();
+    }
+
     public void destroy(){
         dialog.dismiss();
     }

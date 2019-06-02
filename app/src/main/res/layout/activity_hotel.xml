@@ -183,7 +183,7 @@
         android:clickable="true"
         android:focusable="true"
         android:backgroundTint="@color/transparent"
-        android:src="@drawable/ic_search"
+        android:src="@drawable/ic_search_white"
         app:layout_anchor="@id/bar" />
 
     <android.support.design.bottomappbar.BottomAppBar

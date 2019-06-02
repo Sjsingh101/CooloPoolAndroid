@@ -104,7 +104,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/ic_search"
+        android:src="@drawable/ic_search_white"
         app:layout_anchor="@id/bar" />
 
     <android.support.design.bottomappbar.BottomAppBar
