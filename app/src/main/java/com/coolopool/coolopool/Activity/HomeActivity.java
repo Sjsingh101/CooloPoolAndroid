@@ -114,9 +114,16 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void showDialog(){
-        DialogBuilder dB = new DialogBuilder(this, R.layout.post_method_chooser);
+        final DialogBuilder dB = new DialogBuilder(this, R.layout.post_method_chooser);
         dB.build();
 
+
+        ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dB.destroy();
+            }
+        });
 
 
         ((TextView)dB.getDialog().findViewById(R.id.new_post_pic)).setOnClickListener(new View.OnClickListener() {

@@ -77,6 +77,7 @@
                     android:textSize="50sp" />
 
                 <TextView
+                    android:id="@+id/checkIn_value_year_month_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/checkIn_textView"
@@ -119,6 +120,7 @@
                     android:textSize="50sp" />
 
                 <TextView
+                    android:id="@+id/checkOut_value_year_month_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/checkOut_textView"
