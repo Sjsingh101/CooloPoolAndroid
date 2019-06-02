@@ -30,7 +30,7 @@ public class HotelFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_hotel, container, false);
 
-        TextView location = (TextView)v.findViewById(R.id.hotel_fragment_loaction);
+        TextView location = (TextView)v.findViewById(R.id.hotel_fragment_location);
 
         location.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -24,7 +24,7 @@
 
 
         <TextView
-            android:id="@+id/hotel_fragment_loaction"
+            android:id="@+id/hotel_fragment_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/hotel_fragment_tv"
@@ -36,11 +36,181 @@
             android:fontFamily="sans-serif-black"/>
 
 
+        <LinearLayout
+            android:id="@+id/top_checkIn_cheOut_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hotel_fragment_location"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
+
+            <RelativeLayout
+                android:id="@+id/checkIn_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_below="@id/hotel_fragment_location"
+                android:background="@color/white"
+                android:padding="8dp"
+                android:layout_marginRight="1dp">
+
+                <TextView
+                    android:id="@+id/checkIn_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHECK-IN"
+                    android:fontFamily="sans-serif-thin"
+                    android:textColor="@color/colorBtmGray"/>
+
+                <TextView
+                    android:id="@+id/checkIn_value_textView"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/checkIn_textView"
+                    android:layout_marginTop="0dp"
+                    android:text="02"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/checkIn_textView"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@id/checkIn_value_textView"
+                    android:text="MAY 2019" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/checkOut_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_below="@id/hotel_fragment_location"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"
+                android:padding="8dp"
+                android:layout_toRightOf="@id/checkIn_holder"
+                android:layout_marginLeft="1dp">
+
+                <TextView
+                    android:id="@+id/checkOut_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHECK-OUT"
+                    android:fontFamily="sans-serif-thin"
+                    android:textColor="@color/colorBtmGray"/>
+
+                <TextView
+                    android:id="@+id/checkOut_value_textView"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/checkOut_textView"
+                    android:layout_marginTop="0dp"
+                    android:text="29"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/checkOut_textView"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@id/checkOut_value_textView"
+                    android:text="MAY 2019" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top_checkIn_cheOut_panel"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
+
+
+            <RelativeLayout
+                android:id="@+id/guests_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_below="@id/checkIn_holder"
+                android:background="@color/white"
+                android:padding="8dp"
+                android:layout_marginRight="1dp">
+
+                <TextView
+                    android:id="@+id/guests_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GUESTS"
+                    android:fontFamily="sans-serif-thin"
+                    android:textColor="@color/colorBtmGray"/>
+
+                <TextView
+                    android:id="@+id/guests_value_textView"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/guests_textView"
+                    android:layout_marginTop="0dp"
+                    android:text="02"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="50sp" />
 
 
 
 
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:id="@+id/rooms_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_below="@id/checkIn_holder"
+                android:layout_toRightOf="@id/guests_holder"
+                android:background="@color/white"
+                android:padding="8dp"
+                android:layout_marginLeft="1dp">
+
+                <TextView
+                    android:id="@+id/rooms_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GUESTS"
+                    android:fontFamily="sans-serif-thin"
+                    android:textColor="@color/colorBtmGray"/>
+
+                <TextView
+                    android:id="@+id/rooms_value_textView"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rooms_textView"
+                    android:layout_marginTop="0dp"
+                    android:text="02"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="50sp" />
+
+
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
 
 
     </RelativeLayout>
