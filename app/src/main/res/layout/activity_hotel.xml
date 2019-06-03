@@ -4,243 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".Activity.HotelActivity">
+    tools:context=".Activity.HotelActivity"
+    android:background="@drawable/background">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            >
-            <ImageButton
-                android:id="@+id/homeBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_house"
-                android:layout_marginStart="16dp"
-                android:backgroundTint="@color/transparent"/>
+            android:src="@drawable/ic_arrow_back_black"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="City/Area/hotel name"
-                android:textAllCaps="true"
-                android:textColor="@color/GrayGoose"
-                android:textSize="20sp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="Shimla"
-                android:textColor="#ffffff"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:padding="16sp"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/topleftsharp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Check-in"
-                        android:textAllCaps="true"/>
-                    <TextView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="16dp"
-                        android:textAllCaps="true"
-                        android:textColor="#000000"
-                        android:text="02 may 2019"
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:background="@drawable/toprightsharp">
-
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Check-out"
-                        android:textAllCaps="true"/>
-                    <TextView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="16dp"
-                        android:textAllCaps="true"
-                        android:text="08 may 2019"
-                        android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/toprightsharp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Guests"
-                        android:textAllCaps="true"/>
-                    <TextView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:textAllCaps="true"
-                        android:textColor="#000000"
-                        android:text="02"
-                        android:textSize="30dp"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/topleftsharp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Rooms"
-                        android:textAllCaps="true"/>
-                    <TextView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:textAllCaps="true"
-                        android:textColor="#000000"
-                        android:text="01"
-                        android:textSize="30dp"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:backgroundTint="@color/transparent"
-        android:src="@drawable/ic_search_white"
-        app:layout_anchor="@id/bar" />
-
-    <android.support.design.bottomappbar.BottomAppBar
-        android:id="@+id/bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:backgroundTint="@color/colorBtmGray">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="City"
+            />
 
 
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_taxi"
-                android:backgroundTint="@android:color/transparent">
-            </ImageButton>
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_hotel_b"
-                android:backgroundTint="@android:color/transparent">
-
-            </ImageButton>
-
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/transparent">
-            </ImageButton>
-
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_food"
-                android:backgroundTint="@android:color/transparent">
-            </ImageButton>
-
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_user"
-                android:backgroundTint="@android:color/transparent">
-            </ImageButton>
 
 
-        </LinearLayout>
-
-    </android.support.design.bottomappbar.BottomAppBar>
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

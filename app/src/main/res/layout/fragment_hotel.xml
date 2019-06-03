@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_below="@id/hotel_fragment_location"
-                android:background="@color/white"
+                android:background="@drawable/topleftsharp"
                 android:padding="8dp"
                 android:layout_marginRight="1dp">
 
@@ -96,7 +96,7 @@
                 android:layout_weight="1"
                 android:layout_below="@id/hotel_fragment_location"
                 android:layout_centerHorizontal="true"
-                android:background="@color/white"
+                android:background="@drawable/toprightsharp"
                 android:padding="8dp"
                 android:layout_toRightOf="@id/checkIn_holder"
                 android:layout_marginLeft="1dp">
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_below="@id/checkIn_holder"
-                android:background="@color/white"
+                android:background="@drawable/toprightsharp"
                 android:padding="8dp"
                 android:layout_marginRight="1dp">
 
@@ -183,7 +183,7 @@
                 android:layout_weight="1"
                 android:layout_below="@id/checkIn_holder"
                 android:layout_toRightOf="@id/guests_holder"
-                android:background="@color/white"
+                android:background="@drawable/topleftsharp"
                 android:padding="8dp"
                 android:layout_marginLeft="1dp">
 

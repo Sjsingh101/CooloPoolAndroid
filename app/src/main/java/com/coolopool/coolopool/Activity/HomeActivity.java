@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.Adapter.MainStatePageAdapter;
+import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
 
@@ -172,6 +173,13 @@ public class HomeActivity extends AppCompatActivity {
                 break;
             case 2:
                 fab.setImageResource(R.drawable.ic_search_white);
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(HomeActivity.this, HotelActivity.class);
+                        startActivity(intent);
+                    }
+                });
                 Log.d(TAG, "HotelFragment Enabled");
                 break;
             case 3:
