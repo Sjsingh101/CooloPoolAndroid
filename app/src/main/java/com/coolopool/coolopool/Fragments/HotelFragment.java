@@ -3,6 +3,7 @@ package com.coolopool.coolopool.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,12 +17,18 @@ import android.widget.TextView;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.SimpleTimeZone;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HotelFragment extends Fragment {
 
     public static final String[] MONTHS = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    private View v;
 
 
     public HotelFragment() {
@@ -34,7 +41,7 @@ public class HotelFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        final View v = inflater.inflate(R.layout.fragment_hotel, container, false);
+        v = inflater.inflate(R.layout.fragment_hotel, container, false);
 
         TextView location = (TextView)v.findViewById(R.id.hotel_fragment_location);
 
@@ -120,6 +127,10 @@ public class HotelFragment extends Fragment {
         return v;
     }
 
+    public View getView(){
+        return v;
+    }
+
 
     private void checkInBack(View v, DialogBuilder dB){
         DatePicker datePicker = (DatePicker)dB.getDialog().findViewById(R.id.datePicker);
@@ -128,13 +139,15 @@ public class HotelFragment extends Fragment {
         int month = datePicker.getMonth();
         int year = datePicker.getYear();
 
+        String dayOfWeek = getDayOfWeek(day, month, year);
+
         if(day < 10){
             ((TextView)v.findViewById(R.id.checkIn_value_textView)).setText("0"+day);
         }else{
             ((TextView)v.findViewById(R.id.checkIn_value_textView)).setText(""+day);
         }
 
-
+        ((TextView)v.findViewById(R.id.checkIn_value_day_of_week_textView)).setText(dayOfWeek);
         ((TextView)v.findViewById(R.id.checkIn_value_year_month_textView)).setText(MONTHS[month]+" "+year);
 
         dB.destroy();
@@ -148,13 +161,15 @@ public class HotelFragment extends Fragment {
         int month = datePicker.getMonth();
         int year = datePicker.getYear();
 
+        String dayOfWeek = getDayOfWeek(day, month, year);
+
         if(day < 10){
             ((TextView)v.findViewById(R.id.checkOut_value_textView)).setText("0"+day);
         }else{
             ((TextView)v.findViewById(R.id.checkOut_value_textView)).setText(""+day);
         }
 
-
+        ((TextView)v.findViewById(R.id.checkOut_value_day_of_week_textView)).setText(dayOfWeek);
         ((TextView)v.findViewById(R.id.checkOut_value_year_month_textView)).setText(MONTHS[month]+" "+year);
 
         dB.destroy();
@@ -195,5 +210,24 @@ public class HotelFragment extends Fragment {
 
         dB.destroy();
 
+    }
+
+    private String getDayOfWeek(int day, int month, int year){
+        String date = ""+day+"/"+(month+1)+"/"+year;
+
+        SimpleDateFormat format1=new SimpleDateFormat("dd/MM/yyyy");
+
+        Date date1 = null;
+
+        try {
+            date1 = format1.parse(date);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        String dayOfWeek = (String) DateFormat.format("EEEE", date1);
+
+        return dayOfWeek;
     }
 }

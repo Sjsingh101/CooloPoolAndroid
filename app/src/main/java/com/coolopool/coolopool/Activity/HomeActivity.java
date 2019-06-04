@@ -1,11 +1,14 @@
 package com.coolopool.coolopool.Activity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -18,7 +21,7 @@ import com.coolopool.coolopool.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    static String TAG = "HomeActivity";
+    static String TAG = "HomeActivit: ~~~~~~~~~~~~~~~~~~~~~~~~~";
 
     ViewPager viewPager;
     FloatingActionButton fab;
@@ -31,6 +34,8 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton restaurantsButton;
 
     MainStatePageAdapter adapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,13 +67,15 @@ public class HomeActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-
+                Log.d(TAG, ""+i);
             }
 
             @Override
             public void onPageSelected(int i) {
-                Log.d(TAG, ""+i);
+                updateSelectedIcon(100);
+
                 updateUi(i);
+
             }
 
             @Override
@@ -80,6 +87,8 @@ public class HomeActivity extends AppCompatActivity {
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                updateSelectedIcon(viewPager.getCurrentItem());
+                mHomeButton.setImageResource(R.drawable.ic_house_selected);
                 viewPager.setCurrentItem(0);
             }
         });
@@ -87,6 +96,8 @@ public class HomeActivity extends AppCompatActivity {
         transportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                updateSelectedIcon(viewPager.getCurrentItem());
+                transportButton.setImageResource(R.drawable.ic_taxi_selected);
                 viewPager.setCurrentItem(1);
             }
         });
@@ -94,6 +105,8 @@ public class HomeActivity extends AppCompatActivity {
         hotelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                updateSelectedIcon(viewPager.getCurrentItem());
+                hotelButton.setImageResource(R.drawable.ic_hotel_selected);
                 viewPager.setCurrentItem(2);
             }
         });
@@ -101,6 +114,8 @@ public class HomeActivity extends AppCompatActivity {
         restaurantsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                updateSelectedIcon(viewPager.getCurrentItem());
+                restaurantsButton.setImageResource(R.drawable.ic_food_selected);
                 viewPager.setCurrentItem(3);
             }
         });
@@ -155,10 +170,39 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    private void updateSelectedIcon(int i){
+
+        //100: disabling selected state of all fragment
+
+        switch (i){
+            case 0:
+                mHomeButton.setImageResource(R.drawable.ic_house);
+                break;
+            case 1:
+                transportButton.setImageResource(R.drawable.ic_taxi);
+                break;
+            case 2:
+                hotelButton.setImageResource(R.drawable.ic_hotel);
+                break;
+            case 3:
+                restaurantsButton.setImageResource(R.drawable.ic_food);
+                break;
+            case 100:
+                mHomeButton.setImageResource(R.drawable.ic_house);
+                transportButton.setImageResource(R.drawable.ic_taxi);
+                hotelButton.setImageResource(R.drawable.ic_hotel);
+                restaurantsButton.setImageResource(R.drawable.ic_food);
+            default:
+                break;
+        }
+
+    }
+
     private void updateUi(int i){
 
         switch (i){
             case 0:
+                mHomeButton.setImageResource(R.drawable.ic_house_selected);
                 fab.setImageResource(R.drawable.ic_add);
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -168,21 +212,31 @@ public class HomeActivity extends AppCompatActivity {
                 });
                 break;
             case 1:
+                transportButton.setImageResource(R.drawable.ic_taxi_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
                 Log.d(TAG, "CabFragment Enabled");
                 break;
             case 2:
+                hotelButton.setImageResource(R.drawable.ic_hotel_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(HomeActivity.this, HotelActivity.class);
+
+                        Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
+
+                        Pair<View, String> pair = Pair.create(currentFragment.getView().findViewById(R.id.hotel_fragment_location), "LOCATION");
+
+                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pair);
+
                         startActivity(intent);
                     }
                 });
                 Log.d(TAG, "HotelFragment Enabled");
                 break;
             case 3:
+                restaurantsButton.setImageResource(R.drawable.ic_food_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
                 Log.d(TAG, "ResturantFragment Enabled");
                 break;

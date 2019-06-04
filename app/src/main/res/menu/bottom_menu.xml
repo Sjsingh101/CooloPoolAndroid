@@ -8,7 +8,7 @@
         app:showAsAction="always" />
     <item
         android:id="@+id/hotel"
-        android:icon="@drawable/ic_hotel_b"
+        android:icon="@drawable/ic_hotel"
         android:title="Hotel"
         app:showAsAction="always" />
     <item

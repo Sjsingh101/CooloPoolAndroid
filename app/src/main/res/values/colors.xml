@@ -9,4 +9,6 @@
     <color name="white">#fff</color>
     <color name="GrayGoose">#D1D0CE</color>
     <color name="BettleshipGrey">#848482</color>
+
+    <color name="FragmentSelected">#FF7C4444</color>
 </resources>

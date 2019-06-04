@@ -33,7 +33,8 @@
             android:text="Shimla"
             android:textColor="@color/white"
             android:layout_marginTop="16dp"
-            android:fontFamily="sans-serif-black"/>
+            android:fontFamily="sans-serif-black"
+            android:transitionName="LOCATION"/>
 
 
         <LinearLayout
@@ -86,6 +87,16 @@
                     android:layout_toRightOf="@id/checkIn_value_textView"
                     android:text="MAY 2019" />
 
+                <TextView
+                    android:id="@+id/checkIn_value_day_of_week_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/checkIn_value_year_month_textView"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_toRightOf="@+id/checkIn_value_textView"
+                    android:text="Fri" />
+
 
             </RelativeLayout>
 
@@ -128,6 +139,16 @@
                     android:layout_marginTop="20dp"
                     android:layout_toRightOf="@id/checkOut_value_textView"
                     android:text="MAY 2019" />
+
+                <TextView
+                    android:id="@+id/checkOut_value_day_of_week_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/checkOut_value_year_month_textView"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_toRightOf="@+id/checkOut_value_textView"
+                    android:text="Fri" />
 
 
             </RelativeLayout>
