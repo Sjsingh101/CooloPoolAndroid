@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/white">
 
         <ImageButton
@@ -32,7 +32,7 @@
             android:transitionName="LOCATION"/>
 
         <TextView
-            android:id="@+id/hotel_activity_dat_from_dayOfWeek_textView"
+            android:id="@+id/hotel_activity_date_from_dayOfWeek_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Thu, 02 May"
@@ -45,8 +45,81 @@
             android:id="@+id/hotel_activity_to_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
+            android:layout_marginTop="-6dp"
+            android:layout_toRightOf="@id/hotel_activity_back_button"
             android:text="to"
-            android:textColor="@color/BettleshipGrey"/>
+            android:textSize="12sp"
+            android:layout_marginLeft="1dp"
+            android:textColor="@color/BettleshipGrey" />
+
+        <TextView
+            android:id="@+id/hotel_activity_date_to_dayOfWeek_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thu, 02 May"
+            android:textColor="#000"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_toRightOf="@id/hotel_activity_back_button"
+            android:layout_below="@id/hotel_activity_to_textView"
+            android:layout_marginTop="-6dp"/>
+
+        <TextView
+        android:id="@+id/hotel_activity_guests_value_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="04"
+        android:layout_marginTop="-6dp"
+        android:layout_toRightOf="@id/hotel_activity_date_from_dayOfWeek_textView"
+        android:textSize="12sp"
+        android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
+        android:layout_marginLeft="32dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <TextView
+            android:id="@+id/hotel_activity_guests_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guests"
+            android:layout_marginTop="-6dp"
+            android:layout_toRightOf="@id/hotel_activity_guests_value_textView"
+            android:textSize="12sp"
+            android:textColor="@color/BettleshipGrey"
+            android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+
+        <TextView
+            android:id="@+id/hotel_activity_rooms_value_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="04"
+            android:layout_marginTop="-6dp"
+            android:layout_toRightOf="@id/hotel_activity_guests_textView"
+            android:textSize="12sp"
+            android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
+            android:layout_marginLeft="12dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <TextView
+            android:id="@+id/hotel_activity_rooms_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rooms"
+            android:textColor="@color/BettleshipGrey"
+            android:layout_marginTop="-6dp"
+            android:layout_toRightOf="@id/hotel_activity_rooms_value_textView"
+            android:textSize="12sp"
+            android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_settings_black"
+            android:backgroundTint="@color/transparent"/>
 
 
 
