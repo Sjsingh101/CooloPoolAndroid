@@ -230,7 +230,7 @@ public class HomeActivity extends AppCompatActivity {
 
                         ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pair);
 
-                        startActivity(intent);
+                        startActivity(intent, activityOptions.toBundle());
                     }
                 });
                 Log.d(TAG, "HotelFragment Enabled");
