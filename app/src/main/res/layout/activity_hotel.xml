@@ -114,6 +114,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <ImageButton
+            android:id="@+id/hotel_activity_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -125,5 +126,31 @@
 
 
     </RelativeLayout>
+
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp">
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="end">
+
+            <include layout="@layout/hotel_filter_layout"/>
+
+
+
+
+        </android.support.design.widget.NavigationView>
+
+
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+
 
 </android.support.design.widget.CoordinatorLayout>
