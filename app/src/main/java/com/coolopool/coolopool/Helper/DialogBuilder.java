@@ -46,4 +46,8 @@ public class DialogBuilder {
     public Dialog getDialog() {
         return dialog;
     }
+
+    public int getmViewId() {
+        return mViewId;
+    }
 }
