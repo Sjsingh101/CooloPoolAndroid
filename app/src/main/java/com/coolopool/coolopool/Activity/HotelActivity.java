@@ -1,30 +1,36 @@
 package com.coolopool.coolopool.Activity;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
+import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
 
 public class HotelActivity extends AppCompatActivity {
 
-    ImageButton mHomeButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
 
-    mHomeButton = findViewById(R.id.homeBtn);
-    mHomeButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Log.d("Log_test","Home button is clicked");
-            Intent intent = new Intent(HotelActivity.this, HomeActivity.class);
-            startActivity(intent);
-        }
-    });
+        final ImageButton filter = (ImageButton)findViewById(R.id.hotel_activity_filter);
+
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogBuilder dB = new DialogBuilder(HotelActivity.this, R.layout.hotel_filter_layout);
+                dB.build();
+
+                (dB.getDialog().getWindow()).setWindowAnimations(R.style.DialogAnimation);
+
+
+            }
+        });
+
+
     }
 }

@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="bottom"
-    tools:context=".Activity.HomeActivity">
+    tools:context=".Activity.HomeActivity"
+    >
 
     <LinearLayout
 
@@ -13,20 +14,10 @@
         android:gravity="top"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="6"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
         android:baselineAligned="false">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-            <ImageButton
-                android:id="@+id/homeButton"
-                android:src="@drawable/ic_house"
-                android:backgroundTint="@android:color/transparent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="TODO" />
-        </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,23 +44,24 @@
             android:layout_weight="1">
             <ImageButton
                 android:id="@+id/searchButton"
-                android:src="@drawable/ic_search"
+                android:src="@drawable/ic_search_white"
                 android:backgroundTint="@android:color/transparent"
                 android:layout_width="wrap_content"
+                android:tint="#000"
                 android:layout_height="wrap_content"
                 android:contentDescription="TODO" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_height="wrap_content">
             <ImageButton
                 android:src="@drawable/ic_cart"
                 android:backgroundTint="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tint="#000"
                 android:contentDescription="TODO" />
         </LinearLayout>
 
@@ -107,11 +99,11 @@
 
 
             <ImageButton
-                android:id="@+id/taxiBtn"
+                android:id="@+id/homeBtn"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_taxi"
+                android:src="@drawable/ic_house"
                 android:backgroundTint="@android:color/transparent">
             </ImageButton>
             <ImageButton
@@ -119,7 +111,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_hotel_b"
+                android:src="@drawable/ic_hotel"
                 android:backgroundTint="@android:color/transparent">
 
             </ImageButton>

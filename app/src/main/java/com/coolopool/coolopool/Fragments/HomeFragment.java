@@ -1,21 +1,15 @@
 package com.coolopool.coolopool.Fragments;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ImageButton;
 
-import com.coolopool.coolopool.Activity.HomeActivity;
-import com.coolopool.coolopool.Activity.HotelActivity;
 import com.coolopool.coolopool.Adapter.PostAdapter;
 import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.R;
@@ -53,13 +47,11 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        addPost = (FloatingActionButton)view.findViewById(R.id.fab);
-
-        // for search box
+        addPost = view.findViewById(R.id.fab);
 
 
 
-        recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
+        recyclerView = view.findViewById(R.id.recycler_view);
         layoutManager = new GridLayoutManager(MyApplication.getAppContext(),2);
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(layoutManager);

@@ -11,10 +11,24 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowActivityTransitions">true</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="NumberPickerTheame" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@android:color/white</item>
+        <!-- to remove divider of number picker -->
+        <item name="colorControlNormal">@android:color/transparent</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_slide_entry_animation</item>
+        <item name="android:windowExitAnimation">@anim/dialog_slide_exit_animation</item>
+    </style>
 
 </resources>
