@@ -39,7 +39,8 @@
             android:textColor="#000"
             android:fontFamily="sans-serif-condensed"
             android:layout_toRightOf="@id/hotel_activity_back_button"
-            android:layout_below="@id/hotel_activity_location_textView"/>
+            android:layout_below="@id/hotel_activity_location_textView"
+            android:transitionName="CHECKIN_DAY_YEAR"/>
 
         <TextView
             android:id="@+id/hotel_activity_to_textView"
@@ -62,7 +63,8 @@
             android:fontFamily="sans-serif-condensed"
             android:layout_toRightOf="@id/hotel_activity_back_button"
             android:layout_below="@id/hotel_activity_to_textView"
-            android:layout_marginTop="-6dp"/>
+            android:layout_marginTop="-6dp"
+            android:transitionName="CHECKOUT_DAY_YEAR"/>
 
         <TextView
         android:id="@+id/hotel_activity_guests_value_textView"
@@ -74,7 +76,8 @@
         android:textSize="12sp"
         android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
         android:layout_marginLeft="32dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:transitionName="GUESTS"/>
 
         <TextView
             android:id="@+id/hotel_activity_guests_textView"
@@ -99,7 +102,8 @@
             android:textSize="12sp"
             android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
             android:layout_marginLeft="12dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:transitionName="ROOMS"/>
 
         <TextView
             android:id="@+id/hotel_activity_rooms_textView"

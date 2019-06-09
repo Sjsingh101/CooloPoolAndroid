@@ -226,9 +226,17 @@ public class HomeActivity extends AppCompatActivity {
 
                         Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
 
-                        Pair<View, String> pair = Pair.create(currentFragment.getView().findViewById(R.id.hotel_fragment_location), "LOCATION");
+                        Pair<View, String> pair_location = Pair.create(currentFragment.getView().findViewById(R.id.hotel_fragment_location), "LOCATION");
 
-                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pair);
+                        Pair<View, String> pair_guests = Pair.create(currentFragment.getView().findViewById(R.id.guests_value_textView), "GUESTS");
+
+                        Pair<View, String> pair_rooms = Pair.create(currentFragment.getView().findViewById(R.id.rooms_value_textView), "ROOMS");
+
+                        Pair<View, String> pair_checkIn_day = Pair.create(currentFragment.getView().findViewById(R.id.checkIn_value_year_month_textView), "CHECKIN_DAY_YEAR");
+
+                        Pair<View, String> pair_checkOut_day = Pair.create(currentFragment.getView().findViewById(R.id.checkOut_value_year_month_textView), "CHECKOUT_DAY_YEAR");
+
+                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pair_location, pair_guests, pair_rooms, pair_checkIn_day, pair_checkOut_day);
 
                         startActivity(intent, activityOptions.toBundle());
                     }

@@ -85,7 +85,8 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="20dp"
                     android:layout_toRightOf="@id/checkIn_value_textView"
-                    android:text="MAY 2019" />
+                    android:text="MAY 2019"
+                    android:transitionName="CHECKIN_DAY_YEAR"/>
 
                 <TextView
                     android:id="@+id/checkIn_value_day_of_week_textView"
@@ -138,7 +139,8 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="20dp"
                     android:layout_toRightOf="@id/checkOut_value_textView"
-                    android:text="MAY 2019" />
+                    android:text="MAY 2019"
+                    android:transitionName="CHECKOUT_DAY_YEAR"/>
 
                 <TextView
                     android:id="@+id/checkOut_value_day_of_week_textView"
@@ -190,7 +192,8 @@
                     android:layout_marginTop="0dp"
                     android:text="02"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textSize="50sp" />
+                    android:textSize="50sp"
+                    android:transitionName="GUESTS"/>
 
 
 
@@ -224,7 +227,8 @@
                     android:layout_marginTop="0dp"
                     android:text="02"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textSize="50sp" />
+                    android:textSize="50sp"
+                    android:transitionName="ROOMS"/>
 
 
 
