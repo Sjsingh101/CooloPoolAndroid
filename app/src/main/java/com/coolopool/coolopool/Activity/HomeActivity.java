@@ -43,13 +43,14 @@ public class HomeActivity extends AppCompatActivity {
         fab = findViewById(R.id.fab);
 
 
-        viewPager = (ViewPager)findViewById(R.id.viewPager);
-        transportButton = (ImageButton)findViewById(R.id.taxiBtn);
-        hotelButton = (ImageButton)findViewById(R.id.hotelbtn);
-        restaurantsButton = (ImageButton)findViewById(R.id.foodbtn);
+        viewPager = findViewById(R.id.viewPager);
+        hotelButton = findViewById(R.id.hotelbtn);
+        restaurantsButton = findViewById(R.id.foodbtn);
 
-        mSearchButton = (ImageButton)findViewById(R.id.searchButton);
-        final EditText mSearchBox = (EditText)findViewById(R.id.searchbar);
+        // for search box
+
+        mSearchButton = findViewById(R.id.searchButton);
+        final EditText mSearchBox = findViewById(R.id.searchbar);
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,8 +58,10 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        mHomeButton = (ImageButton)findViewById(R.id.homeButton);
-
+        mHomeButton = findViewById(R.id.homeBtn);
+        updateSelectedIcon(viewPager.getCurrentItem());
+        mHomeButton.setImageResource(R.drawable.ic_house_selected);
+        viewPager.setCurrentItem(0);
 
         adapter = new MainStatePageAdapter(getSupportFragmentManager());
 
@@ -93,21 +96,21 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        transportButton.setOnClickListener(new View.OnClickListener() {
+        /*transportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateSelectedIcon(viewPager.getCurrentItem());
+               *//* updateSelectedIcon(viewPager.getCurrentItem());
                 transportButton.setImageResource(R.drawable.ic_taxi_selected);
-                viewPager.setCurrentItem(1);
+                viewPager.setCurrentItem(1);*//*
             }
-        });
+        });*/
 
         hotelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 updateSelectedIcon(viewPager.getCurrentItem());
                 hotelButton.setImageResource(R.drawable.ic_hotel_selected);
-                viewPager.setCurrentItem(2);
+                viewPager.setCurrentItem(1);
             }
         });
 
@@ -116,7 +119,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 updateSelectedIcon(viewPager.getCurrentItem());
                 restaurantsButton.setImageResource(R.drawable.ic_food_selected);
-                viewPager.setCurrentItem(3);
+                viewPager.setCurrentItem(2);
             }
         });
 
@@ -134,7 +137,7 @@ public class HomeActivity extends AppCompatActivity {
         dB.build();
 
 
-        ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
+        (dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dB.destroy();
@@ -142,14 +145,14 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-        ((TextView)dB.getDialog().findViewById(R.id.new_post_pic)).setOnClickListener(new View.OnClickListener() {
+        (dB.getDialog().findViewById(R.id.new_post_pic)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Todo: create another activity for user to create their trip of only pictures
 
             }
         });
-        ((TextView)dB.getDialog().findViewById(R.id.new_post_blog)).setOnClickListener(new View.OnClickListener() {
+        (dB.getDialog().findViewById(R.id.new_post_blog)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Todo: create another activity for user to create their trip of only pictures
@@ -157,17 +160,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        ((TextView)dB.getDialog().findViewById(R.id.new_post_trip)).setOnClickListener(new View.OnClickListener() {
+        (dB.getDialog().findViewById(R.id.new_post_trip)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Normal way of creating post using trip details
                 startActivity(new Intent(HomeActivity.this,NewPostActivity.class));
             }
         });
-
-
-
-
     }
 
     private void updateSelectedIcon(int i){
@@ -178,18 +177,18 @@ public class HomeActivity extends AppCompatActivity {
             case 0:
                 mHomeButton.setImageResource(R.drawable.ic_house);
                 break;
-            case 1:
+            /*case :
                 transportButton.setImageResource(R.drawable.ic_taxi);
-                break;
-            case 2:
+                break;*/
+            case 1:
                 hotelButton.setImageResource(R.drawable.ic_hotel);
                 break;
-            case 3:
+            case 2:
                 restaurantsButton.setImageResource(R.drawable.ic_food);
                 break;
             case 100:
                 mHomeButton.setImageResource(R.drawable.ic_house);
-                transportButton.setImageResource(R.drawable.ic_taxi);
+                /*transportButton.setImageResource(R.drawable.ic_taxi);*/
                 hotelButton.setImageResource(R.drawable.ic_hotel);
                 restaurantsButton.setImageResource(R.drawable.ic_food);
             default:
@@ -211,12 +210,12 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
                 break;
-            case 1:
+           /* case 1:
                 transportButton.setImageResource(R.drawable.ic_taxi_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
                 Log.d(TAG, "CabFragment Enabled");
-                break;
-            case 2:
+                break;*/
+            case 1:
                 hotelButton.setImageResource(R.drawable.ic_hotel_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
                 fab.setOnClickListener(new View.OnClickListener() {
@@ -243,7 +242,7 @@ public class HomeActivity extends AppCompatActivity {
                 });
                 Log.d(TAG, "HotelFragment Enabled");
                 break;
-            case 3:
+            case 2:
                 restaurantsButton.setImageResource(R.drawable.ic_food_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
                 Log.d(TAG, "ResturantFragment Enabled");

@@ -4,12 +4,13 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="8dp"
-    android:background="#000">
+    android:background="#fff">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:cardCornerRadius="20dp"
+        android:elevation="6dp"
         app:cardUseCompatPadding="false">
 
         <LinearLayout
@@ -63,10 +64,6 @@
                     android:layout_marginRight="12dp"
                     android:layout_below="@id/hotel_list_item_cost_textView"/>
 
-
-
-
-
                 <LinearLayout
                     android:id="@+id/hotel_list_item_location_holder_linearLayout"
                     android:layout_width="wrap_content"
@@ -101,21 +98,9 @@
                     android:layout_marginLeft="12dp"
                     android:progressTint="#886FEC"
                     android:layout_marginTop="8dp"/>
-
-
-
-
             </RelativeLayout>
 
-
-
-
         </LinearLayout>
-
-
-
-
-
 
     </android.support.v7.widget.CardView>
 
