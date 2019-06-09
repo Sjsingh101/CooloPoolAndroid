@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,6 +47,7 @@
 
 
         <LinearLayout
+            android:id="@+id/hotel_activity_filter_show_result_holder_linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/hotel_activity_filter_show_result_textView"
@@ -55,6 +57,7 @@
 
 
             <LinearLayout
+                android:id="@+id/hotel_activity_filter_0_to_1_km"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -78,6 +81,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/hotel_activity_filter_1_to_3_km"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -92,7 +96,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0 - 1 Km"
+                    android:text="1 - 3 Km"
                     android:textColor="@color/GrayGoose"
                     android:textSize="16sp"
                     android:fontFamily="sans-serif-thin"
@@ -101,6 +105,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/hotel_activity_filter_3_km"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -115,7 +120,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0 - 1 Km"
+                    android:text="3 + Km"
                     android:textColor="@color/GrayGoose"
                     android:textSize="16sp"
                     android:fontFamily="sans-serif-thin"
@@ -123,18 +128,294 @@
 
             </LinearLayout>
 
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hotel_activity_filter_check_in_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check In"
+            android:textColor="@color/white"
+            android:layout_below="@+id/hotel_activity_filter_show_result_holder_linearLayout"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:fontFamily="sans-serif-thin"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"/>
 
 
+        <LinearLayout
+            android:id="@+id/hotel_activity_filter_check_in_holder_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hotel_activity_filter_check_in_textView"
+            android:orientation="horizontal"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp">
 
 
+            <LinearLayout
+                android:id="@+id/hotel_activity_filter_12_to_6_am"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_dawn" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12Am to 6AM"
+                    android:textColor="@color/GrayGoose"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-thin"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"/>
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bottom_selected_rectangle" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hotel_activity_filter_6_to_12_morning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_morning" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6Am to 12PM"
+                    android:textColor="@color/GrayGoose"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-thin"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bottom_un_selected_rectangle" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hotel_activity_filter_12_to_6_afternoon_evening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_afternoon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12Pm to 5PM"
+                    android:textColor="@color/GrayGoose"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-thin"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bottom_un_selected_rectangle" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hotel_activity_filter_6_to_12_night"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_night" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5PM to 12AM"
+                    android:textColor="@color/GrayGoose"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-thin"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bottom_un_selected_rectangle" />
+
+            </LinearLayout>
 
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/hotel_activity_filter_type_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check In"
+            android:textColor="@color/white"
+            android:layout_below="@+id/hotel_activity_filter_check_in_holder_linearLayout"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:fontFamily="sans-serif-thin"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"/>
 
+
+        <LinearLayout
+            android:id="@+id/hotel_activity_filter_type_holder_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hotel_activity_filter_type_textView"
+            android:orientation="horizontal"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp">
+
+
+            <LinearLayout
+                android:id="@+id/hotel_activity_filter_ac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="32dp"
+                android:gravity="center_horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="AC"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/GrayGoose"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bottom_selected_rectangle" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hotel_activity_filter_non_ac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="32dp"
+                android:gravity="center_horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NON AC"
+                    android:textColor="@color/GrayGoose"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-thin"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bottom_un_selected_rectangle" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hotel_activity_filter_price_range_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price Range"
+            android:textColor="@color/white"
+            android:layout_below="@+id/hotel_activity_filter_type_holder_linearLayout"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:fontFamily="sans-serif-thin"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"/>
+
+
+        <com.appyvet.materialrangebar.RangeBar xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/hotel_activity_filter_price_range_slider"
+            android:layout_below="@id/hotel_activity_filter_price_range_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            app:mrb_barWeight="1dp"
+            app:mrb_connectingLineWeight="4dp"
+            app:mrb_leftSelectorColor="#000"
+            app:mrb_pinColor="#646465"
+            app:mrb_pinMaxFont="15sp"
+            app:mrb_pinMinFont="1sp"
+            app:mrb_pinRadius="12dp"
+            app:mrb_pinTextColor="@color/white"
+            app:mrb_rangeBar="true"
+            app:mrb_rangeBarPaddingBottom="30dp"
+            app:mrb_rangeBar_rounded="true"
+            app:mrb_rightSelectorColor="#000000"
+            app:mrb_selectorBoundaryColor="#646465"
+            app:mrb_selectorBoundarySize="10dp"
+            app:mrb_selectorSize="3dp"
+            app:mrb_temporaryPins="false"
+            app:mrb_tickDefaultLabel="label"
+            app:mrb_tickEnd="10000"
+            app:mrb_tickHeight="0dp"
+            app:mrb_tickInterval="500"
+            app:mrb_tickLabelColor="#fff"
+            app:mrb_tickLabelSelectedColor="#000"
+            app:mrb_tickLabelSize="4sp"
+            app:mrb_tickStart="1000"
+            app:mrb_rangeBarColor="#646465"
+            app:mrb_selectorColor="@color/transparent"/>
+
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply"
+            android:textColor="@color/white"
+            android:layout_below="@id/hotel_activity_filter_price_range_slider"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="52dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+            android:background="@drawable/filter_apply_button_background"/>
 
 
 
