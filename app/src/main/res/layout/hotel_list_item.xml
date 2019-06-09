@@ -18,11 +18,12 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/hotel_list_item_imageView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:background="@drawable/hotel_image_background"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 android:src="@drawable/pic1" />
 
 
@@ -42,6 +43,29 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginLeft="12dp"/>
 
+                <TextView
+                    android:id="@+id/hotel_list_item_cost_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹4000"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/per night"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="#B7B7B7"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="12dp"
+                    android:layout_below="@id/hotel_list_item_cost_textView"/>
+
+
+
+
 
                 <LinearLayout
                     android:id="@+id/hotel_list_item_location_holder_linearLayout"
@@ -49,20 +73,20 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/hotel_list_item_hotel_name_textView"
                     android:layout_marginLeft="12dp"
-                    android:layout_marginTop="2dp">
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/hotel_list_item_location_imageView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_location"
                         android:layout_gravity="center_vertical"/>
 
                     <TextView
+                        android:id="@+id/hotel_list_item_location_textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5/17-A,  mall road, Shimla"
-                        android:layout_toRightOf="@id/hotel_list_item_location_imageView"
                         android:layout_marginLeft="8dp"/>
 
                 </LinearLayout>
