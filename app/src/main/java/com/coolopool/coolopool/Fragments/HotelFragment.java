@@ -81,28 +81,28 @@ public class HotelFragment extends Fragment {
         guestsHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_guests_rooms_chooser);
+                /*final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_guests_rooms_chooser);
                 dB.build();
                 ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         guestsBack(v, dB);
                     }
-                });
+                });*/
             }
         });
 
         roomsHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_guests_rooms_chooser);
+                /*final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_guests_rooms_chooser);
                 dB.build();
                 ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         roomsBack(v, dB);
                     }
-                });
+                });*/
             }
         });
 

@@ -23,7 +23,7 @@
             android:fontFamily="sans-serif-thin"/>
 
 
-        <TextView
+        <EditText
             android:id="@+id/hotel_fragment_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +34,9 @@
             android:textColor="@color/white"
             android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-black"
-            android:transitionName="LOCATION"/>
+            android:transitionName="LOCATION"
+            android:inputType="text"
+            android:lines="1"/>
 
 
         <LinearLayout
@@ -184,7 +186,7 @@
                     android:fontFamily="sans-serif-thin"
                     android:textColor="@color/colorBtmGray"/>
 
-                <TextView
+                <EditText
                     android:id="@+id/guests_value_textView"
                     android:layout_width="67dp"
                     android:layout_height="wrap_content"
@@ -193,7 +195,9 @@
                     android:text="02"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="50sp"
-                    android:transitionName="GUESTS"/>
+                    android:transitionName="GUESTS"
+                    android:inputType="number"
+                    android:lines="1"/>
 
 
 
@@ -219,7 +223,7 @@
                     android:fontFamily="sans-serif-thin"
                     android:textColor="@color/colorBtmGray"/>
 
-                <TextView
+                <EditText
                     android:id="@+id/rooms_value_textView"
                     android:layout_width="67dp"
                     android:layout_height="wrap_content"
@@ -228,7 +232,9 @@
                     android:text="02"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="50sp"
-                    android:transitionName="ROOMS"/>
+                    android:transitionName="ROOMS"
+                    android:inputType="number"
+                    android:lines="1"/>
 
 
 
