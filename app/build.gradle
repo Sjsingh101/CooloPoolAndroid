@@ -28,6 +28,7 @@ dependencies {
 
     implementation 'com.appyvet:materialrangebar:1.4.6'
 
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
