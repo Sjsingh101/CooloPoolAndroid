@@ -140,7 +140,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/hotel_activity_topBar_holder_relativeLayout"
-            tools:listitem="@layout/hotel_list_item">
+            tools:listitem="@layout/hotel_list_item"
+            android:padding="8dp">
 
 
         </android.support.v7.widget.RecyclerView>
@@ -152,6 +153,8 @@
 
 
     </RelativeLayout>
+
+
 
 
 

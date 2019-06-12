@@ -1,5 +1,6 @@
 package com.coolopool.coolopool.Activity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,9 +9,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.appyvet.materialrangebar.RangeBar;
 import com.coolopool.coolopool.Adapter.HotelAdapter;
 import com.coolopool.coolopool.Class.Hotel;
 import com.coolopool.coolopool.Helper.DialogBuilder;
@@ -67,21 +73,134 @@ public class HotelActivity extends AppCompatActivity {
             public void onClick(View view) {
                 final DialogBuilder dB = new DialogBuilder(HotelActivity.this, R.layout.hotel_filter_layout);
                 dB.build();
+                setupDialogButtonsClickEvent(dB);
 
                 (dB.getDialog().getWindow()).setWindowAnimations(R.style.DialogAnimation);
 
-                (dB.getDialog().findViewById(R.id.hotel_activity_filter_cross)).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                       dB.destroy();
-                    }
-                });
 
 
             }
         });
 
 
+    }
+
+    private void setupDialogButtonsClickEvent(final DialogBuilder dB){
+
+        final Dialog dialog = dB.getDialog();
+
+        final int[] defaults = {R.id.hotel_activity_filter_0_to_1_km_selector,
+                R.id.hotel_activity_filter_12_to_6_am_selector,
+                R.id.hotel_activity_filter_ac_selector};
+
+
+        ((ImageButton)dialog.findViewById(R.id.hotel_activity_filter_cross)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dB.destroy();
+            }
+        });
+
+        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_0_to_1_km)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!(defaults[0] == R.id.hotel_activity_filter_0_to_1_km_selector)){
+                    ((ImageView)dialog.findViewById(defaults[0])).setImageResource(R.drawable.filter_bottom_not_selected_circle);
+                    defaults[0] = R.id.hotel_activity_filter_0_to_1_km_selector;
+                    ((ImageView)dialog.findViewById(defaults[0])).setImageResource(R.drawable.filter_bottom_selected_circle);
+                }
+            }
+        });
+        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_1_to_3_km)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!(defaults[0] == R.id.hotel_activity_filter_1_to_3_km_selector)){
+                    ((ImageView)dialog.findViewById(defaults[0])).setImageResource(R.drawable.filter_bottom_not_selected_circle);
+                    defaults[0] = R.id.hotel_activity_filter_1_to_3_km_selector;
+                    ((ImageView)dialog.findViewById(defaults[0])).setImageResource(R.drawable.filter_bottom_selected_circle);
+                }
+            }
+        });
+        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_3_km)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!(defaults[0] == R.id.hotel_activity_filter_3_km_selector)){
+                    ((ImageView)dialog.findViewById(defaults[0])).setImageResource(R.drawable.filter_bottom_not_selected_circle);
+                    defaults[0] = R.id.hotel_activity_filter_3_km_selector;
+                    ((ImageView)dialog.findViewById(defaults[0])).setImageResource(R.drawable.filter_bottom_selected_circle);
+                }
+            }
+        });
+        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_12_to_6_am)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!(defaults[1] == R.id.hotel_activity_filter_12_to_6_am_selector)){
+                    ((ImageView)dialog.findViewById(defaults[1])).setImageResource(R.drawable.filter_bottom_not_selected_circle);
+                    defaults[1] = R.id.hotel_activity_filter_12_to_6_am_selector;
+                    ((ImageView)dialog.findViewById(defaults[1])).setImageResource(R.drawable.filter_bottom_selected_circle);
+                }
+            }
+        });
+        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_6_to_12_morning)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!(defaults[1] == R.id.hotel_activity_filter_6_to_12_morning_selector)){
+                    ((ImageView)dialog.findViewById(defaults[1])).setImageResource(R.drawable.filter_bottom_not_selected_circle);
+                    defaults[1] = R.id.hotel_activity_filter_6_to_12_morning_selector;
+                    ((ImageView)dialog.findViewById(defaults[1])).setImageResource(R.drawable.filter_bottom_selected_circle);
+                }
+            }
+        });
+        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_12_to_6_afternoon_evening)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!(defaults[1] == R.id.hotel_activity_filter_12_to_6_afternoon_evening_selector)){
+                    ((ImageView)dialog.findViewById(defaults[1])).setImageResource(R.drawable.filter_bottom_not_selected_circle);
+                    defaults[1] = R.id.hotel_activity_filter_12_to_6_afternoon_evening_selector;
+                    ((ImageView)dialog.findViewById(defaults[1])).setImageResource(R.drawable.filter_bottom_selected_circle);
+                }
+            }
+        });
+        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_6_to_12_night)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!(defaults[1] == R.id.hotel_activity_filter_6_to_12_night_selector)){
+                    ((ImageView)dialog.findViewById(defaults[1])).setImageResource(R.drawable.filter_bottom_not_selected_circle);
+                    defaults[1] = R.id.hotel_activity_filter_6_to_12_night_selector;
+                    ((ImageView)dialog.findViewById(defaults[1])).setImageResource(R.drawable.filter_bottom_selected_circle);
+                }
+            }
+        });
+        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_ac)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!(defaults[2] == R.id.hotel_activity_filter_ac_selector)){
+                    ((ImageView)dialog.findViewById(defaults[2])).setImageResource(R.drawable.filter_bottom_not_selected_circle);
+                    defaults[2] = R.id.hotel_activity_filter_ac_selector;
+                    ((ImageView)dialog.findViewById(defaults[2])).setImageResource(R.drawable.filter_bottom_selected_circle);
+                }
+            }
+        });
+        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_non_ac)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!(defaults[2] == R.id.hotel_activity_filter_non_ac_selector)){
+                    ((ImageView)dialog.findViewById(defaults[2])).setImageResource(R.drawable.filter_bottom_not_selected_circle);
+                    defaults[2] = R.id.hotel_activity_filter_non_ac_selector;
+                    ((ImageView)dialog.findViewById(defaults[2])).setImageResource(R.drawable.filter_bottom_selected_circle);
+                }
+            }
+        });
+
+        ((Button)dialog.findViewById(R.id.hotel_activity_filter_apply_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int LI = ((RangeBar)dialog.findViewById(R.id.hotel_activity_filter_price_range_slider)).getLeftIndex();
+                int RI = ((RangeBar)dialog.findViewById(R.id.hotel_activity_filter_price_range_slider)).getRightIndex();
+
+                toast("Left: "+(LI*50+500)+"Right: "+(RI*50+500));
+            }
+        });
     }
 
     private void getContentsFromIntent(){
@@ -104,5 +223,9 @@ public class HotelActivity extends AppCompatActivity {
         checkOut_textView.setText(checkOutDate);
         guests_textView.setText(guests);
         rooms_textView.setText(rooms);
+    }
+
+    private void toast(String s){
+        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 }
