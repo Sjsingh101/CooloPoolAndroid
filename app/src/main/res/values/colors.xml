@@ -7,8 +7,11 @@
     <color name="colorBtmGray">#312F2F</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="white">#fff</color>
+    <color name="black">#000</color>
     <color name="GrayGoose">#D1D0CE</color>
     <color name="BettleshipGrey">#848482</color>
+
+    <color name="detail_secondary">#886FEC</color>
 
     <color name="FragmentSelected">#FF7C4444</color>
 </resources>

@@ -51,7 +51,7 @@ public class HotelActivity extends AppCompatActivity {
 
 
         mRecyclerView = (RecyclerView)findViewById(R.id.hotel_activity_recyclerView);
-        mHotelAdapter = new HotelAdapter(hotels);
+        mHotelAdapter = new HotelAdapter(hotels, this);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mHotelAdapter);

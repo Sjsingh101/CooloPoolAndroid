@@ -1,5 +1,7 @@
 package com.coolopool.coolopool.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.media.RatingCompat;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.coolopool.coolopool.Activity.DetailHotelActivity;
+import com.coolopool.coolopool.Activity.HotelActivity;
+import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.Class.Hotel;
 import com.coolopool.coolopool.R;
 import com.squareup.picasso.Picasso;
@@ -23,9 +28,11 @@ import java.util.ArrayList;
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHolder> {
 
     ArrayList<Hotel> hotelList;
+    Context context;
 
-    public HotelAdapter(ArrayList<Hotel> hotelAList) {
+    public HotelAdapter(ArrayList<Hotel> hotelAList, Context context) {
         this.hotelList = hotelAList;
+        this.context = context;
     }
 
     @NonNull
@@ -45,6 +52,13 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
         hotelViewHolder.location.setText(currentHotel.getmLocation());
 
         hotelViewHolder.rating.setRating((float)currentHotel.getmRating());
+
+        hotelViewHolder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, DetailHotelActivity.class));
+            }
+        });
 
         Picasso.get().load(currentHotel.getmThumbnailUrl()).error(R.drawable.pic1).into(hotelViewHolder.thumbnail);
 
