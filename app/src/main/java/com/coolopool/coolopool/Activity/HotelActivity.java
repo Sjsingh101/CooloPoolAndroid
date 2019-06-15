@@ -1,17 +1,22 @@
 package com.coolopool.coolopool.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
+import com.coolopool.coolopool.Fragments.HomeFragment;
+import com.coolopool.coolopool.Fragments.HotelFragment;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
 
 public class HotelActivity extends AppCompatActivity {
 
+    ImageButton mHotelBackbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +31,7 @@ public class HotelActivity extends AppCompatActivity {
                 dB.build();
 
                 (dB.getDialog().getWindow()).setWindowAnimations(R.style.DialogAnimation);
-
-
             }
         });
-
-
     }
 }

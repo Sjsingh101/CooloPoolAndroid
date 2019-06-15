@@ -29,7 +29,6 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton mSearchButton;
     ImageButton mHomeButton;
 
-    ImageButton transportButton;
     ImageButton hotelButton;
     ImageButton restaurantsButton;
 
@@ -57,6 +56,8 @@ public class HomeActivity extends AppCompatActivity {
                 mSearchBox.setVisibility(View.VISIBLE);
             }
         });
+
+        // to set icon on create
 
         mHomeButton = findViewById(R.id.homeBtn);
         updateSelectedIcon(viewPager.getCurrentItem());
@@ -96,14 +97,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        /*transportButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               *//* updateSelectedIcon(viewPager.getCurrentItem());
-                transportButton.setImageResource(R.drawable.ic_taxi_selected);
-                viewPager.setCurrentItem(1);*//*
-            }
-        });*/
 
         hotelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,9 +170,6 @@ public class HomeActivity extends AppCompatActivity {
             case 0:
                 mHomeButton.setImageResource(R.drawable.ic_house);
                 break;
-            /*case :
-                transportButton.setImageResource(R.drawable.ic_taxi);
-                break;*/
             case 1:
                 hotelButton.setImageResource(R.drawable.ic_hotel);
                 break;
@@ -188,7 +178,6 @@ public class HomeActivity extends AppCompatActivity {
                 break;
             case 100:
                 mHomeButton.setImageResource(R.drawable.ic_house);
-                /*transportButton.setImageResource(R.drawable.ic_taxi);*/
                 hotelButton.setImageResource(R.drawable.ic_hotel);
                 restaurantsButton.setImageResource(R.drawable.ic_food);
             default:
@@ -210,11 +199,6 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
                 break;
-           /* case 1:
-                transportButton.setImageResource(R.drawable.ic_taxi_selected);
-                fab.setImageResource(R.drawable.ic_search_white);
-                Log.d(TAG, "CabFragment Enabled");
-                break;*/
             case 1:
                 hotelButton.setImageResource(R.drawable.ic_hotel_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
