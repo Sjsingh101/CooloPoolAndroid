@@ -53,7 +53,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
 
         hotelViewHolder.rating.setRating((float)currentHotel.getmRating());
 
-        hotelViewHolder.name.setOnClickListener(new View.OnClickListener() {
+        hotelViewHolder.rootView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 context.startActivity(new Intent(context, DetailHotelActivity.class));
@@ -77,8 +77,11 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
         RatingBar rating;
         ImageView thumbnail;
 
+        View rootView;
+
         public HotelViewHolder(@NonNull View itemView) {
             super(itemView);
+            rootView = itemView;
             name = (TextView)itemView.findViewById(R.id.hotel_list_item_hotel_name_textView);
             cost = (TextView)itemView.findViewById(R.id.hotel_list_item_cost_textView);
             location = (TextView)itemView.findViewById(R.id.hotel_list_item_location_textView);
