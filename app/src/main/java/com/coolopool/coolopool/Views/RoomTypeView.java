@@ -66,6 +66,7 @@ public class RoomTypeView extends View {
         mPaintText.setColor(mTextColor);
         mPaintText.setTextSize(mTextSize);
 
+
         mPaintCounterText = new Paint();
         mPaintCounterText.setColor(mCounterTextColor);
         mPaintCounterText.setTextSize(mTextSize);
