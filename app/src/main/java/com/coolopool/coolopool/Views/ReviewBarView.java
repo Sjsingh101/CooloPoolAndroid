@@ -14,6 +14,6 @@ public class ReviewBarView extends View {
     }
 
     private void init(AttributeSet set){
-        
+
     }
 }
