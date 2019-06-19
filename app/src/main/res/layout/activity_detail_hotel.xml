@@ -437,6 +437,15 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
 
                         </LinearLayout>
 
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/round_corner_search_bar_background"
+                            android:layout_below="@id/detail_hotel_activity_rating_holder_linearLayout"
+                            android:padding="16dp"
+                            android:drawableStart="@drawable/ic_search_secondary"/>
+
+
 
 
 
