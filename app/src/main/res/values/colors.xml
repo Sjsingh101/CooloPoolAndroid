@@ -11,6 +11,8 @@
     <color name="GrayGoose">#D1D0CE</color>
     <color name="BettleshipGrey">#848482</color>
 
+    <color name="ReviewBarBg">#95A3A3A0</color>
+
     <color name="detail_secondary">#886FEC</color>
 
     <color name="FragmentSelected">#FF7C4444</color>

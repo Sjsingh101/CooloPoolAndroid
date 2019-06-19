@@ -159,6 +159,69 @@
                         android:padding="8dp">
 
                         <TextView
+                            android:id="@+id/detail_hotel_activity_room_types_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Room Types"
+                            android:layout_marginLeft="8dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+
+                        <com.coolopool.coolopool.Views.RoomTypeView
+                            android:id="@+id/detail_hotel_activity_delux_roomType"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/detail_hotel_activity_room_types_textView"
+                            app:text="Delux"
+                            app:textSize="20dp"
+                            app:numberPickerRightGap="-30dp"/>
+
+                        <com.coolopool.coolopool.Views.RoomTypeView
+                            android:id="@+id/detail_hotel_activity_premium_roomType"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/detail_hotel_activity_delux_roomType"
+                            app:text="Premium"
+                            app:textSize="20dp"
+                            app:numberPickerRightGap="-30dp"/>
+
+                        <com.coolopool.coolopool.Views.RoomTypeView
+                            android:id="@+id/detail_hotel_activity_double_roomType"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/detail_hotel_activity_premium_roomType"
+                            app:text="Double"
+                            app:textSize="20dp"
+                            app:numberPickerRightGap="-30dp"/>
+
+                        <com.coolopool.coolopool.Views.RoomTypeView
+                            android:id="@+id/detail_hotel_activity_single_roomType"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/detail_hotel_activity_double_roomType"
+                            app:text="Premium"
+                            app:textSize="20dp"
+                            app:numberPickerRightGap="-30dp"/>
+
+
+                    </RelativeLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp">
+
+                        <TextView
                             android:id="@+id/detail_hotel_activity_hotel_class_textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -289,6 +352,7 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                             android:textColor="@color/black"/>
 
                         <LinearLayout
+                            android:id="@+id/detail_hotel_activity_rating_holder_linearLayout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -298,14 +362,75 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                             <com.coolopool.coolopool.Views.ReviewBarView
                                 android:layout_width="match_parent"
                                 android:layout_height="30dp"
-                                app:bgColor="#000000"
+                                app:bgColor="@color/ReviewBarBg"
                                 app:fgColor="@color/detail_secondary"
                                 app:percentage="49.5"
                                 app:margin_left="12dp"
-                                app:margin_right="80dp"
-                                app:bar_width="200dp"
+                                app:margin_right="70dp"
+                                app:bar_width="170dp"
                                 app:string_start="Excellent"
                                 app:string_end="214"
+                                app:string_size="12sp"
+                                app:string_color="@color/colorPrimaryDark" />
+
+                            <com.coolopool.coolopool.Views.ReviewBarView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="-8dp"
+                                app:bgColor="@color/ReviewBarBg"
+                                app:fgColor="@color/detail_secondary"
+                                app:percentage="37.7"
+                                app:margin_left="12dp"
+                                app:margin_right="70dp"
+                                app:bar_width="170dp"
+                                app:string_start="Very good"
+                                app:string_end="163"
+                                app:string_size="12sp"
+                                app:string_color="@color/colorPrimaryDark" />
+
+                            <com.coolopool.coolopool.Views.ReviewBarView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="-8dp"
+                                app:bgColor="@color/ReviewBarBg"
+                                app:fgColor="@color/detail_secondary"
+                                app:percentage="7.4"
+                                app:margin_left="12dp"
+                                app:margin_right="70dp"
+                                app:bar_width="170dp"
+                                app:string_start="Average"
+                                app:string_end="32"
+                                app:string_size="12sp"
+                                app:string_color="@color/colorPrimaryDark" />
+
+                            <com.coolopool.coolopool.Views.ReviewBarView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="-8dp"
+                                app:bgColor="@color/ReviewBarBg"
+                                app:fgColor="@color/detail_secondary"
+                                app:percentage="2.31"
+                                app:margin_left="12dp"
+                                app:margin_right="70dp"
+                                app:bar_width="170dp"
+                                app:string_start="Poor"
+                                app:string_end="10"
+                                app:string_size="12sp"
+                                app:string_color="@color/colorPrimaryDark" />
+
+                            <com.coolopool.coolopool.Views.ReviewBarView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="-8dp"
+                                app:bgColor="@color/ReviewBarBg"
+                                app:fgColor="@color/detail_secondary"
+                                app:percentage="3.1"
+                                app:margin_left="12dp"
+                                app:margin_right="70dp"
+                                app:bar_width="170dp"
+                                app:string_start="Terrible"
+                                app:string_end="13"
+                                app:string_size="12sp"
                                 app:string_color="@color/colorPrimaryDark" />
 
 

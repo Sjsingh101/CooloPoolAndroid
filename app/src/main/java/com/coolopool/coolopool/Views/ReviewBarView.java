@@ -20,6 +20,7 @@ public class ReviewBarView extends View {
     static int RECT_WIDTH = 600;
 
     float mTextLeftGap;
+    float mTextSize;
 
     String mStringStart, mStringEnd;
     int mBgColor, mFgColor, mStringColor;
@@ -52,6 +53,7 @@ public class ReviewBarView extends View {
         mStringEnd = typedArray.getString(R.styleable.ReviewBarView_string_end);
         mStringColor = typedArray.getColor(R.styleable.ReviewBarView_string_color, Color.BLACK);
         RECT_WIDTH = (int) typedArray.getDimension(R.styleable.ReviewBarView_bar_width, 600);
+        mTextSize = typedArray.getDimension(R.styleable.ReviewBarView_string_size, 30);
 
         typedArray.recycle();
 
@@ -66,7 +68,7 @@ public class ReviewBarView extends View {
         mPaintBar.setColor(mBgColor);
         mPaintProgress.setColor(mFgColor);
 
-        mPaintText.setTextSize(30);
+        mPaintText.setTextSize(mTextSize);
         mPaintText.setColor(mStringColor);
 
 
@@ -93,7 +95,7 @@ public class ReviewBarView extends View {
         canvas.drawRect(mRectProgress, mPaintProgress);
 
         canvas.drawText(mStringStart, mTextLeftGap, getHeight()/2 + RECT_HEIGHT/2, mPaintText);
-        canvas.drawText(mStringEnd, mRectBar.right + 10, getHeight()/2 + RECT_HEIGHT/2, mPaintText);
+        canvas.drawText(mStringEnd, mRectBar.right + 20, getHeight()/2 + RECT_HEIGHT/2, mPaintText);
 
     }
 
