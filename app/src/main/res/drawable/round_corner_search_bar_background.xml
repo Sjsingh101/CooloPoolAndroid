@@ -5,8 +5,8 @@
 
     <solid android:color="@color/ReviewBarBg"/>
 
-    <size android:height="50dp" android:width="300dp"/>
+    <size android:height="50dp" android:width="100dp"/>
 
     <corners
-       android:radius="10dp"/>
+       android:radius="5dp"/>
 </shape>

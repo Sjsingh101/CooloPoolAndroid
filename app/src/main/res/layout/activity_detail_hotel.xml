@@ -355,6 +355,7 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                             android:id="@+id/detail_hotel_activity_rating_holder_linearLayout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
                             android:orientation="vertical"
                             android:layout_below="@id/detail_hotel_activity_hotel_review_traveler_rating_textView">
 
@@ -365,7 +366,7 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                                 app:bgColor="@color/ReviewBarBg"
                                 app:fgColor="@color/detail_secondary"
                                 app:percentage="49.5"
-                                app:margin_left="12dp"
+                                app:margin_left="4dp"
                                 app:margin_right="70dp"
                                 app:bar_width="170dp"
                                 app:string_start="Excellent"
@@ -380,7 +381,7 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                                 app:bgColor="@color/ReviewBarBg"
                                 app:fgColor="@color/detail_secondary"
                                 app:percentage="37.7"
-                                app:margin_left="12dp"
+                                app:margin_left="4dp"
                                 app:margin_right="70dp"
                                 app:bar_width="170dp"
                                 app:string_start="Very good"
@@ -395,7 +396,7 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                                 app:bgColor="@color/ReviewBarBg"
                                 app:fgColor="@color/detail_secondary"
                                 app:percentage="7.4"
-                                app:margin_left="12dp"
+                                app:margin_left="4dp"
                                 app:margin_right="70dp"
                                 app:bar_width="170dp"
                                 app:string_start="Average"
@@ -410,7 +411,7 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                                 app:bgColor="@color/ReviewBarBg"
                                 app:fgColor="@color/detail_secondary"
                                 app:percentage="2.31"
-                                app:margin_left="12dp"
+                                app:margin_left="4dp"
                                 app:margin_right="70dp"
                                 app:bar_width="170dp"
                                 app:string_start="Poor"
@@ -425,7 +426,7 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                                 app:bgColor="@color/ReviewBarBg"
                                 app:fgColor="@color/detail_secondary"
                                 app:percentage="3.1"
-                                app:margin_left="12dp"
+                                app:margin_left="4dp"
                                 app:margin_right="70dp"
                                 app:bar_width="170dp"
                                 app:string_start="Terrible"
@@ -442,12 +443,11 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                             android:layout_height="40dp"
                             android:background="@drawable/round_corner_search_bar_background"
                             android:layout_below="@id/detail_hotel_activity_rating_holder_linearLayout"
-                            android:padding="16dp"
-                            android:drawableStart="@drawable/ic_search_secondary"/>
-
-
-
-
+                            android:padding="8dp"
+                            android:drawableStart="@drawable/ic_search_secondary"
+                            android:hint="  Search reviews..."
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"/>
 
 
 
@@ -476,13 +476,6 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
         android:src="@drawable/ic_heart_like"
         android:layout_gravity="center"
         app:popupTheme="@style/AppTheme.PopupOverlay"/>
-
-
-
-
-
-
-
 
 
 </android.support.design.widget.CoordinatorLayout>
