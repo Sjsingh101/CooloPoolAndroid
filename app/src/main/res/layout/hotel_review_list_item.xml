@@ -62,7 +62,7 @@
         android:layout_toRightOf="@id/hotel_review_list_item_ratingBar"/>
 
     <TextView
-        android:id="@+id/hotel_review_list_item_review_heading_textView"
+        android:id="@+id/hotel_review_list_item_review_title_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Clean and Comfortable"
@@ -75,7 +75,7 @@
         android:id="@+id/hotel_review_list_item_review_description_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/hotel_review_list_item_review_heading_textView"
+        android:layout_below="@id/hotel_review_list_item_review_title_textView"
         android:layout_toRightOf="@id/hotel_review_list_item_profile_details_holder_linearLayout"
         android:maxLines="3"
         android:ellipsize="end"
