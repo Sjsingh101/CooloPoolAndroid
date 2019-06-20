@@ -145,20 +145,5 @@
 
 
         </android.support.v7.widget.RecyclerView>
-
-
-
-
-
-
-
     </RelativeLayout>
-
-
-
-
-
-
-
-
 </android.support.design.widget.CoordinatorLayout>
