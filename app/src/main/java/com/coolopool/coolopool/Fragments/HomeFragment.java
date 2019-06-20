@@ -47,13 +47,11 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        addPost = (FloatingActionButton)view.findViewById(R.id.fab);
-
-        // for search box
+        addPost = view.findViewById(R.id.fab);
 
 
 
-        recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
+        recyclerView = view.findViewById(R.id.recycler_view);
         layoutManager = new GridLayoutManager(MyApplication.getAppContext(),2);
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(layoutManager);

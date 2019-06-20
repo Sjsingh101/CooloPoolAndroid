@@ -43,19 +43,19 @@ public class HotelFragment extends Fragment {
 
         v = inflater.inflate(R.layout.fragment_hotel, container, false);
 
-        TextView location = (TextView)v.findViewById(R.id.hotel_fragment_location);
+        TextView location = v.findViewById(R.id.hotel_fragment_location);
 
-        RelativeLayout checkInHolder = (RelativeLayout)v.findViewById(R.id.checkIn_holder);
-        RelativeLayout checkOutHolder = (RelativeLayout)v.findViewById(R.id.checkOut_holder);
-        RelativeLayout guestsHolder = (RelativeLayout)v.findViewById(R.id.guests_holder);
-        RelativeLayout roomsHolder = (RelativeLayout)v.findViewById(R.id.rooms_holder);
+        RelativeLayout checkInHolder = v.findViewById(R.id.checkIn_holder);
+        RelativeLayout checkOutHolder = v.findViewById(R.id.checkOut_holder);
+        RelativeLayout guestsHolder = v.findViewById(R.id.guests_holder);
+        RelativeLayout roomsHolder = v.findViewById(R.id.rooms_holder);
 
         checkInHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_date_chooser);
                 dB.build();
-                ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
+                (dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         checkInBack(v, dB);
@@ -190,21 +190,21 @@ public class HotelFragment extends Fragment {
         }else{
             ((TextView)v.findViewById(R.id.guests_value_textView)).setText(""+number);
         }
-
         dB.destroy();
 
     }
 
     private void roomsBack(View v, DialogBuilder dB){
-        NumberPicker numberPicker = (NumberPicker)dB.getDialog().findViewById(R.id.numberPicker);
+        NumberPicker numberPicker = dB.getDialog().findViewById(R.id.numberPicker);
         numberPicker.setMinValue(1);
         numberPicker.setMaxValue(10);
 
-        int number = numberPicker.getValue();
+         int number = numberPicker.getValue();
 
         if(number < 10){
             ((TextView)v.findViewById(R.id.rooms_value_textView)).setText("0"+number);
         }else{
+
             ((TextView)v.findViewById(R.id.rooms_value_textView)).setText(""+number);
         }
 
