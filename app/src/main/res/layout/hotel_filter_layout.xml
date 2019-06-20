@@ -64,9 +64,10 @@
                 android:layout_marginLeft="32dp">
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_0_to_1_km_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_selected_rectangle"
+                    android:src="@drawable/filter_bottom_selected_circle"
                     android:layout_gravity="center_vertical"/>
 
                 <TextView
@@ -88,9 +89,10 @@
                 android:layout_marginLeft="32dp">
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_1_to_3_km_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle"
+                    android:src="@drawable/filter_bottom_not_selected_circle"
                     android:layout_gravity="center_vertical"/>
 
                 <TextView
@@ -112,9 +114,10 @@
                 android:layout_marginLeft="32dp">
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_3_km_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle"
+                    android:src="@drawable/filter_bottom_not_selected_circle"
                     android:layout_gravity="center_vertical"/>
 
                 <TextView
@@ -177,9 +180,10 @@
                     android:layout_marginTop="8dp"/>
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_12_to_6_am_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_selected_circle" />
 
             </LinearLayout>
 
@@ -207,9 +211,10 @@
                     android:layout_marginTop="8dp"/>
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_6_to_12_morning_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_not_selected_circle" />
 
             </LinearLayout>
 
@@ -237,9 +242,10 @@
                     android:layout_marginTop="8dp"/>
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_12_to_6_afternoon_evening_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_not_selected_circle" />
 
             </LinearLayout>
 
@@ -267,9 +273,10 @@
                     android:layout_marginTop="8dp" />
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_6_to_12_night_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_not_selected_circle" />
 
             </LinearLayout>
 
@@ -319,9 +326,10 @@
                     android:textSize="16sp" />
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_ac_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_selected_circle" />
 
             </LinearLayout>
 
@@ -346,9 +354,10 @@
                     />
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_non_ac_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_not_selected_circle" />
 
             </LinearLayout>
 
@@ -395,11 +404,11 @@
             app:mrb_tickDefaultLabel="label"
             app:mrb_tickEnd="10000"
             app:mrb_tickHeight="0dp"
-            app:mrb_tickInterval="500"
+            app:mrb_tickInterval="50"
             app:mrb_tickLabelColor="#fff"
             app:mrb_tickLabelSelectedColor="#000"
             app:mrb_tickLabelSize="4sp"
-            app:mrb_tickStart="1000"
+            app:mrb_tickStart="500"
             app:mrb_rangeBarColor="#646465"
             app:mrb_selectorColor="@color/transparent"/>
 
@@ -407,6 +416,7 @@
 
 
         <Button
+            android:id="@+id/hotel_activity_filter_apply_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Apply"

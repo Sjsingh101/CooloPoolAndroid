@@ -1,107 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="8dp"
-    android:background="#fff">
+    android:background="#000"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="20dp">
 
-    <android.support.v7.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:cardCornerRadius="20dp"
-        android:elevation="6dp"
-        app:cardUseCompatPadding="false">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+
+        <ImageView
+            android:id="@+id/hotel_list_item_imageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/hotel_list_item_imageView"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:background="@drawable/hotel_image_background"
-                android:scaleType="centerCrop"
-                android:src="@drawable/pic1" />
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/hotel_image_background"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pic1" />
 
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
+
+            <TextView
+                android:id="@+id/hotel_list_item_hotel_name_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name of the hotel"
+                android:textColor="#000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="12dp"/>
+
+            <TextView
+                android:id="@+id/hotel_list_item_cost_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹4000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/per night"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#B7B7B7"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="12dp"
+                android:layout_below="@id/hotel_list_item_cost_textView"/>
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/hotel_list_item_location_holder_linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hotel_list_item_hotel_name_textView"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_location"
+                    android:layout_gravity="center_vertical"/>
 
                 <TextView
-                    android:id="@+id/hotel_list_item_hotel_name_textView"
+                    android:id="@+id/hotel_list_item_location_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name of the hotel"
-                    android:textColor="#000"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginLeft="12dp"/>
 
-                <TextView
-                    android:id="@+id/hotel_list_item_cost_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="₹4000"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginRight="12dp"/>
+                    android:text="5/17-A,  mall road, Shimla"
+                    android:layout_marginLeft="8dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="/per night"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="#B7B7B7"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="12dp"
-                    android:layout_below="@id/hotel_list_item_cost_textView"/>
+            </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/hotel_list_item_location_holder_linearLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/hotel_list_item_hotel_name_textView"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="2dp"
-                    android:orientation="horizontal">
+            <RatingBar
+                android:id="@+id/hotel_list_item_ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hotel_list_item_location_holder_linearLayout"
+                android:numStars="5"
+                android:rating="3.5"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_marginLeft="12dp"
+                android:progressTint="#886FEC"
+                android:layout_marginTop="8dp"/>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_location"
-                        android:layout_gravity="center_vertical"/>
+        </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/hotel_list_item_location_textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="5/17-A,  mall road, Shimla"
-                        android:layout_marginLeft="8dp"/>
+    </LinearLayout>
 
-                </LinearLayout>
 
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/hotel_list_item_location_holder_linearLayout"
-                    android:numStars="5"
-                    android:rating="3.5"
-                    style="@style/Widget.AppCompat.RatingBar.Small"
-                    android:layout_marginLeft="12dp"
-                    android:progressTint="#886FEC"
-                    android:layout_marginTop="8dp"/>
-            </RelativeLayout>
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-</RelativeLayout>
+</android.support.v7.widget.CardView>

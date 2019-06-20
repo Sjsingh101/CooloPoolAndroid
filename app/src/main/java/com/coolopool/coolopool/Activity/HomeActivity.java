@@ -199,6 +199,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private void updateUi(int i){
 
+        fab.setOnClickListener(null);
+
         switch (i){
             case 0:
                 mHomeButton.setImageResource(R.drawable.ic_house_selected);
@@ -224,6 +226,22 @@ public class HomeActivity extends AppCompatActivity {
                         Intent intent = new Intent(HomeActivity.this, HotelActivity.class);
 
                         Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
+
+                        intent.putExtra("LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.hotel_fragment_location)).getText().toString().trim());
+
+                        intent.putExtra("CHECKIN", ((TextView)currentFragment.getView().findViewById(R.id.checkIn_value_textView)).getText().toString());
+                        intent.putExtra("CHECKIN_DAYOFWEEK", ((TextView)currentFragment.getView().findViewById(R.id.checkIn_value_day_of_week_textView)).getText().toString());
+                        intent.putExtra("CHECKIN_MONTH_YEAR", ((TextView)currentFragment.getView().findViewById(R.id.checkIn_value_year_month_textView)).getText().toString().substring(0,3));
+
+
+                        intent.putExtra("CHECKOUT", ((TextView)currentFragment.getView().findViewById(R.id.checkOut_value_textView)).getText().toString());
+                        intent.putExtra("CHECKOUT_DAYOFWEEK", ((TextView)currentFragment.getView().findViewById(R.id.checkOut_value_day_of_week_textView)).getText().toString());
+                        intent.putExtra("CHECKOUT_MONTH_YEAR", ((TextView)currentFragment.getView().findViewById(R.id.checkOut_value_year_month_textView)).getText().toString().substring(0,3));
+
+                        intent.putExtra("GUESTS", ((EditText)currentFragment.getView().findViewById(R.id.guests_value_textView)).getText().toString().trim());
+
+                        intent.putExtra("ROOMS", ((EditText)currentFragment.getView().findViewById(R.id.rooms_value_textView)).getText().toString().trim());
+
 
                         Pair<View, String> pair_location = Pair.create(currentFragment.getView().findViewById(R.id.hotel_fragment_location), "LOCATION");
 

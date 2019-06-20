@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="Thu, 02 May"
                 android:textColor="#000"
-                android:fontFamily="sans-serif-condensed"
+                android:fontFamily=""
                 android:layout_toRightOf="@id/hotel_activity_back_button"
                 android:layout_below="@id/hotel_activity_location_textView"
                 android:transitionName="CHECKIN_DAY_YEAR"/>
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:text="Thu, 02 May"
                 android:textColor="#000"
-                android:fontFamily="sans-serif-condensed"
+
                 android:layout_toRightOf="@id/hotel_activity_back_button"
                 android:layout_below="@id/hotel_activity_to_textView"
                 android:layout_marginTop="-6dp"
@@ -136,10 +136,12 @@
         </RelativeLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/hotel_activity_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/hotel_activity_topBar_holder_relativeLayout"
-            tools:listitem="@layout/hotel_list_item">
+            tools:listitem="@layout/hotel_list_item"
+            android:padding="8dp">
 
 
         </android.support.v7.widget.RecyclerView>

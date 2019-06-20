@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -30,5 +30,8 @@
         <item name="android:windowEnterAnimation">@anim/dialog_slide_entry_animation</item>
         <item name="android:windowExitAnimation">@anim/dialog_slide_exit_animation</item>
     </style>
+
+
+
 
 </resources>
