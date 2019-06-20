@@ -1,5 +1,6 @@
 package com.coolopool.coolopool.Adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,6 +20,12 @@ import java.util.ArrayList;
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder> {
 
     ArrayList<Review> reviews;
+    Context mContext;
+
+    public ReviewAdapter(ArrayList<Review> reviews, Context mContext) {
+        this.reviews = reviews;
+        this.mContext = mContext;
+    }
 
     @NonNull
     @Override
@@ -61,7 +68,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
             mTitle = (TextView)itemView.findViewById(R.id.hotel_review_list_item_review_title_textView);
             mDescription = (TextView)itemView.findViewById(R.id.hotel_review_list_item_review_description_textView);
             mDate = (TextView)itemView.findViewById(R.id.hotel_review_list_item_review_date_textView);
-            mRating = (RatingBar)itemView.findViewById(R.id.detail_hotel_activity_hotel_review_ratingBar);
+            mRating = (RatingBar)itemView.findViewById(R.id.hotel_review_list_item_ratingBar);
         }
     }
 }

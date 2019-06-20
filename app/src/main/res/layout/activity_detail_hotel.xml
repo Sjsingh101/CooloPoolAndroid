@@ -439,6 +439,7 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                         </LinearLayout>
 
                         <EditText
+                            android:id="@+id/detail_hotel_activity_review_search_editText"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:background="@drawable/round_corner_search_bar_background"
@@ -448,6 +449,18 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                             android:hint="  Search reviews..."
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="8dp"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/detail_hotel_activity_review_list_recyclerView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_below="@id/detail_hotel_activity_review_search_editText"/>
+
+
+
+
+
 
 
 

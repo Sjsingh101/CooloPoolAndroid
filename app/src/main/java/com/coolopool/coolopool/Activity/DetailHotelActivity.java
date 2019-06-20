@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -14,7 +15,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.Adapter.AmenitiesAdapter;
+import com.coolopool.coolopool.Adapter.ReviewAdapter;
 import com.coolopool.coolopool.Class.Amenities;
+import com.coolopool.coolopool.Class.Review;
 import com.coolopool.coolopool.R;
 
 import java.util.ArrayList;
@@ -35,10 +38,28 @@ public class DetailHotelActivity extends AppCompatActivity {
 
         setUpHotelInfo();
 
+        setUpReview();
+
+    }
+
+    private void setUpReview(){
+        String des = "Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions and limitations under the License.";
+        ArrayList<Review> reviews = new ArrayList<>();
+        reviews.add(new Review(R.drawable.pic1, 4, "Delhi, Near hauz khas metro", "Clean and comfortable", des, "20 Jun 2019"));
+        reviews.add(new Review(R.drawable.pic2, 3.5f, "varanasi, Near godowlia khas metro", "Excellent stay", des, "02 Apr 2019"));
+        reviews.add(new Review(R.drawable.pic3, 2.5f, "Delhi, Near hauz khas metro", "Strange, but liked it", des, "20 May 2017"));
+        reviews.add(new Review(R.drawable.google_icon, 4, "Chennai, Near hauz khas metro", "Well organised", des, "01 Jan 2018"));
+        reviews.add(new Review(R.drawable.pic3, 2.0f, "Delhi, Near hauz khas metro", "Very poor", des, "09 Sep 2019"));
+        reviews.add(new Review(R.drawable.pic1, 3f, "Hyderabad, Near hauz khas metro", "Average, great location", des, "23 Feb 2019"));
+        reviews.add(new Review(R.drawable.pic1, 4.7f, "Bangalore, Near hauz khas metro", "Memorable stay", des, "03 May 2017"));
 
 
+        ReviewAdapter reviewAdapter = new ReviewAdapter(reviews, DetailHotelActivity.this);
+        RecyclerView reviewRecyclerView = (RecyclerView)findViewById(R.id.detail_hotel_activity_review_list_recyclerView);
+        reviewRecyclerView.setLayoutManager(new LinearLayoutManager(DetailHotelActivity.this));
+        reviewRecyclerView.setHasFixedSize(false);
 
-
+        reviewRecyclerView.setAdapter(reviewAdapter);
     }
 
     private void sentMapIntent(String location){
