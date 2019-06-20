@@ -109,16 +109,6 @@ public class HotelFragment extends Fragment {
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.city_area_hotel_chooser);
-                dB.build();
-
-                ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dB.destroy();
-                    }
-                });
-
 
             }
         });
