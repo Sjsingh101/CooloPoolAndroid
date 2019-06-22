@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/restaurants_list_item_picture_imageView"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/pic3"
+            android:background="@drawable/hotel_image_background"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/restaurants_list_item_name_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hudson"
+            android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            />
+
+        <TextView
+            android:id="@+id/restaurants_list_item_type_of_food_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
+            android:layout_below="@id/restaurants_list_item_name_textView"
+            android:text="Indian | Italian"
+            android:textColor="@color/BattleshipGrey"/>
+
+        <TextView
+            android:id="@+id/restaurants_veg_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
+            android:layout_below="@id/restaurants_list_item_type_of_food_textView"
+            android:text="Veg"
+            android:textColor="#4CAF50"/>
+
+        <TextView
+            android:id="@+id/restaurants_veg_separator_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/restaurants_veg_textView"
+            android:layout_below="@id/restaurants_list_item_type_of_food_textView"
+            android:text=" | "
+            android:textColor="@color/BattleshipGrey"/>
+
+        <TextView
+            android:id="@+id/restaurants_non_veg_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/restaurants_veg_separator_textView"
+            android:layout_below="@id/restaurants_list_item_type_of_food_textView"
+            android:text="Non-Veg"
+            android:textColor="#912626"/>
+
+        <TextView
+            android:id="@+id/restaurants_cost_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
+            android:text="₹500"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/BattleshipGrey"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/restaurants_cost_textView"
+            android:text="/per person"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_restaurants_go_button"
+            android:foregroundTint="@color/transparent"/>
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

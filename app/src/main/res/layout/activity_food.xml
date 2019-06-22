@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/food_activity_topBar_holder_relativeLayout"
-            tools:listitem="@layout/hotel_list_item"
+            tools:listitem="@layout/restaurant_list_item"
             android:padding="8dp">
 
 
