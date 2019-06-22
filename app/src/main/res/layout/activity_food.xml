@@ -34,23 +34,12 @@
                 android:text="City"
                 android:layout_toRightOf="@id/food_activity_back_button"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:transitionName="LOCATION"
-                android:layout_marginTop="12dp"/>
-
-            <TextView
-                android:id="@+id/food_activity_date_from_dayOfWeek_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Thu, 02 May"
-                android:textColor="#000"
-                android:fontFamily=""
-                android:layout_toRightOf="@id/food_activity_back_button"
-                android:layout_below="@id/food_activity_location_textView"
-                android:transitionName="CHECKIN_DAY_YEAR"/>
+                android:transitionName="FOOD_LOCATION"
+                android:layout_centerVertical="true"/>
 
 
             <ImageButton
-                android:id="@+id/hotel_activity_filter"
+                android:id="@+id/food_activity_filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -63,7 +52,7 @@
         </RelativeLayout>
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/hotel_activity_recyclerView"
+            android:id="@+id/food_activity_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/food_activity_topBar_holder_relativeLayout"

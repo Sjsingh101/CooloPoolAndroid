@@ -20,7 +20,7 @@
             android:hint="CITY/AREA/RESTAURANT NAME"
             android:padding="8dp"
             android:layout_marginTop="52dp"
-            />
+            android:transitionName="FOOD_LOCATION"/>
 
         <DatePicker
             android:id="@+id/food_fragment_datePicker"
@@ -32,7 +32,7 @@
             android:calendarViewShown="false"
             android:datePickerMode="spinner"
             android:padding="22dp"
-            />
+            android:transitionName="FOOD_DATE"/>
 
         <TextView
             android:id="@+id/food_fragment_date_textView"

@@ -197,6 +197,7 @@ public class HomeActivity extends AppCompatActivity {
     private void updateUi(int i){
 
         fab.setOnClickListener(null);
+        final Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
 
         switch (i){
             case 0:
@@ -221,8 +222,6 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(HomeActivity.this, HotelActivity.class);
-
-                        Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
 
                         intent.putExtra("LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.hotel_fragment_location)).getText().toString().trim());
 
@@ -263,7 +262,12 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
-                        startActivity(intent);
+                        intent.putExtra("FOOD_LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.food_fragment_city_area_editText)).getText().toString().trim());
+
+                        Pair<View, String> pair_food_location = Pair.create(currentFragment.getView().findViewById(R.id.food_fragment_city_area_editText), "FOOD_LOCATION");
+
+                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pair_food_location);
+                        startActivity(intent, activityOptions.toBundle());
                     }
                 });
                 break;
