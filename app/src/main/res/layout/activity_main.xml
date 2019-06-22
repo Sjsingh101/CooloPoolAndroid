@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="bottom"
     tools:context=".Activity.HomeActivity"
-    >
+    android:background="@drawable/background">
 
     <LinearLayout
 
