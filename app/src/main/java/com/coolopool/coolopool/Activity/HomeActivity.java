@@ -262,7 +262,8 @@ public class HomeActivity extends AppCompatActivity {
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        
+                        Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
+                        startActivity(intent);
                     }
                 });
                 break;
