@@ -14,6 +14,8 @@ import com.coolopool.coolopool.R;
  */
 public class RestaurantsFragment extends Fragment {
 
+    View v;
+
 
     public RestaurantsFragment() {
         // Required empty public constructor
@@ -24,7 +26,13 @@ public class RestaurantsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_resturants, container, false);
+        v =  inflater.inflate(R.layout.fragment_resturants, container, false);
+        return v;
     }
+
+    public View getView() {
+        return v;
+    }
+
 
 }

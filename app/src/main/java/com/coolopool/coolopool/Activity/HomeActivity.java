@@ -21,15 +21,13 @@ import com.coolopool.coolopool.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    static String TAG = "HomeActivit: ~~~~~~~~~~~~~~~~~~~~~~~~~";
+    static boolean isSearchButtonVisible = false;
 
     ViewPager viewPager;
     FloatingActionButton fab;
 
     ImageButton mSearchButton;
     ImageButton mHomeButton;
-
-    ImageButton transportButton;
     ImageButton hotelButton;
     ImageButton restaurantsButton;
 
@@ -54,7 +52,14 @@ public class HomeActivity extends AppCompatActivity {
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSearchBox.setVisibility(View.VISIBLE);
+                if(isSearchButtonVisible){
+                    mSearchBox.setVisibility(View.INVISIBLE);
+                    isSearchButtonVisible = false;
+                }else{
+                    mSearchBox.setVisibility(View.VISIBLE);
+                    isSearchButtonVisible = true;
+                }
+
             }
         });
 
@@ -70,7 +75,7 @@ public class HomeActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-                Log.d(TAG, ""+i);
+
             }
 
             @Override
@@ -96,14 +101,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        /*transportButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               *//* updateSelectedIcon(viewPager.getCurrentItem());
-                transportButton.setImageResource(R.drawable.ic_taxi_selected);
-                viewPager.setCurrentItem(1);*//*
-            }
-        });*/
 
         hotelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -258,12 +255,16 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(intent, activityOptions.toBundle());
                     }
                 });
-                Log.d(TAG, "HotelFragment Enabled");
                 break;
             case 2:
                 restaurantsButton.setImageResource(R.drawable.ic_food_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
-                Log.d(TAG, "ResturantFragment Enabled");
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        
+                    }
+                });
                 break;
 
             default:
