@@ -27,7 +27,8 @@
             android:text="Hudson"
             android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            />
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/restaurants_list_item_type_of_food_textView"
@@ -36,7 +37,9 @@
             android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
             android:layout_below="@id/restaurants_list_item_name_textView"
             android:text="Indian | Italian"
-            android:textColor="@color/BattleshipGrey"/>
+            android:textColor="@color/BattleshipGrey"
+            android:layout_marginLeft="8dp"
+            android:textSize="10dp"/>
 
         <TextView
             android:id="@+id/restaurants_veg_textView"
@@ -45,7 +48,9 @@
             android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
             android:layout_below="@id/restaurants_list_item_type_of_food_textView"
             android:text="Veg"
-            android:textColor="#4CAF50"/>
+            android:textColor="#4CAF50"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/restaurants_veg_separator_textView"
@@ -54,7 +59,8 @@
             android:layout_toRightOf="@id/restaurants_veg_textView"
             android:layout_below="@id/restaurants_list_item_type_of_food_textView"
             android:text=" | "
-            android:textColor="@color/BattleshipGrey"/>
+            android:textColor="@color/BattleshipGrey"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/restaurants_non_veg_textView"
@@ -63,7 +69,8 @@
             android:layout_toRightOf="@id/restaurants_veg_separator_textView"
             android:layout_below="@id/restaurants_list_item_type_of_food_textView"
             android:text="Non-Veg"
-            android:textColor="#912626"/>
+            android:textColor="#912626"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/restaurants_cost_textView"
@@ -73,23 +80,48 @@
             android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
             android:text="₹500"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/BattleshipGrey"/>
+            android:textColor="@color/BattleshipGrey"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@id/restaurants_cost_textView"
-            android:text="/per person"/>
+            android:text="/per person"
+            android:layout_marginBottom="12dp"/>
 
 
         <ImageView
+            android:id="@+id/restaurants_list_item_go_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@drawable/ic_restaurants_go_button"
             android:foregroundTint="@color/transparent"/>
+
+        <TextView
+            android:id="@+id/restaurants_list_item_opening_time_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/restaurants_list_item_go_textView"
+            android:layout_below="@id/restaurants_non_veg_textView"
+            android:text="9:00 Am"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/restaurants_list_item_go_textView"
+            android:text="8:00 Pm"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:textSize="12dp"/>
+
+
 
 
 
