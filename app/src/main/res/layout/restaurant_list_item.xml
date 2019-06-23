@@ -42,7 +42,7 @@
             android:textSize="10dp"/>
 
         <TextView
-            android:id="@+id/restaurants_veg_textView"
+            android:id="@+id/restaurants_list_item_veg_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
@@ -53,27 +53,27 @@
             android:layout_marginTop="8dp"/>
 
         <TextView
-            android:id="@+id/restaurants_veg_separator_textView"
+            android:id="@+id/restaurants_list_item_veg_separator_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/restaurants_veg_textView"
+            android:layout_toRightOf="@id/restaurants_list_item_veg_textView"
             android:layout_below="@id/restaurants_list_item_type_of_food_textView"
             android:text=" | "
             android:textColor="@color/BattleshipGrey"
             android:layout_marginTop="8dp"/>
 
         <TextView
-            android:id="@+id/restaurants_non_veg_textView"
+            android:id="@+id/restaurants_list_item_non_veg_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/restaurants_veg_separator_textView"
+            android:layout_toRightOf="@id/restaurants_list_item_veg_separator_textView"
             android:layout_below="@id/restaurants_list_item_type_of_food_textView"
             android:text="Non-Veg"
             android:textColor="#912626"
             android:layout_marginTop="8dp"/>
 
         <TextView
-            android:id="@+id/restaurants_cost_textView"
+            android:id="@+id/restaurants_list_item_cost_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/restaurants_cost_textView"
+            android:layout_toRightOf="@id/restaurants_list_item_cost_textView"
             android:text="/per person"
             android:layout_marginBottom="12dp"/>
 
@@ -107,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/restaurants_list_item_go_imageView"
-            android:layout_below="@id/restaurants_non_veg_textView"
+            android:layout_below="@id/restaurants_list_item_non_veg_textView"
             android:text="9:00 Am"
             android:textStyle="bold"
             android:textColor="@color/black"

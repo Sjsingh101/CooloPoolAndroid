@@ -9,10 +9,10 @@ public class Restaurant {
     String mCost;
     String mOpeningTime;
     String mClosingTime;
-    String mTypeOfFood; //veg, non-veg or both
+    int mTypeOfFood; //veg = 0, non-veg = 1 or both = 2
     ArrayList<String> mTypeOfCuisine; // italian, indian, american etc...
 
-    public Restaurant(String mThumbnailUrl, String mName, String mCost, String mOpeningTime, String mClosingTime, String mTypeOfFood, ArrayList<String> mTypeOfCuisine) {
+    public Restaurant(String mThumbnailUrl, String mName, String mCost, String mOpeningTime, String mClosingTime, int mTypeOfFood, ArrayList<String> mTypeOfCuisine) {
         this.mThumbnailUrl = mThumbnailUrl;
         this.mName = mName;
         this.mCost = mCost;
@@ -36,6 +36,14 @@ public class Restaurant {
 
     public void setmName(String mName) {
         this.mName = mName;
+    }
+
+    public int getmTypeOfFood() {
+        return mTypeOfFood;
+    }
+
+    public void setmTypeOfFood(int mTypeOfFood) {
+        this.mTypeOfFood = mTypeOfFood;
     }
 
     public String getmCost() {
@@ -62,13 +70,6 @@ public class Restaurant {
         this.mClosingTime = mClosingTime;
     }
 
-    public String getmTypeOfFood() {
-        return mTypeOfFood;
-    }
-
-    public void setmTypeOfFood(String mTypeOfFood) {
-        this.mTypeOfFood = mTypeOfFood;
-    }
 
     public String getmTypeOfCuisine() {
         String result = "";
