@@ -48,7 +48,7 @@
             android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
             android:layout_below="@id/restaurants_list_item_type_of_food_textView"
             android:text="Veg"
-            android:textColor="#4CAF50"
+            android:textColor="@color/veg"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"/>
 
@@ -69,7 +69,7 @@
             android:layout_toRightOf="@id/restaurants_list_item_veg_separator_textView"
             android:layout_below="@id/restaurants_list_item_type_of_food_textView"
             android:text="Non-Veg"
-            android:textColor="#912626"
+            android:textColor="@color/non_veg"
             android:layout_marginTop="8dp"/>
 
         <TextView

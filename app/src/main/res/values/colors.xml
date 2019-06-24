@@ -16,4 +16,7 @@
     <color name="detail_secondary">#886FEC</color>
 
     <color name="FragmentSelected">#FF7C4444</color>
+
+    <color name="veg">#4CAF50</color>
+    <color name="non_veg">#912626</color>
 </resources>

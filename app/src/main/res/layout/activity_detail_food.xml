@@ -168,41 +168,45 @@
                             android:textStyle="bold"
                             android:textColor="@color/black"/>
 
-                        <com.coolopool.coolopool.Views.RoomTypeView
+                        <com.coolopool.coolopool.Views.FoodView
                             android:id="@+id/detail_food_activity_delux_roomType"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_below="@id/detail_food_activity_room_types_textView"
-                            app:text="Delux"
-                            app:textSize="20dp"
-                            app:numberPickerRightGap="-30dp"/>
+                            app:food_text="Tandoori naan"
+                            app:food_textSize="20dp"
+                            app:food_circleColor="@color/veg"
+                            app:food_numberPickerRightGap="-30dp"/>
 
-                        <com.coolopool.coolopool.Views.RoomTypeView
+                        <com.coolopool.coolopool.Views.FoodView
                             android:id="@+id/detail_hotel_activity_premium_roomType"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_below="@id/detail_food_activity_delux_roomType"
-                            app:text="Premium"
-                            app:textSize="20dp"
-                            app:numberPickerRightGap="-30dp"/>
+                            app:food_text="Tandoori Chicken"
+                            app:food_textSize="20dp"
+                            app:food_circleColor="@color/non_veg"
+                            app:food_numberPickerRightGap="-30dp"/>
 
-                        <com.coolopool.coolopool.Views.RoomTypeView
+                        <com.coolopool.coolopool.Views.FoodView
                             android:id="@+id/detail_food_activity_double_roomType"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_below="@id/detail_hotel_activity_premium_roomType"
-                            app:text="Double"
-                            app:textSize="20dp"
-                            app:numberPickerRightGap="-30dp"/>
+                            app:food_text="Mojito"
+                            app:food_textSize="20dp"
+                            app:food_circleColor="@color/veg"
+                            app:food_numberPickerRightGap="-30dp"/>
 
-                        <com.coolopool.coolopool.Views.RoomTypeView
+                        <com.coolopool.coolopool.Views.FoodView
                             android:id="@+id/detail_food_activity_single_roomType"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_below="@id/detail_food_activity_double_roomType"
-                            app:text="Premium"
-                            app:textSize="20dp"
-                            app:numberPickerRightGap="-30dp"/>
+                            app:food_text="Mineral Water"
+                            app:food_textSize="20dp"
+                            app:food_circleColor="@color/veg"
+                            app:food_numberPickerRightGap="-30dp"/>
 
 
                     </RelativeLayout>
