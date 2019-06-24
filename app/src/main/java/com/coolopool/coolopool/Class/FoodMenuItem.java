@@ -3,9 +3,9 @@ package com.coolopool.coolopool.Class;
 public class FoodMenuItem {
 
     String mItem;
-    String mType;
+    int mType;// veg: 0 and non-veg: 1
 
-    public FoodMenuItem(String mItem, String mType) {
+    public FoodMenuItem(String mItem, int mType) {
         this.mItem = mItem;
         this.mType = mType;
     }
@@ -14,15 +14,8 @@ public class FoodMenuItem {
         return mItem;
     }
 
-    public void setmItem(String mItem) {
-        this.mItem = mItem;
-    }
-
-    public String getmType() {
+    public int getmType() {
         return mType;
     }
 
-    public void setmType(String mType) {
-        this.mType = mType;
-    }
 }

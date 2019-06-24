@@ -142,6 +142,11 @@ public class FoodView extends View {
         return false;
     }
 
+    public void setmCircleColor(int colorId){
+        mPaintCircle.setColor(colorId);
+        postInvalidate();
+    }
+
     public void setmText(String text){
         this.mText = text;
         postInvalidate();

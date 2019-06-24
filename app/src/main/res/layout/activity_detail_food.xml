@@ -36,16 +36,6 @@
                 />
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="₹4000"
-                android:textColor="@color/white"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="32dp"
-                android:layout_marginBottom="6dp"/>
-
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -57,7 +47,7 @@
 
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/detail_food_activity_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 app:layout_collapseMode="pin"
@@ -168,45 +158,26 @@
                             android:textStyle="bold"
                             android:textColor="@color/black"/>
 
-                        <com.coolopool.coolopool.Views.FoodView
-                            android:id="@+id/detail_food_activity_delux_roomType"
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/detail_food_activity_menu_recyclerView"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_below="@id/detail_food_activity_room_types_textView"
-                            app:food_text="Tandoori naan"
-                            app:food_textSize="20dp"
-                            app:food_circleColor="@color/veg"
-                            app:food_numberPickerRightGap="-30dp"/>
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            tools:listitem="@layout/food_menu_list_item"
+                            android:layout_below="@id/detail_food_activity_room_types_textView">
 
-                        <com.coolopool.coolopool.Views.FoodView
-                            android:id="@+id/detail_hotel_activity_premium_roomType"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_below="@id/detail_food_activity_delux_roomType"
-                            app:food_text="Tandoori Chicken"
-                            app:food_textSize="20dp"
-                            app:food_circleColor="@color/non_veg"
-                            app:food_numberPickerRightGap="-30dp"/>
+                        </android.support.v7.widget.RecyclerView>
 
-                        <com.coolopool.coolopool.Views.FoodView
-                            android:id="@+id/detail_food_activity_double_roomType"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_below="@id/detail_hotel_activity_premium_roomType"
-                            app:food_text="Mojito"
-                            app:food_textSize="20dp"
-                            app:food_circleColor="@color/veg"
-                            app:food_numberPickerRightGap="-30dp"/>
-
-                        <com.coolopool.coolopool.Views.FoodView
-                            android:id="@+id/detail_food_activity_single_roomType"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_below="@id/detail_food_activity_double_roomType"
-                            app:food_text="Mineral Water"
-                            app:food_textSize="20dp"
-                            app:food_circleColor="@color/veg"
-                            app:food_numberPickerRightGap="-30dp"/>
+                        <TextView
+                            android:id="@+id/detail_food_activity_readMore_menu_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="More"
+                            android:layout_below="@id/detail_food_activity_menu_recyclerView"
+                            android:padding="8dp"
+                            android:textColor="@color/detail_secondary"
+                            android:textStyle="bold" />
 
 
                     </RelativeLayout>
@@ -455,10 +426,11 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
                             android:layout_marginTop="8dp"/>
 
                         <android.support.v7.widget.RecyclerView
-                            android:id="@+id/detail_hotel_activity_review_list_recyclerView"
+                            android:id="@+id/detail_food_activity_review_list_recyclerView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
+                            tools:listitem="@layout/hotel_review_list_item"
                             android:layout_below="@id/detail_food_activity_review_search_editText"/>
 
                     </RelativeLayout>
