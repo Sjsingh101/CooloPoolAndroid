@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.DetailFoodActivity"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/background">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            >
+
+            <ImageView
+                android:id="@+id/expandedImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pic1"
+                app:layout_collapseMode="pin"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹4000"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="32dp"
+                android:layout_marginBottom="6dp"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cart"
+                android:layout_gravity="right"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"/>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                app:layout_collapseMode="pin"
+                app:titleTextColor="@color/black"
+                app:subtitleTextColor="@color/black"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginTop="32dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/detail_food_activity_foodInformation_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hotel Information"
+                            android:layout_marginLeft="8dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/detail_food_activity_info_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/detail_food_activity_foodInformation_textView"
+                            android:text="In the above code, to knows whether the CollapsingToolbarLayout is collapsed or expanded, we add a listener addOnOffsetChangedListener on the AppBarLayout instance. Depending upon the if else conditions we show or hide the toolbar info option"
+                            android:padding="8dp"
+                            android:maxLines="2"
+                            android:lineHeight="20dp"
+                            android:ellipsize="end"
+                            android:scrollHorizontally="true"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/detail_food_activity_readMore_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Read more"
+                            android:layout_below="@id/detail_food_activity_info_textView"
+                            android:padding="8dp"
+                            android:layout_marginTop="-8dp"
+                            android:textColor="@color/detail_secondary"
+                            android:textStyle="bold" />
+
+
+
+                    </RelativeLayout>
+
+
+
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/detail_food_activity_room_types_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Room Types"
+                            android:layout_marginLeft="8dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+
+                        <com.coolopool.coolopool.Views.RoomTypeView
+                            android:id="@+id/detail_food_activity_delux_roomType"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/detail_food_activity_room_types_textView"
+                            app:text="Delux"
+                            app:textSize="20dp"
+                            app:numberPickerRightGap="-30dp"/>
+
+                        <com.coolopool.coolopool.Views.RoomTypeView
+                            android:id="@+id/detail_hotel_activity_premium_roomType"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/detail_food_activity_delux_roomType"
+                            app:text="Premium"
+                            app:textSize="20dp"
+                            app:numberPickerRightGap="-30dp"/>
+
+                        <com.coolopool.coolopool.Views.RoomTypeView
+                            android:id="@+id/detail_food_activity_double_roomType"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/detail_hotel_activity_premium_roomType"
+                            app:text="Double"
+                            app:textSize="20dp"
+                            app:numberPickerRightGap="-30dp"/>
+
+                        <com.coolopool.coolopool.Views.RoomTypeView
+                            android:id="@+id/detail_food_activity_single_roomType"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/detail_food_activity_double_roomType"
+                            app:text="Premium"
+                            app:textSize="20dp"
+                            app:numberPickerRightGap="-30dp"/>
+
+
+                    </RelativeLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/detail_food_activity_hotel_class_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hotel Class"
+                            android:layout_marginLeft="8dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+
+
+
+                        <RatingBar
+                            android:id="@+id/detail_food_activity_hotel_ratingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/detail_food_activity_hotel_class_textView"
+                            android:numStars="5"
+                            android:rating="3.5"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_marginLeft="12dp"
+                            android:progressTint="@color/black"
+                            android:layout_marginTop="2dp"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/detail_food_activity_amenities_recyclerView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_below="@id/detail_food_activity_hotel_ratingBar"
+                            tools:listitem="@layout/amenities_list_item"
+                            android:gravity="center"
+                            tools:itemCount="1"
+                            android:layout_marginTop="8dp">
+
+
+                        </android.support.v7.widget.RecyclerView>
+
+                        <TextView
+                            android:id="@+id/detail_food_activity_see_all_amenities_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="See all amenities"
+                            android:textColor="@color/detail_secondary"
+                            android:textStyle="bold"
+                            android:layout_below="@id/detail_food_activity_amenities_recyclerView"
+                            android:layout_marginLeft="8dp"/>
+
+                        <EditText
+                            android:id="@+id/detail_food_activity_location_info_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/detail_food_activity_see_all_amenities_textView"
+                            android:text="Crowne Plaza Ahmedabad City Centre
+Sarkhej - Gandhinagar Hwy, near Shapath - V, Prahlad Nagar, Ahmedabad, Gujarat 380015, India
++91 79 6777 9000
+
+https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
+                            android:textSize="20sp"
+                            android:drawablePadding="20dp"
+                            android:layout_marginLeft="8dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:enabled="true"
+                            android:focusable="false"
+                            android:backgroundTint="#6F6E6E"
+                            android:padding="15dp"
+                            android:drawableStart="@drawable/ic_location"
+                            android:drawableEnd="@drawable/ic_greater_than"/>
+
+                    </RelativeLayout>
+
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/detail_food_activity_hotel_review_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reviews"
+                            android:layout_marginLeft="8dp"
+                            android:textStyle="bold"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="@color/black"/>
+
+                        <RatingBar
+                            android:id="@+id/detail_food_activity_hotel_review_ratingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/detail_food_activity_hotel_review_textView"
+                            android:numStars="5"
+                            android:rating="4"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_marginLeft="8dp"
+                            android:progressTint="@color/detail_secondary"
+                            android:layout_marginTop="2dp"/>
+
+                        <TextView
+                            android:id="@+id/detail_food_activity_total_reviews_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/detail_food_activity_hotel_review_ratingBar"
+                            android:layout_below="@id/detail_food_activity_hotel_review_textView"
+                            android:text="432 Reviews"
+                            android:layout_marginLeft="8dp"/>
+
+                        <TextView
+                            android:id="@+id/detail_food_activity_food_review_traveler_rating_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/detail_food_activity_total_reviews_textView"
+                            android:text="Traveler rating"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:textStyle="normal"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="@color/black"/>
+
+                        <LinearLayout
+                            android:id="@+id/detail_food_activity_rating_holder_linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:orientation="vertical"
+                            android:layout_below="@id/detail_food_activity_food_review_traveler_rating_textView">
+
+
+                            <com.coolopool.coolopool.Views.ReviewBarView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                app:bgColor="@color/ReviewBarBg"
+                                app:fgColor="@color/detail_secondary"
+                                app:percentage="49.5"
+                                app:margin_left="4dp"
+                                app:margin_right="70dp"
+                                app:bar_width="170dp"
+                                app:string_start="Excellent"
+                                app:string_end="214"
+                                app:string_size="12sp"
+                                app:string_color="@color/colorPrimaryDark" />
+
+                            <com.coolopool.coolopool.Views.ReviewBarView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="-8dp"
+                                app:bgColor="@color/ReviewBarBg"
+                                app:fgColor="@color/detail_secondary"
+                                app:percentage="37.7"
+                                app:margin_left="4dp"
+                                app:margin_right="70dp"
+                                app:bar_width="170dp"
+                                app:string_start="Very good"
+                                app:string_end="163"
+                                app:string_size="12sp"
+                                app:string_color="@color/colorPrimaryDark" />
+
+                            <com.coolopool.coolopool.Views.ReviewBarView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="-8dp"
+                                app:bgColor="@color/ReviewBarBg"
+                                app:fgColor="@color/detail_secondary"
+                                app:percentage="7.4"
+                                app:margin_left="4dp"
+                                app:margin_right="70dp"
+                                app:bar_width="170dp"
+                                app:string_start="Average"
+                                app:string_end="32"
+                                app:string_size="12sp"
+                                app:string_color="@color/colorPrimaryDark" />
+
+                            <com.coolopool.coolopool.Views.ReviewBarView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="-8dp"
+                                app:bgColor="@color/ReviewBarBg"
+                                app:fgColor="@color/detail_secondary"
+                                app:percentage="2.31"
+                                app:margin_left="4dp"
+                                app:margin_right="70dp"
+                                app:bar_width="170dp"
+                                app:string_start="Poor"
+                                app:string_end="10"
+                                app:string_size="12sp"
+                                app:string_color="@color/colorPrimaryDark" />
+
+                            <com.coolopool.coolopool.Views.ReviewBarView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="-8dp"
+                                app:bgColor="@color/ReviewBarBg"
+                                app:fgColor="@color/detail_secondary"
+                                app:percentage="3.1"
+                                app:margin_left="4dp"
+                                app:margin_right="70dp"
+                                app:bar_width="170dp"
+                                app:string_start="Terrible"
+                                app:string_end="13"
+                                app:string_size="12sp"
+                                app:string_color="@color/colorPrimaryDark" />
+
+
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/detail_food_activity_review_search_editText"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/round_corner_search_bar_background"
+                            android:layout_below="@id/detail_food_activity_rating_holder_linearLayout"
+                            android:padding="8dp"
+                            android:drawableStart="@drawable/ic_search_secondary"
+                            android:hint="  Search reviews..."
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/detail_hotel_activity_review_list_recyclerView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_below="@id/detail_food_activity_review_search_editText"/>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <ImageView
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        android:src="@drawable/ic_heart_like"
+        android:layout_gravity="center"
+        app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,6 +1,7 @@
 package com.coolopool.coolopool.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.coolopool.coolopool.Activity.DetailFoodActivity;
+import com.coolopool.coolopool.Activity.DetailHotelActivity;
 import com.coolopool.coolopool.Class.Restaurant;
 import com.coolopool.coolopool.R;
 
@@ -60,7 +63,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         restaurantViewHolder.mGoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mContext.startActivity(new Intent(mContext, DetailFoodActivity.class));
             }
         });
     }
