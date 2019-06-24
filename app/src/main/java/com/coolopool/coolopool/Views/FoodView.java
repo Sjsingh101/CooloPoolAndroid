@@ -53,7 +53,7 @@ public class FoodView extends View {
         mLeftGap = typedArray.getDimension(R.styleable.FoodView_food_leftGap, 18);
         mTextLeftGap = typedArray.getDimension(R.styleable.FoodView_food_textLeftGap, 20);
         mNumberPickerRightGap = typedArray.getDimension(R.styleable.FoodView_food_numberPickerRightGap, 50);
-        mCircleColor = typedArray.getColor(R.styleable.FoodView_food_circleColor, Color.BLACK);
+        mCircleColor = typedArray.getColor(R.styleable.FoodView_food_circleColor, getResources().getColor(R.color.veg));
         mTextColor = typedArray.getInt(R.styleable.FoodView_food_textColor, Color.BLACK);
         mCounterTextColor = typedArray.getInt(R.styleable.FoodView_food_counterTextColor, Color.BLACK);
 
@@ -126,6 +126,29 @@ public class FoodView extends View {
         }
 
         return value;
+    }
+
+    public boolean isVeg(){
+        if(mCircleColor == getResources().getColor(R.color.veg)){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isNonVeg(){
+        if(!isVeg()){
+            return true;
+        }
+        return false;
+    }
+
+    public void setmText(String text){
+        this.mText = text;
+        postInvalidate();
+    }
+
+    public String getmText() {
+        return mText;
     }
 
     public int getmCounter() {

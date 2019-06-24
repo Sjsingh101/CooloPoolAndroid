@@ -162,7 +162,7 @@
                             android:id="@+id/detail_food_activity_room_types_textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Room Types"
+                            android:text="Menu"
                             android:layout_marginLeft="8dp"
                             android:textSize="15sp"
                             android:textStyle="bold"
