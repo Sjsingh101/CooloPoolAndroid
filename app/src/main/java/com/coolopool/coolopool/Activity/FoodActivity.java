@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -13,8 +15,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appyvet.materialrangebar.RangeBar;
+import com.coolopool.coolopool.Adapter.HotelAdapter;
+import com.coolopool.coolopool.Adapter.RestaurantAdapter;
+import com.coolopool.coolopool.Class.Restaurant;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FoodActivity extends AppCompatActivity {
 
@@ -22,8 +30,25 @@ public class FoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
-
         getContentsFromIntent();
+
+        String[] array = {"Indian", "Italian"};
+
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+
+        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 2, array));
+        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 0, array));
+        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 2, array));
+        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
+        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 2, array));
+        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
+        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
+
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.food_activity_recyclerView);
+        RestaurantAdapter adapter = new RestaurantAdapter(restaurants, FoodActivity.this);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
 
         final ImageButton filter = (ImageButton)findViewById(R.id.food_activity_filter);
         ImageButton backButton = (ImageButton)findViewById(R.id.food_activity_back_button);

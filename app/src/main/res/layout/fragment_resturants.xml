@@ -22,29 +22,6 @@
             android:layout_marginTop="52dp"
             android:transitionName="FOOD_LOCATION"/>
 
-        <DatePicker
-            android:id="@+id/food_fragment_datePicker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/food_fragment_city_area_editText"
-            android:layout_marginTop="112dp"
-            android:background="@color/white"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:padding="22dp"
-            android:transitionName="FOOD_DATE"/>
-
-        <TextView
-            android:id="@+id/food_fragment_date_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:fontFamily="sans-serif-thin"
-            android:layout_below="@id/food_fragment_city_area_editText"
-            android:layout_marginTop="128dp"
-            android:layout_marginLeft="16dp"/>
-
     </RelativeLayout>
 
 </FrameLayout>

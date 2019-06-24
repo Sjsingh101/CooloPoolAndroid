@@ -1,25 +1,44 @@
 package com.coolopool.coolopool.Class;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public class Restaurant {
 
     String mThumbnailUrl;
     String mName;
-    String mCost;
+    String mCost = "₹";
     String mOpeningTime;
     String mClosingTime;
     int mTypeOfFood; //veg = 0, non-veg = 1 or both = 2
-    ArrayList<String> mTypeOfCuisine; // italian, indian, american etc...
+    ArrayList<String> mTypeOfCuisine = new ArrayList<>(); // italian, indian, american etc...
 
-    public Restaurant(String mThumbnailUrl, String mName, String mCost, String mOpeningTime, String mClosingTime, int mTypeOfFood, ArrayList<String> mTypeOfCuisine) {
+    public Restaurant(String mThumbnailUrl, String mName, String mCost, String mOpeningTime, String mClosingTime, int mTypeOfFood, String[] mTypeOfCuisine) {
         this.mThumbnailUrl = mThumbnailUrl;
         this.mName = mName;
-        this.mCost = mCost;
+        this.mCost += mCost;
         this.mOpeningTime = mOpeningTime;
         this.mClosingTime = mClosingTime;
         this.mTypeOfFood = mTypeOfFood;
-        this.mTypeOfCuisine = mTypeOfCuisine;
+        for(String s : mTypeOfCuisine){
+            this.mTypeOfCuisine.add(s);
+        }
+
+    }
+
+    public boolean isVeg(){
+        if(this.mTypeOfFood == 0 | this.mTypeOfFood == 2){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isNonVeg(){
+        if(this.mTypeOfFood == 1 | this.mTypeOfFood == 2){
+            return true;
+        }
+        return false;
     }
 
     public String getmThumbnailUrl() {
@@ -77,7 +96,12 @@ public class Restaurant {
             result = mTypeOfCuisine.get(0);
         }else{
             for(int i=0; i<mTypeOfCuisine.size(); i++){
+                if(i == mTypeOfCuisine.size()-1){
+                    result += mTypeOfCuisine.get(i);
+                    continue;
+                }
                 result += mTypeOfCuisine.get(i) + " | ";
+
             }
         }
         return result;

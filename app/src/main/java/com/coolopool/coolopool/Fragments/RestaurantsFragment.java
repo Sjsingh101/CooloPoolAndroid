@@ -27,6 +27,9 @@ public class RestaurantsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v =  inflater.inflate(R.layout.fragment_resturants, container, false);
+
+
+
         return v;
     }
 
