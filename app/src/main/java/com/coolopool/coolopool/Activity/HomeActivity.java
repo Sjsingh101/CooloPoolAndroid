@@ -21,15 +21,13 @@ import com.coolopool.coolopool.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    static String TAG = "HomeActivit: ~~~~~~~~~~~~~~~~~~~~~~~~~";
+    static boolean isSearchButtonVisible = false;
 
     ViewPager viewPager;
     FloatingActionButton fab;
 
     ImageButton mSearchButton;
     ImageButton mHomeButton;
-
-    ImageButton transportButton;
     ImageButton hotelButton;
     ImageButton restaurantsButton;
 
@@ -54,7 +52,14 @@ public class HomeActivity extends AppCompatActivity {
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSearchBox.setVisibility(View.VISIBLE);
+                if(isSearchButtonVisible){
+                    mSearchBox.setVisibility(View.INVISIBLE);
+                    isSearchButtonVisible = false;
+                }else{
+                    mSearchBox.setVisibility(View.VISIBLE);
+                    isSearchButtonVisible = true;
+                }
+
             }
         });
 
@@ -70,7 +75,7 @@ public class HomeActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-                Log.d(TAG, ""+i);
+
             }
 
             @Override
@@ -96,14 +101,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        /*transportButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               *//* updateSelectedIcon(viewPager.getCurrentItem());
-                transportButton.setImageResource(R.drawable.ic_taxi_selected);
-                viewPager.setCurrentItem(1);*//*
-            }
-        });*/
 
         hotelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -200,6 +197,7 @@ public class HomeActivity extends AppCompatActivity {
     private void updateUi(int i){
 
         fab.setOnClickListener(null);
+        final Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
 
         switch (i){
             case 0:
@@ -224,8 +222,6 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(HomeActivity.this, HotelActivity.class);
-
-                        Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
 
                         intent.putExtra("LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.hotel_fragment_location)).getText().toString().trim());
 
@@ -258,12 +254,22 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(intent, activityOptions.toBundle());
                     }
                 });
-                Log.d(TAG, "HotelFragment Enabled");
                 break;
             case 2:
                 restaurantsButton.setImageResource(R.drawable.ic_food_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
-                Log.d(TAG, "ResturantFragment Enabled");
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
+                        intent.putExtra("FOOD_LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.food_fragment_city_area_editText)).getText().toString().trim());
+
+                        Pair<View, String> pair_food_location = Pair.create(currentFragment.getView().findViewById(R.id.food_fragment_city_area_editText), "FOOD_LOCATION");
+
+                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pair_food_location);
+                        startActivity(intent, activityOptions.toBundle());
+                    }
+                });
                 break;
 
             default:

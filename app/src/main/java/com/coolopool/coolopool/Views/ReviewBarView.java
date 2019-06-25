@@ -44,7 +44,7 @@ public class ReviewBarView extends View {
     private void init(AttributeSet set){
         TypedArray typedArray = getContext().obtainStyledAttributes(set, R.styleable.ReviewBarView);
 
-        mBgColor = typedArray.getInteger(R.styleable.ReviewBarView_bgColor, R.color.BettleshipGrey);
+        mBgColor = typedArray.getInteger(R.styleable.ReviewBarView_bgColor, R.color.BattleshipGrey);
         mFgColor = typedArray.getInteger(R.styleable.ReviewBarView_fgColor, R.color.colorPrimary);
         mPercentage = typedArray.getFloat(R.styleable.ReviewBarView_percentage, 50f);
         mTextLeftGap = typedArray.getDimension(R.styleable.ReviewBarView_margin_left, LEFT_GAP/4);

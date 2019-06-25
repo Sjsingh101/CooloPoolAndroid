@@ -14,11 +14,16 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name=".Activity.DetailHotelActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
-        </activity>
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activity.DetailFoodActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+        <activity
+            android:name=".Activity.FoodActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".Activity.DetailHotelActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".Activity.HotelActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
@@ -50,12 +55,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Activity.HomeActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan">
+        </activity>
     </application>
 
 </manifest>

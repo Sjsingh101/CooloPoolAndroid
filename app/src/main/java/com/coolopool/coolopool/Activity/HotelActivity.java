@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -101,7 +99,7 @@ public class HotelActivity extends AppCompatActivity {
             }
         });
 
-        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_0_to_1_km)).setOnClickListener(new View.OnClickListener() {
+        ((LinearLayout)dialog.findViewById(R.id.food_activity_filter_0_to_1_km)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[0] == R.id.hotel_activity_filter_0_to_1_km_selector)){

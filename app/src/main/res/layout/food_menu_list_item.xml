@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.coolopool.coolopool.Views.FoodView
+        android:id="@+id/food_menu_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:food_text="Tandoori naan"
+        app:food_textSize="20dp"
+        app:food_circleColor="@color/veg"
+        app:food_numberPickerRightGap="-30dp"/>
+
+</RelativeLayout>
