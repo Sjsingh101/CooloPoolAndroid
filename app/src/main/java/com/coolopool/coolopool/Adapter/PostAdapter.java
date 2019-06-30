@@ -1,5 +1,7 @@
 package com.coolopool.coolopool.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.coolopool.coolopool.Activity.PostActivity;
+import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.R;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
@@ -15,11 +19,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     int[] images;
     String[] titles;
     String[] descriptions;
+    Context mContext;
 
-    public PostAdapter(int[] images,String[] titles,String[] descriptions){
+    public PostAdapter(int[] images, String[] titles, String[] descriptions, Context context){
         this.images = images;
         this.titles = titles;
         this.descriptions=descriptions;
+        this.mContext = context;
     }
 
     @NonNull
@@ -40,6 +46,16 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         viewHolder.postimage.setImageResource(image_id);
         viewHolder.posttitle.setText(title);
         viewHolder.postdesc.setText(description);
+
+        viewHolder.postimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mContext != null){
+                    mContext.startActivity(new Intent(mContext, PostActivity.class));
+                }
+
+            }
+        });
 
 
     }

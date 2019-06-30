@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.coolopool.coolopool.Activity.HomeActivity;
 import com.coolopool.coolopool.Adapter.PostAdapter;
 import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.R;
@@ -56,7 +57,7 @@ public class HomeFragment extends Fragment {
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(layoutManager);
 
-        postAdapter = new PostAdapter(images,titles,descriptions);
+        postAdapter = new PostAdapter(images,titles,descriptions, getActivity());
         recyclerView.setAdapter(postAdapter);
 
         return view;
