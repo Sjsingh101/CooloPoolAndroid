@@ -222,11 +222,6 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
                 break;
-           /* case 1:
-                transportButton.setImageResource(R.drawable.ic_taxi_selected);
-                fab.setImageResource(R.drawable.ic_search_white);
-                Log.d(TAG, "CabFragment Enabled");
-                break;*/
             case 1:
                 hotelButton.setImageResource(R.drawable.ic_hotel_selected);
                 fab.setImageResource(R.drawable.ic_search_white);

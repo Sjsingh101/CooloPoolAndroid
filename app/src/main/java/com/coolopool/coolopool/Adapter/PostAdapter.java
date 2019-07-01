@@ -1,9 +1,12 @@
 package com.coolopool.coolopool.Adapter;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +40,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PostViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull final PostViewHolder viewHolder, int i) {
 
         int image_id = images[i];
         String title = titles[i];
@@ -51,7 +54,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             @Override
             public void onClick(View view) {
                 if(mContext != null){
-                    mContext.startActivity(new Intent(mContext, PostActivity.class));
+                    Intent postIntent = new Intent(mContext, PostActivity.class);
+                    Pair<View, String> image = Pair.create((View)viewHolder.postimage, "POST_IMAGE");
+                    ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation((Activity) mContext, image);
+
+                    mContext.startActivity(postIntent, activityOptions.toBundle());
                 }
 
             }
