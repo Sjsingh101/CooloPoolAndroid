@@ -22,6 +22,7 @@
         android:transitionName="POST_IMAGE"/>
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -71,7 +72,7 @@
                     android:layout_marginLeft="16dp"/>
 
                 <LinearLayout
-                    android:id="@+id/post_activity_holder"
+                    android:id="@+id/post_activity_icon_holder_linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/post_activity_profileImage"
@@ -79,42 +80,109 @@
                     android:gravity="center_horizontal"
                     android:layout_marginTop="32dp">
 
-                    <ImageView
-                        android:id="@+id/post_activity_views_imageView"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_views"
-                        android:layout_marginLeft="32dp"/>
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="60dp">
 
-                    <ImageView
-                        android:id="@+id/post_activity_star_imageView"
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_views"/>
+
+                        <TextView
+                            android:id="@+id/post_activity_views_count_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="-2dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Views"
+                            android:textColor="@color/BattleshipGrey"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_star"
-                        android:layout_below="@id/post_activity_profileImage" />
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/post_activity_redirects_imageView"
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_star" />
+
+                        <TextView
+                            android:id="@+id/post_activity_starts_count_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="-2dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Stars"
+                            android:textColor="@color/BattleshipGrey"/>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_search_black"
-                        android:layout_below="@id/post_activity_profileImage"
-                        android:layout_toRightOf="@id/post_activity_star_imageView"
-                        android:layout_marginRight="32dp"/>
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginRight="60dp">
 
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_followers" />
+
+                        <TextView
+                            android:id="@+id/post_activity_followers_count_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="-2dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                                android:text="Followers"
+                            android:textColor="@color/BattleshipGrey"/>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
-
-
 
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@id/post_activity_holder"
+                    android:layout_below="@id/post_activity_icon_holder_linearLayout"
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="32dp"
                     android:layout_marginTop="32dp"
@@ -122,9 +190,14 @@
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:text="
-Sunny and Johnny like to pool their money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have is that they spend all of their money.
-Given a list of prices for the flavors of ice cream, select the two that will cost all of the money they have.
+Sunny and Johnny like to pooltheir money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have is that they spend all of their money.
+Given a list of prices for the flavors of ice cream, select the their money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have is that they spend all of their money.
+Given a list of prices for the flavors of their money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have is that they spend all of their money.
+Given a list of prices for the flavors of ice cream, select the their money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have is that they spend all of their money.
+Given a list of prices for the flavors of ice cream, select theice cream, select the two that will cost all of the money they have.
 For example, they have to spend and there are flavors costing . The two flavors costing and meet the criteria. Using -based indexing, they are at indices and ."/>
+
+
 
 
 
@@ -139,9 +212,11 @@ For example, they have to spend and there are flavors costing . The two flavors 
         android:id="@+id/post_activity_back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_back_white"
+        android:src="@drawable/ic_arrow_back_black"
+        android:background="@drawable/back_button_bg"
         android:layout_marginTop="32dp"
-        android:layout_marginLeft="32dp"/>
+        android:layout_marginLeft="28dp"
+        android:padding="8dp"/>
 
     <ImageView
         android:layout_width="50dp"
