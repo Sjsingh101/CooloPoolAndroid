@@ -5,6 +5,8 @@ import android.provider.ContactsContract;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -13,7 +15,10 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 
+import com.coolopool.coolopool.Adapter.ImageAdapter;
 import com.coolopool.coolopool.R;
+
+import java.util.ArrayList;
 
 public class PostActivity extends AppCompatActivity {
 
@@ -32,6 +37,27 @@ public class PostActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        ArrayList<Integer> id = new ArrayList<>();
+
+        id.add(R.drawable.pic1);
+        id.add(R.drawable.pic2);
+        id.add(R.drawable.pic3);
+        id.add(R.drawable.pic1);
+        id.add(R.drawable.pic2);
+        id.add(R.drawable.pic3);
+        id.add(R.drawable.pic1);
+        id.add(R.drawable.pic2);
+
+
+
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.post_activity_image_recyclerView);
+        ImageAdapter adapter = new ImageAdapter(id, this);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setHasFixedSize(false);
+
+        recyclerView.setAdapter(adapter);
 
 
 
