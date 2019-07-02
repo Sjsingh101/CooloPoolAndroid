@@ -180,6 +180,7 @@
 
 
                 <TextView
+                    android:id="@+id/test"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@id/post_activity_icon_holder_linearLayout"
@@ -198,7 +199,9 @@ Given a list of prices for the flavors of ice cream, select theice cream, select
 For example, they have to spend and there are flavors costing . The two flavors costing and meet the criteria. Using -based indexing, they are at indices and ."/>
 
 
-
+                <include layout="@layout/day_post_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_below="@id/test"/>
 
 
             </RelativeLayout>

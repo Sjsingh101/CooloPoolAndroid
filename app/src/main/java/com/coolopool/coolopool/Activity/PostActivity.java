@@ -33,19 +33,6 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
-        final ScrollView scrollView = (ScrollView)findViewById(R.id.post_activity_scrollView);
-        final NestedScrollView root = (NestedScrollView)findViewById(R.id.nested);
-
-        scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-            @Override
-            public void onScrollChanged() {
-                int[] loc = new int[2];
-                back.getLocationOnScreen(loc);
-                Log.d("~~~~~~~~~~~~~~~",":----------- "+loc[0]);
-
-
-            }
-        });
 
 
     }
