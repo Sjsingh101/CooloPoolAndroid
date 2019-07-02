@@ -2,6 +2,7 @@ package com.coolopool.coolopool.Activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -10,6 +11,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -38,6 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //setUpTransparentNavBar();
         fab = findViewById(R.id.fab);
 
 
@@ -129,6 +133,14 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    private void setUpTransparentNavBar(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR);
+        }
+    }
+
     private void showDialog(){
         final DialogBuilder dB = new DialogBuilder(this, R.layout.post_method_chooser);
         dB.build();
@@ -210,11 +222,6 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
                 break;
-           /* case 1:
-                transportButton.setImageResource(R.drawable.ic_taxi_selected);
-                fab.setImageResource(R.drawable.ic_search_white);
-                Log.d(TAG, "CabFragment Enabled");
-                break;*/
             case 1:
                 hotelButton.setImageResource(R.drawable.ic_hotel_selected);
                 fab.setImageResource(R.drawable.ic_search_white);

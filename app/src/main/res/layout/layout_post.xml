@@ -19,7 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/pic1" />
+            android:src="@drawable/pic1"
+            android:transitionName="POST_IMAGE"/>
 
         <LinearLayout
             android:layout_width="123dp"
