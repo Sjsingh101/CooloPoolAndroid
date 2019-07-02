@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.appyvet.materialrangebar.RangeBar;
 import com.coolopool.coolopool.Adapter.HotelAdapter;
 import com.coolopool.coolopool.Class.Hotel;
@@ -25,16 +24,13 @@ import com.coolopool.coolopool.Fragments.HomeFragment;
 import com.coolopool.coolopool.Fragments.HotelFragment;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
-
 import java.util.ArrayList;
 
 public class HotelActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
-
     HotelAdapter mHotelAdapter;
 
-    ImageButton mHotelBackbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,16 +52,15 @@ public class HotelActivity extends AppCompatActivity {
         hotels.add(new Hotel("OYO 33", "4670", "Mall road", "url", (float)4.25));
 
 
-        mRecyclerView = (RecyclerView)findViewById(R.id.hotel_activity_recyclerView);
+        mRecyclerView = findViewById(R.id.hotel_activity_recyclerView);
         mHotelAdapter = new HotelAdapter(hotels, this);
-
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mHotelAdapter);
 
         getContentsFromIntent();
 
-        final ImageButton filter = (ImageButton)findViewById(R.id.hotel_activity_filter);
-        ImageButton backButton = (ImageButton)findViewById(R.id.hotel_activity_back_button);
+        final ImageButton filter = findViewById(R.id.hotel_activity_filter);
+        ImageButton backButton = findViewById(R.id.hotel_activity_back_button);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

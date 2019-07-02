@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHolder> {
 
-    ArrayList<Hotel> hotelList;
+    private ArrayList<Hotel> hotelList;
     Context context;
 
     public HotelAdapter(ArrayList<Hotel> hotelAList, Context context) {

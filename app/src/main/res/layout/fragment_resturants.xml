@@ -6,22 +6,72 @@
     tools:context=".Fragments.RestaurantsFragment"
     android:background="@drawable/background">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        android:orientation="vertical">
 
-
-        <EditText
-            android:id="@+id/food_fragment_city_area_editText"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:background="@color/white"
-            android:hint="CITY/AREA/RESTAURANT NAME"
-            android:padding="8dp"
-            android:layout_marginTop="52dp"
-            android:transitionName="FOOD_LOCATION"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginStart="16dp"
+            android:orientation="horizontal"
+            android:weightSum="6"
+            android:elevation="16dp"
+            android:layout_marginEnd="16dp">
+            <EditText
+                android:id="@+id/food_fragment_city_area_editText"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:singleLine="true"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:hint="City/Area/Resturants"
+                />
+            <android.support.v7.widget.AppCompatImageButton
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_search_black"
+                android:background="@color/GrayGoose"
+                />
+        </LinearLayout>
 
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/topleftsharp"
+            android:elevation="16dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="start"
+                android:text="Date"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="normal" />
+
+            <DatePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </FrameLayout>

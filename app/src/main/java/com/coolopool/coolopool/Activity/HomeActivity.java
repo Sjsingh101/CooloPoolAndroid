@@ -35,6 +35,8 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton hotelButton;
     ImageButton restaurantsButton;
 
+    ImageButton userButton;
+
     MainStatePageAdapter adapter;
 
 
@@ -49,6 +51,7 @@ public class HomeActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         hotelButton = findViewById(R.id.hotelbtn);
         restaurantsButton = findViewById(R.id.foodbtn);
+        userButton = findViewById(R.id.userbtn);
 
         // for search box
 
@@ -124,6 +127,14 @@ public class HomeActivity extends AppCompatActivity {
                 updateSelectedIcon(viewPager.getCurrentItem());
                 restaurantsButton.setImageResource(R.drawable.ic_food_selected);
                 viewPager.setCurrentItem(2);
+            }
+        });
+
+        userButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent userIntent = new Intent(HomeActivity.this, UserActivity.class);
+                startActivity(userIntent);
             }
         });
 
