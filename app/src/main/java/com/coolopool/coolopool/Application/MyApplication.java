@@ -2,6 +2,9 @@ package com.coolopool.coolopool.Application;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Build;
+import android.view.Window;
+import android.view.WindowManager;
 
 public class MyApplication extends Application {
 
@@ -12,6 +15,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         MyApplication.context = getApplicationContext();
+
     }
 
     public static Context getAppContext(){

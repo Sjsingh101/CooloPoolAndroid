@@ -2,14 +2,15 @@ package com.coolopool.coolopool.Activity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -38,6 +39,7 @@ public class HotelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
+        setUpTransparentNavBar();
 
         ArrayList<Hotel> hotels = new ArrayList<>();
 
@@ -89,6 +91,13 @@ public class HotelActivity extends AppCompatActivity {
 
     }
 
+    private void setUpTransparentNavBar(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
+    }
+
     private void setupDialogButtonsClickEvent(final DialogBuilder dB){
 
         final Dialog dialog = dB.getDialog();
@@ -105,7 +114,7 @@ public class HotelActivity extends AppCompatActivity {
             }
         });
 
-        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_0_to_1_km)).setOnClickListener(new View.OnClickListener() {
+        ((LinearLayout)dialog.findViewById(R.id.food_activity_filter_0_to_1_km)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[0] == R.id.hotel_activity_filter_0_to_1_km_selector)){

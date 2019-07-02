@@ -3,12 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.RestaurantsFragment">
+    tools:context=".Fragments.RestaurantsFragment"
+    android:background="@drawable/background">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Restaurants fragments" />
+        android:padding="8dp">
+
+
+        <EditText
+            android:id="@+id/food_fragment_city_area_editText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/white"
+            android:hint="CITY/AREA/RESTAURANT NAME"
+            android:padding="8dp"
+            android:layout_marginTop="52dp"
+            android:transitionName="FOOD_LOCATION"/>
+
+    </RelativeLayout>
 
 </FrameLayout>

@@ -57,7 +57,7 @@
 
 
             <LinearLayout
-                android:id="@+id/hotel_activity_filter_0_to_1_km"
+                android:id="@+id/food_activity_filter_0_to_1_km"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

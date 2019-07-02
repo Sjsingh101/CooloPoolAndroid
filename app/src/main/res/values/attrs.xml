@@ -12,6 +12,18 @@
 
     </declare-styleable>
 
+    <declare-styleable name="FoodView">
+        <attr name="food_text" format="string"/>
+        <attr name="food_textSize" format="dimension"/>
+        <attr name="food_textColor" format="color"/>
+        <attr name="food_leftGap" format="dimension"/>
+        <attr name="food_textLeftGap" format="dimension"/>
+        <attr name="food_circleColor" format="color"/>
+        <attr name="food_numberPickerRightGap" format="dimension"/>
+        <attr name="food_counterTextColor" format="color"/>
+
+    </declare-styleable>
+
     <declare-styleable name="ReviewBarView">
 
         <attr name="string_start" format="string"/>

@@ -2,6 +2,7 @@ package com.coolopool.coolopool.Activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -10,6 +11,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -21,7 +24,7 @@ import com.coolopool.coolopool.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    static String TAG = "HomeActivit: ~~~~~~~~~~~~~~~~~~~~~~~~~";
+    static boolean isSearchButtonVisible = false;
 
     ViewPager viewPager;
     FloatingActionButton fab;
@@ -39,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //setUpTransparentNavBar();
         fab = findViewById(R.id.fab);
 
 
@@ -53,7 +57,14 @@ public class HomeActivity extends AppCompatActivity {
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSearchBox.setVisibility(View.VISIBLE);
+                if(isSearchButtonVisible){
+                    mSearchBox.setVisibility(View.INVISIBLE);
+                    isSearchButtonVisible = false;
+                }else{
+                    mSearchBox.setVisibility(View.VISIBLE);
+                    isSearchButtonVisible = true;
+                }
+
             }
         });
 
@@ -71,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-                Log.d(TAG, ""+i);
+
             }
 
             @Override
@@ -123,6 +134,14 @@ public class HomeActivity extends AppCompatActivity {
                 showDialog();
             }
         });
+    }
+
+    private void setUpTransparentNavBar(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR);
+        }
     }
 
     private void showDialog(){
@@ -189,6 +208,7 @@ public class HomeActivity extends AppCompatActivity {
     private void updateUi(int i){
 
         fab.setOnClickListener(null);
+        final Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
 
         switch (i){
             case 0:
@@ -208,8 +228,6 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(HomeActivity.this, HotelActivity.class);
-
-                        Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
 
                         intent.putExtra("LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.hotel_fragment_location)).getText().toString().trim());
 
@@ -242,12 +260,22 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(intent, activityOptions.toBundle());
                     }
                 });
-                Log.d(TAG, "HotelFragment Enabled");
                 break;
             case 2:
                 restaurantsButton.setImageResource(R.drawable.ic_food_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
-                Log.d(TAG, "ResturantFragment Enabled");
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
+                        intent.putExtra("FOOD_LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.food_fragment_city_area_editText)).getText().toString().trim());
+
+                        Pair<View, String> pair_food_location = Pair.create(currentFragment.getView().findViewById(R.id.food_fragment_city_area_editText), "FOOD_LOCATION");
+
+                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pair_food_location);
+                        startActivity(intent, activityOptions.toBundle());
+                    }
+                });
                 break;
 
             default:
