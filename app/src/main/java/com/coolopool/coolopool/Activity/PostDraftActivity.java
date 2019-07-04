@@ -1,12 +1,14 @@
 package com.coolopool.coolopool.Activity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -26,6 +28,9 @@ import com.coolopool.coolopool.Adapter.NewPostMenuAdapter;
 import com.coolopool.coolopool.R;
 
 public class PostDraftActivity extends AppCompatActivity {
+
+
+    DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +53,9 @@ public class PostDraftActivity extends AppCompatActivity {
         });
 
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
 
 
 
@@ -66,6 +72,16 @@ public class PostDraftActivity extends AppCompatActivity {
         NewPostMenuAdapter adapter = new NewPostMenuAdapter();
 
         menu.setAdapter(adapter);
+
+        ImageView menuToggel = (ImageView)findViewById(R.id.post_draft_activity_toolbar_menu_opener_imageView);
+
+        menuToggel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.openDrawer(Gravity.RIGHT);
+            }
+        });
+
     }
 
 
@@ -94,4 +110,12 @@ public class PostDraftActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        if(drawer.isDrawerOpen(Gravity.RIGHT)){
+            drawer.closeDrawer(Gravity.RIGHT);
+        }else{
+            super.onBackPressed();
+        }
+    }
 }

@@ -47,6 +47,8 @@ public class NewPostMenuAdapter extends RecyclerView.Adapter<NewPostMenuAdapter.
             title = (TextView)itemView.findViewById(R.id.menu_item_title_textView);
             icon = (ImageView)itemView.findViewById(R.id.menu_item_icon_imageView);
 
+
+
         }
     }
 }

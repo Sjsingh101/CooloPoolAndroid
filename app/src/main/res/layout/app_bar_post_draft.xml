@@ -65,6 +65,7 @@
                     android:transitionName="POST_DATE"/>
 
                 <ImageView
+                    android:id="@+id/post_draft_activity_toolbar_menu_opener_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
