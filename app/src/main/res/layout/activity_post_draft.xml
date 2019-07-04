@@ -24,7 +24,15 @@
         app:headerLayout="@layout/nav_header_post_draft"
         android:background="@color/transparent_blur_side_menu">
 
-        
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/post_draft_activity_menu_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/nav_header_height">
+
+
+
+        </android.support.v7.widget.RecyclerView>
 
     </android.support.design.widget.NavigationView>
 

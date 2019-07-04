@@ -5,6 +5,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -20,6 +22,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.coolopool.coolopool.Adapter.NewPostMenuAdapter;
 import com.coolopool.coolopool.R;
 
 public class PostDraftActivity extends AppCompatActivity {
@@ -31,6 +34,7 @@ public class PostDraftActivity extends AppCompatActivity {
         setUpTransparentNavBar();
         loadIntentData();
         setUpBackButton();
+        setUpNavigationDrawer();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -48,10 +52,20 @@ public class PostDraftActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
 
 
+
         //ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         //drawer.addDrawerListener(toggle);
         //toggle.syncState();
         //navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void setUpNavigationDrawer(){
+        RecyclerView menu = (RecyclerView)findViewById(R.id.post_draft_activity_menu_recyclerView);
+        menu.setLayoutManager(new LinearLayoutManager(PostDraftActivity.this));
+        menu.setHasFixedSize(true);
+        NewPostMenuAdapter adapter = new NewPostMenuAdapter();
+
+        menu.setAdapter(adapter);
     }
 
 
