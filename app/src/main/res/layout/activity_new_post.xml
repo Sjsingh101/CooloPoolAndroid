@@ -49,6 +49,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/new_post_activity_title_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -84,6 +85,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/new_post_activity_description_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -118,6 +120,7 @@
                 android:textStyle="bold" />
 
             <DatePicker
+                android:id="@+id/new_post_activity_date_datePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

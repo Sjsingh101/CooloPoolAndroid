@@ -45,7 +45,15 @@
         <activity
             android:name=".Activity.NewPostActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".Activity.SignUpActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
@@ -59,11 +67,6 @@
             android:name=".Activity.SplashActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Activity.HomeActivity"
