@@ -58,7 +58,8 @@
                 android:hint="Get a catchy title"
                 android:singleLine="true"
                 android:textColorHint="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:transitionName="POST_TITLE"/>
 
         </LinearLayout>
 
@@ -126,7 +127,8 @@
                 android:layout_marginTop="5dp"
                 android:calendarViewShown="false"
                 android:datePickerMode="spinner"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:transitionName="POST_DATE"/>
 
         </LinearLayout>
 

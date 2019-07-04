@@ -41,17 +41,19 @@
         <activity
             android:name=".Activity.PostDraftActivity"
             android:label="@string/title_activity_post_draft"
-            android:theme="@style/Theme.Design.Light.NoActionBar" />
-        <activity
-            android:name=".Activity.NewPostActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:windowSoftInputMode="adjustPan">
+            android:theme="@style/Theme.Design.Light.NoActionBar" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".Activity.NewPostActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
 
         </activity>
         <activity
