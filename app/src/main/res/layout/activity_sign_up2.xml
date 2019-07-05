@@ -13,24 +13,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start"
-        android:paddingStart="50dp"
-        android:layout_marginTop="16dp"
-        android:text="New \nAccount"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="SignUp"
         android:textAllCaps="false"
-        android:textColor="#fff"
-        android:textSize="45sp"
+        android:textColor="@color/white"
+        android:textSize="40sp"
         android:textStyle="bold"/>
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/userProfilePic"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"
         android:layout_width="120dp"
-        android:elevation="6dp"
-        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:scaleType="centerCrop"
+        android:layout_height="130dp"
         android:layout_gravity="center"
-        android:background="@drawable/ic_circle"
-        android:src="@drawable/facelogo"/>
+        android:src="@drawable/userfacepic"/>
 
     <EditText
         android:id="@+id/Name"
@@ -38,10 +38,10 @@
         android:layout_height="wrap_content"
         android:hint="Name"
         android:singleLine="true"
-        android:textColor="#fff"
-        android:textColorHint="@color/colorGold"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
-        android:backgroundTint="@color/colorGold"
+        android:backgroundTint="@color/GrayGoose"
         android:padding="16dp"
         android:drawableStart="@drawable/ic_profile"
         android:drawablePadding="16dp"
@@ -54,12 +54,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Phone No."
-        android:textColor="#fff"
+        android:textColor="@color/white"
         android:singleLine="true"
         android:inputType="number"
-        android:textColorHint="@color/colorGold"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
-        android:backgroundTint="@color/colorGold"
+        android:backgroundTint="@color/GrayGoose"
         android:padding="16dp"
         android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="16dp"
@@ -73,12 +73,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
-        android:textColor="#fff"
+        android:textColor="@color/white"
         android:singleLine="true"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/colorGold"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
-        android:backgroundTint="@color/colorGold"
+        android:backgroundTint="@color/GrayGoose"
         android:padding="16dp"
         android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="16dp"
@@ -91,10 +91,10 @@
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/createAccountButton"
         android:layout_width="wrap_content"
-        android:elevation="6dp"
+        android:elevation="4dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/circlebackground_white"
         android:paddingStart="50dp"
         android:paddingEnd="50dp"
@@ -102,30 +102,4 @@
         android:textColor="@android:color/black"
         android:textSize="15sp" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
-
-        <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="I Already have account"
-            android:padding="8dp"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:id="@+id/Login_btn"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Log In"
-            android:padding="8dp"
-            android:textAllCaps="false"
-            android:textColor="@android:color/darker_gray" />
-    </LinearLayout>
 </LinearLayout>

@@ -13,43 +13,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start"
-        android:paddingStart="50dp"
-        android:layout_marginTop="16dp"
-        android:text="New \nAccount"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="SignUp"
         android:textAllCaps="false"
         android:textColor="#fff"
-        android:textSize="45sp"
+        android:textSize="40sp"
         android:textStyle="bold"/>
-
-   <android.support.v7.widget.AppCompatButton
-       android:id="@+id/googleSignUp"
-       android:layout_marginTop="60dp"
-       android:layout_marginBottom="30dp"
-       android:drawableStart="@drawable/google_icon"
-       android:text="Sign Up with Goolge"
-       android:textSize="25sp"
-       android:drawablePadding="8dp"
-       android:padding="2dp"
-       android:paddingEnd="16dp"
-       android:paddingStart="16dp"
-       android:elevation="10dp"
-       android:background="@drawable/circlebackground_white"
-       android:textAllCaps="false"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_gravity="center"
-       />
 
     <EditText
         android:id="@+id/userName"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="User Name"
         android:singleLine="true"
-        android:textColor="#fff"
-        android:textColorHint="@color/colorGold"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
-        android:backgroundTint="@color/colorGold"
+        android:backgroundTint="@color/GrayGoose"
         android:padding="16dp"
         android:drawableStart="@drawable/ic_profile"
         android:drawablePadding="16dp"
@@ -62,11 +44,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Password"
-        android:textColor="#fff"
+        android:textColor="@color/white"
         android:inputType="textPassword"
-        android:textColorHint="@color/colorGold"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
-        android:backgroundTint="@color/colorGold"
+        android:backgroundTint="@color/GrayGoose"
         android:padding="16dp"
         android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="16dp"
@@ -80,11 +62,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Confirm Password"
-        android:textColor="#fff"
+        android:textColor="@color/white"
         android:inputType="textPassword"
-        android:textColorHint="@color/colorGold"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
-        android:backgroundTint="@color/colorGold"
+        android:backgroundTint="@color/GrayGoose"
         android:padding="16dp"
         android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="16dp"
@@ -93,10 +75,12 @@
         android:layout_marginTop="10dp"
         />
 
+
+
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/nextButtton"
         android:layout_width="wrap_content"
-        android:elevation="6dp"
+        android:elevation="4dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
@@ -106,6 +90,25 @@
         android:text="Next"
         android:textColor="@android:color/black"
         android:textSize="15sp" />
+
+    <View
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/GrayGoose"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+    </View>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:elevation="6dp"
+        android:src="@drawable/google_logo"
+        />
 
     <LinearLayout
         android:orientation="horizontal"
