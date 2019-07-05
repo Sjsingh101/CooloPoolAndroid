@@ -9,21 +9,37 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.coolopool.coolopool.R;
+import com.coolopool.coolopool.Storage.SharedPrefManager;
 
 public class LoginActivity extends AppCompatActivity {
 
     Button loginbtn;
-   // ImageButton mBackButton;  uncomment if back button is required.
+    // ImageButton mBackButton;  uncomment if back button is required.
     TextView signUpbtn;
-    String UserName;
+    String UserName, Password;
+
+    // Dummy URL only for testing, change it when get the real URL of the api
+    private final String LOGIN_URL = "https://my-json-server.typicode.com/typicode/demo/posts/1";
+    private EditText etusername;
+    private EditText etpassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setUpTransparentNavBar();
+
+        etusername = findViewById(R.id.login_name);
+        etpassword = findViewById(R.id.login_pass);
 
         // testing
         UserName="Sj Singh";
@@ -31,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         loginbtn = findViewById(R.id.login_btn);
         signUpbtn = findViewById(R.id.SignUp_btn);
 
-       //  uncomment if back button is required.
+        //  uncomment if back button is required.
        /* mBackButton = findViewById(R.id.backButton);
 
         mBackButton.setOnClickListener(new View.OnClickListener() {
@@ -46,9 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("Log_test","Login button is clicked");
-                Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-                intent.putExtra("name",UserName);
-                startActivity(intent);
+                setUpLogin();
             }
         });
 
@@ -62,10 +76,58 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(SharedPrefManager.getInstance(this).isLoggedIn()) {
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            startActivity(intent);
+        }
+    }
+
     private void setUpTransparentNavBar(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window w = getWindow();
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
+    }
+
+    private void setUpLogin(){
+        UserName = etusername.getText().toString().trim();
+        Password = etpassword.getText().toString().trim();
+
+        if(UserName.isEmpty()){
+            etusername.setError("Please enter a valid Username!");
+            etusername.requestFocus();
+            return;
+        }
+
+        if(Password.isEmpty() || Password.length() < 4){
+            etpassword.setError("Please enter a valid Password!");
+            etpassword.requestFocus();
+            return;
+        }
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, LOGIN_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if(SharedPrefManager.getInstance(LoginActivity.this).saveUser(response) == 1) {
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                    startActivity(intent);
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.v("Log_test", error.toString());
+            }
+        }) ;
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 }
