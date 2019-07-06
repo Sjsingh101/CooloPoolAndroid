@@ -34,6 +34,7 @@ public class NewPicPostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_pic_post);
         coverPhotoSetup();
+        setUpBackButton();
 
         RecyclerView pics = (RecyclerView) findViewById(R.id.new_pic_post_activity_pics_recyclerView);
         pics.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -52,6 +53,14 @@ public class NewPicPostActivity extends AppCompatActivity {
         });
     }
 
+    private void setUpBackButton(){
+        ((ImageView)findViewById(R.id.new_pic_post_activity_back_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+    }
 
     private void coverPhotoSetup() {
         coverImage = (ImageView) findViewById(R.id.new_pic_post_activity_cover_pic_imageView);
