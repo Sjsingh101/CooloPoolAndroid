@@ -17,7 +17,6 @@
         android:scaleType="centerCrop"
         android:transitionName="POST_IMAGE"/>
 
-
     <LinearLayout
         android:id="@+id/new_pic_post_activity_content_holder_linearLayout"
         android:layout_width="match_parent"
@@ -35,7 +34,6 @@
             android:textColor="#FFDE00"
             android:textColorHint="#FFDE00"
             android:backgroundTint="@color/transparent"/>
-
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/new_pic_post_activity_pics_recyclerView"
@@ -55,9 +53,6 @@
             android:layout_gravity="center"/>
 
     </LinearLayout>
-
-
-
 
     <ImageView
         android:id="@+id/new_pic_post_activity_back_button"
@@ -92,7 +87,5 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </FrameLayout>
-
-
 
 </android.support.design.widget.CoordinatorLayout>

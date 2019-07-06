@@ -52,9 +52,6 @@
 
     </LinearLayout>
 
-
-
-
     <ImageView
         android:id="@+id/new_blog_post_activity_back_button"
         android:layout_width="wrap_content"
@@ -88,7 +85,5 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </FrameLayout>
-
-
 
 </android.support.design.widget.CoordinatorLayout>
