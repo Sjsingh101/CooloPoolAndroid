@@ -16,7 +16,7 @@ import com.coolopool.coolopool.R;
 
 import java.util.ArrayList;
 
-import Interface.ItemClickListener;
+import com.coolopool.coolopool.Interface.ItemClickListener;
 
 public class NewDayAdapter extends RecyclerView.Adapter<NewDayAdapter.NewDayViewHolder> {
 
