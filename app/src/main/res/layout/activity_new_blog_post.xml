@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.NewBlogPostActivity">
+
+    <ImageView
+        android:id="@+id/new_blog_post_activity_cover_pic_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/add_cover_pic"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:layout_gravity="top"
+        android:scaleType="centerCrop"
+        android:transitionName="POST_IMAGE"/>
+
+
+    <LinearLayout
+        android:id="@+id/new_blog_post_activity_content_holder_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300dp"
+        android:orientation="vertical"
+        android:background="@drawable/background">
+
+        <EditText
+            android:id="@+id/new_blog_post_activity_title_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="+ Add Title"
+            android:padding="32dp"
+            android:textColor="#FFDE00"
+            android:textColorHint="#FFDE00"
+            android:gravity="center"
+            android:background="@color/transparent"/>
+
+        <EditText
+            android:id="@+id/new_blog_post_activity_description_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:hint="+ Add Description"
+            android:textColorHint="#FFDE00"
+            android:textColor="#FFDE00"
+            android:gravity="center"
+            android:background="@color/transparent"/>
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/new_blog_post_activity_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back_black"
+        android:background="@drawable/back_button_bg"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="28dp"
+        android:padding="8dp"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_anchorGravity="center">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:color/transparent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Post"
+            android:elevation="16dp"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>

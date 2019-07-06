@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        tools:listitem="@layout/image_view_list_item"
+        tools:listitem="@layout/small_image_view_list_item"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         android:padding="8dp">
 

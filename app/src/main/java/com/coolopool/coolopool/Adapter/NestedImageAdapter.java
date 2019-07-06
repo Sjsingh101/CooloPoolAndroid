@@ -20,21 +20,33 @@ public class NestedImageAdapter extends RecyclerView.Adapter<NestedImageAdapter.
 
     ArrayList<Uri> mList;
     Context mContext;
+    int imageSize = 0; //0 for SMALL & 1 for BIG
 
     public NestedImageAdapter(ArrayList<Uri> mList, Context mContext) {
         this.mList = mList;
         this.mContext = mContext;
     }
 
+    public NestedImageAdapter(ArrayList<Uri> mList, Context mContext, int imageSize) {
+        this.mList = mList;
+        this.mContext = mContext;
+        this.imageSize = imageSize;
+    }
+
     @NonNull
     @Override
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new ImageViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.image_view_list_item, viewGroup, false));
+        if(imageSize == 0){
+            return new ImageViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.small_image_view_list_item, viewGroup, false));
+        }
+
+        return new ImageViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.large_image_view_list_item, viewGroup, false));
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder imageViewHolder, int i) {
-        Picasso.get().load(mList.get(i)).fit().centerCrop().placeholder(R.drawable.pic1).into(imageViewHolder.imageView);
+        Picasso.get().load(mList.get(i)).fit().centerCrop().into(imageViewHolder.imageView);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package Interface;
+package com.coolopool.coolopool.Interface;
 
 import android.view.View;
 
