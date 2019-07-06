@@ -6,4 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".Activity.NewBlogPostActivity">
 
+    <ImageView
+        android:id="@+id/post_activity_main_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/pic1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:layout_gravity="top"
+        android:scaleType="centerCrop"
+        android:transitionName="POST_IMAGE"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/post_activity_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/white"
+            android:layout_marginTop="300dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/post_activity_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back_black"
+        android:background="@drawable/back_button_bg"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="28dp"
+        android:padding="8dp"/>
+
 </android.support.constraint.ConstraintLayout>
