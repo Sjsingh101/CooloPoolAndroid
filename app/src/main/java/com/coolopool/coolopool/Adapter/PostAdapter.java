@@ -16,6 +16,9 @@ import android.widget.TextView;
 import com.coolopool.coolopool.Activity.PostActivity;
 import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.R;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
@@ -64,6 +67,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             }
         });
 
+        Picasso.get().load(R.drawable.photo2).fit().centerCrop().into(viewHolder.profilePic);
+
 
     }
 
@@ -76,11 +81,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         ImageView postimage;
         TextView posttitle,postdesc;
+        CircleImageView profilePic;
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
             postimage = itemView.findViewById(R.id.post_image);
             posttitle = itemView.findViewById(R.id.title);
             postdesc = itemView.findViewById(R.id.desc);
+            profilePic = itemView.findViewById(R.id.layout_post_profile_picture_imageView);
         }
 
 

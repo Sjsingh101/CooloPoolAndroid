@@ -68,10 +68,11 @@
                     android:backgroundTint="@android:color/transparent"
                     android:src="@drawable/ic_heart" />
 
-                <ImageButton
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/layout_post_profile_picture_imageView"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="-5dp"
+                   android:padding="8dp"
                     android:backgroundTint="@android:color/transparent"
                     android:src="@drawable/ic_information" />
 

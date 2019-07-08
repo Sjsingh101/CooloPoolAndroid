@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.HotelActivity"
-    android:background="@drawable/background">
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
             android:id="@+id/food_activity_topBar_holder_relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@drawable/background"
             android:layout_alignParentTop="true">
 
             <ImageButton
@@ -128,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_settings_black"
+                android:src="@drawable/ic_filter_tool_black_shape"
                 android:backgroundTint="@color/transparent"/>
 
 
