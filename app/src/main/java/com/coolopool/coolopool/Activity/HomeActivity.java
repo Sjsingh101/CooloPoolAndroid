@@ -1,6 +1,7 @@
 package com.coolopool.coolopool.Activity;
 
 import android.app.ActivityOptions;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
@@ -13,8 +14,12 @@ import android.util.Pair;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.Adapter.MainStatePageAdapter;
@@ -34,6 +39,9 @@ public class HomeActivity extends AppCompatActivity {
 
     ImageButton hotelButton;
     ImageButton restaurantsButton;
+
+    RadioButton topRadioButton;
+    RadioButton bottomRadioButton;
 
     ImageButton userButton;
 
@@ -57,9 +65,18 @@ public class HomeActivity extends AppCompatActivity {
 
         mSearchButton = findViewById(R.id.searchButton);
         final EditText mSearchBox = findViewById(R.id.searchbar);
+
+
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                DialogBuilder dialogBuilder = new DialogBuilder(HomeActivity.this, R.layout.home_activity_search_dialog_layout);
+                dialogBuilder.build();
+
+                setUpDialogForSearch(dialogBuilder);
+
+
                 if(isSearchButtonVisible){
                     mSearchBox.setVisibility(View.INVISIBLE);
                     isSearchButtonVisible = false;
@@ -153,6 +170,45 @@ public class HomeActivity extends AppCompatActivity {
             w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR);
         }
+    }
+
+    private void setUpDialogForSearch(DialogBuilder db){
+        final Dialog dialog = db.getDialog();
+        topRadioButton = (RadioButton)dialog.findViewById(R.id.search_dialog_top_radioBar);
+        bottomRadioButton = (RadioButton)dialog.findViewById(R.id.search_dialog_bottom_radioBar);
+
+        ((ImageView)dialog.findViewById(R.id.search_dialog_back_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        topRadioButton.setChecked(true);
+
+        topRadioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+            }
+        });
+
+        topRadioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                topRadioButton.setChecked(true);
+                bottomRadioButton.setChecked(false);
+            }
+        });
+
+        bottomRadioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomRadioButton.setChecked(true);
+                topRadioButton.setChecked(false);
+            }
+        });
+
     }
 
     private void showDialog(){
