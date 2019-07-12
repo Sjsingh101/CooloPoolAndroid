@@ -486,7 +486,7 @@ https://goo.gl/maps/Wjv3aqshP7ZZs7gS9"
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        android:src="@drawable/ic_heart_like"
+        android:src="@drawable/ic_like_heart"
         android:layout_gravity="center"
         app:popupTheme="@style/AppTheme.PopupOverlay"/>
 

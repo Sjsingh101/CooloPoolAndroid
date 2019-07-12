@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_day_tag"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/create_new_day_list_item_day_counter_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Day 1"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="5dp" />
+
+    <EditText
+        android:id="@+id/create_new_day_list_item_desc_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/transparent"
+        android:hint="+ Add Description"
+        android:gravity="center"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/create_new_day_list_image_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        tools:listitem="@layout/small_image_view_list_item"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        android:padding="8dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+
+</RelativeLayout>

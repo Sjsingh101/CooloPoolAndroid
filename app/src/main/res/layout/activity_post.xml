@@ -122,7 +122,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_star" />
+                            android:src="@drawable/ic_like_heart" />
 
                         <TextView
                             android:id="@+id/post_activity_starts_count_textView"
@@ -137,7 +137,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Stars"
+                            android:text="Likes"
                             android:textColor="@color/BattleshipGrey"/>
 
 
@@ -170,7 +170,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                                android:text="Followers"
+                            android:text="Experienced"
                             android:textColor="@color/BattleshipGrey"/>
 
 
@@ -231,7 +231,7 @@ For example, they have to spend and there are flavors costing . The two flavors 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/ic_heart_like"
+        android:src="@drawable/ic_shopping_cart"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="24dp"
         android:layout_marginTop="32dp"

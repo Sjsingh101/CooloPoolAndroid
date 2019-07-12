@@ -49,6 +49,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/new_post_activity_title_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -57,7 +58,8 @@
                 android:hint="Get a catchy title"
                 android:singleLine="true"
                 android:textColorHint="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:transitionName="POST_TITLE"/>
 
         </LinearLayout>
 
@@ -84,6 +86,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/new_post_activity_description_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -118,12 +121,14 @@
                 android:textStyle="bold" />
 
             <DatePicker
+                android:id="@+id/new_post_activity_date_datePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:calendarViewShown="false"
                 android:datePickerMode="spinner"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:transitionName="POST_DATE"/>
 
         </LinearLayout>
 

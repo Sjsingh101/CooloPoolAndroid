@@ -15,9 +15,11 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.PostActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
-        </activity>
+        <activity android:name=".Activity.NewPicPostActivity"></activity>
+        <activity android:name=".Activity.NewBlogPostActivity" />
+        <activity
+            android:name=".Activity.PostActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".Activity.DetailFoodActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
@@ -27,11 +29,9 @@
         <activity
             android:name=".Activity.DetailHotelActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
-
         <activity
             android:name=".Activity.UserActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"/>
-
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".Activity.HotelActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
@@ -57,7 +57,13 @@
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".Activity.SplashActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
+            android:theme="@style/Theme.Design.Light.NoActionBar" >
+
+        </activity>
+        <activity
+            android:name=".Activity.HomeActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,10 +71,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Activity.HomeActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>

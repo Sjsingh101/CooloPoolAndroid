@@ -8,4 +8,14 @@
     tools:context=".Activity.PostDraftActivity"
     tools:showIn="@layout/app_bar_post_draft">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/post_draft_activity_content_holder_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:listitem="@layout/create_new_day_list_item">
+
+    </android.support.v7.widget.RecyclerView>
+
+
 </android.support.constraint.ConstraintLayout>

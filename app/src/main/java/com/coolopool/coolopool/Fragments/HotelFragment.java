@@ -14,6 +14,7 @@ import android.widget.NumberPicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
 
@@ -138,7 +139,7 @@ public class HotelFragment extends Fragment {
         }
 
         ((TextView)v.findViewById(R.id.checkIn_value_day_of_week_textView)).setText(dayOfWeek);
-        ((TextView)v.findViewById(R.id.checkIn_value_year_month_textView)).setText(MONTHS[month]+" "+year);
+        ((TextView)v.findViewById(R.id.checkIn_value_year_month_textView)).setText(MyApplication.MONTHS[month]+" "+year);
 
         dB.destroy();
 

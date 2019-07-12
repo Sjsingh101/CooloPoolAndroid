@@ -10,10 +10,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.coolopool.coolopool.R;
+import com.coolopool.coolopool.Storage.SharedPrefManager;
 
 public class SplashActivity extends AppCompatActivity {
 
     Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,12 +26,19 @@ public class SplashActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SplashActivity.this,LoginActivity.class));
+                if (SharedPrefManager.getInstance(SplashActivity.this).isLoggedIn()) {
+                    Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                    startActivity(intent);
+                } else {
+                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                }
             }
         });
     }
 
-    private void setUpTransparentNavBar(){
+    private void setUpTransparentNavBar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window w = getWindow();
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
