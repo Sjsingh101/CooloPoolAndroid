@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:text="+ Add Photos"
             android:textSize="32sp"
+            android:textColor="@color/white"
             android:layout_gravity="center"/>
 
     </LinearLayout>
