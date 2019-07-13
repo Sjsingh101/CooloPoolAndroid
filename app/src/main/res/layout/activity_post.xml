@@ -231,7 +231,7 @@ For example, they have to spend and there are flavors costing . The two flavors 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/ic_shopping_cart"
+        android:src="@drawable/ic_cart_black"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="24dp"
         android:layout_marginTop="32dp"

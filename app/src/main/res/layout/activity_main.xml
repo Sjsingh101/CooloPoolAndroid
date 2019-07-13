@@ -6,7 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="bottom"
     tools:context=".Activity.HomeActivity"
-    android:background="@drawable/background">
+    android:background="#0072e2">
+
 
     <LinearLayout
 
@@ -18,24 +19,7 @@
         android:paddingEnd="0dp"
         android:baselineAligned="false">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/transparent"
-            android:layout_gravity="center"
-            android:layout_weight="4">
-            <EditText
-                android:id="@+id/searchbar"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/search_box"
-                android:visibility="invisible"
-                android:singleLine="true"
-                android:padding="4dp"
-                android:background="@drawable/rounded_edittext"
-                android:inputType="text"/>
 
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -44,7 +28,7 @@
             android:layout_weight="1">
             <ImageButton
                 android:id="@+id/searchButton"
-                android:src="@drawable/ic_search_white"
+                android:src="@drawable/ic_search_black"
                 android:backgroundTint="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:tint="@color/transparent"
@@ -57,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <ImageButton
-                android:src="@drawable/ic_cart"
+                android:src="@drawable/ic_cart_black"
                 android:backgroundTint="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -68,12 +52,17 @@
     </LinearLayout>
 
 
+
+
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:layout_marginTop="40dp"/>
+
+
+
 
 
     <android.support.design.widget.FloatingActionButton
