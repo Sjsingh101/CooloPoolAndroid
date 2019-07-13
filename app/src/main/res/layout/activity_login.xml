@@ -9,7 +9,7 @@
     android:background="@drawable/background">
 
 
-    <!-- Uncomment if it requried -->
+    <!-- Uncomment if it required -->
     <!--<ImageButton
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
@@ -23,7 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:gravity="center"
+        android:gravity="start"
+        android:layout_marginStart="40dp"
         android:text="Log In"
         android:textAllCaps="false"
         android:textColor="#fff"
@@ -39,12 +40,12 @@
         android:drawableStart="@drawable/ic_profile"
         android:drawablePadding="18dp"
         android:hint="@string/UserName"
-        android:backgroundTint="@color/colorGold"
+        android:backgroundTint="@color/GrayGoose"
         android:padding="15dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:textColor="@color/colorGold"
-        android:textColorHint="@color/colorGold"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         />
 
@@ -54,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="40dp"
-        android:backgroundTint="@color/colorGold"
+        android:backgroundTint="@color/GrayGoose"
         android:layout_marginTop="20dp"
         android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="18dp"
@@ -62,8 +63,8 @@
         android:inputType="textPassword"
         android:padding="15dp"
         android:layout_marginLeft="40dp"
-        android:textColor="@color/colorGold"
-        android:textColorHint="@color/colorGold"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp" />
 
 
@@ -73,6 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="150dp"
+        android:elevation="4dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/circlebackground_white"
         android:text="Log In"

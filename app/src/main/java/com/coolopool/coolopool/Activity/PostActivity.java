@@ -39,14 +39,14 @@ public class PostActivity extends AppCompatActivity {
 
         ArrayList<Integer> id = new ArrayList<>();
 
-        id.add(R.drawable.pic1);
-        id.add(R.drawable.pic2);
-        id.add(R.drawable.pic3);
-        id.add(R.drawable.pic1);
-        id.add(R.drawable.pic2);
-        id.add(R.drawable.pic3);
-        id.add(R.drawable.pic1);
-        id.add(R.drawable.pic2);
+        id.add(R.drawable.photo2);
+        id.add(R.drawable.photo4);
+        id.add(R.drawable.photo1);
+        id.add(R.drawable.photo5);
+        id.add(R.drawable.photo3);
+        id.add(R.drawable.photo1);
+        id.add(R.drawable.photo2);
+        id.add(R.drawable.photo3);
 
 
 

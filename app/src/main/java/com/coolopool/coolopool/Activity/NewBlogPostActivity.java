@@ -24,17 +24,17 @@ public class NewBlogPostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_blog_post);
         coverPhotoSetup();
-        setUpBackButton();
+        /*setUpBackButton();*/
     }
 
-    private void setUpBackButton(){
+ /*   private void setUpBackButton(){
         ((ImageView)findViewById(R.id.new_blog_post_activity_back_button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
             }
         });
-    }
+    }*/
 
     private void coverPhotoSetup() {
         coverImage = (ImageView) findViewById(R.id.new_blog_post_activity_cover_pic_imageView);

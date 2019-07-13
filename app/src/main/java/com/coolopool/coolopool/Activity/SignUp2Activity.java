@@ -18,12 +18,13 @@ import android.widget.TextView;
 
 import com.coolopool.coolopool.R;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class SignUp2Activity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int RESULT_LOAD_IMAGE = 1;
     Button mCreateButton;
-    TextView mLoginButton;
-    ImageButton mUserProfilePic;
+    CircleImageView mUserProfilePic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +33,9 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
 
         mUserProfilePic = findViewById(R.id.userProfilePic);
         mCreateButton = findViewById(R.id.createAccountButton);
-        mLoginButton = findViewById(R.id.Login_btn);
 
         mUserProfilePic.setOnClickListener(this);
         mCreateButton.setOnClickListener(this);
-        mLoginButton.setOnClickListener(this);
     }
 
     @Override
@@ -51,10 +50,6 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
             case R.id.createAccountButton:
                 Intent createAccountIntent = new Intent(SignUp2Activity.this,LoginActivity.class);
                 startActivity(createAccountIntent);
-                break;
-            case R.id.Login_btn:
-                Intent loginIntent = new Intent(SignUp2Activity.this,LoginActivity.class);
-                startActivity(loginIntent);
                 break;
         }
     }

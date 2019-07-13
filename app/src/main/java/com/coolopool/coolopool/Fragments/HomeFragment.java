@@ -21,7 +21,7 @@ import com.coolopool.coolopool.R;
 public class HomeFragment extends Fragment {
 
     RecyclerView recyclerView;
-    int[] images ={R.drawable.pic1,R.drawable.pic2,R.drawable.pic3,R.drawable.pic1,R.drawable.pic2,R.drawable.pic3};
+    int[] images ={R.drawable.photo3,R.drawable.photo5,R.drawable.photo1,R.drawable.photo4,R.drawable.photo2,R.drawable.photo5};
     String[] titles ={"Afgfgf","A","A","A","A","A"};
     String[] descriptions ={"A","A","A","A","A","A"};
     RecyclerView.LayoutManager layoutManager;
@@ -39,7 +39,6 @@ public class HomeFragment extends Fragment {
 
 
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

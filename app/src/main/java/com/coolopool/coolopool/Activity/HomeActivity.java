@@ -231,13 +231,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        (dB.getDialog().findViewById(R.id.new_post_trip)).setOnClickListener(new View.OnClickListener() {
+        /*(dB.getDialog().findViewById(R.id.new_post_trip)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Normal way of creating post using trip details
                 startActivity(new Intent(HomeActivity.this,NewPostActivity.class));
             }
-        });
+        });*/
     }
 
     private void updateSelectedIcon(int i){

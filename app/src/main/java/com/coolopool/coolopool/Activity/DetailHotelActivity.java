@@ -51,7 +51,7 @@ public class DetailHotelActivity extends AppCompatActivity {
         reviews.add(new Review(R.drawable.pic1, 4, "Delhi, Near hauz khas metro", "Clean and comfortable", des, "20 Jun 2019"));
         reviews.add(new Review(R.drawable.pic2, 3.5f, "varanasi, Near godowlia khas metro", "Excellent stay", des, "02 Apr 2019"));
         reviews.add(new Review(R.drawable.pic3, 2.5f, "Delhi, Near hauz khas metro", "Strange, but liked it", des, "20 May 2017"));
-        reviews.add(new Review(R.drawable.google_icon, 4, "Chennai, Near hauz khas metro", "Well organised", des, "01 Jan 2018"));
+        reviews.add(new Review(R.drawable.google_logo, 4, "Chennai, Near hauz khas metro", "Well organised", des, "01 Jan 2018"));
         reviews.add(new Review(R.drawable.pic3, 2.0f, "Delhi, Near hauz khas metro", "Very poor", des, "09 Sep 2019"));
         reviews.add(new Review(R.drawable.pic1, 3f, "Hyderabad, Near hauz khas metro", "Average, great location", des, "23 Feb 2019"));
         reviews.add(new Review(R.drawable.pic1, 4.7f, "Bangalore, Near hauz khas metro", "Memorable stay", des, "03 May 2017"));
