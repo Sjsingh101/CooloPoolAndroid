@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context=".Activity.NewPicPostActivity">
 
     <ImageView
         android:id="@+id/new_pic_post_activity_cover_pic_imageView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:src="@drawable/add_cover_pic"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/white"
         android:layout_gravity="top"
         android:scaleType="centerCrop"
@@ -20,72 +22,92 @@
     <LinearLayout
         android:id="@+id/new_pic_post_activity_content_holder_linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="300dp"
-        android:orientation="vertical"
-        android:background="@drawable/background">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/new_pic_post_activity_cover_pic_imageView"
+        android:layout_marginBottom="0dp"
+        android:background="@color/transparent"
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/new_pic_post_activity_title_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:singleLine="true"
+            android:backgroundTint="@color/transparent"
+            android:elevation="2dp"
             android:hint="+ Add Title"
-            android:padding="32dp"
-            android:textColor="#FFDE00"
-            android:textColorHint="#FFDE00"
-            android:backgroundTint="@color/transparent"/>
+            android:padding="6dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="25sp" />
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/GrayGoose"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/new_pic_post_activity_pics_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
-
-
-        </android.support.v7.widget.RecyclerView>
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="6dp"/>
 
         <TextView
             android:id="@+id/new_pic_post_activity_add_pics_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="+ Add Photos"
-            android:textSize="32sp"
-            android:layout_gravity="center"/>
-
+            android:textColor="@color/white"
+            android:textSize="25sp" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/new_pic_post_activity_back_button"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_back_black"
-        android:background="@drawable/back_button_bg"
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="28dp"
-        android:padding="8dp"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="end">
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="@dimen/fab_margin"
-        app:layout_anchorGravity="center">
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:color/transparent"/>
-
-        <TextView
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Post"
-            android:elevation="16dp"
-            android:textColor="@android:color/white"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:layout_margin="@dimen/fab_margin"
+            android:layout_marginBottom="20dp"
+            app:layout_anchorGravity="center">
 
-    </FrameLayout>
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                android:src="@android:color/transparent" />
 
-</android.support.design.widget.CoordinatorLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:elevation="16dp"
+                android:text="Post"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/white" />
+
+        </FrameLayout>
+    </LinearLayout>
+   <!-- <ImageView
+        android:id="@+id/new_pic_post_activity_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@drawable/back_button_bg"
+        android:padding="8dp"
+        android:src="@drawable/ic_arrow_back_black" />-->
+</RelativeLayout>

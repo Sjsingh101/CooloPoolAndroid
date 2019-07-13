@@ -15,7 +15,8 @@
             android:id="@+id/food_activity_topBar_holder_relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:background="@color/white"
+            android:background="@color/transparent"
+            android:elevation="4dp"
             android:layout_alignParentTop="true">
 
             <ImageButton
@@ -32,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="City"
+                android:textColor="@color/white"
                 android:layout_toRightOf="@id/food_activity_back_button"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:transitionName="FOOD_LOCATION"

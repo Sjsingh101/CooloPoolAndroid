@@ -166,7 +166,7 @@ public class HotelFragment extends Fragment {
         dB.destroy();
     }
 
-    private void guestsBack(View v, DialogBuilder dB){
+    /*private void guestsBack(View v, DialogBuilder dB){
         NumberPicker numberPicker = (NumberPicker)dB.getDialog().findViewById(R.id.numberPicker);
         numberPicker.setWrapSelectorWheel(true);
 
@@ -201,7 +201,7 @@ public class HotelFragment extends Fragment {
 
         dB.destroy();
 
-    }
+    }*/
 
     private String getDayOfWeek(int day, int month, int year){
         String date = ""+day+"/"+(month+1)+"/"+year;
