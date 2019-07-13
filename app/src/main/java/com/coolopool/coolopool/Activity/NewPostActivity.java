@@ -25,7 +25,6 @@ public class NewPostActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_post);
-        setUpTransparentNavBar();
 
         final EditText title = (EditText)findViewById(R.id.new_post_activity_title_editText);
         final DatePicker datePicker = (DatePicker)findViewById(R.id.new_post_activity_date_datePicker);
@@ -64,10 +63,4 @@ public class NewPostActivity extends AppCompatActivity {
     }
 
 
-    private void setUpTransparentNavBar(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-    }
 }

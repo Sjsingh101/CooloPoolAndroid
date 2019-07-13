@@ -28,7 +28,7 @@
             android:layout_weight="1">
             <ImageButton
                 android:id="@+id/searchButton"
-                android:src="@drawable/ic_search_black"
+                android:src="@drawable/ic_search_white"
                 android:backgroundTint="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:tint="@color/transparent"
@@ -71,6 +71,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
+        android:backgroundTint="@color/top_bar"
         android:src="@drawable/ic_add"
         app:layout_anchor="@id/bar" />
 

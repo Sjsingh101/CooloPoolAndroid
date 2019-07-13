@@ -37,7 +37,6 @@ public class DetailFoodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_food);
 
-        setUpTransparentNavBar();
         setUpToolbar();
         setUpRestaurantInfo();
         setUpAmenities();
@@ -47,12 +46,7 @@ public class DetailFoodActivity extends AppCompatActivity {
 
     }
 
-    private void setUpTransparentNavBar(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-    }
+
 
     private void setUpToolbar(){
         final Toolbar toolbar = (Toolbar) findViewById(R.id.detail_food_activity_toolbar);

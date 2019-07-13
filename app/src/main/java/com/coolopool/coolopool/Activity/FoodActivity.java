@@ -33,7 +33,6 @@ public class FoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
-        setUpTransparentNavBar();
         getContentsFromIntent();
 
         String[] array = {"Indian", "Italian"};
@@ -75,12 +74,6 @@ public class FoodActivity extends AppCompatActivity {
         });
     }
 
-    private void setUpTransparentNavBar(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-    }
 
     private void setupDialogButtonsClickEvent(final DialogBuilder dB){
 

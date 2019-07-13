@@ -6,6 +6,8 @@ import android.os.Build;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.coolopool.coolopool.R;
+
 public class MyApplication extends Application {
 
 
@@ -17,6 +19,7 @@ public class MyApplication extends Application {
         super.onCreate();
         MyApplication.context = getApplicationContext();
 
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/glacial_indifference_regular");
     }
 
     public static Context getAppContext(){

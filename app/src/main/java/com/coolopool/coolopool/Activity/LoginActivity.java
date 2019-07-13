@@ -35,8 +35,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        setUpTransparentNavBar();
 
         etusername = findViewById(R.id.login_name);
         etpassword = findViewById(R.id.login_pass);
@@ -88,12 +86,6 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void setUpTransparentNavBar(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-    }
 
     private void setUpLogin(){
         UserName = etusername.getText().toString().trim();

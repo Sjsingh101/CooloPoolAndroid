@@ -189,6 +189,7 @@
                     android:layout_marginTop="32dp"
                     android:lineHeight="30dp"
                     android:textSize="20sp"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:textColor="@color/black"
                     android:text="
 Sunny and Johnny like to pooltheir money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have is that they spend all of their money.
@@ -226,7 +227,7 @@ For example, they have to spend and there are flavors costing . The two flavors 
         android:background="@drawable/back_button_bg"
         android:layout_marginTop="32dp"
         android:layout_marginLeft="28dp"
-        android:padding="8dp"/>
+        android:padding="8dp" />
 
     <ImageView
         android:layout_width="50dp"

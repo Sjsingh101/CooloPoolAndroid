@@ -52,7 +52,6 @@ public class PostDraftActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_draft);
         init();
-        setUpTransparentNavBar();
         loadIntentData();
         setUpBackButton();
         setUpNavigationDrawer();
@@ -164,13 +163,6 @@ public class PostDraftActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-    }
-
-    private void setUpTransparentNavBar(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
     }
 
     @Override
