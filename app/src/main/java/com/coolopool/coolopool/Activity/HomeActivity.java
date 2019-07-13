@@ -29,7 +29,6 @@ import com.coolopool.coolopool.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    static boolean isSearchButtonVisible = false;
 
     ViewPager viewPager;
     FloatingActionButton fab;
@@ -64,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
         // for search box
 
         mSearchButton = findViewById(R.id.searchButton);
-        final EditText mSearchBox = findViewById(R.id.searchbar);
+
 
 
         mSearchButton.setOnClickListener(new View.OnClickListener() {
@@ -76,14 +75,6 @@ public class HomeActivity extends AppCompatActivity {
 
                 setUpDialogForSearch(dialogBuilder);
 
-
-                if(isSearchButtonVisible){
-                    mSearchBox.setVisibility(View.INVISIBLE);
-                    isSearchButtonVisible = false;
-                }else{
-                    mSearchBox.setVisibility(View.VISIBLE);
-                    isSearchButtonVisible = true;
-                }
 
             }
         });

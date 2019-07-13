@@ -15,7 +15,7 @@
             android:id="@+id/food_activity_topBar_holder_relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:background="@color/white"
+            android:background="@color/top_bar"
             android:layout_alignParentTop="true">
 
             <ImageButton
