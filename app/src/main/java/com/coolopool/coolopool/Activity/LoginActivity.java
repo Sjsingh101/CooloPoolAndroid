@@ -1,6 +1,10 @@
 package com.coolopool.coolopool.Activity;
 
+import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -57,11 +62,23 @@ public class LoginActivity extends AppCompatActivity {
             }
         });*/
 
+
+        ConnectivityManager connMgr =
+                (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        // Get details on the currently active default data network
+        final NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("Log_test","Login button is clicked");
-                setUpLogin();
+                // If there is a network connection, setup Login
+                if (networkInfo != null && networkInfo.isConnected()) {
+                    setUpLogin();
+                } else {
+                    Toast.makeText(LoginActivity.this,"No Internet Connection.",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

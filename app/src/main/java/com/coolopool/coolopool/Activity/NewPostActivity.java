@@ -27,6 +27,7 @@ public class NewPostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_post);
 
         final EditText title = (EditText)findViewById(R.id.new_post_activity_title_editText);
+        final EditText description = (EditText)findViewById(R.id.new_post_activity_description_editText);
         final DatePicker datePicker = (DatePicker)findViewById(R.id.new_post_activity_date_datePicker);
 
         swipeUp = findViewById(R.id.swipe_up);
@@ -41,6 +42,7 @@ public class NewPostActivity extends AppCompatActivity {
                 super.onSwipeUp();
                 Intent draftPostActivity = new Intent(NewPostActivity.this,PostDraftActivity.class);
                 draftPostActivity.putExtra("Title", title.getText().toString().trim());
+                draftPostActivity.putExtra("Description", description.getText().toString().trim());
                 String date = "";
                 date = date + MyApplication.MONTHS[datePicker.getMonth()] + " " + datePicker.getDayOfMonth() + ", " + datePicker.getYear();
                 draftPostActivity.putExtra("Date", date);
