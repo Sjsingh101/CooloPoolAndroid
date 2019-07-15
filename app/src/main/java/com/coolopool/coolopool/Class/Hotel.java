@@ -7,12 +7,12 @@ public class Hotel implements Serializable {
     private String mName;
     private String mCost;
     private String mLocation;
-    private String mThumbnailUrl;
+    private int mThumbnailUrl;
     private float mRating;
 
     public Hotel(){}
 
-    public Hotel(String mName, String mCost, String mLocation, String mThumbnailUrl, float mRating) {
+    public Hotel(String mName, String mCost, String mLocation, int mThumbnailUrl, float mRating) {
         this.mName = mName;
         this.mCost = mCost;
         this.mLocation = mLocation;
@@ -32,7 +32,7 @@ public class Hotel implements Serializable {
         return mLocation;
     }
 
-    public String getmThumbnailUrl() {
+    public int getmThumbnailUrl() {
         return mThumbnailUrl;
     }
 
@@ -52,7 +52,7 @@ public class Hotel implements Serializable {
         this.mLocation = mLocation;
     }
 
-    public void setmThumbnailUrl(String mThumbnailUrl) {
+    public void setmThumbnailUrl(int mThumbnailUrl) {
         this.mThumbnailUrl = mThumbnailUrl;
     }
 

@@ -38,17 +38,17 @@ public class HotelActivity extends AppCompatActivity {
 
         ArrayList<Hotel> hotels = new ArrayList<>();
 
-        hotels.add(new Hotel("ABCD", "4000", "Mall road", "url", 3.5f));
-        hotels.add(new Hotel("Residence", "5500", "Mall road", "url", 5f));
-        hotels.add(new Hotel("OYO 337", "6079", "GT road", "url", 4.5f));
-        hotels.add(new Hotel("OYO 334", "4040", "Nh32 road", "url", 2.5f));
-        hotels.add(new Hotel("OYO 654", "4400", "Nh21 road", "url", 4.5f));
-        hotels.add(new Hotel("OYO 323", "8000", "Mall road", "url", 5f));
-        hotels.add(new Hotel("OYO 110", "4060", "Mall road", "url", 4.5f));
-        hotels.add(new Hotel("OYO 111", "9000", "Mall road", "url", 1.5f));
-        hotels.add(new Hotel("OYO 999", "4560", "Mall road", "url", 4.5f));
-        hotels.add(new Hotel("OYO 600", "4900", "Mall road", "url", 5f));
-        hotels.add(new Hotel("OYO 33", "4670", "Mall road", "url", 4.25f));
+        hotels.add(new Hotel("ABCD", "4000", "Mall road", R.drawable.photo3, 3.5f));
+        hotels.add(new Hotel("Residence", "5500", "Mall road", R.drawable.photo5, 5f));
+        hotels.add(new Hotel("OYO 337", "6079", "GT road", R.drawable.photo3, 4.5f));
+        hotels.add(new Hotel("OYO 334", "4040", "Nh32 road", R.drawable.photo4, 2.5f));
+        hotels.add(new Hotel("OYO 654", "4400", "Nh21 road", R.drawable.photo3, 4.5f));
+        hotels.add(new Hotel("OYO 323", "8000", "Mall road", R.drawable.photo5, 5f));
+        hotels.add(new Hotel("OYO 110", "4060", "Mall road", R.drawable.photo3, 4.5f));
+        hotels.add(new Hotel("OYO 111", "9000", "Mall road", R.drawable.photo4, 1.5f));
+        hotels.add(new Hotel("OYO 999", "4560", "Mall road", R.drawable.photo4, 4.5f));
+        hotels.add(new Hotel("OYO 600", "4900", "Mall road", R.drawable.photo3, 5f));
+        hotels.add(new Hotel("OYO 33", "4670", "Mall road", R.drawable.photo4, 4.25f));
 
 
         mRecyclerView = findViewById(R.id.hotel_activity_recyclerView);

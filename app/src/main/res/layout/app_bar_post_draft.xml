@@ -15,13 +15,14 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:background="?attr/colorPrimary"
+            android:background="@color/top_bar"
             app:popupTheme="@style/AppTheme.PopupOverlay" >
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="end">
+                android:gravity="end"
+                android:background="@color/top_bar">
 
                 <ImageView
                     android:id="@+id/post_draft_activity_toolbar_back_button_imageView"

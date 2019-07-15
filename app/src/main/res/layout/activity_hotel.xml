@@ -15,7 +15,7 @@
             android:id="@+id/food_activity_topBar_holder_relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background"
+            android:background="@color/top_bar"
             android:layout_alignParentTop="true">
 
             <ImageButton
@@ -135,10 +135,12 @@
                 android:id="@+id/hotel_activity_filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_filter_tool_black_shape"
-                android:backgroundTint="@color/transparent"/>
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="17dp"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_filter_white_outline" />
 
 
 
