@@ -19,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Wifi"
+        android:fontFamily="@font/glacial_indifference_regular"
         android:layout_marginLeft="8dp"
         android:maxLines="1"
         android:minLines="1"

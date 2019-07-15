@@ -14,14 +14,12 @@
         android:src="@drawable/ic_arrow_back_white"
         android:backgroundTint="@android:color/transparent"/>
 
-
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_centerInParent="true"
         android:background="@color/white"
         android:padding="16dp">
-
 
         <NumberPicker
             android:id="@+id/numberPicker"

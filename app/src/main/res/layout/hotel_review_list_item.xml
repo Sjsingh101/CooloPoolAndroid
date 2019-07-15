@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:text="New delhi, "
             android:textSize="10sp"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:ellipsize="end"
             android:textStyle="bold"
             android:maxLines="2"
@@ -47,7 +48,6 @@
         android:rating="3.5"
         android:layout_toRightOf="@id/hotel_review_list_item_profile_details_holder_linearLayout"
         style="@style/Widget.AppCompat.RatingBar.Small"
-
         android:progressTint="@color/detail_secondary"
         android:layout_marginTop="16dp"/>
 
@@ -56,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="22 Apr 2019"
+        android:fontFamily="@font/glacial_indifference_regular"
         android:textSize="10sp"
         android:layout_marginTop="19dp"
         android:layout_marginLeft="8dp"
@@ -68,6 +69,7 @@
         android:text="Clean and Comfortable"
         android:maxLines="1"
         android:ellipsize="end"
+        android:fontFamily="@font/glacial_indifference_regular"
         android:layout_below="@id/hotel_review_list_item_ratingBar"
         android:layout_toRightOf="@id/hotel_review_list_item_profile_details_holder_linearLayout"
         android:layout_marginTop="8dp"
@@ -81,6 +83,7 @@
         android:layout_toRightOf="@id/hotel_review_list_item_profile_details_holder_linearLayout"
         android:maxLines="3"
         android:ellipsize="end"
+        android:fontFamily="@font/glacial_indifference_regular"
         android:textSize="12sp"
         android:layout_marginRight="8dp"
         android:text="Unless required by applicable law or agreed to in writing, software
@@ -88,14 +91,5 @@ distributed under the License is distributed on an BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License."/>
-
-
-
-
-
-
-
-
-
 
 </RelativeLayout>

@@ -5,13 +5,11 @@
     android:layout_height="wrap_content"
     android:layout_margin="1dp">
 
-
         <ImageButton
             android:id="@+id/tripPic"
             android:layout_width="150dp"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            />
+            android:scaleType="centerCrop" />
 
         <LinearLayout
             android:padding="6dp"
@@ -28,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:textSize="18sp"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:textStyle="bold"
                 android:background="@color/transparent"
                 android:textColor="@color/white"
@@ -38,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:layout_marginStart="15dp"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"

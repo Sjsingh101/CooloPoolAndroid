@@ -18,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADD"
+        android:fontFamily="@font/glacial_indifference_bold"
         android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:layout_centerInParent="true"/>

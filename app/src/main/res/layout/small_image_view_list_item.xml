@@ -7,5 +7,4 @@
     android:src="@drawable/pic1"
     android:scaleType="centerCrop"
     android:layout_marginRight="8dp">
-
 </ImageView>

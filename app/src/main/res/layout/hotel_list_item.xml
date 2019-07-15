@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name of the hotel"
-                android:fontFamily="serif"
+                android:fontFamily="@font/glacial_indifference_bold"
                 android:textColor="#000"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:layout_marginTop="12dp"
@@ -46,6 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="₹4000"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="12dp"
@@ -57,6 +58,7 @@
                 android:text="/per night"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="#B7B7B7"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="12dp"
                 android:layout_below="@id/hotel_list_item_cost_textView"/>
@@ -84,7 +86,7 @@
                     android:id="@+id/hotel_list_item_location_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:text="5/17-A,  mall road, Shimla"
                     android:layout_marginLeft="8dp"/>
 

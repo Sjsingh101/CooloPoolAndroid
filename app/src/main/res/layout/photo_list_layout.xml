@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:textSize="18sp"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:textStyle="bold"
             android:background="@color/transparent"
             android:textColor="@color/white"
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:textSize="12sp"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:textStyle="bold"
             android:background="@color/transparent"
             android:textColor="@color/white"/>

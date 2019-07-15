@@ -26,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hudson"
+            android:fontFamily="@font/glacial_indifference_bold"
             android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:layout_marginLeft="8dp"
@@ -35,6 +36,7 @@
             android:id="@+id/restaurants_list_item_type_of_food_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
             android:layout_below="@id/restaurants_list_item_name_textView"
             android:text="Indian | Italian"
@@ -46,6 +48,7 @@
             android:id="@+id/restaurants_list_item_veg_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
             android:layout_below="@id/restaurants_list_item_type_of_food_textView"
             android:text="Veg"
@@ -57,6 +60,7 @@
             android:id="@+id/restaurants_list_item_veg_separator_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_toRightOf="@id/restaurants_list_item_veg_textView"
             android:layout_below="@id/restaurants_list_item_type_of_food_textView"
             android:text=" | "
@@ -67,6 +71,7 @@
             android:id="@+id/restaurants_list_item_non_veg_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_toRightOf="@id/restaurants_list_item_veg_separator_textView"
             android:layout_below="@id/restaurants_list_item_type_of_food_textView"
             android:text="Non-Veg"
@@ -77,6 +82,7 @@
             android:id="@+id/restaurants_list_item_cost_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@id/restaurants_list_item_picture_imageView"
             android:text="₹500"
@@ -88,6 +94,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@id/restaurants_list_item_cost_textView"
             android:text="/per person"
@@ -107,6 +114,7 @@
             android:id="@+id/restaurants_list_item_opening_time_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_toLeftOf="@id/restaurants_list_item_go_imageView"
             android:layout_below="@id/restaurants_list_item_non_veg_textView"
             android:text="9:00 Am"
@@ -121,19 +129,10 @@
             android:layout_toLeftOf="@id/restaurants_list_item_go_imageView"
             android:text="8:00 Pm"
             android:layout_alignParentBottom="true"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_marginBottom="15dp"
             android:layout_marginRight="16dp"
             android:textSize="12dp"/>
-
-
-
-
-
-
-
-
-
-
 
     </RelativeLayout>
 

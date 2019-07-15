@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:fontFamily="@font/glacial_indifference_regular"
         android:text="Day 1"
         android:layout_marginTop="32dp"
         android:layout_marginLeft="5dp" />
@@ -26,13 +27,13 @@
         android:id="@+id/create_new_day_list_item_desc_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/glacial_indifference_regular"
         android:layout_centerInParent="true"
         android:backgroundTint="@color/transparent"
         android:hint="+ Add Description"
         android:textColor="@color/GrayGoose"
         android:textColorHint="@color/white"
         android:gravity="center"/>
-
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/create_new_day_list_image_recyclerView"
@@ -44,10 +45,5 @@
         android:padding="8dp">
 
     </android.support.v7.widget.RecyclerView>
-
-
-
-
-
 
 </RelativeLayout>

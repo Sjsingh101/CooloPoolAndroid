@@ -37,6 +37,7 @@
                     android:layout_toRightOf="@id/post_draft_activity_toolbar_back_button_imageView"
                     android:text="Title of the post goes here"
                     android:layout_marginTop="16dp"
+                    android:fontFamily="@font/glacial_indifference_bold"
                     android:textColor="@color/black"
                     android:layout_marginLeft="8dp"
                     android:transitionName="POST_TITLE"/>
@@ -45,6 +46,7 @@
                     android:id="@+id/post_draft_activity_toolbar_start_date_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_toRightOf="@id/post_draft_activity_toolbar_back_button_imageView"
                     android:layout_below="@id/post_draft_activity_toolbar_title_textView"
                     android:text="Start Date: "
@@ -56,6 +58,7 @@
                     android:id="@+id/post_draft_activity_toolbar_date_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_toRightOf="@id/post_draft_activity_toolbar_start_date_textView"
                     android:layout_below="@id/post_draft_activity_toolbar_title_textView"
                     android:text="May 02, 2019"
@@ -78,6 +81,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:text="+ Add"
+                    android:fontFamily="@font/glacial_indifference_bold"
                     android:textColor="@color/white"
                     android:layout_marginRight="8dp"/>
 
@@ -109,6 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:text="Post"
             android:elevation="16dp"
             android:textColor="@android:color/white"

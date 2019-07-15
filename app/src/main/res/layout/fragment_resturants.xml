@@ -24,6 +24,7 @@
                 android:id="@+id/food_fragment_city_area_editText"
                 android:layout_width="0dp"
                 android:layout_weight="5"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:singleLine="true"
                 android:layout_height="match_parent"
                 android:background="@color/white"
@@ -57,6 +58,7 @@
                 android:gravity="start"
                 android:text="Date"
                 android:textAllCaps="false"
+                android:fontFamily="@font/glacial_indifference_bold"
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
                 android:textStyle="normal" />
@@ -72,6 +74,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </FrameLayout>

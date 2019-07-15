@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:text="New Day"
         android:textStyle="bold"
+        android:fontFamily="@font/glacial_indifference_regular"
         android:textColor="@color/white"
         android:layout_gravity="center"/>
 
