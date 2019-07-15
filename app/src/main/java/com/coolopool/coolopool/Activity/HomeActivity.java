@@ -226,7 +226,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Todo: create another activity for user to create their trip of only pictures
-                startActivity(new Intent(HomeActivity.this, NewBlogPostActivity.class));
+                startActivity(new Intent(HomeActivity.this, NewPostActivity.class));
 
             }
         });

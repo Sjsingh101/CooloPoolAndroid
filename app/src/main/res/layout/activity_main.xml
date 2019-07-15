@@ -51,19 +51,12 @@
 
     </LinearLayout>
 
-
-
-
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:layout_marginTop="40dp"/>
-
-
-
-
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -87,7 +80,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-
             <ImageButton
                 android:id="@+id/homeBtn"
                 android:layout_width="0dp"
@@ -96,6 +88,7 @@
                 android:src="@drawable/ic_house"
                 android:backgroundTint="@android:color/transparent">
             </ImageButton>
+
             <ImageButton
                 android:id="@+id/hotelbtn"
                 android:layout_width="0dp"
@@ -103,7 +96,6 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_hotel"
                 android:backgroundTint="@android:color/transparent">
-
             </ImageButton>
 
             <ImageButton
