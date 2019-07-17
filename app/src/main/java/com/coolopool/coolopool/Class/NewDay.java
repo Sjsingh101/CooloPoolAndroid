@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class NewDay {
 
-    static int COUNT = 1;
+    public static int COUNT = 1;
 
     String mDays;
     String mDescription;
@@ -17,9 +17,21 @@ public class NewDay {
     NestedImageAdapter mAdapter;
     Context mContext;
 
+    public NewDay() {
+    }
+
     public NewDay(String mDescription, Context context) {
         this.mDescription = mDescription;
         this.mImageUri = new ArrayList<>();
+        this.mContext = context;
+        this.mDays = "DAY "+COUNT;
+        this.setUpAdapter();
+        COUNT ++ ;
+    }
+
+    public NewDay(String mDescription, Context context, ArrayList<Uri> images) {
+        this.mDescription = mDescription;
+        this.mImageUri = images;
         this.mContext = context;
         this.mDays = "DAY "+COUNT;
         this.setUpAdapter();

@@ -191,17 +191,11 @@
                     android:textSize="20sp"
                     android:fontFamily="@font/glacial_indifference_regular"
                     android:textColor="@color/black"
-                    android:text="
-Sunny and Johnny like to pooltheir money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have is that they spend all of their money.
-Given a list of prices for the flavors of ice cream, select the their money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have is that they spend all of their money.
-Given a list of prices for the flavors of their money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have is that they spend all of their money.
-Given a list of prices for the flavors of ice cream, select the their money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have is that they spend all of their money.
-Given a list of prices for the flavors of ice cream, select theice cream, select the two that will cost all of the money they have.
-For example, they have to spend and there are flavors costing . The two flavors costing and meet the criteria. Using -based indexing, they are at indices and ."/>
+                    android:text="Sunny and Johnny like to pooltheir money and go to the ice cream parlor. Johnny never buys the same flavor that Sunny does. The only other rule they have i"/>
 
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/post_activity_image_recyclerView"
+                    android:id="@+id/post_activity_days_recyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="32dp"
@@ -233,9 +227,11 @@ For example, they have to spend and there are flavors costing . The two flavors 
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/ic_cart_black"
+        android:background="@drawable/back_button_bg"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="24dp"
         android:layout_marginTop="32dp"
+        android:padding="12dp"
         app:layout_anchor="@id/post_activity_scrollView"
         app:layout_anchorGravity="end|top"/>
 

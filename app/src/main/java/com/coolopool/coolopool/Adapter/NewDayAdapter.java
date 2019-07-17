@@ -24,11 +24,18 @@ public class NewDayAdapter extends RecyclerView.Adapter<NewDayAdapter.NewDayView
     Context context;
     int focussedPosition = 0;
     View previouslySelectedView;
+    int flag = 0; //0: for creating & 1: for displaying
 
 
     public NewDayAdapter(ArrayList<NewDay> newDays, Context context) {
         this.newDays = newDays;
         this.context = context;
+    }
+
+    public NewDayAdapter(ArrayList<NewDay> newDays, Context context, int flag) {
+        this.newDays = newDays;
+        this.context = context;
+        this.flag = flag;
     }
 
     @NonNull
@@ -43,17 +50,23 @@ public class NewDayAdapter extends RecyclerView.Adapter<NewDayAdapter.NewDayView
         newDayViewHolder.setUpNestedRecyclerView(context, newDays.get(i));
         newDayViewHolder.description.setText(newDays.get(i).getmDescription().trim());
 
-        newDayViewHolder.setItemClickListener(new ItemClickListener() {
-            @Override
-            public void onClick(View view, int position) {
-                if(previouslySelectedView != null){
-                    previouslySelectedView.setBackground(context.getResources().getDrawable(R.drawable.background));
+        if(flag == 1){
+            newDayViewHolder.description.setEnabled(false);
+        }else{
+            newDayViewHolder.setItemClickListener(new ItemClickListener() {
+                @Override
+                public void onClick(View view, int position) {
+                    if(previouslySelectedView != null){
+                        previouslySelectedView.setBackground(context.getResources().getDrawable(R.drawable.background));
+                    }
+                    view.setBackgroundColor(context.getResources().getColor(R.color.white));
+                    previouslySelectedView = view;
+                    focussedPosition = position;
                 }
-                view.setBackgroundColor(context.getResources().getColor(R.color.white));
-                previouslySelectedView = view;
-                focussedPosition = position;
-            }
-        });
+            });
+        }
+
+
     }
 
     @Override
