@@ -98,12 +98,7 @@ public class PostDraftActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK && data != null) {
             if (requestCode == SELECT_PICTURE) {
 
-                ClipData clipData = data.getClipData();
-                for (int i = 0; i < clipData.getItemCount(); i++) {
-                    ClipData.Item item = clipData.getItemAt(i);
-                    Uri uri = item.getUri();
-                    adapter.addPhoto(uri);
-                }
+                adapter.addPhoto(data.getData());
             }
         }
     }
