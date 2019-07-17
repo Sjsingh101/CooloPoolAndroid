@@ -115,7 +115,10 @@ public class NewDayAdapter extends RecyclerView.Adapter<NewDayAdapter.NewDayView
 
         @Override
         public void onClick(View view) {
-            itemClickListener.onClick(view, getAdapterPosition());
+            if(flag == 0){
+                itemClickListener.onClick(view, getAdapterPosition());
+            }
+
         }
     }
 }

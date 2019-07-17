@@ -42,7 +42,8 @@
         android:layout_alignParentBottom="true"
         tools:listitem="@layout/small_image_view_list_item"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:layout_marginBottom="8dp">
 
     </android.support.v7.widget.RecyclerView>
 

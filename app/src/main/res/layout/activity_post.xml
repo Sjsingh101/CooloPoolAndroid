@@ -198,8 +198,7 @@
                     android:id="@+id/post_activity_days_recyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginRight="32dp"
+                    tools:listitem="@layout/create_new_day_list_item"
                     android:layout_marginTop="32dp"
                     android:layout_below="@id/post_activity_description_textView">
 
