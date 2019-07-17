@@ -114,5 +114,14 @@ public class NewPicPostActivity extends AppCompatActivity {
 
     }
 
+    private void setUpBackButton(){
+        ((ImageView)findViewById(R.id.new_pic_post_activity_back_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+    }
+
 
 }
