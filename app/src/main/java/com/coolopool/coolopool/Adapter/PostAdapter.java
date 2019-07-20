@@ -22,12 +22,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
-    int[] images;
+    String[] images;
     String[] titles;
     String[] descriptions;
     Context mContext;
 
-    public PostAdapter(int[] images, String[] titles, String[] descriptions, Context context){
+    public PostAdapter(String[] images, String[] titles, String[] descriptions, Context context){
         this.images = images;
         this.titles = titles;
         this.descriptions=descriptions;
@@ -45,11 +45,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     @Override
     public void onBindViewHolder(@NonNull final PostViewHolder viewHolder, int i) {
 
-        int image_id = images[i];
+        String image_url = images[i];
         String title = titles[i];
         String description = descriptions[i];
 
-        viewHolder.postimage.setImageResource(image_id);
+        if(image_url != null) {
+            Picasso.get().load(image_url).into(viewHolder.postimage);
+        }
+
         viewHolder.posttitle.setText(title);
         viewHolder.postdesc.setText(description);
 

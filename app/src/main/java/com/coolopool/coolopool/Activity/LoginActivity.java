@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     Button loginbtn;
     // ImageButton mBackButton;  uncomment if back button is required.
     TextView signUpbtn;
-    String UserName, Password;
+    private static String UserName, Password;
 
     // Dummy URL only for testing, change it when get the real URL of the api
     private final String LOGIN_URL = "https://my-json-server.typicode.com/typicode/demo/posts/1";
@@ -124,6 +124,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(SharedPrefManager.getInstance(LoginActivity.this).saveUser(response) == 1) {
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                     startActivity(intent);
                 }
             }
@@ -136,5 +137,9 @@ public class LoginActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    public static String getUsername() {
+        return UserName;
     }
 }

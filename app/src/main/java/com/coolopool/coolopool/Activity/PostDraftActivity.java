@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -156,7 +155,7 @@ public class PostDraftActivity extends AppCompatActivity {
         for (int i = 0; i < days.size(); i++) {
             List<String> imagesNames = new ArrayList<>();
             for (int j = 0; j < days.get(i).getmImageUri().size(); j++)
-                imagesNames.add("XYZ" + count++);
+                imagesNames.add(LoginActivity.getUsername() + count++);
             Map<String, List<String>> map = new HashMap<>();
             map.put("Description", new ArrayList<String>(Arrays.asList(days.get(i).getmDescription())));
             map.put("Images Name", imagesNames);
@@ -172,7 +171,7 @@ public class PostDraftActivity extends AppCompatActivity {
         for (int i = 0; i < days.size(); i++) {
             NewDay currentDay = days.get(i);
             for (int j = 0; j < currentDay.getmImageUri().size(); j++)
-                parts.add(prepareFilePart("XYZ" + imageNumber++, currentDay.getmImageUri().get(j)));
+                parts.add(prepareFilePart(LoginActivity.getUsername() + imageNumber++, currentDay.getmImageUri().get(j)));
         }
 
         RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), string);
