@@ -32,6 +32,7 @@
     </RelativeLayout>
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cart_activity_hotel_content_holder_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/cart_activity_top_content_holder_relativeLayout"
@@ -39,15 +40,11 @@
         android:layout_margin="16dp"
         app:cardCornerRadius="8dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
 
             <RelativeLayout
                 android:id="@+id/cart_activity_hotel_content_holder_relativeLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@color/transparent_blur_side_menu">
 
                 <TextView
@@ -59,81 +56,95 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:fontFamily="@font/glacial_indifference_bold"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_centerVertical="true"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search_white"
+                    android:src="@drawable/ic_down_arrow"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    />
+                    android:padding="8dp"/>
 
             </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
-            <RelativeLayout
-                android:id="@+id/cart_activity_travel_content_holder_relativeLayout"
-                android:layout_width="match_parent"
+    <android.support.v7.widget.CardView
+        android:id="@+id/cart_activity_travel_content_holder_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cart_activity_hotel_content_holder_cardView"
+        android:backgroundTint="@color/transparent"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp">
+
+
+        <RelativeLayout
+            android:id="@+id/cart_activity_travel_content_holder_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent_blur_side_menu"
+            android:layout_below="@id/cart_activity_hotel_content_holder_relativeLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/transparent_blur_side_menu"
-                android:layout_below="@id/cart_activity_hotel_content_holder_relativeLayout">
+                android:text="Travel"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/glacial_indifference_bold"
+                android:layout_marginLeft="8dp"
+                android:layout_centerVertical="true"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hotel"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:fontFamily="@font/glacial_indifference_bold"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search_white"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/cart_activity_restaurants_content_holder_relativeLayout"
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/transparent_blur_side_menu"
-                android:layout_below="@id/cart_activity_travel_content_holder_relativeLayout">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hotel"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:fontFamily="@font/glacial_indifference_bold"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search_white"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    />
-
-            </RelativeLayout>
-
-
+                android:src="@drawable/ic_down_arrow"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="8dp"/>
 
         </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cart_activity_restaurants_content_holder_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cart_activity_travel_content_holder_cardView"
+        android:backgroundTint="@color/transparent"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp">
 
 
+        <RelativeLayout
+            android:id="@+id/cart_activity_restaurants_content_holder_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent_blur_side_menu"
+            android:layout_below="@id/cart_activity_travel_content_holder_relativeLayout">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Restaurants"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/glacial_indifference_bold"
+                android:layout_marginLeft="8dp"
+                android:layout_centerVertical="true"/>
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_down_arrow"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="8dp"/>
+
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
 
