@@ -37,7 +37,6 @@
             android:layout_marginEnd="20dp"
             android:singleLine="true"
             android:backgroundTint="@color/transparent"
-
             android:hint="+ Add Title"
             android:fontFamily="@font/glacial_indifference_regular"
             android:padding="6dp"

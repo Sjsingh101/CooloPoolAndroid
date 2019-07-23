@@ -47,14 +47,14 @@ public class FoodActivity extends AppCompatActivity {
         restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
         restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
 
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.food_activity_recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.food_activity_recyclerView);
         RestaurantAdapter adapter = new RestaurantAdapter(restaurants, FoodActivity.this);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
-        final ImageButton filter = (ImageButton)findViewById(R.id.food_activity_filter);
-        ImageButton backButton = (ImageButton)findViewById(R.id.food_activity_back_button);
+        final ImageButton filter = findViewById(R.id.food_activity_filter);
+        ImageButton backButton = findViewById(R.id.food_activity_back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,14 +83,14 @@ public class FoodActivity extends AppCompatActivity {
                 R.id.food_activity_filter_italian_selector,};
 
 
-        ((ImageButton)dialog.findViewById(R.id.food_activity_filter_cross)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.food_activity_filter_cross)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dB.destroy();
             }
         });
 
-        ((LinearLayout)dialog.findViewById(R.id.food_activity_filter_0_to_1_km)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.food_activity_filter_0_to_1_km)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[0] == R.id.food_activity_filter_0_to_1_km_selector)){
@@ -100,7 +100,7 @@ public class FoodActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.food_activity_filter_1_to_3_km)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.food_activity_filter_1_to_3_km)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[0] == R.id.food_activity_filter_1_to_3_km_selector)){
@@ -110,7 +110,7 @@ public class FoodActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.food_activity_filter_3_km)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.food_activity_filter_3_km)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[0] == R.id.food_activity_filter_3_km_selector)){
@@ -120,7 +120,7 @@ public class FoodActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.food_activity_filter_italian)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.food_activity_filter_italian)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[1] == R.id.food_activity_filter_italian_selector)){
@@ -130,7 +130,7 @@ public class FoodActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.food_activity_filter_south_indian)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.food_activity_filter_south_indian)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[1] == R.id.food_activity_filter_south_indian_selector)){
@@ -140,7 +140,7 @@ public class FoodActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.food_activity_filter_american)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.food_activity_filter_american)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[1] == R.id.food_activity_filter_american_selector)){
@@ -150,7 +150,7 @@ public class FoodActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.food_activity_filter_sushi)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.food_activity_filter_sushi)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[1] == R.id.food_activity_filter_sushi_selector)){
@@ -162,7 +162,7 @@ public class FoodActivity extends AppCompatActivity {
         });
 
 
-        ((Button)dialog.findViewById(R.id.food_activity_filter_apply_button)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.food_activity_filter_apply_button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int LI = ((RangeBar)dialog.findViewById(R.id.food_activity_filter_price_range_slider)).getLeftIndex();
@@ -178,7 +178,7 @@ public class FoodActivity extends AppCompatActivity {
 
         String food_location = intent.getStringExtra("FOOD_LOCATION");
 
-        TextView food_location_textView = (TextView)findViewById(R.id.food_activity_location_textView);
+        TextView food_location_textView = findViewById(R.id.food_activity_location_textView);
 
         food_location_textView.setText(food_location);
 

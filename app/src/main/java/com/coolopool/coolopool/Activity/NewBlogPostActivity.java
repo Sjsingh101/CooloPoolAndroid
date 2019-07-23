@@ -37,7 +37,7 @@ public class NewBlogPostActivity extends AppCompatActivity {
     }*/
 
     private void coverPhotoSetup() {
-        coverImage = (ImageView) findViewById(R.id.new_blog_post_activity_cover_pic_imageView);
+        coverImage =  findViewById(R.id.new_blog_post_activity_cover_pic_imageView);
 
         coverImage.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -64,17 +64,13 @@ public class HomeActivity extends AppCompatActivity {
 
         mSearchButton = findViewById(R.id.searchButton);
 
-
-
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 DialogBuilder dialogBuilder = new DialogBuilder(HomeActivity.this, R.layout.home_activity_search_dialog_layout);
                 dialogBuilder.build();
-
                 setUpDialogForSearch(dialogBuilder);
-
 
             }
         });
@@ -165,8 +161,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private void setUpDialogForSearch(DialogBuilder db){
         final Dialog dialog = db.getDialog();
-        topRadioButton = (RadioButton)dialog.findViewById(R.id.search_dialog_top_radioBar);
-        bottomRadioButton = (RadioButton)dialog.findViewById(R.id.search_dialog_bottom_radioBar);
+        topRadioButton = dialog.findViewById(R.id.search_dialog_top_radioBar);
+        bottomRadioButton = dialog.findViewById(R.id.search_dialog_bottom_radioBar);
 
         ((ImageView)dialog.findViewById(R.id.search_dialog_back_button)).setOnClickListener(new View.OnClickListener() {
             @Override

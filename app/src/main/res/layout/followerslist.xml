@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="horizontal"
+    android:weightSum="3">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userProfilePic"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:elevation="4dp"
+        android:layout_weight=".5"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/facelogo" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1.5"
+        android:layout_gravity="center">
+            <TextView
+                android:id="@+id/Username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/UserName"
+                android:fontFamily="@font/glacial_indifference_regular"
+                android:textColor="@color/white"
+                />
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Full Name"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/glacial_indifference_regular"
+                android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/FollowStatus"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="1dp"
+        android:padding="6dp"
+        android:background="@color/top_bar"
+        android:elevation="6dp"
+        android:text="Following"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</LinearLayout>

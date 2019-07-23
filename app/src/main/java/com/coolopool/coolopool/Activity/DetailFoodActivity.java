@@ -43,10 +43,7 @@ public class DetailFoodActivity extends AppCompatActivity {
         setUpMenu();
         setUpReview();
 
-
     }
-
-
 
     private void setUpToolbar(){
         final Toolbar toolbar = (Toolbar) findViewById(R.id.detail_food_activity_toolbar);

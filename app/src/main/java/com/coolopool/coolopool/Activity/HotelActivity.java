@@ -77,15 +77,10 @@ public class HotelActivity extends AppCompatActivity {
 
                 (dB.getDialog().getWindow()).setWindowAnimations(R.style.DialogAnimation);
 
-
-
             }
         });
 
-
     }
-
-
     private void setupDialogButtonsClickEvent(final DialogBuilder dB){
 
         final Dialog dialog = dB.getDialog();
@@ -102,7 +97,7 @@ public class HotelActivity extends AppCompatActivity {
             }
         });
 
-        ((LinearLayout)dialog.findViewById(R.id.food_activity_filter_0_to_1_km)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.food_activity_filter_0_to_1_km)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[0] == R.id.hotel_activity_filter_0_to_1_km_selector)){
@@ -112,7 +107,7 @@ public class HotelActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_1_to_3_km)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.hotel_activity_filter_1_to_3_km)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[0] == R.id.hotel_activity_filter_1_to_3_km_selector)){
@@ -122,7 +117,7 @@ public class HotelActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_3_km)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.hotel_activity_filter_3_km)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[0] == R.id.hotel_activity_filter_3_km_selector)){
@@ -132,7 +127,7 @@ public class HotelActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_12_to_6_am)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.hotel_activity_filter_12_to_6_am)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[1] == R.id.hotel_activity_filter_12_to_6_am_selector)){
@@ -142,7 +137,7 @@ public class HotelActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_6_to_12_morning)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.hotel_activity_filter_6_to_12_morning)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[1] == R.id.hotel_activity_filter_6_to_12_morning_selector)){
@@ -152,7 +147,7 @@ public class HotelActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_12_to_6_afternoon_evening)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.hotel_activity_filter_12_to_6_afternoon_evening)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[1] == R.id.hotel_activity_filter_12_to_6_afternoon_evening_selector)){
@@ -162,7 +157,7 @@ public class HotelActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_6_to_12_night)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.hotel_activity_filter_6_to_12_night)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[1] == R.id.hotel_activity_filter_6_to_12_night_selector)){
@@ -172,7 +167,7 @@ public class HotelActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_ac)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.hotel_activity_filter_ac)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[2] == R.id.hotel_activity_filter_ac_selector)){
@@ -182,7 +177,7 @@ public class HotelActivity extends AppCompatActivity {
                 }
             }
         });
-        ((LinearLayout)dialog.findViewById(R.id.hotel_activity_filter_non_ac)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.hotel_activity_filter_non_ac)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(defaults[2] == R.id.hotel_activity_filter_non_ac_selector)){
@@ -193,7 +188,7 @@ public class HotelActivity extends AppCompatActivity {
             }
         });
 
-        ((Button)dialog.findViewById(R.id.hotel_activity_filter_apply_button)).setOnClickListener(new View.OnClickListener() {
+        (dialog.findViewById(R.id.hotel_activity_filter_apply_button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int LI = ((RangeBar)dialog.findViewById(R.id.hotel_activity_filter_price_range_slider)).getLeftIndex();
@@ -213,11 +208,11 @@ public class HotelActivity extends AppCompatActivity {
         String checkInDate = intent.getStringExtra("CHECKIN_DAYOFWEEK").substring(0, 3)+ ", " + intent.getStringExtra("CHECKIN") + intent.getStringExtra("CHECKIN_MONTH_YEAR");
         String checkOutDate = intent.getStringExtra("CHECKOUT_DAYOFWEEK").substring(0, 3)+ ", " + intent.getStringExtra("CHECKOUT") + intent.getStringExtra("CHECKOUT_MONTH_YEAR");
 
-        TextView location_textView = (TextView)findViewById(R.id.hotel_activity_location_textView);
-        TextView checkIn_textView = (TextView)findViewById(R.id.hotel_activity_date_from_dayOfWeek_textView);
-        TextView checkOut_textView = (TextView)findViewById(R.id.hotel_activity_date_to_dayOfWeek_textView);
-        TextView guests_textView = (TextView)findViewById(R.id.hotel_activity_guests_value_textView);
-        TextView rooms_textView = (TextView)findViewById(R.id.hotel_activity_rooms_value_textView);
+        TextView location_textView = findViewById(R.id.hotel_activity_location_textView);
+        TextView checkIn_textView = findViewById(R.id.hotel_activity_date_from_dayOfWeek_textView);
+        TextView checkOut_textView = findViewById(R.id.hotel_activity_date_to_dayOfWeek_textView);
+        TextView guests_textView = findViewById(R.id.hotel_activity_guests_value_textView);
+        TextView rooms_textView = findViewById(R.id.hotel_activity_rooms_value_textView);
 
         location_textView.setText(location);
         checkIn_textView.setText(checkInDate);

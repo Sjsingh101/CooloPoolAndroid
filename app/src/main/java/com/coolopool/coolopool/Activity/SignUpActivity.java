@@ -22,9 +22,9 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        etusername = (EditText) findViewById(R.id.userName);
-        etpassword = (EditText) findViewById(R.id.password);
-        etconfirmPassword = (EditText) findViewById(R.id.confPassword);
+        etusername =  findViewById(R.id.userName);
+        etpassword =  findViewById(R.id.password);
+        etconfirmPassword =  findViewById(R.id.confPassword);
 
         // use for creating account
         mNextButton = findViewById(R.id.nextButtton);
@@ -70,7 +70,6 @@ public class SignUpActivity extends AppCompatActivity {
             etconfirmPassword.requestFocus();
             return;
         }
-
         intent.putExtra("Username", username);
         intent.putExtra("Password", password);
         startActivity(intent);

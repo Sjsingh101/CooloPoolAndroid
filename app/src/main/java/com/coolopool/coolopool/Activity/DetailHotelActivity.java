@@ -58,7 +58,7 @@ public class DetailHotelActivity extends AppCompatActivity {
 
 
         ReviewAdapter reviewAdapter = new ReviewAdapter(reviews, DetailHotelActivity.this);
-        RecyclerView reviewRecyclerView = (RecyclerView)findViewById(R.id.detail_hotel_activity_review_list_recyclerView);
+        RecyclerView reviewRecyclerView = findViewById(R.id.detail_hotel_activity_review_list_recyclerView);
         reviewRecyclerView.setLayoutManager(new LinearLayoutManager(DetailHotelActivity.this));
         reviewRecyclerView.setHasFixedSize(false);
 
@@ -75,7 +75,7 @@ public class DetailHotelActivity extends AppCompatActivity {
     private void setUpAmenities(){
         final ArrayList<Amenities> amenities = new ArrayList<>();
         final AmenitiesAdapter adapter = new AmenitiesAdapter(amenities, DetailHotelActivity.this);
-        final EditText locationText = (EditText)findViewById(R.id.detail_hotel_activity_location_info_editText);
+        final EditText locationText = findViewById(R.id.detail_hotel_activity_location_info_editText);
 
         amenities.add(new Amenities(R.drawable.ic_wifi_black, "Wifi"));
         amenities.add(new Amenities(R.drawable.ic_wifi_black, "Food"));
@@ -84,7 +84,7 @@ public class DetailHotelActivity extends AppCompatActivity {
         amenities.add(new Amenities(R.drawable.ic_wifi_black, "Parking"));
         amenities.add(new Amenities(R.drawable.ic_wifi_black, "Spa"));
 
-        final TextView seeAllButton = (TextView)findViewById(R.id.detail_hotel_activity_see_all_amenities_textView);
+        final TextView seeAllButton = findViewById(R.id.detail_hotel_activity_see_all_amenities_textView);
 
         seeAllButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +112,7 @@ public class DetailHotelActivity extends AppCompatActivity {
         });
 
 
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.detail_hotel_activity_amenities_recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.detail_hotel_activity_amenities_recyclerView);
         recyclerView.setHasFixedSize(true);
 
 
@@ -123,8 +123,8 @@ public class DetailHotelActivity extends AppCompatActivity {
     }
 
     private void setUpHotelInfo(){
-        final TextView hotelInfo = (TextView)findViewById(R.id.detail_hotel_activity_info_textView);
-        final TextView readMoreButton = (TextView)findViewById(R.id.detail_hotel_activity_readMore_textView);
+        final TextView hotelInfo = findViewById(R.id.detail_hotel_activity_info_textView);
+        final TextView readMoreButton = findViewById(R.id.detail_hotel_activity_readMore_textView);
 
         readMoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,7 +143,7 @@ public class DetailHotelActivity extends AppCompatActivity {
     }
 
     private void setUpToolbar(){
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = findViewById(R.id.toolbar);
 
         toolbar.setTitle("Hotel Name");
 
