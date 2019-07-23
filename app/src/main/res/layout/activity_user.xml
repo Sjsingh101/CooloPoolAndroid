@@ -20,36 +20,44 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/ic_settings_white" />
+            </RelativeLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <RelativeLayout
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="128dp"
+                        android:layout_gravity="center"
                         android:elevation="6dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/userfacepic" />
 
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="9dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="0dp"
-                        android:background="@color/transparent"
-                        android:src="@drawable/ic_settings_white" />
-                </RelativeLayout>
+
+                </LinearLayout>
 
 
 

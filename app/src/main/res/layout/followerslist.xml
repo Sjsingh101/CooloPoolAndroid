@@ -52,6 +52,7 @@
         android:padding="6dp"
         android:background="@color/top_bar"
         android:elevation="6dp"
+        android:fontFamily="@font/glacial_indifference_regular"
         android:text="Following"
         android:textAllCaps="false"
         android:textColor="@color/white" />
