@@ -18,32 +18,33 @@ import java.util.TimerTask;
 
 public class SplashActivity extends AppCompatActivity {
 
-    Button btn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        btn = findViewById(R.id.startBtn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 if (SharedPrefManager.getInstance(SplashActivity.this).isLoggedIn()) {
                     new Timer().schedule(new TimerTask(){
                         public void run() {
+                            Log.d("Log_test","home screen open");
                             Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             finish();
                         }
                     }, 2000 );
-
-                } else {
-                    startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                }
+                else {
+                    /*startActivity(new Intent(SplashActivity.this, HomeActivity.class));*/
+                    new Timer().schedule(new TimerTask(){
+                        public void run() {
+                            Log.d("Log_test","Login screen open");
+                            Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }, 2000 );
                 }
                 }
-        });
     }
-
-}
