@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.Adapter.PhotoListAdapter;
@@ -20,11 +21,22 @@ public class UserActivity extends AppCompatActivity {
 
     RecyclerView mTripList,mPhotoList;
     TextView mFollowButton, mAddPost, mAddPhoto;
+    ImageButton mSettingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+
+        //for Setting
+        mSettingButton = findViewById(R.id.settingbtn);
+        mSettingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this, SettingActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // this is for Trip List View
 
