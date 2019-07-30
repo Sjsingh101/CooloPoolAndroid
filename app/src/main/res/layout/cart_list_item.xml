@@ -1,79 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="125dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black">
+    android:layout_height="50dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cart_list_item_cardView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_toLeftOf="@id/cart_list_item_price_relativeLayout"
-        android:backgroundTint="@color/transparent">
+    <TextView
+        android:id="@+id/cart_list_item_counter_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:fontFamily="@font/glacial_indifference_bold"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white">
+    <TextView
+        android:id="@+id/cart_list_item_details_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cart_list_item_counter_textView"
+        android:text="Hotel name | Room type"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="@font/glacial_indifference_regular"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"/>
 
-            <ImageView
-                android:id="@+id/cart_list_item_imageView"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/trip1"
-                android:scaleType="centerCrop"
-                android:background="@drawable/hotel_image_background"/>
+    <TextView
+        android:id="@+id/cart_list_item_cost_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="₹ 4500"
+        android:fontFamily="@font/glacial_indifference_bold"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:textSize="20sp"/>
 
-            <TextView
-                android:id="@+id/cart_list_item_name_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hotel name"
-                android:textColor="@color/black"
-                android:layout_toRightOf="@id/cart_list_item_imageView"
-                android:fontFamily="@font/glacial_indifference_bold"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"/>
-
-            <com.coolopool.coolopool.Views.RoomTypeView
-                android:id="@+id/cart_list_item_delux_roomType"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/cart_list_item_name_textView"
-                android:layout_toRightOf="@id/cart_list_item_imageView"
-                app:text="Delux"
-                app:textSize="20dp"
-                app:numberPickerRightGap="-30dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"/>
-
-            <com.coolopool.coolopool.Views.RoomTypeView
-                android:id="@+id/cart_list_item_single_roomType"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/cart_list_item_delux_roomType"
-                android:layout_toRightOf="@id/cart_list_item_imageView"
-                app:text="Single"
-                app:textSize="20dp"
-                app:numberPickerRightGap="-30dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="8dp"/>
-
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <RelativeLayout
-        android:id="@+id/cart_list_item_price_relativeLayout"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:background="@color/transparent_blur_side_menu"
-        android:layout_alignParentEnd="true">
-
-    </RelativeLayout>
 
 
 </RelativeLayout>

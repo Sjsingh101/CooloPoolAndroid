@@ -3,6 +3,7 @@ package com.coolopool.coolopool.Activity;
 import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -35,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
 
     ImageButton mSearchButton;
     ImageButton mHomeButton;
+    ImageButton mCartButton;
 
     ImageButton hotelButton;
     ImageButton restaurantsButton;
@@ -63,6 +65,15 @@ public class HomeActivity extends AppCompatActivity {
         // for search box
 
         mSearchButton = findViewById(R.id.searchButton);
+        mCartButton = (ImageButton)findViewById(R.id.cart_imageButton);
+
+        mCartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
