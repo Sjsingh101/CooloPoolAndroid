@@ -39,13 +39,13 @@ public class FoodActivity extends AppCompatActivity {
 
         ArrayList<Restaurant> restaurants = new ArrayList<>();
 
-        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 2, array));
-        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 0, array));
-        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 2, array));
-        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
-        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 2, array));
-        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
-        restaurants.add(new Restaurant("", "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
+        restaurants.add(new Restaurant(R.drawable.photo1, "Hudson", "500", "9:00 Am", "8:00 Pm", 2, array));
+        restaurants.add(new Restaurant(R.drawable.photo2, "Hudson", "500", "9:00 Am", "8:00 Pm", 0, array));
+        restaurants.add(new Restaurant(R.drawable.photo4, "Hudson", "500", "9:00 Am", "8:00 Pm", 2, array));
+        restaurants.add(new Restaurant(R.drawable.photo3, "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
+        restaurants.add(new Restaurant(R.drawable.photo2, "Hudson", "500", "9:00 Am", "8:00 Pm", 2, array));
+        restaurants.add(new Restaurant(R.drawable.photo5, "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
+        restaurants.add(new Restaurant(R.drawable.photo3, "Hudson", "500", "9:00 Am", "8:00 Pm", 1, array));
 
         RecyclerView recyclerView = findViewById(R.id.food_activity_recyclerView);
         RestaurantAdapter adapter = new RestaurantAdapter(restaurants, FoodActivity.this);

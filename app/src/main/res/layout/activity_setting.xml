@@ -44,6 +44,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="10dp">
         <TextView
+            android:id="@+id/profilebtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -60,6 +61,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="10dp">
         <TextView
+            android:id="@+id/privacybtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -76,6 +78,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="10dp">
         <TextView
+            android:id="@+id/aboutbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -92,6 +95,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="10dp">
         <TextView
+            android:id="@+id/logoutbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"

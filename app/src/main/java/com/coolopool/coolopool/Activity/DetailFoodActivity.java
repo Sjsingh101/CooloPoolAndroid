@@ -14,8 +14,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.coolopool.coolopool.Adapter.AmenitiesAdapter;
 import com.coolopool.coolopool.Adapter.FoodMenuAdapter;
 import com.coolopool.coolopool.Adapter.ReviewAdapter;
@@ -31,11 +33,19 @@ public class DetailFoodActivity extends AppCompatActivity {
     Boolean infoReadMoreExpanded = false;
     Boolean amenitiesReadMoreExpanded = false;
     Boolean menuReadMoreExpanded = false;
-
+    ImageView mthubImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_food);
+
+        mthubImage = findViewById(R.id.expandedImage);
+
+        int img = getIntent().getExtras().getInt("ImageUri");
+        Glide
+                .with(DetailFoodActivity.this)
+                .load(img)
+                .into(mthubImage);
 
         setUpToolbar();
         setUpRestaurantInfo();

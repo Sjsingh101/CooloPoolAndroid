@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.Adapter.AmenitiesAdapter;
@@ -28,11 +29,19 @@ public class DetailHotelActivity extends AppCompatActivity {
 
     Boolean infoReadMoreExpanded = false;
     Boolean amenitiesReadMoreExpanded = false;
+    ImageView mthumImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_hotel);
+
+        mthumImage = findViewById(R.id.expandedImage);
+
+        Intent intent =getIntent();
+        int img = intent.getExtras().getInt("ImageUri");
+        mthumImage.setImageResource(img);
+
 
         setUpToolbar();
 

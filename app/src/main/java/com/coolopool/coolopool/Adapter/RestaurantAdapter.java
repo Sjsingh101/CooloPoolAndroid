@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.coolopool.coolopool.Activity.DetailFoodActivity;
 import com.coolopool.coolopool.Activity.DetailHotelActivity;
 import com.coolopool.coolopool.Class.Restaurant;
@@ -39,7 +40,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     @Override
     public void onBindViewHolder(@NonNull RestaurantViewHolder restaurantViewHolder, int i) {
-        Restaurant currentRestaurant = restaurants.get(i);
+        final Restaurant currentRestaurant = restaurants.get(i);
 
         restaurantViewHolder.mName.setText(currentRestaurant.getmName());
         restaurantViewHolder.mCuisineType.setText(currentRestaurant.getmTypeOfCuisine());
@@ -63,9 +64,16 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         restaurantViewHolder.mGoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mContext.startActivity(new Intent(mContext, DetailFoodActivity.class));
+                Intent intent = new Intent(mContext, DetailFoodActivity.class);
+                intent.putExtra("ImageUri",currentRestaurant.getmThumbnailUrl());
+                mContext.startActivity(intent);
             }
         });
+
+        Glide
+                .with(mContext)
+                .load(currentRestaurant.getmThumbnailUrl())
+                .into(restaurantViewHolder.mThumbnail);
     }
 
     @Override
