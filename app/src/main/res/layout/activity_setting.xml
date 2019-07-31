@@ -95,6 +95,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
+            android:text=" Wallet"
+            android:textColor="@color/white"
+            android:drawablePadding="5dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:drawableStart="@drawable/ic_wallet"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
             android:text=" Logout"
             android:textColor="@color/white"
             android:drawablePadding="5dp"
@@ -102,6 +118,8 @@
             android:fontFamily="@font/glacial_indifference_regular"
             android:drawableStart="@drawable/ic_logout"/>
     </LinearLayout>
+
+
     </LinearLayout>
 
 </ScrollView>

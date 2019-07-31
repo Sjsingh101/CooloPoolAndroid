@@ -17,7 +17,6 @@ public class CartItem {
         CartItem.counter ++;
     }
 
-
     public String getDetails(){
         return type+" | "+item;
     }
