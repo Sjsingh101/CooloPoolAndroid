@@ -65,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
         // for search box
 
         mSearchButton = findViewById(R.id.searchButton);
-        mCartButton = (ImageButton)findViewById(R.id.cart_imageButton);
+        mCartButton = findViewById(R.id.cart_imageButton);
 
         mCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
