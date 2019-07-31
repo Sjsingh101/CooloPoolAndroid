@@ -16,6 +16,10 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
+=======
+        <activity android:name=".Activity.ProfileSettingActivity"></activity>
+>>>>>>> d363d6c96c96ae1247de8a6d06e63533a0fc629d
         <activity android:name=".Activity.SettingActivity" />
         <activity android:name=".Activity.PhotoActivity" />
         <activity android:name=".Activity.TripActivity" />

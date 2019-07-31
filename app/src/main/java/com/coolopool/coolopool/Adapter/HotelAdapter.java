@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.coolopool.coolopool.Activity.DetailHotelActivity;
 import com.coolopool.coolopool.Activity.HotelActivity;
 import com.coolopool.coolopool.Application.MyApplication;
@@ -44,7 +45,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
 
     @Override
     public void onBindViewHolder(@NonNull HotelViewHolder hotelViewHolder, int i) {
-        Hotel currentHotel = hotelList.get(i);
+        final Hotel currentHotel = hotelList.get(i);
 
         hotelViewHolder.name.setText(currentHotel.getmName());
         hotelViewHolder.cost.setText(currentHotel.getmCost());
@@ -55,11 +56,16 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
         hotelViewHolder.rootView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context.startActivity(new Intent(context, DetailHotelActivity.class));
+                Intent intent = new Intent(context, DetailHotelActivity.class);
+                intent.putExtra("ImageUri",currentHotel.getmThumbnailUrl());
+                context.startActivity(intent);
             }
         });
 
-        Picasso.get().load(currentHotel.getmThumbnailUrl()).error(R.drawable.pic1).into(hotelViewHolder.thumbnail);
+        Glide
+                .with(context)
+                .load(currentHotel.getmThumbnailUrl())
+                .into(hotelViewHolder.thumbnail);
 
     }
 

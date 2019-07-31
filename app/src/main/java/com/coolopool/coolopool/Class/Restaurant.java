@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Restaurant {
 
-    String mThumbnailUrl;
+    int mThumbnailUrl;
     String mName;
     String mCost = "₹";
     String mOpeningTime;
@@ -14,7 +14,7 @@ public class Restaurant {
     int mTypeOfFood; //veg = 0, non-veg = 1 or both = 2
     ArrayList<String> mTypeOfCuisine = new ArrayList<>(); // italian, indian, american etc...
 
-    public Restaurant(String mThumbnailUrl, String mName, String mCost, String mOpeningTime, String mClosingTime, int mTypeOfFood, String[] mTypeOfCuisine) {
+    public Restaurant(int mThumbnailUrl, String mName, String mCost, String mOpeningTime, String mClosingTime, int mTypeOfFood, String[] mTypeOfCuisine) {
         this.mThumbnailUrl = mThumbnailUrl;
         this.mName = mName;
         this.mCost += mCost;
@@ -41,11 +41,11 @@ public class Restaurant {
         return false;
     }
 
-    public String getmThumbnailUrl() {
+    public int getmThumbnailUrl() {
         return mThumbnailUrl;
     }
 
-    public void setmThumbnailUrl(String mThumbnailUrl) {
+    public void setmThumbnailUrl(int mThumbnailUrl) {
         this.mThumbnailUrl = mThumbnailUrl;
     }
 

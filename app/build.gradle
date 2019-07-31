@@ -39,4 +39,8 @@ dependencies {
     // CircleImageView lib.
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Glide ImageView lib.
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }
