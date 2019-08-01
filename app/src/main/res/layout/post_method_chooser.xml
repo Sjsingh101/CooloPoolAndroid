@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/transparent">
+    android:background="@color/transparent_blur_side_menu">
 
     <ImageButton
         android:id="@+id/dialog_back_button"
@@ -25,6 +25,7 @@
     <TextView
         android:id="@+id/new_post_pic"
         android:layout_width="300dp"
+        android:fontFamily="@font/glacial_indifference_bold"
         android:layout_height="100dp"
         android:background="@drawable/circlebackground_white_small"
         android:layout_marginBottom="8dp"
@@ -35,18 +36,19 @@
         android:id="@+id/new_post_blog"
         android:layout_width="300dp"
         android:layout_height="100dp"
+        android:fontFamily="@font/glacial_indifference_bold"
         android:background="@drawable/circlebackground_white_small"
         android:layout_marginBottom="8dp"
         android:text="Blog"
         android:gravity="center"/>
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/new_post_trip"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:background="@drawable/circlebackground_white_small"
         android:text="Trip"
-        android:gravity="center"/>
+        android:gravity="center"/>-->
 
     </LinearLayout>
 

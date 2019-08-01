@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".Activity.SettingActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="6dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="25sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="40dp"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/GrayGoose"
+        android:elevation="6dp"
+        android:layout_marginBottom="5dp"/>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+        <TextView
+            android:id="@+id/profilebtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text=" Profile"
+            android:textColor="@color/white"
+            android:drawablePadding="5dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:drawableStart="@drawable/ic_profile"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+        <TextView
+            android:id="@+id/privacybtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text=" Privacy"
+            android:textColor="@color/white"
+            android:drawablePadding="5dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:drawableStart="@drawable/ic_lock"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+        <TextView
+            android:id="@+id/aboutbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text=" About"
+            android:textColor="@color/white"
+            android:drawablePadding="5dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:drawableStart="@drawable/ic_about"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+        <TextView
+            android:id="@+id/logoutbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text=" Wallet"
+            android:textColor="@color/white"
+            android:drawablePadding="5dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:drawableStart="@drawable/ic_wallet"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text=" Logout"
+            android:textColor="@color/white"
+            android:drawablePadding="5dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:drawableStart="@drawable/ic_logout"/>
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>

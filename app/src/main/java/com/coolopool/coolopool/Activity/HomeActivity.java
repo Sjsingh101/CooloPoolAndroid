@@ -1,7 +1,10 @@
 package com.coolopool.coolopool.Activity;
 
 import android.app.ActivityOptions;
+import android.app.Dialog;
 import android.content.Intent;
+import android.media.Image;
+import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -10,8 +13,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.Adapter.MainStatePageAdapter;
@@ -21,17 +30,21 @@ import com.coolopool.coolopool.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    static String TAG = "HomeActivit: ~~~~~~~~~~~~~~~~~~~~~~~~~";
 
     ViewPager viewPager;
     FloatingActionButton fab;
 
     ImageButton mSearchButton;
     ImageButton mHomeButton;
+    ImageButton mCartButton;
 
-    ImageButton transportButton;
     ImageButton hotelButton;
     ImageButton restaurantsButton;
+
+    RadioButton topRadioButton;
+    RadioButton bottomRadioButton;
+
+    ImageButton userButton;
 
     MainStatePageAdapter adapter;
 
@@ -40,23 +53,40 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //setUpTransparentNavBar();
         fab = findViewById(R.id.fab);
 
 
         viewPager = findViewById(R.id.viewPager);
         hotelButton = findViewById(R.id.hotelbtn);
         restaurantsButton = findViewById(R.id.foodbtn);
+        userButton = findViewById(R.id.userbtn);
 
         // for search box
 
         mSearchButton = findViewById(R.id.searchButton);
-        final EditText mSearchBox = findViewById(R.id.searchbar);
+        mCartButton = findViewById(R.id.cart_imageButton);
+
+        mCartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSearchBox.setVisibility(View.VISIBLE);
+
+                DialogBuilder dialogBuilder = new DialogBuilder(HomeActivity.this, R.layout.home_activity_search_dialog_layout);
+                dialogBuilder.build();
+                setUpDialogForSearch(dialogBuilder);
+
             }
         });
+
+        // to set icon on create
 
         mHomeButton = findViewById(R.id.homeBtn);
         updateSelectedIcon(viewPager.getCurrentItem());
@@ -70,7 +100,7 @@ public class HomeActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-                Log.d(TAG, ""+i);
+
             }
 
             @Override
@@ -96,14 +126,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        /*transportButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               *//* updateSelectedIcon(viewPager.getCurrentItem());
-                transportButton.setImageResource(R.drawable.ic_taxi_selected);
-                viewPager.setCurrentItem(1);*//*
-            }
-        });*/
 
         hotelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,6 +145,14 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        userButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent userIntent = new Intent(HomeActivity.this, UserActivity.class);
+                startActivity(userIntent);
+            }
+        });
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +160,53 @@ public class HomeActivity extends AppCompatActivity {
                 showDialog();
             }
         });
+    }
+
+    private void setUpTransparentNavBar(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR);
+        }
+    }
+
+    private void setUpDialogForSearch(DialogBuilder db){
+        final Dialog dialog = db.getDialog();
+        topRadioButton = dialog.findViewById(R.id.search_dialog_top_radioBar);
+        bottomRadioButton = dialog.findViewById(R.id.search_dialog_bottom_radioBar);
+
+        ((ImageView)dialog.findViewById(R.id.search_dialog_back_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        topRadioButton.setChecked(true);
+
+        topRadioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+            }
+        });
+
+        topRadioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                topRadioButton.setChecked(true);
+                bottomRadioButton.setChecked(false);
+            }
+        });
+
+        bottomRadioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomRadioButton.setChecked(true);
+                topRadioButton.setChecked(false);
+            }
+        });
+
     }
 
     private void showDialog(){
@@ -149,24 +226,25 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Todo: create another activity for user to create their trip of only pictures
-
+                startActivity(new Intent(HomeActivity.this, NewPicPostActivity.class));
             }
         });
         (dB.getDialog().findViewById(R.id.new_post_blog)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Todo: create another activity for user to create their trip of only pictures
+                startActivity(new Intent(HomeActivity.this, NewPostActivity.class));
 
             }
         });
 
-        (dB.getDialog().findViewById(R.id.new_post_trip)).setOnClickListener(new View.OnClickListener() {
+        /*(dB.getDialog().findViewById(R.id.new_post_trip)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Normal way of creating post using trip details
                 startActivity(new Intent(HomeActivity.this,NewPostActivity.class));
             }
-        });
+        });*/
     }
 
     private void updateSelectedIcon(int i){
@@ -177,9 +255,6 @@ public class HomeActivity extends AppCompatActivity {
             case 0:
                 mHomeButton.setImageResource(R.drawable.ic_house);
                 break;
-            /*case :
-                transportButton.setImageResource(R.drawable.ic_taxi);
-                break;*/
             case 1:
                 hotelButton.setImageResource(R.drawable.ic_hotel);
                 break;
@@ -188,7 +263,6 @@ public class HomeActivity extends AppCompatActivity {
                 break;
             case 100:
                 mHomeButton.setImageResource(R.drawable.ic_house);
-                /*transportButton.setImageResource(R.drawable.ic_taxi);*/
                 hotelButton.setImageResource(R.drawable.ic_hotel);
                 restaurantsButton.setImageResource(R.drawable.ic_food);
             default:
@@ -198,6 +272,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void updateUi(int i){
+
+        fab.setOnClickListener(null);
+        final Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
 
         switch (i){
             case 0:
@@ -210,11 +287,6 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
                 break;
-           /* case 1:
-                transportButton.setImageResource(R.drawable.ic_taxi_selected);
-                fab.setImageResource(R.drawable.ic_search_white);
-                Log.d(TAG, "CabFragment Enabled");
-                break;*/
             case 1:
                 hotelButton.setImageResource(R.drawable.ic_hotel_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
@@ -223,7 +295,21 @@ public class HomeActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         Intent intent = new Intent(HomeActivity.this, HotelActivity.class);
 
-                        Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
+                        intent.putExtra("LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.hotel_fragment_location)).getText().toString().trim());
+
+                        intent.putExtra("CHECKIN", ((TextView)currentFragment.getView().findViewById(R.id.checkIn_value_textView)).getText().toString());
+                        intent.putExtra("CHECKIN_DAYOFWEEK", ((TextView)currentFragment.getView().findViewById(R.id.checkIn_value_day_of_week_textView)).getText().toString());
+                        intent.putExtra("CHECKIN_MONTH_YEAR", ((TextView)currentFragment.getView().findViewById(R.id.checkIn_value_year_month_textView)).getText().toString().substring(0,3));
+
+
+                        intent.putExtra("CHECKOUT", ((TextView)currentFragment.getView().findViewById(R.id.checkOut_value_textView)).getText().toString());
+                        intent.putExtra("CHECKOUT_DAYOFWEEK", ((TextView)currentFragment.getView().findViewById(R.id.checkOut_value_day_of_week_textView)).getText().toString());
+                        intent.putExtra("CHECKOUT_MONTH_YEAR", ((TextView)currentFragment.getView().findViewById(R.id.checkOut_value_year_month_textView)).getText().toString().substring(0,3));
+
+                        intent.putExtra("GUESTS", ((EditText)currentFragment.getView().findViewById(R.id.guests_value_textView)).getText().toString().trim());
+
+                        intent.putExtra("ROOMS", ((EditText)currentFragment.getView().findViewById(R.id.rooms_value_textView)).getText().toString().trim());
+
 
                         Pair<View, String> pair_location = Pair.create(currentFragment.getView().findViewById(R.id.hotel_fragment_location), "LOCATION");
 
@@ -240,12 +326,22 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(intent, activityOptions.toBundle());
                     }
                 });
-                Log.d(TAG, "HotelFragment Enabled");
                 break;
             case 2:
                 restaurantsButton.setImageResource(R.drawable.ic_food_selected);
                 fab.setImageResource(R.drawable.ic_search_white);
-                Log.d(TAG, "ResturantFragment Enabled");
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
+                        intent.putExtra("FOOD_LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.food_fragment_city_area_editText)).getText().toString().trim());
+
+                        Pair<View, String> pair_food_location = Pair.create(currentFragment.getView().findViewById(R.id.food_fragment_city_area_editText), "FOOD_LOCATION");
+
+                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pair_food_location);
+                        startActivity(intent, activityOptions.toBundle());
+                    }
+                });
                 break;
 
             default:

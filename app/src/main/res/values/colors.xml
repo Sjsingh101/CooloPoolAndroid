@@ -7,8 +7,14 @@
     <color name="colorBtmGray">#312F2F</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="white">#fff</color>
+    <color name="black">#000</color>
     <color name="GrayGoose">#D1D0CE</color>
-    <color name="BettleshipGrey">#848482</color>
-
-    <color name="FragmentSelected">#FF7C4444</color>
+    <color name="BattleshipGrey">#848482</color>
+    <color name="ReviewBarBg">#54A3A3A0</color>
+    <color name="detail_secondary">#886FEC</color>
+    <color name="top_bar">#0072e2</color>
+    <color name="FragmentSelected">#b2d9ff</color>
+    <color name="veg">#4CAF50</color>
+    <color name="non_veg">#912626</color>
+    <color name="transparent_blur_side_menu">#D4111113</color>
 </resources>

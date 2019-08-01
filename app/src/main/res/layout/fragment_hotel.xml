@@ -6,9 +6,6 @@
     tools:context=".Fragments.HotelFragment"
     android:background="@drawable/background">
 
-
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -21,10 +18,10 @@
             android:text="City/Area/Hotel Name"
             android:layout_centerHorizontal="true"
             android:textColor="@color/white"
-            android:fontFamily="sans-serif-thin"/>
+            android:fontFamily="@font/glacial_indifference_regular"/>
 
 
-        <TextView
+        <EditText
             android:id="@+id/hotel_fragment_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,8 +31,10 @@
             android:text="Shimla"
             android:textColor="@color/white"
             android:layout_marginTop="16dp"
-            android:fontFamily="sans-serif-black"
-            android:transitionName="LOCATION"/>
+            android:fontFamily="@font/glacial_indifference_bold"
+            android:transitionName="LOCATION"
+            android:inputType="text"
+            android:lines="1"/>
 
 
         <LinearLayout
@@ -65,7 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CHECK-IN"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:textColor="@color/colorBtmGray"/>
 
                 <TextView
@@ -75,6 +74,7 @@
                     android:layout_below="@id/checkIn_textView"
                     android:layout_marginTop="0dp"
                     android:text="02"
+                    android:fontFamily="@font/glacial_indifference_bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="50sp" />
 
@@ -84,6 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/checkIn_textView"
                     android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_marginTop="20dp"
                     android:layout_toRightOf="@id/checkIn_value_textView"
                     android:text="MAY 2019"
@@ -95,6 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/checkIn_value_year_month_textView"
                     android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/checkIn_value_textView"
                     android:text="Fri" />
@@ -119,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CHECK-OUT"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:textColor="@color/colorBtmGray"/>
 
                 <TextView
@@ -129,6 +131,7 @@
                     android:layout_below="@id/checkOut_textView"
                     android:layout_marginTop="0dp"
                     android:text="29"
+                    android:fontFamily="@font/glacial_indifference_bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="50sp" />
 
@@ -138,6 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/checkOut_textView"
                     android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_marginTop="20dp"
                     android:layout_toRightOf="@id/checkOut_value_textView"
                     android:text="MAY 2019"
@@ -150,12 +154,11 @@
                     android:layout_below="@+id/checkOut_value_year_month_textView"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="0dp"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_toRightOf="@+id/checkOut_value_textView"
                     android:text="Fri" />
 
-
             </RelativeLayout>
-
 
         </LinearLayout>
 
@@ -165,7 +168,6 @@
             android:layout_below="@id/top_checkIn_cheOut_panel"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp">
-
 
             <RelativeLayout
                 android:id="@+id/guests_holder"
@@ -182,22 +184,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="GUESTS"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:textColor="@color/colorBtmGray"/>
 
-                <TextView
+                <EditText
                     android:id="@+id/guests_value_textView"
                     android:layout_width="67dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/guests_textView"
                     android:layout_marginTop="0dp"
                     android:text="02"
+                    android:fontFamily="@font/glacial_indifference_bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="50sp"
-                    android:transitionName="GUESTS"/>
-
-
-
+                    android:transitionName="GUESTS"
+                    android:inputType="number"
+                    android:lines="1"/>
 
             </RelativeLayout>
 
@@ -217,29 +219,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ROOMS"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:textColor="@color/colorBtmGray"/>
 
-                <TextView
+                <EditText
                     android:id="@+id/rooms_value_textView"
                     android:layout_width="67dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/rooms_textView"
                     android:layout_marginTop="0dp"
                     android:text="02"
+                    android:fontFamily="@font/glacial_indifference_bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="50sp"
-                    android:transitionName="ROOMS"/>
-
-
-
+                    android:transitionName="ROOMS"
+                    android:inputType="number"
+                    android:lines="1"/>
 
             </RelativeLayout>
 
-
-
         </LinearLayout>
-
 
     </RelativeLayout>
 

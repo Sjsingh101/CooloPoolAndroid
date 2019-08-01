@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CartActivity"
+    android:background="@drawable/background">
+
+    <RelativeLayout
+        android:id="@+id/cart_activity_top_content_holder_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_white"
+            android:layout_marginLeft="32dp"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Cart"
+            android:textColor="@color/white"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:textSize="50sp"
+            android:layout_centerVertical="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cart_activity_cart_item_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cart_activity_top_content_holder_relativeLayout"
+        android:padding="8dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/cart_activity_toatl_content_holder_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/cart_activity_subtotal_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtotoal"
+            android:textSize="20sp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/cart_activity_subtotal_ammount_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:text="₹ 4500"/>
+
+        <TextView
+            android:id="@+id/cart_activity_tax_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_below="@id/cart_activity_subtotal_textView"
+            android:text="Tax"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/cart_activity_tax_ammount_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:layout_below="@id/cart_activity_subtotal_ammount_textView"
+            android:layout_alignParentEnd="true"
+            android:text="₹ 4500"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/cart_activity_total_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:textSize="20sp"
+            android:fontFamily="@font/glacial_indifference_bold"
+            android:layout_below="@id/cart_activity_tax_ammount_textView"/>
+
+        <TextView
+            android:id="@+id/cart_activity_total_ammount_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp"
+            android:layout_below="@id/cart_activity_tax_ammount_textView"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:text="₹ 4500"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Checkout"
+            android:layout_below="@id/cart_activity_total_ammount_textView"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.FoodActivity"
+    android:background="@drawable/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/food_activity_topBar_holder_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/transparent"
+            android:elevation="4dp"
+            android:layout_alignParentTop="true">
+
+            <ImageButton
+                android:id="@+id/food_activity_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back_black"
+                android:backgroundTint="@android:color/transparent"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"/>
+
+            <TextView
+                android:id="@+id/food_activity_location_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:fontFamily="@font/glacial_indifference_regular"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@id/food_activity_back_button"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:transitionName="FOOD_LOCATION"
+                android:layout_centerVertical="true"/>
+
+
+            <ImageButton
+                android:id="@+id/food_activity_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_settings_black"
+                android:backgroundTint="@color/transparent"/>
+
+
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/food_activity_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/food_activity_topBar_holder_relativeLayout"
+            tools:listitem="@layout/restaurant_list_item"
+            android:padding="8dp">
+
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

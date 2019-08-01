@@ -7,9 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000">
-
-
+        android:background="#7E000000">
 
         <ImageButton
             android:id="@+id/hotel_activity_filter_cross"
@@ -29,7 +27,7 @@
             android:textColor="@color/white"
             android:layout_centerHorizontal="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:fontFamily="sans-serif-thin"
+            android:fontFamily="@font/glacial_indifference_bold"
             android:textSize="30sp"
             android:layout_marginTop="16dp"/>
 
@@ -41,7 +39,7 @@
             android:textColor="@color/white"
             android:layout_below="@id/hotel_activity_filter_filter_textView"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:fontFamily="sans-serif-thin"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"/>
 
@@ -57,16 +55,17 @@
 
 
             <LinearLayout
-                android:id="@+id/hotel_activity_filter_0_to_1_km"
+                android:id="@+id/food_activity_filter_0_to_1_km"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginLeft="32dp">
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_0_to_1_km_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_selected_rectangle"
+                    android:src="@drawable/filter_bottom_selected_circle"
                     android:layout_gravity="center_vertical"/>
 
                 <TextView
@@ -75,7 +74,7 @@
                     android:text="0 - 1 Km"
                     android:textColor="@color/GrayGoose"
                     android:textSize="16sp"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_marginLeft="8dp"/>
 
             </LinearLayout>
@@ -88,9 +87,10 @@
                 android:layout_marginLeft="32dp">
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_1_to_3_km_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle"
+                    android:src="@drawable/filter_bottom_not_selected_circle"
                     android:layout_gravity="center_vertical"/>
 
                 <TextView
@@ -99,7 +99,7 @@
                     android:text="1 - 3 Km"
                     android:textColor="@color/GrayGoose"
                     android:textSize="16sp"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_marginLeft="8dp"/>
 
             </LinearLayout>
@@ -112,9 +112,10 @@
                 android:layout_marginLeft="32dp">
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_3_km_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle"
+                    android:src="@drawable/filter_bottom_not_selected_circle"
                     android:layout_gravity="center_vertical"/>
 
                 <TextView
@@ -123,7 +124,7 @@
                     android:text="3 + Km"
                     android:textColor="@color/GrayGoose"
                     android:textSize="16sp"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_marginLeft="8dp"/>
 
             </LinearLayout>
@@ -138,7 +139,7 @@
             android:textColor="@color/white"
             android:layout_below="@+id/hotel_activity_filter_show_result_holder_linearLayout"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:fontFamily="sans-serif-thin"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"/>
 
@@ -172,14 +173,15 @@
                     android:text="12Am to 6AM"
                     android:textColor="@color/GrayGoose"
                     android:textSize="12sp"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"/>
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_12_to_6_am_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_selected_circle" />
 
             </LinearLayout>
 
@@ -202,14 +204,15 @@
                     android:text="6Am to 12PM"
                     android:textColor="@color/GrayGoose"
                     android:textSize="12sp"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"/>
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_6_to_12_morning_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_not_selected_circle" />
 
             </LinearLayout>
 
@@ -232,14 +235,15 @@
                     android:text="12Pm to 5PM"
                     android:textColor="@color/GrayGoose"
                     android:textSize="12sp"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"/>
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_12_to_6_afternoon_evening_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_not_selected_circle" />
 
             </LinearLayout>
 
@@ -262,17 +266,17 @@
                     android:text="5PM to 12AM"
                     android:textColor="@color/GrayGoose"
                     android:textSize="12sp"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp" />
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_6_to_12_night_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_not_selected_circle" />
 
             </LinearLayout>
-
 
         </LinearLayout>
 
@@ -284,10 +288,9 @@
             android:textColor="@color/white"
             android:layout_below="@+id/hotel_activity_filter_check_in_holder_linearLayout"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:fontFamily="sans-serif-thin"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"/>
-
 
         <LinearLayout
             android:id="@+id/hotel_activity_filter_type_holder_linearLayout"
@@ -298,7 +301,6 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp">
 
-
             <LinearLayout
                 android:id="@+id/hotel_activity_filter_ac"
                 android:layout_width="wrap_content"
@@ -307,21 +309,21 @@
                 android:layout_marginLeft="32dp"
                 android:gravity="center_horizontal">
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:text="AC"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/GrayGoose"
                     android:textSize="16sp" />
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_ac_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_selected_circle" />
 
             </LinearLayout>
 
@@ -333,25 +335,24 @@
                 android:layout_marginLeft="32dp"
                 android:gravity="center_horizontal">
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="NON AC"
                     android:textColor="@color/GrayGoose"
                     android:textSize="16sp"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="@font/glacial_indifference_regular"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:layout_marginTop="8dp"
                     />
 
                 <ImageView
+                    android:id="@+id/hotel_activity_filter_non_ac_selector"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/bottom_un_selected_rectangle" />
+                    android:src="@drawable/filter_bottom_not_selected_circle" />
 
             </LinearLayout>
-
 
         </LinearLayout>
 
@@ -363,12 +364,12 @@
             android:textColor="@color/white"
             android:layout_below="@+id/hotel_activity_filter_type_holder_linearLayout"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:fontFamily="sans-serif-thin"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"/>
 
-
-        <com.appyvet.materialrangebar.RangeBar xmlns:app="http://schemas.android.com/apk/res-auto"
+        <com.appyvet.materialrangebar.RangeBar
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/hotel_activity_filter_price_range_slider"
             android:layout_below="@id/hotel_activity_filter_price_range_textView"
             android:layout_width="wrap_content"
@@ -395,18 +396,16 @@
             app:mrb_tickDefaultLabel="label"
             app:mrb_tickEnd="10000"
             app:mrb_tickHeight="0dp"
-            app:mrb_tickInterval="500"
+            app:mrb_tickInterval="50"
             app:mrb_tickLabelColor="#fff"
             app:mrb_tickLabelSelectedColor="#000"
             app:mrb_tickLabelSize="4sp"
-            app:mrb_tickStart="1000"
+            app:mrb_tickStart="500"
             app:mrb_rangeBarColor="#646465"
             app:mrb_selectorColor="@color/transparent"/>
 
-
-
-
         <Button
+            android:id="@+id/hotel_activity_filter_apply_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Apply"
@@ -414,15 +413,10 @@
             android:layout_below="@id/hotel_activity_filter_price_range_slider"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="52dp"
+            android:fontFamily="@font/glacial_indifference_regular"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
             android:background="@drawable/filter_apply_button_background"/>
 
-
-
-
     </RelativeLayout>
-
-
-
 
 </android.support.constraint.ConstraintLayout>

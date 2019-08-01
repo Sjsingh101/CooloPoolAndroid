@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".Activity.ProfileSettingActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".8"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Edit Profile"
+            android:fontFamily="@font/glacial_indifference_bold"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+        <ImageButton
+            android:layout_weight=".2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check_white"
+            android:background="@color/transparent"
+            android:layout_marginTop="40dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/GrayGoose"
+        android:elevation="6dp"
+        android:layout_marginBottom="5dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilepic"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="120dp"
+                android:elevation="4dp"
+                android:scaleType="centerCrop"
+                android:layout_height="130dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/userProfilePic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/glacial_indifference_regular"
+                android:text="Change Profile Pic"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:fontFamily="@font/glacial_indifference_regular"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="20sp"
+                android:backgroundTint="@color/GrayGoose"
+                android:padding="16dp"
+                android:drawablePadding="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <EditText
+                android:id="@+id/phoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User Name"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                android:fontFamily="@font/glacial_indifference_regular"
+                android:inputType="number"
+                android:textColorHint="@color/white"
+                android:textSize="20sp"
+                android:backgroundTint="@color/GrayGoose"
+                android:padding="16dp"
+                android:drawablePadding="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:id="@+id/Url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Website"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/white"
+                android:fontFamily="@font/glacial_indifference_regular"
+                android:textSize="20sp"
+                android:backgroundTint="@color/GrayGoose"
+                android:padding="16dp"
+                android:drawablePadding="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:id="@+id/Bio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bio"
+                android:textColor="@color/white"
+                android:singleLine="false"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/white"
+                android:fontFamily="@font/glacial_indifference_regular"
+                android:textSize="20sp"
+                android:backgroundTint="@color/GrayGoose"
+                android:padding="16dp"
+                android:drawablePadding="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

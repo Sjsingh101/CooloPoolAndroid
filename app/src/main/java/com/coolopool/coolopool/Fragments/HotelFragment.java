@@ -14,6 +14,7 @@ import android.widget.NumberPicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
 
@@ -81,44 +82,34 @@ public class HotelFragment extends Fragment {
         guestsHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_guests_rooms_chooser);
+                /*final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_guests_rooms_chooser);
                 dB.build();
                 ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         guestsBack(v, dB);
                     }
-                });
+                });*/
             }
         });
 
         roomsHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_guests_rooms_chooser);
+                /*final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_guests_rooms_chooser);
                 dB.build();
                 ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         roomsBack(v, dB);
                     }
-                });
+                });*/
             }
         });
 
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.city_area_hotel_chooser);
-                dB.build();
-
-                ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dB.destroy();
-                    }
-                });
-
 
             }
         });
@@ -148,7 +139,7 @@ public class HotelFragment extends Fragment {
         }
 
         ((TextView)v.findViewById(R.id.checkIn_value_day_of_week_textView)).setText(dayOfWeek);
-        ((TextView)v.findViewById(R.id.checkIn_value_year_month_textView)).setText(MONTHS[month]+" "+year);
+        ((TextView)v.findViewById(R.id.checkIn_value_year_month_textView)).setText(MyApplication.MONTHS[month]+" "+year);
 
         dB.destroy();
 
@@ -175,7 +166,7 @@ public class HotelFragment extends Fragment {
         dB.destroy();
     }
 
-    private void guestsBack(View v, DialogBuilder dB){
+    /*private void guestsBack(View v, DialogBuilder dB){
         NumberPicker numberPicker = (NumberPicker)dB.getDialog().findViewById(R.id.numberPicker);
         numberPicker.setWrapSelectorWheel(true);
 
@@ -210,7 +201,7 @@ public class HotelFragment extends Fragment {
 
         dB.destroy();
 
-    }
+    }*/
 
     private String getDayOfWeek(int day, int month, int year){
         String date = ""+day+"/"+(month+1)+"/"+year;

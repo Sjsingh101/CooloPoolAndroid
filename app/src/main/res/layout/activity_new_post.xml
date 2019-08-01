@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:gravity="center"
+            android:fontFamily="@font/glacial_indifference_bold"
             android:text="New Post"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
@@ -39,8 +40,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:gravity="left"
+                android:layout_marginStart="10dp"
+                android:gravity="start"
+                android:fontFamily="@font/glacial_indifference_bold"
                 android:singleLine="true"
                 android:text="Title"
                 android:textAllCaps="false"
@@ -49,15 +51,18 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/new_post_activity_title_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:layout_marginRight="10dp"
                 android:hint="Get a catchy title"
                 android:singleLine="true"
                 android:textColorHint="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:transitionName="POST_TITLE"/>
 
         </LinearLayout>
 
@@ -77,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:gravity="left"
+                android:fontFamily="@font/glacial_indifference_bold"
                 android:text="Description"
                 android:textAllCaps="false"
                 android:textColor="@android:color/black"
@@ -84,10 +90,12 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/new_post_activity_description_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="50dp"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:layout_marginRight="10dp"
                 android:hint="Describe your trip"
                 android:textColorHint="@android:color/black"
@@ -113,17 +121,20 @@
                 android:gravity="left"
                 android:text="Date"
                 android:textAllCaps="false"
+                android:fontFamily="@font/glacial_indifference_bold"
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
             <DatePicker
+                android:id="@+id/new_post_activity_date_datePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:calendarViewShown="false"
                 android:datePickerMode="spinner"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:transitionName="POST_DATE"/>
 
         </LinearLayout>
 
@@ -159,6 +170,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:textColor="@android:color/white"
+              android:fontFamily="@font/glacial_indifference_bold"
               android:textSize="20sp"
               android:text="Swipe when you are done"
               android:textAllCaps="false"/>

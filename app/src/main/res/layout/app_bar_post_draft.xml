@@ -14,20 +14,112 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="80dp"
+            android:background="@color/white"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/post_draft_activity_toolbar_back_button_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_back_black"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/post_draft_activity_toolbar_title_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/post_draft_activity_toolbar_back_button_imageView"
+                    android:text="Title of the post goes here"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/glacial_indifference_bold"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="8dp"
+                    android:transitionName="POST_TITLE"/>
+
+                <TextView
+                    android:id="@+id/post_draft_activity_toolbar_start_date_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/glacial_indifference_regular"
+                    android:layout_toRightOf="@id/post_draft_activity_toolbar_back_button_imageView"
+                    android:layout_below="@id/post_draft_activity_toolbar_title_textView"
+                    android:text="Start Date: "
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/post_draft_activity_toolbar_date_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/glacial_indifference_regular"
+                    android:layout_toRightOf="@id/post_draft_activity_toolbar_start_date_textView"
+                    android:layout_below="@id/post_draft_activity_toolbar_title_textView"
+                    android:text="May 02, 2019"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp"
+                    android:transitionName="POST_DATE"/>
+
+                <ImageView
+                    android:id="@+id/post_draft_activity_toolbar_menu_opener_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/post_draft_add_new"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="+ Add"
+                    android:fontFamily="@font/glacial_indifference_bold"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="8dp"/>
+
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+
 
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_post_draft" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|right"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:layout_anchorGravity="center">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:color/transparent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:text="Post"
+            android:elevation="16dp"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.HotelActivity"
-    android:background="@drawable/background">
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:id="@+id/hotel_activity_topBar_holder_relativeLayout"
+            android:id="@+id/food_activity_topBar_holder_relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/top_bar"
             android:layout_alignParentTop="true">
 
             <ImageButton
@@ -32,6 +32,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="City"
+                android:fontFamily="@font/glacial_indifference_regular"
+                android:textColor="@color/white"
                 android:layout_toRightOf="@id/hotel_activity_back_button"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:transitionName="LOCATION"/>
@@ -41,8 +43,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Thu, 02 May"
-                android:textColor="#000"
-                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/white"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:layout_toRightOf="@id/hotel_activity_back_button"
                 android:layout_below="@id/hotel_activity_location_textView"
                 android:transitionName="CHECKIN_DAY_YEAR"/>
@@ -55,17 +57,18 @@
                 android:layout_marginTop="-6dp"
                 android:layout_toRightOf="@id/hotel_activity_back_button"
                 android:text="to"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:textSize="12sp"
                 android:layout_marginLeft="1dp"
-                android:textColor="@color/BettleshipGrey" />
+                android:textColor="@color/BattleshipGrey" />
 
             <TextView
                 android:id="@+id/hotel_activity_date_to_dayOfWeek_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Thu, 02 May"
-                android:textColor="#000"
-                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/white"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:layout_toRightOf="@id/hotel_activity_back_button"
                 android:layout_below="@id/hotel_activity_to_textView"
                 android:layout_marginTop="-6dp"
@@ -76,7 +79,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="04"
+                android:textColor="@color/white"
                 android:layout_marginTop="-6dp"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:layout_toRightOf="@id/hotel_activity_date_from_dayOfWeek_textView"
                 android:textSize="12sp"
                 android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
@@ -89,10 +94,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Guests"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:layout_marginTop="-6dp"
                 android:layout_toRightOf="@id/hotel_activity_guests_value_textView"
                 android:textSize="12sp"
-                android:textColor="@color/BettleshipGrey"
+                android:textColor="@color/BattleshipGrey"
                 android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
@@ -102,7 +108,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="04"
+                android:textColor="@color/white"
                 android:layout_marginTop="-6dp"
+                android:fontFamily="@font/glacial_indifference_regular"
                 android:layout_toRightOf="@id/hotel_activity_guests_textView"
                 android:textSize="12sp"
                 android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
@@ -115,7 +123,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rooms"
-                android:textColor="@color/BettleshipGrey"
+                android:fontFamily="@font/glacial_indifference_regular"
+                android:textColor="@color/BattleshipGrey"
                 android:layout_marginTop="-6dp"
                 android:layout_toRightOf="@id/hotel_activity_rooms_value_textView"
                 android:textSize="12sp"
@@ -126,20 +135,24 @@
                 android:id="@+id/hotel_activity_filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_settings_black"
-                android:backgroundTint="@color/transparent"/>
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="17dp"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_filter_white_outline" />
 
 
 
         </RelativeLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/hotel_activity_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/hotel_activity_topBar_holder_relativeLayout"
-            tools:listitem="@layout/hotel_list_item">
+            android:layout_below="@id/food_activity_topBar_holder_relativeLayout"
+            tools:listitem="@layout/hotel_list_item"
+            android:padding="8dp">
 
 
         </android.support.v7.widget.RecyclerView>

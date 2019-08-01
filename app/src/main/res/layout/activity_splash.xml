@@ -9,11 +9,12 @@
     android:background="@drawable/background">
 
     <ImageView
+        android:id="@+id/Logo"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_gravity="center"
         android:layout_marginTop="160dp"
-        android:src="@drawable/logo" />
+        />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/startBtn"
@@ -22,6 +23,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="180dp"
         android:layout_marginBottom="80dp"
+        android:elevation="4dp"
         android:background="@drawable/circlebackground"
         android:text="What's Hot"
         android:textAllCaps="false"

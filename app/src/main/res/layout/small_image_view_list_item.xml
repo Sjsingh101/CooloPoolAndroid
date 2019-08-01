@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/image_view_list_item"
+    android:layout_width="50dp"
+    android:layout_height="70dp"
+    android:src="@drawable/pic1"
+    android:scaleType="centerCrop"
+    android:layout_marginRight="8dp">
+</ImageView>
