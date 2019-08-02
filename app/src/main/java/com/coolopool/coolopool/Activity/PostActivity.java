@@ -32,7 +32,7 @@ public class PostActivity extends AppCompatActivity {
 
 
 
-        final ImageView back = (ImageView)findViewById(R.id.post_activity_back_button);
+        final ImageView back = findViewById(R.id.post_activity_back_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,7 +78,7 @@ public class PostActivity extends AppCompatActivity {
 
 
 
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.post_activity_days_recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.post_activity_days_recyclerView);
         ImageAdapter adapter = new ImageAdapter(id, this);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

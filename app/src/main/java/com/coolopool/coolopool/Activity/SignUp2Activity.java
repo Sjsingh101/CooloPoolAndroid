@@ -46,9 +46,9 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
 
         getIntentData();
 
-        etname = (EditText) findViewById(R.id.Name);
-        etphoneNo = (EditText) findViewById(R.id.phoneNo);
-        etemail = (EditText) findViewById(R.id.email);
+        etname =  findViewById(R.id.Name);
+        etphoneNo =  findViewById(R.id.phoneNo);
+        etemail =  findViewById(R.id.email);
 
         mUserProfilePic = findViewById(R.id.userProfilePic);
         mCreateButton = findViewById(R.id.createAccountButton);
