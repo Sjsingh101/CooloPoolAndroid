@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/transaction_list_item_date_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="26 Jul 2019"
+        android:fontFamily="@font/glacial_indifference_bold"
+        android:padding="8dp"
+        android:textColor="@color/GrayGoose"/>
+    <TextView
+        android:id="@+id/transaction_list_item_detail_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/transaction_list_item_date_textView"
+        android:text="Hudson"
+        android:layout_marginLeft="8dp"
+        android:layout_centerVertical="true"
+        android:textSize="20dp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/transaction_list_item_txn_id_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/transaction_list_item_detail_textView"
+        android:layout_marginLeft="8dp"
+        android:text="Txn id: 250098763"/>
+    <TextView
+        android:id="@+id/transaction_list_item_time_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/transaction_list_item_txn_id_textView"
+        android:layout_below="@id/transaction_list_item_detail_textView"
+        android:layout_marginLeft="16dp"
+        android:text="03:35 pm"
+        android:textColor="@color/GrayGoose"/>
+    <TextView
+        android:id="@+id/transaction_list_item_ammount_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- ₹21.00"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:textSize="20dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/transaction_list_item_closing_balance_textView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Closing Balance: ₹21.00"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/GrayGoose"
+        android:layout_marginRight="8dp"
+        android:layout_below="@id/transaction_list_item_detail_textView" />
+
+
+
+</RelativeLayout>
