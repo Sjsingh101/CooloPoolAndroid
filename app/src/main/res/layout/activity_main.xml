@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="bottom"
     tools:context=".Activity.HomeActivity"
-    android:background="#0072e2">
+    >
 
 
     <LinearLayout
@@ -17,7 +17,8 @@
         android:orientation="horizontal"
         android:paddingStart="16dp"
         android:paddingEnd="0dp"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:background="@color/colorPrimary">
 
 
 
