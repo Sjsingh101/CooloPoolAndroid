@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.R;
@@ -16,13 +17,24 @@ public class SettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-    mProfileButton = findViewById(R.id.profilebtn);
-    mProfileButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent =  new Intent(SettingActivity.this, ProfileSettingActivity.class);
-            startActivity(intent);
-        }
-    });
+        mProfileButton = findViewById(R.id.profilebtn);
+        mProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(SettingActivity.this, ProfileSettingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        (findViewById(R.id.setting_activity_wallet_holder_linearLayout)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SettingActivity.this, WalletActivity.class));
+            }
+        });
+
+
+
     }
+
 }
