@@ -16,8 +16,10 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.WalletActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
+        <activity android:name=".Activity.PaymentActivity"></activity>
+        <activity
+            android:name=".Activity.WalletActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity android:name=".Activity.ProfileSettingActivity" />
         <activity android:name=".Activity.SettingActivity" />
         <activity android:name=".Activity.PhotoActivity" />
