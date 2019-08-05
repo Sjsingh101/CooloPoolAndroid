@@ -1,10 +1,12 @@
 package com.coolopool.coolopool.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.coolopool.coolopool.Adapter.CartListAdapter;
 import com.coolopool.coolopool.Class.CartItem;
@@ -22,6 +24,13 @@ public class CartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+
+        (findViewById(R.id.cart_activity_checkout_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CartActivity.this, PaymentActivity.class));
+            }
+        });
 
         items = new ArrayList<>();
 
