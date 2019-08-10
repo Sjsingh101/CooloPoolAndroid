@@ -44,7 +44,8 @@
                 android:layout_height="wrap_content"
                 android:text="Thu, 02 May"
                 android:textColor="@color/white"
-                android:fontFamily="@font/glacial_indifference_regular"
+                android:textSize="12sp"
+                android:fontFamily="@font/glacial_indifference_bold"
                 android:layout_toRightOf="@id/hotel_activity_back_button"
                 android:layout_below="@id/hotel_activity_location_textView"
                 android:transitionName="CHECKIN_DAY_YEAR"/>
@@ -54,13 +55,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
-                android:layout_marginTop="-6dp"
                 android:layout_toRightOf="@id/hotel_activity_back_button"
                 android:text="to"
+                android:layout_marginTop="-2dp"
                 android:fontFamily="@font/glacial_indifference_regular"
                 android:textSize="12sp"
                 android:layout_marginLeft="1dp"
-                android:textColor="@color/BattleshipGrey" />
+                android:textColor="@color/GrayGoose" />
 
             <TextView
                 android:id="@+id/hotel_activity_date_to_dayOfWeek_textView"
@@ -68,10 +69,11 @@
                 android:layout_height="wrap_content"
                 android:text="Thu, 02 May"
                 android:textColor="@color/white"
-                android:fontFamily="@font/glacial_indifference_regular"
+                android:textSize="12sp"
+                android:layout_marginTop="-2dp"
+                android:fontFamily="@font/glacial_indifference_bold"
                 android:layout_toRightOf="@id/hotel_activity_back_button"
                 android:layout_below="@id/hotel_activity_to_textView"
-                android:layout_marginTop="-6dp"
                 android:transitionName="CHECKOUT_DAY_YEAR"/>
 
             <TextView
@@ -84,7 +86,7 @@
                 android:fontFamily="@font/glacial_indifference_regular"
                 android:layout_toRightOf="@id/hotel_activity_date_from_dayOfWeek_textView"
                 android:textSize="12sp"
-                android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
+                android:layout_below="@id/hotel_activity_to_textView"
                 android:layout_marginLeft="32dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:transitionName="GUESTS"/>
@@ -98,8 +100,8 @@
                 android:layout_marginTop="-6dp"
                 android:layout_toRightOf="@id/hotel_activity_guests_value_textView"
                 android:textSize="12sp"
-                android:textColor="@color/BattleshipGrey"
-                android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
+                android:textColor="@color/GrayGoose"
+                android:layout_below="@id/hotel_activity_to_textView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
 
@@ -113,7 +115,7 @@
                 android:fontFamily="@font/glacial_indifference_regular"
                 android:layout_toRightOf="@id/hotel_activity_guests_textView"
                 android:textSize="12sp"
-                android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
+                android:layout_below="@id/hotel_activity_to_textView"
                 android:layout_marginLeft="12dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:transitionName="ROOMS"/>
@@ -124,11 +126,11 @@
                 android:layout_height="wrap_content"
                 android:text="Rooms"
                 android:fontFamily="@font/glacial_indifference_regular"
-                android:textColor="@color/BattleshipGrey"
+                android:textColor="@color/GrayGoose"
                 android:layout_marginTop="-6dp"
                 android:layout_toRightOf="@id/hotel_activity_rooms_value_textView"
                 android:textSize="12sp"
-                android:layout_below="@id/hotel_activity_date_from_dayOfWeek_textView"
+                android:layout_below="@id/hotel_activity_to_textView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
             <ImageButton
