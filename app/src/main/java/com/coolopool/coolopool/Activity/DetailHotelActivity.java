@@ -19,8 +19,10 @@ import android.widget.TextView;
 
 import com.coolopool.coolopool.Adapter.AmenitiesAdapter;
 import com.coolopool.coolopool.Adapter.ReviewAdapter;
+import com.coolopool.coolopool.Adapter.RoomTypAdapter;
 import com.coolopool.coolopool.Class.Amenities;
 import com.coolopool.coolopool.Class.Review;
+import com.coolopool.coolopool.Class.RoomType;
 import com.coolopool.coolopool.R;
 
 import java.util.ArrayList;
@@ -51,8 +53,25 @@ public class DetailHotelActivity extends AppCompatActivity {
 
         setUpReview();
 
+        setupRoomTypes();
+
     }
 
+    private void setupRoomTypes(){
+        ArrayList<RoomType> roomTypes = new ArrayList<>();
+        roomTypes.add(new RoomType("Delux", 3));
+        roomTypes.add(new RoomType("Premium", 8));
+        roomTypes.add(new RoomType("Double", 6));
+        roomTypes.add(new RoomType("Single", 2));
+
+        RoomTypAdapter adapter = new RoomTypAdapter(roomTypes, DetailHotelActivity.this);
+
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.detail_hotel_activity_room_types_recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(DetailHotelActivity.this));
+        recyclerView.setHasFixedSize(false);
+
+        recyclerView.setAdapter(adapter);
+    }
 
     private void setUpReview(){
         String des = "Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions and limitations under the License.";

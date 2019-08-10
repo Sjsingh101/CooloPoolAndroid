@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:padding="8dp">
 
     <RadioButton
         android:id="@+id/room_type_list_item_radioButton"
@@ -20,7 +20,7 @@
         android:fontFamily="@font/glacial_indifference_regular"
         android:text="Delux"
         android:layout_centerVertical="true"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:layout_marginLeft="8dp"/>
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:text="4"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:fontFamily="@font/glacial_indifference_regular"
         android:layout_marginRight="16sp"/>
 

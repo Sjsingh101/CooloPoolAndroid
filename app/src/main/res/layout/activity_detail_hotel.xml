@@ -160,41 +160,14 @@
                             android:textStyle="bold"
                             android:textColor="@color/black"/>
 
-                        <com.coolopool.coolopool.Views.RoomTypeView
-                            android:id="@+id/detail_hotel_activity_delux_roomType"
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/detail_hotel_activity_room_types_recyclerView"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="wrap_content"
                             android:layout_below="@id/detail_hotel_activity_room_types_textView"
-                            app:text="Delux"
-                            app:textSize="20dp"
-                            app:numberPickerRightGap="-30dp"/>
+                            tools:listitem="@layout/room_type_list_item">
 
-                        <com.coolopool.coolopool.Views.RoomTypeView
-                            android:id="@+id/detail_hotel_activity_premium_roomType"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_below="@id/detail_hotel_activity_delux_roomType"
-                            app:text="Premium"
-                            app:textSize="20dp"
-                            app:numberPickerRightGap="-30dp"/>
-
-                        <com.coolopool.coolopool.Views.RoomTypeView
-                            android:id="@+id/detail_hotel_activity_double_roomType"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_below="@id/detail_hotel_activity_premium_roomType"
-                            app:text="Double"
-                            app:textSize="20dp"
-                            app:numberPickerRightGap="-30dp"/>
-
-                        <com.coolopool.coolopool.Views.RoomTypeView
-                            android:id="@+id/detail_hotel_activity_single_roomType"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_below="@id/detail_hotel_activity_double_roomType"
-                            app:text="Premium"
-                            app:textSize="20dp"
-                            app:numberPickerRightGap="-30dp"/>
+                        </android.support.v7.widget.RecyclerView>
 
 
                     </RelativeLayout>
