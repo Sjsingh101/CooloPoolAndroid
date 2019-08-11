@@ -16,14 +16,14 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:padding="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
                     <ImageButton
                         android:id="@+id/settingbtn"
                         android:layout_width="wrap_content"
@@ -40,7 +40,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
 
                     <LinearLayout
@@ -90,7 +91,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:weightSum="3"
+                    android:padding="16dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -175,7 +177,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
                     android:layout_marginTop="20dp"
                     android:orientation="vertical">
 
@@ -185,11 +186,13 @@
                         android:fontFamily="@font/glacial_indifference_bold"
                         android:text="Trips"
                         android:textColor="#ffffff"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:padding="16dp"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:background="@color/white">
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/Trip_RecyclerView"
                             android:layout_width="match_parent"
@@ -206,14 +209,14 @@
                         android:fontFamily="@font/glacial_indifference_regular"
                         android:textColor="#ffffff"
                         android:textSize="12sp"
-                        android:text="Plan another trip +" />
+                        android:text="Plan another trip +"
+                        android:padding="16dp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
                     android:layout_marginTop="20dp"
                     android:orientation="vertical">
 
@@ -223,12 +226,14 @@
                         android:fontFamily="@font/glacial_indifference_bold"
                         android:text="Photos"
                         android:textColor="#ffffff"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:padding="16dp"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:background="@color/white">
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/Photo_RecyclerView"
                             android:layout_width="match_parent"
@@ -243,8 +248,7 @@
                         android:fontFamily="@font/glacial_indifference_regular"
                         android:layout_height="wrap_content"
                         android:textColor="#ffffff"
-                        android:textSize="12sp"
-                        android:text="Add another photo +" />
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
