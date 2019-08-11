@@ -283,7 +283,7 @@ public class HomeActivity extends AppCompatActivity {
         switch (i){
             case 0:
                 mHomeButton.setImageResource(R.drawable.ic_house_selected);
-                fab.setImageResource(R.drawable.ic_add);
+                //fab.setImageResource(R.drawable.ic_add);
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -293,7 +293,7 @@ public class HomeActivity extends AppCompatActivity {
                 break;
             case 1:
                 hotelButton.setImageResource(R.drawable.ic_hotel_selected);
-                fab.setImageResource(R.drawable.ic_search_white);
+                //fab.setImageResource(R.drawable.ic_search_white);
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -333,7 +333,7 @@ public class HomeActivity extends AppCompatActivity {
                 break;
             case 2:
                 restaurantsButton.setImageResource(R.drawable.ic_food_selected);
-                fab.setImageResource(R.drawable.ic_search_white);
+                //fab.setImageResource(R.drawable.ic_search_white);
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
