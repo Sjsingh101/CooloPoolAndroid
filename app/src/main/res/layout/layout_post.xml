@@ -52,6 +52,7 @@
                 android:layout_marginTop="-5dp"
                 android:text="Description"
                 android:padding="2dp"
+                android:layout_marginLeft="6dp"
                 android:fontFamily="@font/glacial_indifference_regular"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"

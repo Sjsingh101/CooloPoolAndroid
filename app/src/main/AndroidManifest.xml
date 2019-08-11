@@ -43,9 +43,6 @@
             android:name=".Activity.DetailHotelActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
-            android:name=".Activity.UserActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar" />
-        <activity
             android:name=".Activity.HotelActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity

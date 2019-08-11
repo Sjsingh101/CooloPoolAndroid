@@ -1,8 +1,6 @@
 package com.coolopool.coolopool.Fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,7 +16,6 @@ import com.coolopool.coolopool.Activity.FollowersActivity;
 import com.coolopool.coolopool.Activity.NewPicPostActivity;
 import com.coolopool.coolopool.Activity.NewPostActivity;
 import com.coolopool.coolopool.Activity.SettingActivity;
-import com.coolopool.coolopool.Activity.UserActivity;
 import com.coolopool.coolopool.Adapter.PhotoListAdapter;
 import com.coolopool.coolopool.Adapter.TripListAdapter;
 import com.coolopool.coolopool.Application.MyApplication;
