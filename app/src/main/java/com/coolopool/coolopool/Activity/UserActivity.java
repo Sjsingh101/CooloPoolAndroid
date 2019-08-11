@@ -78,25 +78,6 @@ public class UserActivity extends AppCompatActivity {
             }
         });
 
-       /* mPhotoButton = findViewById(R.id.photobtn);
-        mPhotoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("Log_test", "Photo activity is started");
-                Intent intent = new Intent(UserActivity.this, PhotoActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        mTripButton = findViewById(R.id.tripsbtn);
-        mTripButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("Log_test", "Trip activity is started");
-                Intent intent = new Intent(UserActivity.this, TripActivity.class);
-                startActivity(intent);
-            }
-        });*/
 
        mAddPhoto = findViewById(R.id.addPhoto);
        mAddPhoto.setOnClickListener(new View.OnClickListener() {
