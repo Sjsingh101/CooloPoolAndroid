@@ -269,11 +269,13 @@ public class HomeActivity extends AppCompatActivity {
                 mHomeButton.setImageResource(R.drawable.ic_house);
                 hotelButton.setImageResource(R.drawable.ic_hotel);
                 restaurantsButton.setImageResource(R.drawable.ic_food);
+                break;
             default:
                 break;
         }
 
     }
+
 
     private void updateUi(int i){
 
@@ -297,56 +299,20 @@ public class HomeActivity extends AppCompatActivity {
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(HomeActivity.this, HotelActivity.class);
-
-                        intent.putExtra("LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.hotel_fragment_location)).getText().toString().trim());
-
-                        intent.putExtra("CHECKIN", ((TextView)currentFragment.getView().findViewById(R.id.checkIn_value_textView)).getText().toString());
-                        intent.putExtra("CHECKIN_DAYOFWEEK", ((TextView)currentFragment.getView().findViewById(R.id.checkIn_value_day_of_week_textView)).getText().toString());
-                        intent.putExtra("CHECKIN_MONTH_YEAR", ((TextView)currentFragment.getView().findViewById(R.id.checkIn_value_year_month_textView)).getText().toString().substring(0,3));
-
-
-                        intent.putExtra("CHECKOUT", ((TextView)currentFragment.getView().findViewById(R.id.checkOut_value_textView)).getText().toString());
-                        intent.putExtra("CHECKOUT_DAYOFWEEK", ((TextView)currentFragment.getView().findViewById(R.id.checkOut_value_day_of_week_textView)).getText().toString());
-                        intent.putExtra("CHECKOUT_MONTH_YEAR", ((TextView)currentFragment.getView().findViewById(R.id.checkOut_value_year_month_textView)).getText().toString().substring(0,3));
-
-                        intent.putExtra("GUESTS", ((EditText)currentFragment.getView().findViewById(R.id.guests_value_textView)).getText().toString().trim());
-
-                        intent.putExtra("ROOMS", ((EditText)currentFragment.getView().findViewById(R.id.rooms_value_textView)).getText().toString().trim());
-
-
-                        Pair<View, String> pair_location = Pair.create(currentFragment.getView().findViewById(R.id.hotel_fragment_location), "LOCATION");
-
-                        Pair<View, String> pair_guests = Pair.create(currentFragment.getView().findViewById(R.id.guests_value_textView), "GUESTS");
-
-                        Pair<View, String> pair_rooms = Pair.create(currentFragment.getView().findViewById(R.id.rooms_value_textView), "ROOMS");
-
-                        Pair<View, String> pair_checkIn_day = Pair.create(currentFragment.getView().findViewById(R.id.checkIn_value_year_month_textView), "CHECKIN_DAY_YEAR");
-
-                        Pair<View, String> pair_checkOut_day = Pair.create(currentFragment.getView().findViewById(R.id.checkOut_value_year_month_textView), "CHECKOUT_DAY_YEAR");
-
-                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pair_location, pair_guests, pair_rooms, pair_checkIn_day, pair_checkOut_day);
-
-                        startActivity(intent, activityOptions.toBundle());
+                       showDialog();
                     }
                 });
                 break;
             case 2:
                 restaurantsButton.setImageResource(R.drawable.ic_food_selected);
-                //fab.setImageResource(R.drawable.ic_search_white);
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
-                        intent.putExtra("FOOD_LOCATION", ((EditText)currentFragment.getView().findViewById(R.id.food_fragment_city_area_editText)).getText().toString().trim());
-
-                        Pair<View, String> pair_food_location = Pair.create(currentFragment.getView().findViewById(R.id.food_fragment_city_area_editText), "FOOD_LOCATION");
-
-                        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pair_food_location);
-                        startActivity(intent, activityOptions.toBundle());
+                        showDialog();
                     }
                 });
                 break;
+
 
             default:
                 return;

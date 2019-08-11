@@ -1,19 +1,25 @@
 package com.coolopool.coolopool.Fragments;
 
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.NumberPicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.coolopool.coolopool.Activity.HomeActivity;
+import com.coolopool.coolopool.Activity.HotelActivity;
 import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
@@ -43,6 +49,15 @@ public class HotelFragment extends Fragment {
         // Inflate the layout for this fragment
 
         v = inflater.inflate(R.layout.fragment_hotel, container, false);
+
+        (v.findViewById(R.id.hotel_fragment_search_button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setUpTransition();
+            }
+        });
+
+
 
         TextView location = v.findViewById(R.id.hotel_fragment_location);
 
@@ -79,33 +94,6 @@ public class HotelFragment extends Fragment {
             }
         });
 
-        guestsHolder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_guests_rooms_chooser);
-                dB.build();
-                ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        guestsBack(v, dB);
-                    }
-                });*/
-            }
-        });
-
-        roomsHolder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*final DialogBuilder dB = new DialogBuilder(getActivity(), R.layout.dialog_guests_rooms_chooser);
-                dB.build();
-                ((ImageButton)dB.getDialog().findViewById(R.id.dialog_back_button)).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        roomsBack(v, dB);
-                    }
-                });*/
-            }
-        });
 
         location.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,6 +110,39 @@ public class HotelFragment extends Fragment {
         return v;
     }
 
+    private void setUpTransition(){
+        Intent intent = new Intent(getActivity(), HotelActivity.class);
+
+        intent.putExtra("LOCATION", ((EditText)v.findViewById(R.id.hotel_fragment_location)).getText().toString().trim());
+
+        intent.putExtra("CHECKIN", ((TextView)v.findViewById(R.id.checkIn_value_textView)).getText().toString());
+        intent.putExtra("CHECKIN_DAYOFWEEK", ((TextView)v.findViewById(R.id.checkIn_value_day_of_week_textView)).getText().toString());
+        intent.putExtra("CHECKIN_MONTH_YEAR", ((TextView)v.findViewById(R.id.checkIn_value_year_month_textView)).getText().toString().substring(0,3));
+
+
+        intent.putExtra("CHECKOUT", ((TextView)v.findViewById(R.id.checkOut_value_textView)).getText().toString());
+        intent.putExtra("CHECKOUT_DAYOFWEEK", ((TextView)v.findViewById(R.id.checkOut_value_day_of_week_textView)).getText().toString());
+        intent.putExtra("CHECKOUT_MONTH_YEAR", ((TextView)v.findViewById(R.id.checkOut_value_year_month_textView)).getText().toString().substring(0,3));
+
+        intent.putExtra("GUESTS", ((EditText)v.findViewById(R.id.guests_value_textView)).getText().toString().trim());
+
+        intent.putExtra("ROOMS", ((EditText)v.findViewById(R.id.rooms_value_textView)).getText().toString().trim());
+
+
+        Pair<View, String> pair_location = Pair.create(v.findViewById(R.id.hotel_fragment_location), "LOCATION");
+
+        Pair<View, String> pair_guests = Pair.create(v.findViewById(R.id.guests_value_textView), "GUESTS");
+
+        Pair<View, String> pair_rooms = Pair.create(v.findViewById(R.id.rooms_value_textView), "ROOMS");
+
+        Pair<View, String> pair_checkIn_day = Pair.create(v.findViewById(R.id.checkIn_value_year_month_textView), "CHECKIN_DAY_YEAR");
+
+        Pair<View, String> pair_checkOut_day = Pair.create(v.findViewById(R.id.checkOut_value_year_month_textView), "CHECKOUT_DAY_YEAR");
+
+        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(getActivity(), pair_location, pair_guests, pair_rooms, pair_checkIn_day, pair_checkOut_day);
+
+        startActivity(intent, activityOptions.toBundle());
+    }
 
     private void checkInBack(View v, DialogBuilder dB){
         DatePicker datePicker = (DatePicker)dB.getDialog().findViewById(R.id.datePicker);

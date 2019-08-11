@@ -163,6 +163,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/bottom_guests_room_linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/top_checkIn_cheOut_panel"
@@ -239,6 +240,16 @@
             </RelativeLayout>
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/hotel_fragment_search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bottom_guests_room_linearLayout"
+            android:layout_centerHorizontal="true"
+            android:text="Search"
+            android:layout_marginTop="32dp"
+            android:padding="16dp"/>
 
     </RelativeLayout>
 
