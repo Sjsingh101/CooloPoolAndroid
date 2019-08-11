@@ -47,6 +47,8 @@ public class DetailFoodActivity extends AppCompatActivity {
                 .load(img)
                 .into(mthubImage);
 
+        
+
         setUpToolbar();
         setUpRestaurantInfo();
         setUpAmenities();

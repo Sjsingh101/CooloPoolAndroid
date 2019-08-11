@@ -37,7 +37,7 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.FoodMe
         FoodMenuItem currentItem = menuItems.get(i);
 
         foodMenuViewHolder.textView.setText(currentItem.getmItem());
-        
+
     }
 
     @Override
