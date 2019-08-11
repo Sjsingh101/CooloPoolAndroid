@@ -148,8 +148,9 @@ public class HomeActivity extends AppCompatActivity {
         userButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent userIntent = new Intent(HomeActivity.this, UserActivity.class);
-                startActivity(userIntent);
+                updateSelectedIcon(viewPager.getCurrentItem());
+                userButton.setImageResource(R.drawable.ic_user_selected);
+                viewPager.setCurrentItem(3);
             }
         });
 
@@ -260,6 +261,9 @@ public class HomeActivity extends AppCompatActivity {
                 break;
             case 2:
                 restaurantsButton.setImageResource(R.drawable.ic_food);
+                break;
+            case 3:
+                userButton.setImageResource(R.drawable.ic_user);
                 break;
             case 100:
                 mHomeButton.setImageResource(R.drawable.ic_house);

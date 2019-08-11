@@ -6,11 +6,12 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.coolopool.coolopool.Fragments.HomeFragment;
 import com.coolopool.coolopool.Fragments.HotelFragment;
+import com.coolopool.coolopool.Fragments.ProfileFragment;
 import com.coolopool.coolopool.Fragments.RestaurantsFragment;
 
 public class MainStatePageAdapter extends FragmentStatePagerAdapter {
 
-    Fragment[] fragments = {new HomeFragment(), new HotelFragment(), new RestaurantsFragment()};
+    Fragment[] fragments = {new HomeFragment(), new HotelFragment(), new RestaurantsFragment(), new ProfileFragment()};
 
 
     public MainStatePageAdapter(FragmentManager fm) {
@@ -26,6 +27,6 @@ public class MainStatePageAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }
