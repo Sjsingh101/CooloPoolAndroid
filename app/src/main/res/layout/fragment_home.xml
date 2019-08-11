@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:gravity="bottom"
-        tools:listitem="@layout/layout_post"/>
+        tools:listitem="@layout/layout_post"
+        android:layout_marginBottom="50dp"/>
 
 </FrameLayout>

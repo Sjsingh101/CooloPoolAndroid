@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/pic3"
             android:transitionName="POST_IMAGE"/>
 
         <LinearLayout
@@ -34,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:padding="0dp"
+                android:padding="8dp"
                 android:fontFamily="@font/glacial_indifference_bold"
                 android:maxLines="1"
                 android:ellipsize="end"
@@ -50,6 +51,7 @@
                 android:layout_gravity="bottom"
                 android:layout_marginTop="-5dp"
                 android:text="Description"
+                android:padding="2dp"
                 android:fontFamily="@font/glacial_indifference_regular"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
