@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.coolopool.coolopool.Class.FoodMenuItem;
 import com.coolopool.coolopool.R;
@@ -35,12 +36,8 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.FoodMe
     public void onBindViewHolder(@NonNull FoodMenuViewHolder foodMenuViewHolder, int i) {
         FoodMenuItem currentItem = menuItems.get(i);
 
-        foodMenuViewHolder.foodView.setmText(currentItem.getmItem());
-        if(currentItem.getmType() == 0){
-            foodMenuViewHolder.foodView.setmCircleColor(mContext.getResources().getColor(R.color.veg));
-        }else{
-            foodMenuViewHolder.foodView.setmCircleColor(mContext.getResources().getColor(R.color.non_veg));
-        }
+        foodMenuViewHolder.textView.setText(currentItem.getmItem());
+        
     }
 
     @Override
@@ -50,11 +47,11 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.FoodMe
 
     public class FoodMenuViewHolder extends RecyclerView.ViewHolder{
 
-        FoodView foodView;
+        TextView textView;
 
         public FoodMenuViewHolder(@NonNull View itemView) {
             super(itemView);
-            foodView = (FoodView)itemView.findViewById(R.id.food_menu_list_item);
+            textView = (TextView) itemView.findViewById(R.id.food_menu_list_item_type_textView);
         }
     }
 }

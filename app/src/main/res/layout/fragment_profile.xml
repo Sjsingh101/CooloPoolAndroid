@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.ProfileFragment">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background">
@@ -217,7 +217,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="-8dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -247,25 +247,28 @@
                         android:layout_width="wrap_content"
                         android:fontFamily="@font/glacial_indifference_regular"
                         android:layout_height="wrap_content"
+                        android:text="Add another photo +"
                         android:textColor="#ffffff"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:padding="16dp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tags"
-                        android:fontFamily="@font/glacial_indifference_bold"
-                        android:textSize="20sp"
-                        android:textColor="#ffffff"
-                        />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tags"
+                    android:fontFamily="@font/glacial_indifference_bold"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
+                    android:padding="16dp"/>
+
 
                 </LinearLayout>
 
@@ -274,7 +277,7 @@
         </ScrollView>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 

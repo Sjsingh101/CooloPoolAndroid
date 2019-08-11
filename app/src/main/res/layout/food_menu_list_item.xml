@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
-    <com.coolopool.coolopool.Views.FoodView
-        android:id="@+id/food_menu_list_item"
-        android:layout_width="match_parent"
+    <RadioButton
+        android:id="@+id/food_menu_list_item_radioButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:food_text="Tandoori naan"
-        app:food_textSize="20dp"
-        app:food_circleColor="@color/veg"
-        app:food_numberPickerRightGap="-30dp"/>
+        android:layout_centerVertical="true"
+        android:checked="true" />
+
+    <TextView
+        android:id="@+id/food_menu_list_item_type_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/food_menu_list_item_radioButton"
+        android:fontFamily="@font/glacial_indifference_regular"
+        android:text="Delux"
+        android:layout_centerVertical="true"
+        android:textSize="20sp"
+        android:layout_marginLeft="8dp"/>
+
+
+
+
 
 </RelativeLayout>

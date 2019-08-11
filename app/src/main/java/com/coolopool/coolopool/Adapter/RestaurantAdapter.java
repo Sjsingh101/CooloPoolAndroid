@@ -61,7 +61,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
         }
 
-        restaurantViewHolder.mGoButton.setOnClickListener(new View.OnClickListener() {
+        restaurantViewHolder.v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, DetailFoodActivity.class);
@@ -93,9 +93,11 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         TextView mOpeningTime;
         TextView mClosingTme;
         ImageView mGoButton;
+        View v;
 
         public RestaurantViewHolder(@NonNull View itemView) {
             super(itemView);
+            v = itemView;
             mThumbnail = (ImageView)itemView.findViewById(R.id.restaurants_list_item_picture_imageView);
             mName = (TextView)itemView.findViewById(R.id.restaurants_list_item_name_textView);
             mCuisineType = (TextView)itemView.findViewById(R.id.restaurants_list_item_type_of_food_textView);

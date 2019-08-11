@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_settings_black"
+                android:src="@drawable/ic_filter"
                 android:backgroundTint="@color/transparent"/>
 
 

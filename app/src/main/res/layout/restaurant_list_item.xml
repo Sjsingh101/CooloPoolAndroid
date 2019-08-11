@@ -92,6 +92,7 @@
             android:layout_marginLeft="8dp"/>
 
         <TextView
+            android:id="@+id/per_person"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/glacial_indifference_regular"
@@ -116,22 +117,22 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/glacial_indifference_regular"
             android:layout_toLeftOf="@id/restaurants_list_item_go_imageView"
-            android:layout_below="@id/restaurants_list_item_non_veg_textView"
+            android:layout_below="@id/restaurants_list_item_veg_separator_textView"
             android:text="9:00 Am"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginRight="16dp"/>
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/restaurants_list_item_closing_time_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/restaurants_list_item_go_imageView"
+            android:layout_toRightOf="@id/per_person"
+            android:layout_below="@id/restaurants_list_item_opening_time_textView"
             android:text="8:00 Pm"
+            android:gravity="right"
             android:layout_alignParentBottom="true"
             android:fontFamily="@font/glacial_indifference_regular"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="16dp"
             android:textSize="12dp"/>
 
     </RelativeLayout>

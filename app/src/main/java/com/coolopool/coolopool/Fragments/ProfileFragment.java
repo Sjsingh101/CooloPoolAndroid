@@ -102,7 +102,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d("Log_test","Add New photo is open");
-                Intent intent = new Intent(MyApplication.getAppContext(), NewPicPostActivity.class);
+                Intent intent = new Intent(getActivity(), NewPicPostActivity.class);
                 startActivity(intent);
             }
         });
