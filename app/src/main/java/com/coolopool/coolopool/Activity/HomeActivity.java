@@ -173,8 +173,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void setUpDialogForSearch(DialogBuilder db){
         final Dialog dialog = db.getDialog();
-        topRadioButton = dialog.findViewById(R.id.search_dialog_top_radioBar);
-        bottomRadioButton = dialog.findViewById(R.id.search_dialog_bottom_radioBar);
+
 
         ((ImageView)dialog.findViewById(R.id.search_dialog_back_button)).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,30 +182,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        topRadioButton.setChecked(true);
 
-        topRadioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
-            }
-        });
-
-        topRadioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                topRadioButton.setChecked(true);
-                bottomRadioButton.setChecked(false);
-            }
-        });
-
-        bottomRadioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                bottomRadioButton.setChecked(true);
-                topRadioButton.setChecked(false);
-            }
-        });
 
     }
 

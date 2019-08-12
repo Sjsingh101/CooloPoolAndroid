@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <ScrollView
+            android:layout_gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/profile_image_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center"
+                            android:elevation="6dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/userfacepic" />
+
+
+                    </LinearLayout>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/glacial_indifference_bold"
+                        android:layout_marginTop="10dp"
+                        android:elevation="6dp"
+                        android:text="@string/UserName"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/glacial_indifference_regular"
+                        android:text="place"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/followers_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:padding="16dp"
+                    android:layout_below="@id/profile_image_container">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/followbtn"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:fontFamily="@font/glacial_indifference_bold"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_circle_white"
+                            android:gravity="center"
+                            android:text="2K+" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/glacial_indifference_regular"
+                            android:text="Followers"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tripsbtn"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:fontFamily="@font/glacial_indifference_bold"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_circle_white"
+                            android:gravity="center"
+                            android:text="20" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/glacial_indifference_regular"
+                            android:text="Trips"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/photobtn"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/glacial_indifference_bold"
+                            android:background="@drawable/ic_circle_white"
+                            android:gravity="center"
+                            android:text="1845" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/glacial_indifference_regular"
+                            android:text="Photos"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp">
+
+                        <TextView
+                            android:id="@+id/settingbtn"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/glacial_indifference_bold"
+                            android:background="@drawable/ic_circle_white"
+                            android:gravity="center" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_like_heart"
+                            android:layout_marginTop="19dp"
+                            android:layout_marginLeft="19dp"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/glacial_indifference_regular"
+                            android:text="Follow"
+                            android:layout_below="@id/settingbtn"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/trips_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:layout_below="@id/followers_container">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/glacial_indifference_bold"
+                        android:text="Trips"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:padding="16dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/Trip_RecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </android.support.v7.widget.RecyclerView>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/addTrip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/glacial_indifference_regular"
+                        android:textColor="#ffffff"
+                        android:textSize="12sp"
+                        android:text="Plan another trip +"
+                        android:padding="16dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/picturs_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:orientation="vertical"
+                    android:layout_below="@id/trips_container">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/glacial_indifference_bold"
+                        android:text="Photos"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:padding="16dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/Photo_RecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </android.support.v7.widget.RecyclerView>
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/addPhoto"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/glacial_indifference_regular"
+                        android:layout_height="wrap_content"
+                        android:text="Add another photo +"
+                        android:textColor="#ffffff"
+                        android:textSize="12sp"
+                        android:padding="16dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/tag_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="-16dp"
+                    android:layout_below="@id/picturs_container">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tags"
+                        android:padding="16dp"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/glacial_indifference_bold"/>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

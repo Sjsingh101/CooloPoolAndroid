@@ -12,132 +12,19 @@
         android:layout_height="350dp"
         android:layout_centerInParent="true"
         android:background="#FFFFFF">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/search_dialog_separator_linearLayout">
-
-            <RadioButton
-                android:id="@+id/search_dialog_top_radioBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/circlebackground_white_small"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="16dp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/search_dialog_top_radioBar"
-                android:layout_centerVertical="true"
-                android:layout_margin="16dp"
-                android:fontFamily="@font/glacial_indifference_regular"
-                android:padding="16dp"
-                android:hint="Enter location "
-                android:textColorHint="@color/white"
-                android:backgroundTint="#A8000000"
-                android:background="@drawable/round_corner_search_bar_white_background"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/search_dialog_separator_linearLayout"
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_weight="1.4"
-                android:background="@color/black"
-                android:layout_marginLeft="32dp"
-                android:layout_gravity="center_vertical"
-                tools:ignore="Suspicious0dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:fontFamily="@font/glacial_indifference_regular"
-                android:gravity="center"
-                android:text="OR"
-                android:textColor="@color/black"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_weight="1.4"
-                android:background="@color/black"
-                android:layout_marginRight="32dp"
-                android:layout_gravity="center_vertical"/>
-
-        </LinearLayout>
+            android:layout_centerVertical="true"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:padding="16dp"
+            android:hint="Enter location "
+            android:textColorHint="@color/white"
+            android:backgroundTint="#A8000000"
+            android:background="@drawable/round_corner_search_bar_white_background"/>
 
 
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/search_dialog_separator_linearLayout">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select price range"
-                android:textColor="@color/black"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:textSize="16dp"
-                android:fontFamily="@font/glacial_indifference_regular"/>
-
-            <RadioButton
-                android:id="@+id/search_dialog_bottom_radioBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/circlebackground_white_small"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="16dp"
-                />
-
-            <com.appyvet.materialrangebar.RangeBar
-                android:id="@+id/food_activity_filter_price_range_slider"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:layout_toRightOf="@id/search_dialog_bottom_radioBar"
-                android:layout_centerVertical="true"
-                app:mrb_barWeight="1dp"
-                app:mrb_connectingLineWeight="4dp"
-                app:mrb_leftSelectorColor="#000"
-                app:mrb_pinColor="#646465"
-                app:mrb_pinMaxFont="15sp"
-                app:mrb_pinMinFont="1sp"
-                app:mrb_pinRadius="12dp"
-                app:mrb_pinTextColor="@color/white"
-                app:mrb_rangeBar="true"
-                app:mrb_rangeBarPaddingBottom="30dp"
-                app:mrb_rangeBar_rounded="true"
-                app:mrb_rightSelectorColor="#000000"
-                app:mrb_selectorBoundaryColor="#646465"
-                app:mrb_selectorBoundarySize="10dp"
-                app:mrb_selectorSize="3dp"
-                app:mrb_temporaryPins="false"
-                app:mrb_tickDefaultLabel="label"
-                app:mrb_tickEnd="10000"
-                app:mrb_tickHeight="0dp"
-                app:mrb_tickInterval="50"
-                app:mrb_tickLabelColor="#fff"
-                app:mrb_tickLabelSelectedColor="#000"
-                app:mrb_tickLabelSize="4sp"
-                app:mrb_tickStart="500"
-                app:mrb_rangeBarColor="#646465"
-                app:mrb_selectorColor="@color/transparent"/>
-
-        </RelativeLayout>
 
         <Button
             android:id="@+id/search_dialog_search_buttom"
