@@ -30,8 +30,8 @@ public class ProfileFragment extends Fragment {
 
     View v;
     RecyclerView mTripList,mPhotoList;
-    TextView mFollowButton, mAddPost, mAddPhoto;
-    ImageButton mSettingButton;
+    TextView mFollowButton, mAddPost, mAddPhoto, mSettingButton;
+
 
 
     public ProfileFragment() {
@@ -91,7 +91,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d("Log_test", "followers activity is started");
-                Intent intent = new Intent(MyApplication.getAppContext(), FollowersActivity.class);
+                Intent intent = new Intent(getActivity(), FollowersActivity.class);
                 startActivity(intent);
             }
         });

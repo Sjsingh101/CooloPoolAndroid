@@ -19,31 +19,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <RelativeLayout
-                    android:id="@+id/top_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp">
-                    <ImageButton
-                        android:id="@+id/settingbtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="9dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="0dp"
-                        android:background="@color/transparent"
-                        android:src="@drawable/ic_settings_white" />
-                </RelativeLayout>
 
                 <LinearLayout
                     android:id="@+id/profile_image_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:layout_below="@id/top_bar">
+                    android:padding="16dp">
 
 
                     <LinearLayout
@@ -175,6 +157,39 @@
                             android:textColor="@color/white"
                             android:textSize="20sp" />
                     </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp">
+
+                        <TextView
+                            android:id="@+id/settingbtn"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/glacial_indifference_bold"
+                            android:background="@drawable/ic_circle_white"
+                            android:gravity="center" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_settings_black"
+                            android:layout_marginTop="19dp"
+                            android:layout_marginLeft="19dp"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/glacial_indifference_regular"
+                            android:text="Settings"
+                            android:layout_below="@id/settingbtn"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
 
                 </LinearLayout>
 
