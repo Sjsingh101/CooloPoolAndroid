@@ -30,11 +30,12 @@
             <ImageButton
                 android:id="@+id/searchButton"
                 android:src="@drawable/ic_search_white"
-                android:backgroundTint="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:tint="@color/transparent"
                 android:layout_height="wrap_content"
-                android:contentDescription="TODO" />
+                android:background="@drawable/search_and_cart_bg"
+                android:contentDescription="TODO"
+                android:layout_gravity="center"/>
         </LinearLayout>
 
         <LinearLayout
@@ -44,11 +45,13 @@
             <ImageButton
                 android:id="@+id/cart_imageButton"
                 android:src="@drawable/ic_cart_white"
-                android:backgroundTint="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:tint="@color/transparent"
-                android:contentDescription="TODO" />
+                android:contentDescription="TODO"
+                android:layout_gravity="center"
+                android:layout_marginLeft="2dp"
+                android:background="@drawable/search_and_cart_bg"/>
         </LinearLayout>
 
     </LinearLayout>
