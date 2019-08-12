@@ -15,12 +15,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
                 <RelativeLayout
+                    android:id="@+id/top_bar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp">
@@ -38,10 +38,12 @@
                 </RelativeLayout>
 
                 <LinearLayout
+                    android:id="@+id/profile_image_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:layout_below="@id/top_bar">
 
 
                     <LinearLayout
@@ -87,12 +89,14 @@
 
 
                 <LinearLayout
+                    android:id="@+id/followers_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:orientation="horizontal"
                     android:weightSum="3"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:layout_below="@id/profile_image_container">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -175,10 +179,12 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/trips_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_below="@id/followers_container">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -215,10 +221,12 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/picturs_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-8dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_below="@id/trips_container">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -253,26 +261,29 @@
                         android:padding="16dp"/>
 
                 </LinearLayout>
-
                 <LinearLayout
+                    android:id="@+id/tag_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    >
+                    android:layout_marginTop="-16dp"
+                    android:layout_below="@id/picturs_container">
 
                     <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tags"
-                    android:fontFamily="@font/glacial_indifference_bold"
-                    android:textSize="20sp"
-                    android:textColor="#ffffff"
-                    android:padding="16dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tgas"
+                        android:padding="16dp"
+                        android:textSize="20sp"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </RelativeLayout>
 
         </ScrollView>
 
