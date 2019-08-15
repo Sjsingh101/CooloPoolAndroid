@@ -162,7 +162,7 @@
                         android:layout_marginLeft="16dp">
 
                         <TextView
-                            android:id="@+id/settingbtn"
+                            android:id="@+id/like_button"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_gravity="center"

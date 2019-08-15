@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.Activity.FollowersActivity;
@@ -30,7 +31,8 @@ public class ProfileFragment extends Fragment {
 
     View v;
     RecyclerView mTripList,mPhotoList;
-    TextView mFollowButton, mAddPost, mAddPhoto, mSettingButton;
+    TextView  mAddPost, mAddPhoto;
+    LinearLayout mSettingButton, mFollowButton;
 
 
 
