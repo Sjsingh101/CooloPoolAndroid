@@ -57,9 +57,9 @@ public class NewDayAdapter extends RecyclerView.Adapter<NewDayAdapter.NewDayView
                 @Override
                 public void onClick(View view, int position) {
                     if(previouslySelectedView != null){
-                        previouslySelectedView.setBackground(context.getResources().getDrawable(R.drawable.background));
+                        previouslySelectedView.setBackgroundColor(context.getResources().getColor(R.color.GrayGoose));
                     }
-                    view.setBackgroundColor(context.getResources().getColor(R.color.white));
+                    view.setBackground(context.getResources().getDrawable(R.drawable.background));
                     previouslySelectedView = view;
                     focussedPosition = position;
                 }
