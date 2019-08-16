@@ -2,30 +2,24 @@ package com.coolopool.coolopool.Activity;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appyvet.materialrangebar.RangeBar;
-import com.coolopool.coolopool.Adapter.HotelAdapter;
 import com.coolopool.coolopool.Adapter.RestaurantAdapter;
 import com.coolopool.coolopool.Class.Restaurant;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FoodActivity extends AppCompatActivity {
 

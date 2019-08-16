@@ -68,11 +68,11 @@
         android:focusable="false"
         android:fontFamily="@font/glacial_indifference_regular" />
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_marginTop="10dp"
             android:id="@+id/Followers_RecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        </android.support.v7.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

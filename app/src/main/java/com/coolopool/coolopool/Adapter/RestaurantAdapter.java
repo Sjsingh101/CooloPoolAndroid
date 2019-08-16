@@ -3,19 +3,16 @@ package com.coolopool.coolopool.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.coolopool.coolopool.Activity.DetailFoodActivity;
-import com.coolopool.coolopool.Activity.DetailHotelActivity;
 import com.coolopool.coolopool.Class.Restaurant;
 import com.coolopool.coolopool.R;
 

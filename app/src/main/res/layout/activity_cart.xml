@@ -32,14 +32,14 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cart_activity_cart_item_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/cart_activity_top_content_holder_relativeLayout"
         android:padding="8dp">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <RelativeLayout
         android:id="@+id/cart_activity_toatl_content_holder_linearLayout"

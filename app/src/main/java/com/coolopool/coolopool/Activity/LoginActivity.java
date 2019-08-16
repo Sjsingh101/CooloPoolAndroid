@@ -1,17 +1,14 @@
 package com.coolopool.coolopool.Activity;
 
-import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,7 +28,8 @@ public class LoginActivity extends AppCompatActivity {
     Button loginbtn;
     // ImageButton mBackButton;  uncomment if back button is required.
     TextView signUpbtn;
-    private static String UserName, Password;
+    static String UserName;
+    private static String Password;
 
     // Dummy URL only for testing, change it when get the real URL of the api
     private final String LOGIN_URL = "https://my-json-server.typicode.com/typicode/demo/posts/1";
