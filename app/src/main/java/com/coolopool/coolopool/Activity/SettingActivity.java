@@ -26,12 +26,14 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
+        /*
         (findViewById(R.id.setting_activity_wallet_holder_linearLayout)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(SettingActivity.this, WalletActivity.class));
             }
         });
+        */
 
 
 

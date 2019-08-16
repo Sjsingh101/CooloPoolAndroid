@@ -90,6 +90,7 @@
             android:drawableStart="@drawable/ic_about"/>
     </LinearLayout>
 
+    <!--
     <LinearLayout
         android:id="@+id/setting_activity_wallet_holder_linearLayout"
         android:layout_width="match_parent"
@@ -107,6 +108,7 @@
             android:fontFamily="@font/glacial_indifference_regular"
             android:drawableStart="@drawable/ic_wallet"/>
     </LinearLayout>
+    -->
 
     <LinearLayout
         android:layout_width="match_parent"
