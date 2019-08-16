@@ -38,6 +38,8 @@
                 android:layout_gravity="center"/>
         </LinearLayout>
 
+        <!--
+
         <LinearLayout
             android:layout_gravity="end"
             android:layout_width="wrap_content"
@@ -53,6 +55,8 @@
                 android:layout_marginLeft="2dp"
                 android:background="@drawable/search_and_cart_bg"/>
         </LinearLayout>
+
+        -->
 
     </LinearLayout>
 

@@ -65,7 +65,10 @@ public class HomeActivity extends AppCompatActivity {
         // for search box
 
         mSearchButton = findViewById(R.id.searchButton);
+
+        /*
         mCartButton = findViewById(R.id.cart_imageButton);
+
 
         mCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +76,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(HomeActivity.this, CartActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
