@@ -171,12 +171,12 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:background="@color/white">
-                        <android.support.v7.widget.RecyclerView
+                        <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/Trip_RecyclerView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                        </android.support.v7.widget.RecyclerView>
+                        </androidx.recyclerview.widget.RecyclerView>
 
                     </LinearLayout>
 
@@ -214,12 +214,12 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:background="@color/white">
-                        <android.support.v7.widget.RecyclerView
+                        <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/Photo_RecyclerView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                        </android.support.v7.widget.RecyclerView>
+                        </androidx.recyclerview.widget.RecyclerView>
 
                     </LinearLayout>
                     <TextView

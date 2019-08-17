@@ -1,20 +1,14 @@
 package com.coolopool.coolopool.Activity;
 
 import android.net.Uri;
-import android.os.Build;
-import android.provider.ContactsContract;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 
 import com.coolopool.coolopool.Adapter.ImageAdapter;
 import com.coolopool.coolopool.Adapter.NewDayAdapter;

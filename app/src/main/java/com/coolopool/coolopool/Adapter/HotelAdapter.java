@@ -2,27 +2,20 @@ package com.coolopool.coolopool.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v4.media.RatingCompat;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.coolopool.coolopool.Activity.DetailHotelActivity;
-import com.coolopool.coolopool.Activity.HotelActivity;
-import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.Class.Hotel;
 import com.coolopool.coolopool.R;
-import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 

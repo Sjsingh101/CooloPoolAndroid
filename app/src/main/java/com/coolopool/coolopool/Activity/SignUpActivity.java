@@ -1,21 +1,43 @@
 package com.coolopool.coolopool.Activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.coolopool.coolopool.R;
+import com.coolopool.coolopool.Storage.SharedPrefManager;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.Task;
+import com.google.gson.JsonObject;
 
-public class SignUpActivity extends AppCompatActivity {
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class SignUpActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     Button mNextButton;
     TextView mLoginButton;
     private EditText etusername, etpassword, etconfirmPassword;
+    CircleImageView googleLogin;
+    GoogleSignInClient msignInClient;
+    private static final int RC_SIGN_IN = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +68,23 @@ public class SignUpActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        googleLogin = (CircleImageView) findViewById(R.id.google_login);
+
+        GoogleSignInOptions signInOptions = new GoogleSignInOptions
+                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        msignInClient = GoogleSignIn.getClient(this, signInOptions);
+
+        googleLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = msignInClient.getSignInIntent();
+                startActivityForResult(intent, RC_SIGN_IN);
+            }
+        });
     }
 
     private void setUpSignUp(){
@@ -73,5 +112,54 @@ public class SignUpActivity extends AppCompatActivity {
         intent.putExtra("Username", username);
         intent.putExtra("Password", password);
         startActivity(intent);
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
+        }
+    }
+
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+
+            updateUI(account);
+        } catch (ApiException e) {
+            Log.w("Google Sign In Error", "signInResult:failed code=" + e.getStatusCode());
+            Toast.makeText(SignUpActivity.this, "Failed to Log in", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void updateUI(GoogleSignInAccount account) {
+        account = GoogleSignIn.getLastSignedInAccount(this);
+        if(account != null) {
+            String name = account.getDisplayName();
+            String email = account.getEmail();
+            String img_url = account.getPhotoUrl().toString();
+            LoginActivity.UserName = name;
+
+            // THIS IS JUST TEMPORARY, HAVE TO CHANGE THIS
+            JSONObject temp = new JSONObject();
+            try {
+                temp.put("id",1);
+                temp.put("title", "Post 1");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            SharedPrefManager.getInstance(SignUpActivity.this).saveUser(temp.toString());
+            Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
     }
 }

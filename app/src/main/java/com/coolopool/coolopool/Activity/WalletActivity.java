@@ -1,11 +1,10 @@
 package com.coolopool.coolopool.Activity;
 
-import android.os.TransactionTooLargeException;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.coolopool.coolopool.Adapter.TransactionAdapter;
 import com.coolopool.coolopool.Class.Transaction;

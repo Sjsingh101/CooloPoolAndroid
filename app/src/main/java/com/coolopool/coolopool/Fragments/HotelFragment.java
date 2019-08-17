@@ -4,9 +4,8 @@ package com.coolopool.coolopool.Fragments;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +13,9 @@ import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.NumberPicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.coolopool.coolopool.Activity.HomeActivity;
 import com.coolopool.coolopool.Activity.HotelActivity;
 import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.Helper.DialogBuilder;
@@ -27,7 +24,6 @@ import com.coolopool.coolopool.R;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.SimpleTimeZone;
 
 /**
  * A simple {@link Fragment} subclass.

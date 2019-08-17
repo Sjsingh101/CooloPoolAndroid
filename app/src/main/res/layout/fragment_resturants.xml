@@ -31,7 +31,7 @@
                 android:padding="10dp"
                 android:hint="City/Area/Resturants"
                 />
-            <android.support.v7.widget.AppCompatImageButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/restaurants_fragment_searchButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"

@@ -32,7 +32,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
     </RelativeLayout>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/wallet_activity_debit_card_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,9 +75,9 @@
 
         </RelativeLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/wallet_activity_credit_card_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -118,9 +118,9 @@
 
         </RelativeLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/wallet_activity_paytm_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -154,9 +154,9 @@
 
         </RelativeLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/wallet_activity_wallet_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -189,7 +189,7 @@
 
         </RelativeLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
 
