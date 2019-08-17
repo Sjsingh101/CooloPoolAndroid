@@ -26,7 +26,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp"
-                    android:background="@color/white">
+                    android:background="@drawable/rounded_edittext"
+                    android:layout_margin="8dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profile_image"
@@ -133,30 +134,20 @@
 
                     </LinearLayout>
 
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:id="@+id/settingbtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:layout_below="@id/profile_image_container"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
                     <TextView
+                        android:id="@+id/settingbtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Setting"
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:textSize="20sp"
+                        android:layout_marginTop="32dp"
+                        android:layout_below="@id/profile_image"
                         android:fontFamily="@font/glacial_indifference_bold"
                         android:background="@color/transparent_blur_side_menu"/>
 
-
-                </LinearLayout>
-
+                </RelativeLayout>
 
 
                 <LinearLayout
@@ -165,7 +156,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:orientation="vertical"
-                    android:layout_below="@id/settingbtn">
+                    android:layout_below="@id/profile_image_container">
 
                     <TextView
                         android:layout_width="wrap_content"

@@ -31,8 +31,8 @@ public class ProfileFragment extends Fragment {
 
     View v;
     RecyclerView mTripList,mPhotoList;
-    TextView  mAddPost, mAddPhoto;
-    LinearLayout mSettingButton, mFollowButton;
+    TextView  mAddPost, mAddPhoto, mSettingButton;
+    LinearLayout  mFollowButton;
 
 
 
