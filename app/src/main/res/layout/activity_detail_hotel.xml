@@ -72,7 +72,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         android:layout_marginTop="32dp">
 
 
@@ -159,6 +159,19 @@
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/detail_hotel_activity_rooms_available_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Availibility"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/glacial_indifference_bold"
+                            android:layout_marginRight="8dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/detail_hotel_activity_room_types_recyclerView"

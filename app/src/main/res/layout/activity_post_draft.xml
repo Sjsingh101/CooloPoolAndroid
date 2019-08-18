@@ -47,7 +47,7 @@
                     android:id="@+id/menu_item_new_day_title_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Day"
+                    android:text="New Block"
                     android:textStyle="bold"
                     android:fontFamily="@font/glacial_indifference_bold"
                     android:textColor="@color/white"
