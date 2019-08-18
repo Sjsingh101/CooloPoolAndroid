@@ -115,7 +115,7 @@
                     android:id="@+id/menu_item_tag_frnd_icon_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_friend"
+                    android:src="@drawable/ic_follow"
                     android:layout_gravity="center"/>
 
                 <TextView

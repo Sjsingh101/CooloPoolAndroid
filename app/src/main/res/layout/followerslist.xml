@@ -1,60 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:orientation="horizontal"
-    android:weightSum="3">
+    app:cardCornerRadius="10dp"
+    android:layout_marginBottom="16dp">
 
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/userProfilePic"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:elevation="4dp"
-        android:layout_weight=".5"
-        android:padding="10dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/facelogo" />
-
-    <LinearLayout
-        android:layout_width="0dp"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1.5"
-        android:layout_gravity="center">
-            <TextView
-                android:id="@+id/Username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/UserName"
-                android:fontFamily="@font/glacial_indifference_regular"
-                android:textColor="@color/white"
-                />
-            <TextView
-                android:id="@+id/Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Full Name"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/glacial_indifference_regular"
-                android:textColor="@color/white"/>
-    </LinearLayout>
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/FollowStatus"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="1dp"
-        android:padding="6dp"
-        android:background="@color/top_bar"
-        android:elevation="6dp"
-        android:fontFamily="@font/glacial_indifference_regular"
-        android:text="Following"
-        android:textAllCaps="false"
-        android:textColor="@color/white" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userProfilePic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/userfacepic"/>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/Username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="20sp"
+            android:fontFamily="@font/glacial_indifference_bold"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/userProfilePic"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_below="@id/Username"
+            android:textColor="@color/GrayGoose"
+            android:layout_toRightOf="@id/userProfilePic"
+            android:layout_marginLeft="16dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_follow"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/transparent"/>
+    </RelativeLayout>
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>
