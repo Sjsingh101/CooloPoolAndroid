@@ -220,7 +220,7 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/ic_cart_black"
+        android:src="@drawable/ic_menu_share"
         android:background="@drawable/back_button_bg"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="24dp"

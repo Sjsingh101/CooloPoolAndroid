@@ -41,11 +41,19 @@ public class NewDayAdapter extends RecyclerView.Adapter<NewDayAdapter.NewDayView
     @NonNull
     @Override
     public NewDayAdapter.NewDayViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new NewDayViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.create_new_day_list_item, viewGroup, false));
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.create_new_day_list_item, viewGroup, false);
+        return new NewDayViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull NewDayAdapter.NewDayViewHolder newDayViewHolder, int i) {
+
+        if(newDays.size() == 1){
+            previouslySelectedView = newDayViewHolder.view;
+            newDayViewHolder.view.setBackground(context.getResources().getDrawable(R.drawable.background));
+        }
+
+
         newDayViewHolder.daysCounter.setText(newDays.get(i).getmDays());
         newDayViewHolder.setUpNestedRecyclerView(context, newDays.get(i));
         newDayViewHolder.description.setText(newDays.get(i).getmDescription().trim());
@@ -94,12 +102,14 @@ public class NewDayAdapter extends RecyclerView.Adapter<NewDayAdapter.NewDayView
         TextView daysCounter;
         TextView description;
         RecyclerView imageRecyclerView;
+        View view;
 
         public NewDayViewHolder(@NonNull View itemView) {
             super(itemView);
             daysCounter = (TextView)itemView.findViewById(R.id.create_new_day_list_item_day_counter_textView);
             description = (TextView)itemView.findViewById(R.id.create_new_day_list_item_desc_editText);
             imageRecyclerView = (RecyclerView)itemView.findViewById(R.id.create_new_day_list_image_recyclerView);
+            view = itemView;
 
             itemView.setOnClickListener(this);
         }

@@ -32,7 +32,7 @@
         android:backgroundTint="@color/transparent"
         android:hint="+ Add Description"
         android:textColor="@color/GrayGoose"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView

@@ -169,28 +169,6 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private void setUpTransparentNavBar(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR);
-        }
-    }
-
-    private void setUpDialogForSearch(DialogBuilder db){
-        final Dialog dialog = db.getDialog();
-
-
-        ((ImageView)dialog.findViewById(R.id.search_dialog_back_button)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
-
-
-
-    }
 
     private void showDialog(){
         final DialogBuilder dB = new DialogBuilder(this, R.layout.post_method_chooser);
