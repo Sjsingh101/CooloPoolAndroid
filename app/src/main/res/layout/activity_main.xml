@@ -4,39 +4,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="bottom"
     tools:context=".Activity.HomeActivity"
-    >
+    android:id="@+id/root">
 
-
-    <LinearLayout
-
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:gravity="top"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="0dp"
-        android:baselineAligned="false"
-        android:background="@color/colorPrimary">
+        app:layout_anchor="@id/viewPager"
+        app:layout_anchorGravity="top"
+        android:padding="16dp">
 
+        <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_search_black"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/searchBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_weight="1">
-            <ImageButton
-                android:id="@+id/searchButton"
-                android:src="@drawable/ic_search_white"
-                android:layout_width="wrap_content"
-                android:tint="@color/transparent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/search_and_cart_bg"
-                android:contentDescription="TODO"
-                android:layout_gravity="center"/>
-        </LinearLayout>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:padding="16dp"
+            android:hint="Enter location "
+            android:textColorHint="@color/white"
+            android:backgroundTint="#A8000000"
+            android:background="@drawable/round_corner_search_bar_white_background"
+            android:visibility="gone"/>
+
+
+
+    </RelativeLayout>
+
+
+
 
         <!--
 
@@ -57,15 +68,6 @@
         </LinearLayout>
 
         -->
-
-    </LinearLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        android:layout_marginTop="40dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

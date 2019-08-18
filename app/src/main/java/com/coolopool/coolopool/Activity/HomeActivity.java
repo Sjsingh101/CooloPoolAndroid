@@ -11,6 +11,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -26,6 +30,7 @@ public class HomeActivity extends AppCompatActivity {
     FloatingActionButton fab;
 
     ImageButton mSearchButton;
+    EditText mSearchBar;
     ImageButton mHomeButton;
     ImageButton mCartButton;
 
@@ -55,8 +60,6 @@ public class HomeActivity extends AppCompatActivity {
 
         // for search box
 
-        mSearchButton = findViewById(R.id.searchButton);
-
         /*
         mCartButton = findViewById(R.id.cart_imageButton);
 
@@ -69,13 +72,22 @@ public class HomeActivity extends AppCompatActivity {
             }
         });*/
 
+        mSearchButton = findViewById(R.id.searchButton);
+        mSearchBar = findViewById(R.id.searchBox);
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                DialogBuilder dialogBuilder = new DialogBuilder(HomeActivity.this, R.layout.home_activity_search_dialog_layout);
-                dialogBuilder.build();
-                setUpDialogForSearch(dialogBuilder);
+                if(mSearchBar.getVisibility() == View.GONE){
+                    mSearchBar.setVisibility(View.VISIBLE);
+                    mSearchButton.setBackground(getResources().getDrawable(R.drawable.ic_cross_black));
+                    Animation animation = AnimationUtils.loadAnimation(HomeActivity.this, R.anim.search_entry_animation);
+                    mSearchBar.startAnimation(animation);
+                }else{
+                    mSearchButton.setBackground(getResources().getDrawable(R.drawable.ic_search_black));
+                    Animation animation = AnimationUtils.loadAnimation(HomeActivity.this, R.anim.search_exit_animation);
+                    mSearchBar.startAnimation(animation);
+                    mSearchBar.setVisibility(View.GONE);
+                }
 
             }
         });
