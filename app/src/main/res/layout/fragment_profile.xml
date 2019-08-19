@@ -29,110 +29,122 @@
                     android:background="@drawable/rounded_edittext"
                     android:layout_margin="8dp">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/profile_image"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_gravity="left"
-                        android:elevation="6dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/userfacepic" />
-
-                    <LinearLayout
+                    <RelativeLayout
+                        android:id="@+id/profile_image_container_top_layout"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_toRightOf="@id/profile_image"
-                        android:layout_centerVertical="true">
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_gravity="left"
+                            android:elevation="6dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/userfacepic" />
 
                         <LinearLayout
-                            android:id="@+id/trips_linearLayout"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_centerVertical="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:layout_toRightOf="@id/profile_image"
-                            android:orientation="vertical">
+                            android:layout_centerVertical="true">
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:id="@+id/trips_linearLayout"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="13"
-                                android:textSize="20sp"
-                                android:fontFamily="@font/glacial_indifference_bold"
-                                android:textColor="@color/black"/>
+                                android:layout_weight="1"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/profile_image"
+                                android:orientation="vertical">
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="13"
+                                    android:textSize="20sp"
+                                    android:fontFamily="@font/glacial_indifference_bold"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:fontFamily="@font/glacial_indifference_regular"
+                                    android:text="Trips"
+                                    android:lines="1"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/followbtn"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:fontFamily="@font/glacial_indifference_regular"
-                                android:text="Trips"
-                                android:textColor="@color/black"
-                                android:textSize="20sp" />
+                                android:layout_weight="1"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/trips_linearLayout"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="13"
+                                    android:textSize="20sp"
+                                    android:fontFamily="@font/glacial_indifference_bold"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:fontFamily="@font/glacial_indifference_regular"
+                                    android:text="Followers"
+                                    android:lines="1"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/followbtn"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="13"
+                                    android:textSize="20sp"
+                                    android:fontFamily="@font/glacial_indifference_bold"
+                                    android:textColor="@color/black"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:fontFamily="@font/glacial_indifference_regular"
+                                    android:text="Photos"
+                                    android:lines="1"
+                                    android:ellipsize="end"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/followbtn"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_centerVertical="true"
-                            android:layout_toRightOf="@id/trips_linearLayout"
-                            android:orientation="vertical">
+                    </RelativeLayout>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="13"
-                                android:textSize="20sp"
-                                android:fontFamily="@font/glacial_indifference_bold"
-                                android:textColor="@color/black"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:fontFamily="@font/glacial_indifference_regular"
-                                android:text="Followers"
-                                android:textColor="@color/black"
-                                android:textSize="20sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_centerVertical="true"
-                            android:layout_toRightOf="@id/followbtn"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="13"
-                                android:textSize="20sp"
-                                android:fontFamily="@font/glacial_indifference_bold"
-                                android:textColor="@color/black"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:fontFamily="@font/glacial_indifference_regular"
-                                android:text="Photos"
-                                android:textColor="@color/black"
-                                android:textSize="20sp" />
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/settingbtn"
@@ -143,7 +155,22 @@
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:layout_marginTop="32dp"
-                        android:layout_below="@id/profile_image"
+                        android:padding="8dp"
+                        android:layout_below="@id/profile_image_container_top_layout"
+                        android:fontFamily="@font/glacial_indifference_bold"
+                        android:background="@color/transparent_blur_side_menu"/>
+
+                    <TextView
+                        android:id="@+id/editProfileButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Edit profile"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:layout_marginTop="8dp"
+                        android:padding="8dp"
+                        android:layout_below="@id/settingbtn"
                         android:fontFamily="@font/glacial_indifference_bold"
                         android:background="@color/transparent_blur_side_menu"/>
 

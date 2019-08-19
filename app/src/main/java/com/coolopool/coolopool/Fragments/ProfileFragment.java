@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.coolopool.coolopool.Activity.FollowersActivity;
 import com.coolopool.coolopool.Activity.NewPicPostActivity;
 import com.coolopool.coolopool.Activity.NewPostActivity;
+import com.coolopool.coolopool.Activity.ProfileSettingActivity;
 import com.coolopool.coolopool.Activity.SettingActivity;
 import com.coolopool.coolopool.Adapter.PhotoListAdapter;
 import com.coolopool.coolopool.Adapter.TripListAdapter;
@@ -30,7 +31,7 @@ public class ProfileFragment extends Fragment {
 
     View v;
     RecyclerView mTripList,mPhotoList;
-    TextView  mAddPost, mAddPhoto, mSettingButton;
+    TextView  mAddPost, mAddPhoto, mSettingButton, mEditProfileButton;
     LinearLayout  mFollowButton;
 
 
@@ -46,6 +47,15 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
 
         v =  inflater.inflate(R.layout.fragment_profile, container, false);
+
+        //for editing profile
+        mEditProfileButton = v.findViewById(R.id.editProfileButton);
+        mEditProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ProfileSettingActivity.class));
+            }
+        });
 
         //for Setting
         mSettingButton = v.findViewById(R.id.settingbtn);

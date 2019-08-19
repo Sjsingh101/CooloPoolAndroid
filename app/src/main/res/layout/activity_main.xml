@@ -20,20 +20,38 @@
         app:layout_anchorGravity="top"
         android:padding="16dp">
 
-        <ImageButton
-            android:id="@+id/searchButton"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/ic_search_black"
+        <RelativeLayout
+            android:id="@+id/search_container"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_circle"/>
+
+            <ImageButton
+                android:id="@+id/searchButton"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/ic_search_white"
+                android:layout_centerInParent="true"/>
+
+
+        </RelativeLayout>
+
 
         <EditText
             android:id="@+id/searchBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="48dp"
             android:fontFamily="@font/glacial_indifference_regular"
             android:padding="16dp"
             android:hint="Enter location "

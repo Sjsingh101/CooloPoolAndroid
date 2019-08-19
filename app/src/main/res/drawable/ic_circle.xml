@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
     <solid
-        android:color="#666666"
+        android:color="@color/top_bar"
         />
     <size
         android:width="120dp"
