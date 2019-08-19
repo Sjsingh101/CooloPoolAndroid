@@ -30,6 +30,9 @@ public class HomeActivity extends AppCompatActivity {
     ViewPager viewPager;
     FloatingActionButton fab;
 
+    RelativeLayout mGiftContainer;
+    ImageButton mGiftButton;
+
     RelativeLayout mSearchContainer;
     ImageButton mSearchButton;
     EditText mSearchBar;
@@ -74,13 +77,30 @@ public class HomeActivity extends AppCompatActivity {
             }
         });*/
 
+        mGiftContainer = findViewById(R.id.gifts_container);
+        mGiftButton = findViewById(R.id.giftButton);
+
+        mGiftButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, GiftsActivity.class));
+            }
+        });
+        mGiftContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, GiftsActivity.class));
+            }
+        });
+
+
         mSearchContainer = findViewById(R.id.search_container);
         mSearchButton = findViewById(R.id.searchButton);
         mSearchBar = findViewById(R.id.searchBox);
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mSearchBar.getVisibility() == View.GONE){
+                if(mSearchBar.getVisibility() == View.INVISIBLE){
                     mSearchBar.setVisibility(View.VISIBLE);
                     mSearchButton.setBackground(getResources().getDrawable(R.drawable.ic_cross));
                     Animation animation = AnimationUtils.loadAnimation(HomeActivity.this, R.anim.search_entry_animation);
@@ -89,7 +109,7 @@ public class HomeActivity extends AppCompatActivity {
                     mSearchButton.setBackground(getResources().getDrawable(R.drawable.ic_search_white));
                     Animation animation = AnimationUtils.loadAnimation(HomeActivity.this, R.anim.search_exit_animation);
                     mSearchBar.startAnimation(animation);
-                    mSearchBar.setVisibility(View.GONE);
+                    mSearchBar.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -97,7 +117,7 @@ public class HomeActivity extends AppCompatActivity {
         mSearchContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mSearchBar.getVisibility() == View.GONE){
+                if(mSearchBar.getVisibility() == View.INVISIBLE){
                     mSearchBar.setVisibility(View.VISIBLE);
                     mSearchButton.setBackground(getResources().getDrawable(R.drawable.ic_cross));
                     Animation animation = AnimationUtils.loadAnimation(HomeActivity.this, R.anim.search_entry_animation);
@@ -106,7 +126,7 @@ public class HomeActivity extends AppCompatActivity {
                     mSearchButton.setBackground(getResources().getDrawable(R.drawable.ic_search_white));
                     Animation animation = AnimationUtils.loadAnimation(HomeActivity.this, R.anim.search_exit_animation);
                     mSearchBar.startAnimation(animation);
-                    mSearchBar.setVisibility(View.GONE);
+                    mSearchBar.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -263,7 +283,7 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(null);
         final Fragment currentFragment = adapter.getItem(viewPager.getCurrentItem());
 
-        if(mSearchButton.getVisibility() == View.GONE && i != 2){
+        if(mSearchButton.getVisibility() == View.INVISIBLE && i != 2){
             mSearchButton.setVisibility(View.VISIBLE);
             mSearchButton.setBackground(getResources().getDrawable(R.drawable.ic_search_white));
             mSearchContainer.setVisibility(View.VISIBLE);
@@ -292,10 +312,10 @@ public class HomeActivity extends AppCompatActivity {
                 break;
             case 2:
                 if(mSearchBar.getVisibility() == View.VISIBLE){
-                    mSearchBar.setVisibility(View.GONE);
+                    mSearchBar.setVisibility(View.INVISIBLE);
                 }
-                mSearchButton.setVisibility(View.GONE);
-                mSearchContainer.setVisibility(View.GONE);
+                mSearchButton.setVisibility(View.INVISIBLE);
+                mSearchContainer.setVisibility(View.INVISIBLE);
                 restaurantsButton.setImageResource(R.drawable.ic_food_selected);
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override

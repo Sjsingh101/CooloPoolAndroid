@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="225dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/picture"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cash_back"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cashback won"
+            android:textColor="@color/black"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:layout_below="@id/picture"
+            android:layout_centerHorizontal="true"
+            android:textSize="10sp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flat 20% off*"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:fontFamily="@font/glacial_indifference_bold"
+            android:layout_below="@id/type"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/expiry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expire in 13 days"
+            android:textColor="#FF9800"
+            android:fontFamily="@font/glacial_indifference_regular"
+            android:layout_below="@id/description"
+            android:layout_centerHorizontal="true"
+            android:textSize="10dp"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/getCode"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Get code"
+            android:textSize="10dp"
+            android:background="#ff9800"
+            android:layout_centerHorizontal="true"
+           android:layout_below="@id/expiry"
+            android:layout_marginTop="2dp"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

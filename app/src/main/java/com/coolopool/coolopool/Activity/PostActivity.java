@@ -1,12 +1,16 @@
 package com.coolopool.coolopool.Activity;
 
+import android.content.Intent;
 import android.net.Uri;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.widget.ShareActionProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -24,7 +28,14 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-
+        ImageView shareButton = findViewById(R.id.shareButton);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ShareActionProvider shareActionProvider = new ShareActionProvider(PostActivity.this);
+                startActivity(createShareIntent());
+            }
+        });
 
         final ImageView back = findViewById(R.id.post_activity_back_button);
         back.setOnClickListener(new View.OnClickListener() {
@@ -84,4 +95,9 @@ public class PostActivity extends AppCompatActivity {
 
     }
 
+
+    private Intent createShareIntent(){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://ruby.bastardsbook.com/chapters/html-parsing/"));
+        return intent;
+    }
 }

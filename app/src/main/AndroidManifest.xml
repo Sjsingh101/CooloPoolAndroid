@@ -16,7 +16,10 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.PaymentActivity"></activity>
+        <activity android:name=".Activity.GiftsActivity">
+
+        </activity>
+        <activity android:name=".Activity.PaymentActivity" />
         <activity
             android:name=".Activity.WalletActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
@@ -67,9 +70,7 @@
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".Activity.SplashActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
         <activity
             android:name=".Activity.HomeActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar"
@@ -79,7 +80,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

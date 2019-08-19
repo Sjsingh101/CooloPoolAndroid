@@ -218,6 +218,7 @@
         android:padding="8dp" />
 
     <ImageView
+        android:id="@+id/shareButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/ic_menu_share"
