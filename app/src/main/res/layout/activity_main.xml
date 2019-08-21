@@ -25,21 +25,21 @@
             android:id="@+id/searchBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:fontFamily="@font/glacial_indifference_regular"
             android:padding="16dp"
             android:hint="Enter location "
             android:textColorHint="@color/white"
             android:backgroundTint="#A8000000"
             android:background="@drawable/round_corner_search_bar_white_background"
-            android:visibility="visible"/>
+            android:visibility="invisible"/>
 
         <RelativeLayout
             android:id="@+id/search_container"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:layout_weight="0">
+            android:layout_weight="">
 
             <ImageView
                 android:layout_width="40dp"
@@ -71,8 +71,9 @@
 
             <ImageButton
                 android:id="@+id/giftButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:scaleType="fitXY"
                 android:background="@drawable/ic_gift"
                 android:layout_centerInParent="true"/>
 
@@ -114,7 +115,7 @@
         android:clickable="true"
         android:focusable="true"
         android:backgroundTint="@color/top_bar"
-        android:src="@drawable/ic_add_bold"
+        android:src="@drawable/ic_gift"
         app:layout_anchor="@id/bar" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
