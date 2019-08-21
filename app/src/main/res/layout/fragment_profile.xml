@@ -145,34 +145,46 @@
 
                     </RelativeLayout>
 
-
-                    <TextView
-                        android:id="@+id/settingbtn"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Setting"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:layout_marginTop="32dp"
-                        android:padding="8dp"
                         android:layout_below="@id/profile_image_container_top_layout"
-                        android:fontFamily="@font/glacial_indifference_bold"
-                        android:background="@color/transparent_blur_side_menu"/>
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:layout_marginTop="8dp">
 
-                    <TextView
-                        android:id="@+id/editProfileButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Edit profile"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:layout_marginTop="8dp"
-                        android:padding="8dp"
-                        android:layout_below="@id/settingbtn"
-                        android:fontFamily="@font/glacial_indifference_bold"
-                        android:background="@color/transparent_blur_side_menu"/>
+                        <TextView
+                            android:id="@+id/settingbtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Setting"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:padding="8dp"
+                            android:fontFamily="@font/glacial_indifference_bold"
+                            android:background="@color/transparent_blur_side_menu"/>
+
+                        <TextView
+                            android:id="@+id/editProfileButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Edit profile"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:padding="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/glacial_indifference_bold"
+                            android:background="@color/transparent_blur_side_menu"/>
+
+
+                    </LinearLayout>
+
+
+
 
                 </RelativeLayout>
 
