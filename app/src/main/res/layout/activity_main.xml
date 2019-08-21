@@ -13,34 +13,33 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_anchor="@id/viewPager"
         app:layout_anchorGravity="top"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:gravity="center_vertical">
 
         <EditText
             android:id="@+id/searchBox"
-            android:layout_width="285dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
+            android:layout_weight="1"
             android:fontFamily="@font/glacial_indifference_regular"
             android:padding="16dp"
             android:hint="Enter location "
             android:textColorHint="@color/white"
             android:backgroundTint="#A8000000"
             android:background="@drawable/round_corner_search_bar_white_background"
-            android:visibility="invisible"/>
+            android:visibility="visible"/>
 
         <RelativeLayout
             android:id="@+id/search_container"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_marginLeft="8dp"
-            android:layout_toRightOf="@id/searchBox">
+            android:layout_weight="0">
 
             <ImageView
                 android:layout_width="40dp"
@@ -63,15 +62,11 @@
             android:id="@+id/gifts_container"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/search_container"
             android:layout_marginLeft="8dp">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
                 android:src="@drawable/ic_circle"/>
 
             <ImageButton
@@ -87,7 +82,7 @@
 
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
 
