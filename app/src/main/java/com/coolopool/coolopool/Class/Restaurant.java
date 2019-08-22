@@ -8,7 +8,7 @@ public class Restaurant {
 
     int mThumbnailUrl;
     String mName;
-    String mCost = "₹";
+    String mCost = "";
     String mOpeningTime;
     String mClosingTime;
     int mTypeOfFood; //veg = 0, non-veg = 1 or both = 2

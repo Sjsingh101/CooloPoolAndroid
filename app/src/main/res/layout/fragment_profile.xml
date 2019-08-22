@@ -150,7 +150,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/profile_image_container_top_layout"
                         android:orientation="horizontal"
-                        android:padding="16dp"
+                        android:padding="12dp"
                         android:layout_marginTop="8dp">
 
                         <TextView
@@ -161,8 +161,8 @@
                             android:text="Setting"
                             android:gravity="center"
                             android:textColor="@color/white"
-                            android:textSize="20sp"
-                            android:padding="8dp"
+                            android:textSize="15sp"
+                            android:padding="6dp"
                             android:fontFamily="@font/glacial_indifference_bold"
                             android:background="@color/transparent_blur_side_menu"/>
 
@@ -174,8 +174,8 @@
                             android:text="Edit profile"
                             android:gravity="center"
                             android:textColor="@color/white"
-                            android:textSize="20sp"
-                            android:padding="8dp"
+                            android:textSize="15sp"
+                            android:padding="6dp"
                             android:layout_marginLeft="8dp"
                             android:fontFamily="@font/glacial_indifference_bold"
                             android:background="@color/transparent_blur_side_menu"/>

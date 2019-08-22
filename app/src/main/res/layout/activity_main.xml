@@ -116,7 +116,7 @@
         android:clickable="true"
         android:focusable="true"
         android:backgroundTint="@color/top_bar"
-        android:src="@drawable/ic_gift"
+        android:src="@drawable/ic_add_bold"
         app:layout_anchor="@id/bar" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
