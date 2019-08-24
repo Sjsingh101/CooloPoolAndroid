@@ -16,6 +16,11 @@ import com.coolopool.coolopool.Application.MyApplication;
 import com.coolopool.coolopool.Class.HomePageBlog;
 import com.coolopool.coolopool.Interface.TripClient;
 import com.coolopool.coolopool.R;
+import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
+import com.yuyakaido.android.cardstackview.CardStackListener;
+import com.yuyakaido.android.cardstackview.CardStackView;
+import com.yuyakaido.android.cardstackview.Direction;
+import com.yuyakaido.android.cardstackview.StackFrom;
 
 import java.util.List;
 
@@ -65,6 +70,48 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    private void init(){
+        CardStackView cardStackView = view.findViewById(R.id.card_stack_view);
+        CardStackListener listener = new CardStackListener() {
+            @Override
+            public void onCardDragging(Direction direction, float ratio) {
+
+            }
+
+            @Override
+            public void onCardSwiped(Direction direction) {
+
+            }
+
+            @Override
+            public void onCardRewound() {
+
+            }
+
+            @Override
+            public void onCardCanceled() {
+
+            }
+
+            @Override
+            public void onCardAppeared(View view, int position) {
+
+            }
+
+            @Override
+            public void onCardDisappeared(View view, int position) {
+
+            }
+        };
+        CardStackLayoutManager manager = new CardStackLayoutManager(getActivity(), listener);
+        cardStackView.setLayoutManager(manager);
+        manager.setStackFrom(StackFrom.Right);
+        manager.setVisibleCount(3);
+        manager.setTranslationInterval(30f);
+        cardStackView.setAdapter(postAdapter);
+
+    }
+
     private void getBlogs() {
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -95,13 +142,9 @@ public class HomeFragment extends Fragment {
                     images[i] = blogs.get(i).getImageUrl();
                 }
 
-                recyclerView = view.findViewById(R.id.recycler_view);
-                layoutManager = new GridLayoutManager(MyApplication.getAppContext(),2);
-                recyclerView.setHasFixedSize(false);
-                recyclerView.setLayoutManager(layoutManager);
-
                 postAdapter = new PostAdapter(images,titles,descriptions, getActivity());
-                recyclerView.setAdapter(postAdapter);
+                init();
+
             }
 
             @Override
