@@ -6,12 +6,15 @@ import android.content.Context;
 import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.coolopool.coolopool.Activity.PostActivity;
 import com.coolopool.coolopool.Class.Post;
@@ -24,6 +27,7 @@ import com.yuyakaido.android.cardstackview.Direction;
 import com.yuyakaido.android.cardstackview.StackFrom;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -98,8 +102,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             profilePic = itemView.findViewById(R.id.profileImage);
         }
 
-        public void setUpNestedStackView(Context context, Post post){
-            CardStackLayoutManager manager = new CardStackLayoutManager(context, new CardStackListener() {
+        public void setUpNestedStackView(final Context context, final Post post){
+            CardStackListener listener = new CardStackListener() {
                 @Override
                 public void onCardDragging(Direction direction, float ratio) {
 
@@ -127,16 +131,25 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
                 @Override
                 public void onCardDisappeared(View view, int position) {
+                    if(position+1 == stackView.getAdapter().getItemCount()){
+                       stackView.setAdapter(post.getAdapter());
+                       stackView.getAdapter().notifyDataSetChanged();
+                    }
 
                 }
-            });
+            };
+
+            final CardStackLayoutManager manager = new CardStackLayoutManager(context, listener);
+
             stackView.setLayoutManager(manager);
             manager.setStackFrom(StackFrom.Right);
             manager.setVisibleCount(4);
             manager.setTranslationInterval(30f);
+            manager.setScaleInterval(0.85f);
+
             stackView.setAdapter(post.getAdapter());
+
+
         }
-
-
     }
 }

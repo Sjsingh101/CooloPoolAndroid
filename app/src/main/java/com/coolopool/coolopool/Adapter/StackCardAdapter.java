@@ -37,6 +37,10 @@ public class StackCardAdapter extends RecyclerView.Adapter<StackCardAdapter.Stac
         holder.description.setText(description[position]);
     }
 
+    public String getDes(int position){
+        return description[position];
+    }
+
     @Override
     public int getItemCount() {
         return imageUrl.length;

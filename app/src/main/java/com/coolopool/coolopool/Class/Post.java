@@ -43,6 +43,17 @@ public class Post {
         return title;
     }
 
+    public int getImageLen(){
+        return imageUrl.length;
+    }
+
+    public String[] getImageUrl() {
+        return imageUrl;
+    }
+
+    public String[] getDescription() {
+        return description;
+    }
 
     public Context getContext() {
         return context;
