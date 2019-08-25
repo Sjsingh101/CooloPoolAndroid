@@ -32,7 +32,7 @@
             android:textColorHint="@color/white"
             android:backgroundTint="#A8000000"
             android:background="@drawable/main_activity_search_bar_bg"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:drawableLeft="@drawable/ic_search_white"
             android:drawablePadding="10dp"/>
 
