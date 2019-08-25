@@ -4,15 +4,15 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="16dp"
     android:elevation="2dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/post_image_card"
-        android:layout_width="300dp"
-        android:layout_height="450dp"
+        android:layout_width="260dp"
+        android:layout_height="350dp"
         app:cardElevation="10dp"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="20dp">
+
 
         <ImageView
             android:id="@+id/post_image"
@@ -27,22 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_weight="5"
-            android:gravity="right"
+            android:gravity="left"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:padding="8dp"
-                android:fontFamily="@font/glacial_indifference_bold"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:text="Name"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/desc"
@@ -51,37 +37,21 @@
                 android:layout_gravity="bottom"
                 android:layout_marginTop="-5dp"
                 android:text="Description"
-                android:padding="2dp"
+                android:padding="8dp"
                 android:layout_marginLeft="6dp"
-                android:fontFamily="@font/glacial_indifference_regular"
+                android:fontFamily="@font/glacial_indifference_bold"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp" />
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/ic_heart"
+                android:layout_marginLeft="8dp"/>
         </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|bottom"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:backgroundTint="@android:color/transparent"
-                    android:src="@drawable/ic_heart" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/layout_post_profile_picture_imageView"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:padding="8dp"
-                    android:backgroundTint="@android:color/transparent"
-                    android:src="@drawable/ic_information" />
-
-            </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

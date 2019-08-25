@@ -14,29 +14,33 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.coolopool.coolopool.Activity.PostActivity;
+import com.coolopool.coolopool.Class.Post;
 import com.coolopool.coolopool.R;
 import com.squareup.picasso.Picasso;
+import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
+import com.yuyakaido.android.cardstackview.CardStackListener;
+import com.yuyakaido.android.cardstackview.CardStackView;
+import com.yuyakaido.android.cardstackview.Direction;
+import com.yuyakaido.android.cardstackview.StackFrom;
+
+import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
-    String[] images;
-    String[] titles;
-    String[] descriptions;
+    ArrayList<Post> posts;
     Context mContext;
 
-    public PostAdapter(String[] images, String[] titles, String[] descriptions, Context context){
-        this.images = images;
-        this.titles = titles;
-        this.descriptions=descriptions;
+    public PostAdapter(ArrayList<Post> postArrayList, Context context){
+        posts = postArrayList;
         this.mContext = context;
     }
 
     @NonNull
     @Override
     public PostViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_post,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.root_layout_post,viewGroup,false);
         PostViewHolder postViewHolder= new PostViewHolder(view);
         return postViewHolder;
     }
@@ -44,18 +48,16 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     @Override
     public void onBindViewHolder(@NonNull final PostViewHolder viewHolder, int i) {
 
-        String image_url = images[i];
-        String title = titles[i];
-        String description = descriptions[i];
+        Post current_post = posts.get(i);
 
-        if(image_url != null) {
-            Picasso.get().load(image_url).into(viewHolder.postimage);
-        }
+        viewHolder.title.setText(current_post.getTitle());
+        viewHolder.userName.setText(current_post.getUserInfo());
+        viewHolder.setUpNestedStackView(mContext, current_post);
 
-        viewHolder.posttitle.setText(title);
-        viewHolder.postdesc.setText(description);
 
-        viewHolder.postimage.setOnClickListener(new View.OnClickListener() {
+
+        /*
+        viewHolder.v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(mContext != null){
@@ -67,7 +69,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                 }
 
             }
-        });
+        });*/
 
         Picasso.get().load(R.drawable.photo2).fit().centerCrop().into(viewHolder.profilePic);
 
@@ -76,20 +78,63 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return posts.size();
     }
 
     public static class PostViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView postimage;
-        TextView posttitle,postdesc;
-        CircleImageView profilePic;
+        TextView title;
+        TextView userName;
+        ImageView profilePic;
+        CardStackView stackView;
+        View v;
+
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
-            postimage = itemView.findViewById(R.id.post_image);
-            posttitle = itemView.findViewById(R.id.title);
-            postdesc = itemView.findViewById(R.id.desc);
-            profilePic = itemView.findViewById(R.id.layout_post_profile_picture_imageView);
+            v = itemView;
+            title = itemView.findViewById(R.id.title);
+            userName = itemView.findViewById(R.id.userName);
+            stackView = itemView.findViewById(R.id.card_stack_view);
+            profilePic = itemView.findViewById(R.id.profileImage);
+        }
+
+        public void setUpNestedStackView(Context context, Post post){
+            CardStackLayoutManager manager = new CardStackLayoutManager(context, new CardStackListener() {
+                @Override
+                public void onCardDragging(Direction direction, float ratio) {
+
+                }
+
+                @Override
+                public void onCardSwiped(Direction direction) {
+
+                }
+
+                @Override
+                public void onCardRewound() {
+
+                }
+
+                @Override
+                public void onCardCanceled() {
+
+                }
+
+                @Override
+                public void onCardAppeared(View view, int position) {
+
+                }
+
+                @Override
+                public void onCardDisappeared(View view, int position) {
+
+                }
+            });
+            stackView.setLayoutManager(manager);
+            manager.setStackFrom(StackFrom.Right);
+            manager.setVisibleCount(4);
+            manager.setTranslationInterval(30f);
+            stackView.setAdapter(post.getAdapter());
         }
 
 

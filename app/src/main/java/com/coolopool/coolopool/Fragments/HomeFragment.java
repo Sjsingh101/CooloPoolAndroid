@@ -2,9 +2,12 @@ package com.coolopool.coolopool.Fragments;
 
 
 import android.os.Bundle;
+
+import com.coolopool.coolopool.Class.Post;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +25,7 @@ import com.yuyakaido.android.cardstackview.CardStackView;
 import com.yuyakaido.android.cardstackview.Direction;
 import com.yuyakaido.android.cardstackview.StackFrom;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -71,44 +75,10 @@ public class HomeFragment extends Fragment {
     }
 
     private void init(){
-        CardStackView cardStackView = view.findViewById(R.id.card_stack_view);
-        CardStackListener listener = new CardStackListener() {
-            @Override
-            public void onCardDragging(Direction direction, float ratio) {
-
-            }
-
-            @Override
-            public void onCardSwiped(Direction direction) {
-
-            }
-
-            @Override
-            public void onCardRewound() {
-
-            }
-
-            @Override
-            public void onCardCanceled() {
-
-            }
-
-            @Override
-            public void onCardAppeared(View view, int position) {
-
-            }
-
-            @Override
-            public void onCardDisappeared(View view, int position) {
-
-            }
-        };
-        CardStackLayoutManager manager = new CardStackLayoutManager(getActivity(), listener);
-        cardStackView.setLayoutManager(manager);
-        manager.setStackFrom(StackFrom.Right);
-        manager.setVisibleCount(3);
-        manager.setTranslationInterval(30f);
-        cardStackView.setAdapter(postAdapter);
+        recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setHasFixedSize(false);
+        recyclerView.setAdapter(postAdapter);
 
     }
 
@@ -142,7 +112,12 @@ public class HomeFragment extends Fragment {
                     images[i] = blogs.get(i).getImageUrl();
                 }
 
-                postAdapter = new PostAdapter(images,titles,descriptions, getActivity());
+                ArrayList<Post> posts = new ArrayList<>();
+                for(int i=0; i<size; i++){
+                    posts.add(new Post(images, titles[i], descriptions, heartCounts[i], getActivity()));
+                }
+
+                postAdapter = new PostAdapter(posts, getActivity());
                 init();
 
             }
