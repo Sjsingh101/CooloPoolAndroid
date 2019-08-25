@@ -35,7 +35,7 @@ public class NewPicPostActivity extends AppCompatActivity {
        /* setUpBackButton();*/
 
         RecyclerView pics = (RecyclerView) findViewById(R.id.new_pic_post_activity_pics_recyclerView);
-        pics.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        pics.setLayoutManager(new LinearLayoutManager(this));
         pics.setHasFixedSize(false);
 
         mImageUri = new ArrayList<>();
