@@ -50,6 +50,9 @@
                 android:backgroundTint="@android:color/transparent"
                 android:src="@drawable/ic_heart"
                 android:layout_marginLeft="8dp"/>
+
+
+
         </LinearLayout>
 
 
