@@ -58,6 +58,15 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         viewHolder.userName.setText(current_post.getUserInfo());
         viewHolder.setUpNestedStackView(mContext, current_post);
 
+        viewHolder.v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent postIntent = new Intent(mContext, PostActivity.class);
+
+                mContext.startActivity(postIntent);
+            }
+        });
+
 
 
         /*
@@ -148,6 +157,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             manager.setScaleInterval(0.85f);
 
             stackView.setAdapter(post.getAdapter());
+            stackView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent postIntent = new Intent(context, PostActivity.class);
+
+                    context.startActivity(postIntent);
+                }
+            });
 
 
         }
