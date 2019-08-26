@@ -7,7 +7,7 @@
     tools:context=".Activity.HomeActivity"
     android:id="@+id/root">
 
-    <androidx.viewpager.widget.ViewPager
+    <com.coolopool.coolopool.Views.CustomViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

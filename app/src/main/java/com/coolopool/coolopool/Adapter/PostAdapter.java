@@ -61,9 +61,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         viewHolder.v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent postIntent = new Intent(mContext, PostActivity.class);
-
-                mContext.startActivity(postIntent);
+                viewHolder.openCurrentPost(mContext);
             }
         });
 
@@ -109,6 +107,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             userName = itemView.findViewById(R.id.userName);
             stackView = itemView.findViewById(R.id.card_stack_view);
             profilePic = itemView.findViewById(R.id.profileImage);
+        }
+
+        public void openCurrentPost(Context mContext){
+            Intent postIntent = new Intent(mContext, PostActivity.class);
+            mContext.startActivity(postIntent);
         }
 
         public void setUpNestedStackView(final Context context, final Post post){
@@ -160,9 +163,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             stackView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent postIntent = new Intent(context, PostActivity.class);
-
-                    context.startActivity(postIntent);
+                    openCurrentPost(context);
                 }
             });
 

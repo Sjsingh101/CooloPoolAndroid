@@ -1,5 +1,7 @@
 package com.coolopool.coolopool.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.coolopool.coolopool.Activity.PostActivity;
 import com.coolopool.coolopool.R;
 import com.squareup.picasso.Picasso;
 
@@ -16,10 +19,14 @@ public class StackCardAdapter extends RecyclerView.Adapter<StackCardAdapter.Stac
 
     String[] imageUrl;
     String[] description;
+    Context mContext;
 
-    public StackCardAdapter(String[] imageUrl, String[] description) {
+
+
+    public StackCardAdapter(String[] imageUrl, String[] description, Context context) {
         this.imageUrl = imageUrl;
         this.description = description;
+        mContext = context;
     }
 
     @NonNull
@@ -35,6 +42,13 @@ public class StackCardAdapter extends RecyclerView.Adapter<StackCardAdapter.Stac
             Picasso.get().load(imageUrl[position]).into(holder.imageView);
         }
         holder.description.setText(description[position]);
+        holder.v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent postIntent = new Intent(mContext, PostActivity.class);
+                mContext.startActivity(postIntent);
+            }
+        });
     }
 
     public String getDes(int position){
@@ -50,9 +64,11 @@ public class StackCardAdapter extends RecyclerView.Adapter<StackCardAdapter.Stac
 
         ImageView imageView;
         TextView description;
+        View v;
 
         public StackCardViewHolder(@NonNull View itemView) {
             super(itemView);
+            v = itemView;
             imageView = itemView.findViewById(R.id.post_image);
             description = itemView.findViewById(R.id.desc);
 

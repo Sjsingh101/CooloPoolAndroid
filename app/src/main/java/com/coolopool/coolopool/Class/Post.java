@@ -24,7 +24,7 @@ public class Post {
     }
 
     private void setUpAdapter(){
-        adapter = new StackCardAdapter(imageUrl, description);
+        adapter = new StackCardAdapter(imageUrl, description, context);
     }
 
     public StackCardAdapter getAdapter() {

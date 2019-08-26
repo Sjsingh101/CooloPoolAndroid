@@ -3,6 +3,8 @@ package com.coolopool.coolopool.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
+
+import com.coolopool.coolopool.Views.CustomViewPager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -27,7 +29,7 @@ import com.coolopool.coolopool.R;
 public class HomeActivity extends AppCompatActivity {
 
 
-    ViewPager viewPager;
+    CustomViewPager viewPager;
     FloatingActionButton fab;
 
     RelativeLayout mGiftContainer;
