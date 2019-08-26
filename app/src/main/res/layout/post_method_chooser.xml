@@ -22,6 +22,7 @@
         android:layout_centerInParent="true">
 
 
+    <!--
     <TextView
         android:id="@+id/new_post_pic"
         android:layout_width="300dp"
@@ -31,6 +32,8 @@
         android:layout_marginBottom="8dp"
         android:text="Pics"
         android:gravity="center"/>
+
+        -->
 
     <TextView
         android:id="@+id/new_post_blog"

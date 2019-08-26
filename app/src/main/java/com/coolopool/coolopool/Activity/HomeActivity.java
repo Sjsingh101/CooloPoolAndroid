@@ -226,13 +226,13 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-        (dB.getDialog().findViewById(R.id.new_post_pic)).setOnClickListener(new View.OnClickListener() {
+        /*(dB.getDialog().findViewById(R.id.new_post_pic)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Todo: create another activity for user to create their trip of only pictures
                 startActivity(new Intent(HomeActivity.this, NewPicPostActivity.class));
             }
-        });
+        });*/
         (dB.getDialog().findViewById(R.id.new_post_blog)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
