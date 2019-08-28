@@ -21,10 +21,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.coolopool.coolopool.Adapter.MainStatePageAdapter;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -51,11 +53,16 @@ public class HomeActivity extends AppCompatActivity {
 
     MainStatePageAdapter adapter;
 
+    FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAuth = FirebaseAuth.getInstance();
+        Toast.makeText(this, "main: "+mAuth.getUid(), Toast.LENGTH_SHORT).show();
 
         fab = findViewById(R.id.fab);
 

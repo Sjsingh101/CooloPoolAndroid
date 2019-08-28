@@ -6,6 +6,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.provider.MediaStore;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,17 +18,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.coolopool.coolopool.Class.User;
-import com.coolopool.coolopool.Interface.TripClient;
+import com.coolopool.coolopool.Backend.Authentication;
 import com.coolopool.coolopool.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SignUp2Activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -39,10 +39,14 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
     EditText etname, etphoneNo, etemail;
     NetworkInfo networkInfo;
 
+    Authentication authentication;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up2);
+
+        authentication = new Authentication(this, SignUp2Activity.this);
 
         getIntentData();
 
@@ -74,10 +78,7 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.createAccountButton:
                 if (networkInfo != null && networkInfo.isConnected()) {
-                    if(createAccount() == 1) {
-                        Intent createAccountIntent = new Intent(SignUp2Activity.this, LoginActivity.class);
-                        startActivity(createAccountIntent);
-                    }
+                    createAccount();
                 } else {
                     Toast.makeText(SignUp2Activity.this,"No Internet Connection.",Toast.LENGTH_SHORT).show();
                 }
@@ -85,7 +86,7 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    private int createAccount() {
+    private void createAccount() {
 
         name = etname.getText().toString().trim();
         phoneNo = etphoneNo.getText().toString().trim();
@@ -94,45 +95,23 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
         if(name.isEmpty()){
             etname.setError("Please enter a valid Name.");
             etname.requestFocus();
-            return 0;
+            return;
         }
 
         if(phoneNo.isEmpty() || phoneNo.length() < 10){
             etphoneNo.setError("Please enter a valid phone number.");
             etphoneNo.requestFocus();
-            return 0;
+            return;
         }
 
         if(email.isEmpty()){
             etemail.setError("Please enter a valid email.");
             etemail.requestFocus();
-            return 0;
+            return;
         }
 
-        User user = new User(username, password, name, phoneNo, email);
+        authentication.signUp(username, password);
 
-        // add the url here
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("")
-                .addConverterFactory(GsonConverterFactory.create());
-
-        Retrofit retrofit = builder.build();
-
-        TripClient client = retrofit.create(TripClient.class);
-        Call<ResponseBody> call = client.createAccount(user);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Toast.makeText(SignUp2Activity.this, "Account created.", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(SignUp2Activity.this, "Oops something went wrong!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        return 1;
     }
 
     @Override

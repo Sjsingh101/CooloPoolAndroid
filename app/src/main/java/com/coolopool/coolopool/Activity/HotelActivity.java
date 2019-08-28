@@ -18,6 +18,8 @@ import com.coolopool.coolopool.Adapter.HotelAdapter;
 import com.coolopool.coolopool.Class.Hotel;
 import com.coolopool.coolopool.Helper.DialogBuilder;
 import com.coolopool.coolopool.R;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 
 public class HotelActivity extends AppCompatActivity {
@@ -25,10 +27,12 @@ public class HotelActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     HotelAdapter mHotelAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
+
 
         ArrayList<Hotel> hotels = new ArrayList<>();
 

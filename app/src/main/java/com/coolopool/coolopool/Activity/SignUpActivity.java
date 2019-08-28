@@ -30,7 +30,7 @@ import org.json.JSONObject;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class SignUpActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class SignUpActivity extends AppCompatActivity {
 
     Button mNextButton;
     TextView mLoginButton;
@@ -71,20 +71,6 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
 
         googleLogin = (CircleImageView) findViewById(R.id.google_login);
 
-        GoogleSignInOptions signInOptions = new GoogleSignInOptions
-                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-
-        msignInClient = GoogleSignIn.getClient(this, signInOptions);
-
-        googleLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = msignInClient.getSignInIntent();
-                startActivityForResult(intent, RC_SIGN_IN);
-            }
-        });
     }
 
     private void setUpSignUp(){
@@ -115,11 +101,6 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
     }
 
     @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
-
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -139,6 +120,7 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
             Toast.makeText(SignUpActivity.this, "Failed to Log in", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     private void updateUI(GoogleSignInAccount account) {
         account = GoogleSignIn.getLastSignedInAccount(this);

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,8 +21,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.coolopool.coolopool.Backend.Authentication;
 import com.coolopool.coolopool.R;
 import com.coolopool.coolopool.Storage.SharedPrefManager;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -31,20 +37,23 @@ public class LoginActivity extends AppCompatActivity {
     static String UserName;
     private static String Password;
 
-    // Dummy URL only for testing, change it when get the real URL of the api
-    private final String LOGIN_URL = "https://my-json-server.typicode.com/typicode/demo/posts/1";
     private EditText etusername;
     private EditText etpassword;
+
+    Authentication authentication;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        authentication = new Authentication(this, LoginActivity.this);
+
+
         etusername = findViewById(R.id.login_name);
         etpassword = findViewById(R.id.login_pass);
 
-        // testing
-        UserName="Sj Singh";
 
         loginbtn = findViewById(R.id.login_btn);
         signUpbtn = findViewById(R.id.SignUp_btn);
@@ -93,12 +102,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-        if(SharedPrefManager.getInstance(this).isLoggedIn()) {
-            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
+        if(authentication.isUserLoggedIn()){
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
         }
+
     }
 
     private void setUpLogin(){
@@ -116,25 +123,10 @@ public class LoginActivity extends AppCompatActivity {
             etpassword.requestFocus();
             return;
         }
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, LOGIN_URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                if(SharedPrefManager.getInstance(LoginActivity.this).saveUser(response) == 1) {
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                    startActivity(intent);
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.v("Log_test", error.toString());
-            }
-        }) ;
+        authentication.loginUser(UserName, Password);
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+
     }
 
     public static String getUsername() {
