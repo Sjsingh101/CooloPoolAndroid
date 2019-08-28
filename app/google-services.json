@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "386633929657",
+    "firebase_url": "https://coolopoolandroid.firebaseio.com",
+    "project_id": "coolopoolandroid",
+    "storage_bucket": "coolopoolandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386633929657:android:2958ba4ae7dbcc26",
+        "android_client_info": {
+          "package_name": "com.coolopool.coolopool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386633929657-d874gih0ko7l9r02ou5dbf4eq99cof46.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.coolopool.coolopool",
+            "certificate_hash": "d797888f388cfc266e920ae17edab94fcc0ab8b0"
+          }
+        },
+        {
+          "client_id": "386633929657-r4d2rapj7thm1f2hiuc9kbmfsp3iq618.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9dzTYJXjcNFRlP47UBki6kXL0Ks6NsX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386633929657-r4d2rapj7thm1f2hiuc9kbmfsp3iq618.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
