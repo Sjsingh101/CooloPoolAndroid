@@ -3,6 +3,7 @@ package com.coolopool.coolopool.Backend;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -38,7 +39,7 @@ public class Authentication {
         auth = FirebaseAuth.getInstance();
     }
 
-    public void signUp(String userName, String password){
+    public void signUp(String userName, String password, final Uri uri){
         if(activity instanceof LoginActivity){ return; }
         auth.createUserWithEmailAndPassword(userName+EMAIL, password)
                 .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
@@ -49,6 +50,8 @@ public class Authentication {
                             activity.onBackPressed();
                         }
                         if(task.isSuccessful()){
+                            Storage storage = new Storage(context, activity, uri);
+                            storage.storeProfilePic(task.getResult().getUser().getUid());
                             context.startActivity(new Intent(activity, HomeActivity.class));
                         }
                     }
@@ -63,10 +66,8 @@ public class Authentication {
             auth.signInWithEmailAndPassword(userName+EMAIL, password).addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.getException() != null){
-                        Toast.makeText(activity, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
-                    }
+                    if(task.getException() != null)
+                    Toast.makeText(activity, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     if(task.isSuccessful()){
                         context.startActivity(new Intent(activity, HomeActivity.class));
                     }
