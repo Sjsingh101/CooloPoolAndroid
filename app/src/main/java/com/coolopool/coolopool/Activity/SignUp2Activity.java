@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.coolopool.coolopool.Backend.Authentication;
+import com.coolopool.coolopool.Backend.Model.User;
 import com.coolopool.coolopool.R;
 import com.google.android.gms.common.internal.Constants;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -129,7 +130,13 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
             return;
         }
 
-        authentication.signUp(username, password, uri);
+        if(uri == null){
+            uri = Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.userfacepic);
+        }
+
+        User user = new User(username, password, name, phoneNo, email);
+
+        authentication.signUp(user, uri);
 
     }
 

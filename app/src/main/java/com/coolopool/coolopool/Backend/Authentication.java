@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import com.coolopool.coolopool.Activity.HomeActivity;
 import com.coolopool.coolopool.Activity.LoginActivity;
 import com.coolopool.coolopool.Activity.SignUp2Activity;
+import com.coolopool.coolopool.Backend.Model.User;
+import com.coolopool.coolopool.Backend.Model.UserDatabase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -39,9 +41,9 @@ public class Authentication {
         auth = FirebaseAuth.getInstance();
     }
 
-    public void signUp(String userName, String password, final Uri uri){
+    public void signUp(final User user, final Uri uri){
         if(activity instanceof LoginActivity){ return; }
-        auth.createUserWithEmailAndPassword(userName+EMAIL, password)
+        auth.createUserWithEmailAndPassword(user.getUsername()+EMAIL, user.getPassword())
                 .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -50,8 +52,12 @@ public class Authentication {
                             activity.onBackPressed();
                         }
                         if(task.isSuccessful()){
+                            user.setUid(task.getResult().getUser().getUid());
                             Storage storage = new Storage(context, activity, uri);
+                            UserDatabase userDatabase = new UserDatabase(context, activity);
                             storage.storeProfilePic(task.getResult().getUser().getUid());
+                            userDatabase.addUserToDatabase(user);
+
                             context.startActivity(new Intent(activity, HomeActivity.class));
                         }
                     }
