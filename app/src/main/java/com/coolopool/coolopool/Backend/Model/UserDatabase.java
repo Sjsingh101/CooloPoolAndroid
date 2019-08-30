@@ -34,12 +34,6 @@ public class UserDatabase {
     private void init(){ db = FirebaseFirestore.getInstance(); }
 
     public void addUserToDatabase(User user) {
-        Map<String, Object> us = new HashMap<>();
-        us.put("Username", user.getUsername());
-        us.put("Password", user.getPassword());
-
-
-
         // Add a new document with a generated ID
         db.collection("users").document(user.getUid()).set(user);
 

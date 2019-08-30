@@ -15,6 +15,7 @@ import com.coolopool.coolopool.Class.NewDay;
 import com.coolopool.coolopool.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.coolopool.coolopool.Interface.ItemClickListener;
 
@@ -90,7 +91,11 @@ public class NewDayAdapter extends RecyclerView.Adapter<NewDayAdapter.NewDayView
         newDays.add(day);
     }
 
-    public void addPhoto(Uri uri){
+    public ArrayList<NewDay> getNewDays() {
+        return newDays;
+    }
+
+    public void addPhoto(List<Uri> uri){
         Toast.makeText(context, newDays.get(focussedPosition).getmDays(), Toast.LENGTH_SHORT).show();
         newDays.get(focussedPosition).addmImageUri(uri);
     }

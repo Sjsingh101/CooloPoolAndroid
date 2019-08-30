@@ -1,12 +1,22 @@
 package com.coolopool.coolopool.Activity;
 
+import android.content.ClipData;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+
+import com.coolopool.coolopool.Backend.Model.Day;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -22,11 +32,18 @@ import com.coolopool.coolopool.Class.NewDay;
 import com.coolopool.coolopool.Class.NewTrip;
 import com.coolopool.coolopool.Interface.TripClient;
 import com.coolopool.coolopool.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,6 +72,10 @@ public class PostDraftActivity extends AppCompatActivity {
     NewDayAdapter adapter;
     RecyclerView recyclerView;
 
+    int noOfTrips;
+    FirebaseAuth mAuth;
+    ArrayList<String> downloadUrl = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +91,7 @@ public class PostDraftActivity extends AppCompatActivity {
 
 
     private void init() {
+        mAuth = FirebaseAuth.getInstance();
         drawer = findViewById(R.id.drawer_layout);
         days = new ArrayList<>();
         adapter = new NewDayAdapter(days, this);
@@ -95,10 +117,42 @@ public class PostDraftActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && data != null) {
             if (requestCode == SELECT_PICTURE) {
-
-                adapter.addPhoto(data.getData());
+                if(data.getClipData() != null){
+                    getMultipleSelectedPics(data);
+                }
+                adapter.addPhoto(Collections.singletonList(data.getData()));
             }
         }
+    }
+
+    private void getMultipleSelectedPics(Intent data){
+        String[] filePathColumn = { MediaStore.Images.Media.DATA };
+        ArrayList<String> imagesEncodedList = new ArrayList<String>();
+        String imageEncoded;
+        ClipData mClipData = data.getClipData();
+        ArrayList<Uri> mArrayUri = new ArrayList<Uri>();
+        for (int i = 0; i < mClipData.getItemCount(); i++) {
+
+            ClipData.Item item = mClipData.getItemAt(i);
+            Uri uri = item.getUri();
+            mArrayUri.add(uri);
+            // Get the cursor
+            Cursor cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+            // Move to first row
+            cursor.moveToFirst();
+
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            imageEncoded  = cursor.getString(columnIndex);
+            imagesEncodedList.add(imageEncoded);
+            cursor.close();
+        }
+        ArrayList<Uri> selectedPhotos = new ArrayList<>();
+        for(int i=0; i<mArrayUri.size(); i++){
+            if(mArrayUri.get(i) != null){
+                selectedPhotos.add(mArrayUri.get(i));
+            }
+        }
+        adapter.addPhoto(selectedPhotos);
     }
 
     private void setUpNavigationDrawer() {
@@ -141,72 +195,64 @@ public class PostDraftActivity extends AppCompatActivity {
     }
 
     private void uploadTrip() {
+        //preparing required data that is to be uploaded
+        ArrayList<NewDay> newDays = adapter.getNewDays();
+        storePicsOfSingleDay(getUriOfSingleDay(newDays.get(0)), 0);
 
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("")
-                .addConverterFactory(GsonConverterFactory.create());
 
-        Retrofit retrofit = builder.build();
+    }
 
-        int imageNumber = count;
-
-        List<Map<String, List<String>>> tripList = new ArrayList<>();
-        for (int i = 0; i < days.size(); i++) {
-            List<String> imagesNames = new ArrayList<>();
-            for (int j = 0; j < days.get(i).getmImageUri().size(); j++)
-                imagesNames.add(LoginActivity.getUsername() + count++);
-            Map<String, List<String>> map = new HashMap<>();
-            map.put("Description", new ArrayList<String>(Arrays.asList(days.get(i).getmDescription())));
-            map.put("Images Name", imagesNames);
-            tripList.add(map);
+    private ArrayList<Uri> getUriOfSingleDay(NewDay newDay){
+        ArrayList<Uri> uris = new ArrayList<>();
+        for(int i=0; i<newDay.getmImageUri().size(); i++){
+            uris.add(newDay.getmImageUri().get(i));
         }
-        NewTrip trip = new NewTrip(tripTitle, tripDescription, tripDate, tripList);
-        String string = new Gson().toJson(trip);
+        return uris;
+    }
 
-        TripClient client = retrofit.create(TripClient.class);
+    private void storePicsOfSingleDay(ArrayList<Uri> uris, int dayCounter){
+        //Todo: create a day array and upload pics of all day in a nested loop
+        int noOfBlogs = getNoOfTrips();
+        StorageReference mRef = FirebaseStorage.getInstance().getReference()
+                .child("blogs/"+mAuth.getUid().toString())
+                .child("blog"+noOfBlogs).child("day"+dayCounter);
+        for(int k=0; k<uris.size(); k++){
+            if(uris.get(k) != null){
+                final StorageReference currentRef = mRef.child("pic"+k);
+                Task t = currentRef.putFile(uris.get(k));
+                t.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                        if(task.isSuccessful()){
+                            Log.d(">>>>>>>>>>>>>>>>>>>>", currentRef.getDownloadUrl().toString());
+                            addUrl(currentRef.getDownloadUrl().toString());
+                        }
+                    }
+                });
 
-        List<MultipartBody.Part> parts = new ArrayList<>();
-
-        for (int i = 0; i < days.size(); i++) {
-            NewDay currentDay = days.get(i);
-            for (int j = 0; j < currentDay.getmImageUri().size(); j++)
-                parts.add(prepareFilePart(LoginActivity.getUsername() + imageNumber++, currentDay.getmImageUri().get(j)));
-        }
-
-        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), string);
-
-        Call<ResponseBody> call = client.uploadTrip(
-                parts, body
-        );
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Toast.makeText(PostDraftActivity.this, "Trip Uploaded.", Toast.LENGTH_SHORT).show();
             }
 
+
+        }
+
+    }
+
+    private void addUrl(String url){
+        downloadUrl.add(url);
+        Log.d(">>>>>>>>>>>>>>>>>>>>", "Uploaded: "+downloadUrl.size());
+    }
+
+    private int getNoOfTrips(){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("users").document(mAuth.getUid().toString()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(PostDraftActivity.this, "Sorry, trip isn't Uploaded.", Toast.LENGTH_SHORT).show();
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                noOfTrips = documentSnapshot.getLong("noOfTrips").intValue();
             }
         });
+
+        return noOfTrips;
     }
-
-    @NonNull
-    private MultipartBody.Part prepareFilePart(String partName, Uri fileUri) {
-
-        File file = new File(fileUri.getPath());
-
-        // create RequestBody instance from file
-        RequestBody requestFile =
-                RequestBody.create(
-                        MediaType.parse(Objects.requireNonNull(getContentResolver().getType(fileUri))),
-                        file
-                );
-
-        // MultipartBody.Part is used to send also the actual file name
-        return MultipartBody.Part.createFormData(partName, file.getName(), requestFile);
-    }
-
 
     private void setUpToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);

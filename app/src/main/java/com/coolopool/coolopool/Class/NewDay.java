@@ -6,6 +6,7 @@ import android.net.Uri;
 import com.coolopool.coolopool.Adapter.NestedImageAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NewDay {
 
@@ -46,8 +47,8 @@ public class NewDay {
         return mAdapter;
     }
 
-    public void addmImageUri(Uri uri) {
-        this.mImageUri.add(uri);
+    public void addmImageUri(List<Uri> uri) {
+        this.mImageUri.addAll(uri);
         this.mAdapter.notifyDataSetChanged();
     }
 
