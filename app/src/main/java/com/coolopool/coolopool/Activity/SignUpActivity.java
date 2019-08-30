@@ -13,12 +13,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.coolopool.coolopool.Backend.Authentication;
 import com.coolopool.coolopool.R;
 import com.coolopool.coolopool.Storage.SharedPrefManager;
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -32,17 +35,26 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SignUpActivity extends AppCompatActivity {
 
+
     Button mNextButton;
     TextView mLoginButton;
     private EditText etusername, etpassword, etconfirmPassword;
     CircleImageView googleLogin;
-    GoogleSignInClient msignInClient;
-    private static final int RC_SIGN_IN = 0;
+    GoogleApiClient mSignInClient;
+
+    String googleProfileImageUrl;
+    String googleAccountHolderName;
+    public static final int GOOGLE_SIGN_IN = 100;
+    Boolean isGoogleSignUp = false;
+
+    Authentication authentication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        authentication = new Authentication(this, SignUpActivity.this);
 
         etusername =  findViewById(R.id.userName);
         etpassword =  findViewById(R.id.password);
@@ -71,7 +83,16 @@ public class SignUpActivity extends AppCompatActivity {
 
         googleLogin = (CircleImageView) findViewById(R.id.google_login);
 
+        googleLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                authentication.googleSignIn();
+            }
+        });
+
     }
+
+
 
     private void setUpSignUp(){
         String username = etusername.getText().toString().trim();
@@ -97,51 +118,27 @@ public class SignUpActivity extends AppCompatActivity {
         }
         intent.putExtra("Username", username);
         intent.putExtra("Password", password);
+
+
+        intent.putExtra("GoogleDisplayName", googleAccountHolderName);
+        intent.putExtra("GooglePicUrl", googleProfileImageUrl);
+        intent.putExtra("IsGoogleSignIn", isGoogleSignUp);
+
         startActivity(intent);
+
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
+        if(requestCode == GOOGLE_SIGN_IN){
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            etusername.setText(result.getSignInAccount().getEmail());
+            googleAccountHolderName = result.getSignInAccount().getDisplayName();
+            googleProfileImageUrl = result.getSignInAccount().getPhotoUrl().toString();
+            isGoogleSignUp = true;
         }
     }
 
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-
-            updateUI(account);
-        } catch (ApiException e) {
-            Log.w("Google Sign In Error", "signInResult:failed code=" + e.getStatusCode());
-            Toast.makeText(SignUpActivity.this, "Failed to Log in", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-    private void updateUI(GoogleSignInAccount account) {
-        account = GoogleSignIn.getLastSignedInAccount(this);
-        if(account != null) {
-            String name = account.getDisplayName();
-            String email = account.getEmail();
-            String img_url = account.getPhotoUrl().toString();
-            LoginActivity.UserName = name;
-
-            // THIS IS JUST TEMPORARY, HAVE TO CHANGE THIS
-            JSONObject temp = new JSONObject();
-            try {
-                temp.put("id",1);
-                temp.put("title", "Post 1");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            SharedPrefManager.getInstance(SignUpActivity.this).saveUser(temp.toString());
-            Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-        }
-    }
 }

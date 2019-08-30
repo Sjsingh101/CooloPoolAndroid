@@ -61,8 +61,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
-        Toast.makeText(this, "main: "+mAuth.getUid(), Toast.LENGTH_SHORT).show();
+        firebaseInit();
 
         fab = findViewById(R.id.fab);
 
@@ -219,6 +218,20 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(mAuth.getCurrentUser() == null){
+            startActivity(new Intent(HomeActivity.this, SplashActivity.class));
+            finish();
+        }
+
+    }
+
+    private void firebaseInit(){
+        mAuth = FirebaseAuth.getInstance();
+        Toast.makeText(this, "main: "+mAuth.getUid(), Toast.LENGTH_SHORT).show();
+    }
 
     private void showDialog(){
         final DialogBuilder dB = new DialogBuilder(this, R.layout.post_method_chooser);

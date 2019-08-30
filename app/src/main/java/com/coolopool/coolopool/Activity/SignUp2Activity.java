@@ -34,6 +34,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -59,6 +60,10 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
 
     Authentication authentication;
 
+    String googleName;
+    String googleImageUrl;
+    boolean isGoogleSignIn = false;
+
     Uri uri;
 
     @Override
@@ -67,8 +72,6 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_sign_up2);
 
         authentication = new Authentication(this, SignUp2Activity.this);
-
-        getIntentData();
 
         etname =  findViewById(R.id.Name);
         etphoneNo =  findViewById(R.id.phoneNo);
@@ -79,6 +82,8 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
 
         mUserProfilePic.setOnClickListener(this);
         mCreateButton.setOnClickListener(this);
+
+        getIntentData();
 
         ConnectivityManager connMgr =
                 (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -133,8 +138,13 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
         if(uri == null){
             uri = Uri.parse("android.resource://" + getApplicationContext().getPackageName() + "/" + R.drawable.userfacepic);
         }
+        User user;
+        if(isGoogleSignIn){
+            user = new User(username, password, name, phoneNo, email);
+        }else{
+            user = new User(username+"@coolopool.com", password, name, phoneNo, email);
+        }
 
-        User user = new User(username, password, name, phoneNo, email);
 
         authentication.signUp(user, uri);
 
@@ -145,19 +155,33 @@ public class SignUp2Activity extends AppCompatActivity implements View.OnClickLi
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == RESULT_LOAD_IMAGE &&resultCode == RESULT_OK && data != null ){
             uri = data.getData();
-
             mUserProfilePic.setScaleType(ImageButton.ScaleType.CENTER_CROP);
             mUserProfilePic.setImageURI(uri);
-
         }
     }
 
+    private void getGoogleIntentData(Intent intent) {
 
+        googleName = intent.getStringExtra("GoogleDisplayName");
+        googleImageUrl = intent.getStringExtra("GooglePicUrl");
+
+        etname.setText(googleName);
+
+
+        //Todo: getting gmail profile picture from url to uri
+        //uri = Uri.parse(Uri.decode(googleImageUrl));
+        //Picasso.get().load(uri).into(mUserProfilePic);
+    }
+//https://coolopoolandroid.firebaseapp.com/__/auth/handler
     private void getIntentData() {
 
         Intent intent = getIntent();
         username = intent.getStringExtra("Username");
         password = intent.getStringExtra("Password");
+        isGoogleSignIn = intent.getBooleanExtra("IsGoogleSignIn", false);
+        if(isGoogleSignIn){
+            getGoogleIntentData(intent);
+        }
     }
 
 }

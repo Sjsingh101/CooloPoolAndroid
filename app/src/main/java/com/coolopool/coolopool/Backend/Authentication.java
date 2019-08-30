@@ -4,30 +4,43 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 
 import com.coolopool.coolopool.Activity.HomeActivity;
 import com.coolopool.coolopool.Activity.LoginActivity;
 import com.coolopool.coolopool.Activity.SignUp2Activity;
+import com.coolopool.coolopool.Activity.SignUpActivity;
 import com.coolopool.coolopool.Backend.Model.User;
 import com.coolopool.coolopool.Backend.Model.UserDatabase;
+import com.coolopool.coolopool.R;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
-public class Authentication {
+import javax.security.auth.callback.Callback;
 
-    String EMAIL = "@coolopool.com";
+public class Authentication {
 
     Context context;
     Activity activity;
+    FragmentActivity fActivity;
 
     FirebaseAuth auth;
 
+    GoogleSignInOptions gso;
+    GoogleApiClient googleSignInClient;
 
 
     //use the correct activity for authentication
@@ -38,12 +51,36 @@ public class Authentication {
     }
 
     private void init(){
+
         auth = FirebaseAuth.getInstance();
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(context.getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        GoogleApiClient.OnConnectionFailedListener listener = new GoogleApiClient.OnConnectionFailedListener() {
+            @Override
+            public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+            }
+        };
+        googleSignInClient = new GoogleApiClient.Builder(context)
+                .enableAutoManage((FragmentActivity) activity, listener)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+    }
+
+    public void fbSignIn(){
+
+    }
+
+    public void googleSignIn(){
+        Intent googleIntent = Auth.GoogleSignInApi.getSignInIntent(googleSignInClient);
+       activity.startActivityForResult(googleIntent, 100);
     }
 
     public void signUp(final User user, final Uri uri){
         if(activity instanceof LoginActivity){ return; }
-        auth.createUserWithEmailAndPassword(user.getUsername()+EMAIL, user.getPassword())
+        auth.createUserWithEmailAndPassword(user.getUsername(), user.getPassword())
                 .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -69,7 +106,7 @@ public class Authentication {
         if (isUserLoggedIn()){
             context.startActivity(new Intent(context, HomeActivity.class));
         }else{
-            auth.signInWithEmailAndPassword(userName+EMAIL, password).addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
+            auth.signInWithEmailAndPassword(userName, password).addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.getException() != null)
