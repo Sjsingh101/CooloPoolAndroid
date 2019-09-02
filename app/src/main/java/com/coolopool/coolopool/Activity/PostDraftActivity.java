@@ -7,7 +7,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
+import com.coolopool.coolopool.Backend.Model.Blog;
 import com.coolopool.coolopool.Backend.Model.Day;
+import com.coolopool.coolopool.Class.Post;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -15,6 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
@@ -74,7 +77,7 @@ public class PostDraftActivity extends AppCompatActivity {
 
     int noOfTrips;
     FirebaseAuth mAuth;
-    ArrayList<String> downloadUrl = new ArrayList<>();
+    ArrayList<ArrayList<String>> downloadUrl = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,17 +192,50 @@ public class PostDraftActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                uploadTrip();
+                uploadBlog();
             }
         });
     }
 
-    private void uploadTrip() {
-        //preparing required data that is to be uploaded
+    private void uploadBlog() {
+        //uploading picture
+        if(uploadPictureOfBlog()){
+            uploadBlogData();
+        }
+
+
+    }
+
+    private void uploadBlogData(){
+        //creating model
+        int days = downloadUrl.size();
+        Blog blog = new Blog(tripTitle, tripDescription, 0, 0, 0);
+
+        FirebaseFirestore mRef = FirebaseFirestore.getInstance();
+        mRef.collection("blogs").document(mAuth.getUid()).set(blog);
+
+    }
+
+    private void uploadDyasInDatabse(){
+        FirebaseFirestore mRef = FirebaseFirestore.getInstance();
         ArrayList<NewDay> newDays = adapter.getNewDays();
-        storePicsOfSingleDay(getUriOfSingleDay(newDays.get(0)), 0);
+        for(int i=0; i<downloadUrl.size(); i++){
+            Toast.makeText(PostDraftActivity.this, ""+downloadUrl.size(), Toast.LENGTH_SHORT).show();
+            Day d = new Day(""+i, "TITLE", newDays.get(i).getmDescription(), downloadUrl.get(i));
+            mRef.collection("blogs").document(mAuth.getUid())
+                    .collection("days").document("day"+i).set(d);
 
+        }
+    }
 
+    private boolean uploadPictureOfBlog(){
+        ArrayList<NewDay> newDays = adapter.getNewDays();
+        for(int i=0; i<newDays.size(); i++){
+            if(newDays.get(i).getmImageUri().size() > 0){
+                storePicsOfSingleDay(getUriOfSingleDay(newDays.get(i)), i);
+            }
+        }
+        return true;
     }
 
     private ArrayList<Uri> getUriOfSingleDay(NewDay newDay){
@@ -210,7 +246,7 @@ public class PostDraftActivity extends AppCompatActivity {
         return uris;
     }
 
-    private void storePicsOfSingleDay(ArrayList<Uri> uris, int dayCounter){
+    private void storePicsOfSingleDay(ArrayList<Uri> uris, final int dayCounter){
         //Todo: create a day array and upload pics of all day in a nested loop
         int noOfBlogs = getNoOfTrips();
         StorageReference mRef = FirebaseStorage.getInstance().getReference()
@@ -224,8 +260,14 @@ public class PostDraftActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                         if(task.isSuccessful()){
-                            Log.d(">>>>>>>>>>>>>>>>>>>>", currentRef.getDownloadUrl().toString());
-                            addUrl(currentRef.getDownloadUrl().toString());
+                            currentRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    Log.d(">>>>>>>>>>>>>>>>>>>>", currentRef.getDownloadUrl().toString());
+                                    addUrl(uri.toString(), dayCounter);
+                                }
+                            });
+
                         }
                     }
                 });
@@ -237,10 +279,19 @@ public class PostDraftActivity extends AppCompatActivity {
 
     }
 
-    private void addUrl(String url){
-        downloadUrl.add(url);
+    private void addUrl(String url, int index){
+        if(downloadUrl.size() == index){
+            downloadUrl.add(index, new ArrayList<String>());
+            downloadUrl.get(index).add(url);
+        }else{
+            downloadUrl.get(index).add(url);
+            uploadDyasInDatabse();
+        }
+
+
         Log.d(">>>>>>>>>>>>>>>>>>>>", "Uploaded: "+downloadUrl.size());
     }
+
 
     private int getNoOfTrips(){
         FirebaseFirestore db = FirebaseFirestore.getInstance();

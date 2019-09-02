@@ -6,37 +6,41 @@ import java.util.ArrayList;
 
 public class Day {
 
-    String dayCout;
+    String dayCount;
     String title;
-    ArrayList<Uri> images;
+    String description;
+    ArrayList<String> images;
 
-    public Day(String dayCout, String title, ArrayList<Uri> images) {
-        this.dayCout = dayCout;
+    public Day(String dayCount, String title, String description, ArrayList<String> images) {
+        this.dayCount = dayCount;
         this.title = title;
+        this.description = description;
         this.images = images;
     }
 
-    public String getDayCout() {
-        return dayCout;
+    public String getDayCount() {
+        return dayCount;
     }
 
-    public void setDayCout(String dayCout) {
-        this.dayCout = dayCout;
+    public void setDayCount(String dayCount) {
+        this.dayCount = dayCount;
     }
 
-    public String getTitle() {
+    public String gettitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+
+    public String getdescription() {
+        return description;
     }
 
-    public ArrayList<Uri> getImages() {
+
+    public ArrayList<String> getImages() {
         return images;
     }
 
-    public void setImages(ArrayList<Uri> images) {
+    public void setImages(ArrayList<String> images) {
         this.images = images;
     }
 }

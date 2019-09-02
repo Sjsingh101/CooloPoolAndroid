@@ -13,13 +13,10 @@ import androidx.fragment.app.FragmentActivity;
 import com.coolopool.coolopool.Activity.HomeActivity;
 import com.coolopool.coolopool.Activity.LoginActivity;
 import com.coolopool.coolopool.Activity.SignUp2Activity;
-import com.coolopool.coolopool.Activity.SignUpActivity;
 import com.coolopool.coolopool.Backend.Model.User;
 import com.coolopool.coolopool.Backend.Model.UserDatabase;
 import com.coolopool.coolopool.R;
 import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -28,8 +25,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-
-import javax.security.auth.callback.Callback;
 
 public class Authentication {
 

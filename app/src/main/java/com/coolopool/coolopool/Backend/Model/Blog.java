@@ -10,15 +10,13 @@ public class Blog {
     int Views;
     int likes;
     int experienced;
-    ArrayList<Day> days;
 
-    public Blog(String title, String description, int views, int likes, int experienced, ArrayList<Day> days) {
+    public Blog(String title, String description, int views, int likes, int experienced) {
         this.title = title;
         this.description = description;
         Views = views;
         this.likes = likes;
         this.experienced = experienced;
-        this.days = days;
     }
 
     public String getTitle() {
@@ -61,11 +59,4 @@ public class Blog {
         this.experienced = experienced;
     }
 
-    public ArrayList<Day> getDays() {
-        return days;
-    }
-
-    public void setDays(ArrayList<Day> days) {
-        this.days = days;
-    }
 }
